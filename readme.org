@@ -1,11 +1,23 @@
 * features:
 
-  simple configuration with minimal abstraction and clear organization
-  auto bootstrap
-  prefer built-ins
-  doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
-  use gccemacs for ultimate performance
+  - use pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance
+  - simple configuration with minimal abstraction
+  - auto bootstrap self
+  - prefer built-ins
+  - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
 
-  audit third party packages and track them in vetted/
-  for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
-  basically the only third-party packages being installed from repos are:, which pulls in the dash, transient and with-editor libs.
+  - audit third party packages and track them in vetted/
+  - for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
+  - basically the only third-party packages being installed from repos are:
+
+    magit (melpa stable)
+    which pulls in:
+    dash (GNU elpa)
+    transient (melpa stable)
+    with-editor  (melpa stable)
+
+    eglot (GNU elpa, only depends on Emacs)
+
+  - free software, public domain, no warranty (fork the repo and make it your own)
+
+  - happy hacking
