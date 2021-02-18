@@ -133,8 +133,8 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(require 'magit)
-(require 'eglot)
+;; (require 'magit)
+;; (require 'eglot)
 
 ;; BINDS
 
