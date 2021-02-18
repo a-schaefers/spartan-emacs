@@ -1,8 +1,8 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;; update config `git pull`
-;; update emacs emacs-pgtk-native-comp-git
-;; update third party pkgs, M-x package-list-packages, then U followed by x.
+;; update emacs pacman -Syu emacs-pgtk-native-comp-git
+;; update third party pkgs, M-x package-list-packages, then U followed by x
 
 ;; SETTINGS
 
@@ -15,20 +15,14 @@
               comp-deferred-compilation t
               package-native-compile t
               frame-resize-pixelwise t
-
               indent-tabs-mode nil
               tab-width 8
               fill-column 79
-
               gnutls-verify-error t
               gnutls-min-prime-bits 2048
-
-              ;; epg-gpg-program "gpg"
               password-cache-expiry nil
-
               mouse-yank-at-point t
               save-interprogram-paste-before-kill t
-
               apropos-do-all t
               require-final-newline t
               ediff-window-setup-function 'ediff-setup-windows-plain
@@ -36,21 +30,15 @@
               `((".*" . ,temporary-file-directory))
               auto-save-file-name-transforms
               `((".*" ,temporary-file-directory t))
-
               tab-always-indent 'complete
-
               tramp-default-method "ssh"
               tramp-copy-size-limit nil
               tramp-use-ssh-controlmaster-options nil
               tramp-default-remote-shell "/bin/bash"
               shell-file-name "/bin/bash"
-
               vc-follow-symlinks t
-
               ring-bell-function 'ignore
-
               browse-url-browser-function 'eww-browse-url
-
               ido-create-new-buffer 'always
               ido-auto-merge-work-directories-length -1
               ido-enable-flex-matching t
@@ -146,14 +134,14 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; ;; (require 'magit)
-
+(require 'magit)
 (require 'eglot)
 
 ;; BINDS
-;; (global-set-key "C-c i" #'(lambda ()
-;;                        (interactive)
-;;                        (find-file user-init-file)))
+
+(global-set-key (kbd "C-c i") #'(lambda ()
+                                  (interactive)
+                                  (find-file user-init-file)))
 
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
@@ -179,8 +167,13 @@
                      (interactive)
                      (my-font-resizer -1)))
 
-(global-set-key (kbd "<f5>") 'compile)
-(global-set-key (kbd "<f6>") 'my-shell-mode-compile)
+;; FIND FILE
+
+(global-set-key (kbd "C-c pf") 'find-name-dired)
+
+;; GREP FILE
+
+(global-set-key (kbd "C-c psg") 'grep)
 
 ;; GIT
 
@@ -197,6 +190,9 @@
 (global-set-key (kbd "C-c t b") 'buffer-to-termbin)
 
 ;; ALL LANGUAGES
+
+(global-set-key (kbd "<f5>") 'compile)
+(global-set-key (kbd "<f6>") 'my-shell-mode-compile)
 
 ;; https://github.com/joaotavora/eglot
 
