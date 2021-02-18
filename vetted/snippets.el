@@ -40,22 +40,22 @@ current frame."
   (message "pushing buffer to termbin.com...")
   (shell-command-on-region (point-min) (point-max) "nc termbin.com 9999"))
 
-(defun my-font-resizer (x)
+(defun spartan-font-resizer (x)
   (when (> x 0)
     (progn
-      (setq my-font-size (+ 1 my-font-size))
+      (setq spartan-font-size (+ 1 spartan-font-size))
       (set-face-attribute 'default nil
-                          :font (concat my-font "-" (number-to-string my-font-size)))))
+                          :font (concat spartan-font "-" (number-to-string spartan-font-size)))))
   (when (< x 0)
     (progn
-      (setq my-font-size (+ -1 my-font-size))
+      (setq spartan-font-size (+ -1 spartan-font-size))
       (set-face-attribute 'default nil
-                          :font (concat my-font "-" (number-to-string my-font-size)))))
+                          :font (concat spartan-font "-" (number-to-string spartan-font-size)))))
   (when (eq x 0)
     (progn
       (set-face-attribute 'default nil
-                          :font (concat my-font "-" (number-to-string my-font-size)))))
-  (message (concat my-font "-" (number-to-string my-font-size))))
+                          :font (concat spartan-font "-" (number-to-string spartan-font-size)))))
+  (message (concat spartan-font "-" (number-to-string spartan-font-size))))
 
 (defun forward-or-backward-sexp (&optional arg)
   "Go to the matching parenthesis character if one is adjacent to point."
@@ -66,7 +66,7 @@ current frame."
         ((looking-at "\\s)") (forward-char) (backward-sexp arg))
         ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
-(defun my-shell-mode-compile()
+(defun spartan-shell-mode-compile()
   (interactive)
   (save-buffer)
   (async-shell-command (buffer-file-name)))

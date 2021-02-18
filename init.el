@@ -1,9 +1,5 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; update config `git pull`
-;; update emacs `pikaur -Syu emacs-pgtk-native-comp-git`
-;; update third party pkgs, M-x package-list-packages, then U followed by x
-
 ;; SETTINGS
 
 (setq-default gc-cons-threshold 100000000
@@ -140,9 +136,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(setq my-font "Source Code Pro"
-      my-font-size '10)
-(my-font-resizer 0)
+(setq spartan-font "Source Code Pro"
+      spartan-font-size '10)
+(spartan-font-resizer 0)
 
 ;; BINDS
 
@@ -169,10 +165,10 @@
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "C-=") #'(lambda ()
                      (interactive)
-                     (my-font-resizer 1)))
+                     (spartan-font-resizer 1)))
 (global-set-key (kbd "C--") #'(lambda ()
                      (interactive)
-                     (my-font-resizer -1)))
+                     (spartan-font-resizer -1)))
 
 ;; FIND FILE
 
@@ -203,7 +199,7 @@
 ;; ALL LANGUAGES
 
 (global-set-key (kbd "<f5>") 'compile)
-(global-set-key (kbd "<f6>") 'my-shell-mode-compile)
+(global-set-key (kbd "<f6>") 'spartan-shell-mode-compile)
 
 ;; https://github.com/joaotavora/eglot
 
@@ -244,5 +240,11 @@
   (define-key python-mode-map (kbd "M-m rb") 'python-shell-send-buffer)
   (define-key python-mode-map (kbd "M-m rR") 'run-python)
   (define-key python-mode-map (kbd "M-m db") 'db))
+
+;; LAST THINGS
+
+(setq spartan-user-local (concat user-emacs-directory "init.local.el"))
+(when (file-exists-p spartan-user-local)
+  (load-file spartan-user-local))
 
 ;;; init.el ends here

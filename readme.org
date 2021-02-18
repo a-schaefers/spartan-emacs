@@ -1,11 +1,15 @@
-* features:
+* spartan emacs
 
+** features:
+
+  - no syntax highlighting
   - use pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance
   - simple configuration with minimal abstraction
   - auto bootstrap self
   - prefer built-ins
   - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
 
+** security conscious
   - audit third party packages and track them in vetted/
   - for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
   - basically the only third-party packages being installed from repos are:
@@ -18,6 +22,36 @@
 
     eglot (GNU elpa, only depends on Emacs)
 
-  - free software, public domain, no warranty (fork the repo and make it your own)
+** languages preconfigured (geared for devops usage)
+
+    Bash
+    Python
+    Systemd
+    Nginx
+    Docker
+    Tramp
+
+** how to hack
+
+   - fork the repo and make it your own
+   - if ~/.emacs.d/override.el exists it will load last
+
+** how to update
+
+   - config
+
+   `git pull`
+
+   - emacs
+
+   `pikaur -Syu emacs-pgtk-native-comp-git`
+
+   - third party pkgs
+
+   M-x package-list-packages, then U followed by x
+
+   ** license
+
+  - free software, public domain, no warranty
 
   - happy hacking
