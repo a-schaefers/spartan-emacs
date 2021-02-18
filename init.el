@@ -57,12 +57,6 @@
                                  (or (server-running-p)
                                      (server-start))))
 
-(blink-cursor-mode 1)
-(scroll-bar-mode -1)
-(fringe-mode -1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -127,17 +121,23 @@
 
 (package-initialize)
 
-; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
-; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
 (require 'magit)
 (require 'eglot)
+
+;; THEME
+
+(blink-cursor-mode 1)
+(scroll-bar-mode -1)
+(fringe-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 (setq my-font "Source Code Pro"
       my-font-size '10)
@@ -245,3 +245,4 @@
   (define-key python-mode-map (kbd "M-m db") 'db))
 
 ;;; init.el ends here
+p
