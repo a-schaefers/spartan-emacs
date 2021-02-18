@@ -40,9 +40,6 @@ current frame."
   (message "pushing buffer to termbin.com...")
   (shell-command-on-region (point-min) (point-max) "nc termbin.com 9999"))
 
-(setq my-font "Source Code Pro")
-(setq my-font-size '10)
-
 (defun my-font-resizer (x)
   (when (> x 0)
     (progn
@@ -59,8 +56,6 @@ current frame."
       (set-face-attribute 'default nil
                           :font (concat my-font "-" (number-to-string my-font-size)))))
   (message (concat my-font "-" (number-to-string my-font-size))))
-
-(my-font-resizer 0)
 
 (defun forward-or-backward-sexp (&optional arg)
   "Go to the matching parenthesis character if one is adjacent to point."

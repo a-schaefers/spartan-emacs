@@ -133,8 +133,12 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; (require 'magit)
-;; (require 'eglot)
+(require 'magit)
+(require 'eglot)
+
+(setq my-font "Source Code Pro"
+      my-font-size '10)
+(my-font-resizer 0)
 
 ;; BINDS
 
