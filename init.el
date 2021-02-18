@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;; update config `git pull`
-;; update emacs pikaur -Syu emacs-pgtk-native-comp-git
+;; update emacs `pikaur -Syu emacs-pgtk-native-comp-git`
 ;; update third party pkgs, M-x package-list-packages, then U followed by x
 
 ;; SETTINGS
