@@ -1,28 +1,34 @@
 * spartan emacs
 
-** features:
+  #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+  [[spartan-emacs.jpg]]
 
-  - no syntax highlighting
-  - use pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance
-  - simple configuration with minimal abstraction
-  - auto bootstrap self
-  - prefer built-ins
-  - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
+** For when https://github.com/technomancy/emacs-starter-kit is too elitist and Spacemacs/Doom/Prelude/Purcell/Radian/... are too bloated.
 
-** security conscious
-  - audit third party packages and track them in vetted/
-  - for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
-  - basically the only third-party packages being installed from repos are:
+*** features:
 
-    magit (melpa stable)
-    which pulls in:
-    dash (GNU elpa)
-    transient (melpa stable)
-    with-editor  (melpa stable)
+    - no syntax highlighting
+    - use pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance
+    - simple configuration with minimal abstraction
+    - auto bootstrap self
+    - prefer built-ins
+    - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
 
-    eglot (GNU elpa, only depends on Emacs)
+*** security conscious
 
-** languages preconfigured (geared for devops usage)
+    - audit third party packages and track them in vetted/
+    - for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
+    - basically the only third-party packages being installed from repos are:
+
+      magit (melpa stable)
+      which pulls in:
+      dash (GNU elpa)
+      transient (melpa stable)
+      with-editor  (melpa stable)
+
+      eglot (GNU elpa, only depends on Emacs)
+
+*** languages preconfigured (geared for devops usage)
 
     Bash
     Python
@@ -31,27 +37,28 @@
     Docker
     Tramp
 
-** how to hack
+*** how to hack
 
-   - fork the repo and make it your own
-   - if ~/.emacs.d/override.el exists it will load last
+    - fork repo, clone it, own it
+    - when ~/.emacs.d/init.pre.local.el exists it will load first
+    - when ~/.emacs.d/init.local.el exists it will load last
 
-** how to update
+*** how to update
 
-   - config
+    - config
 
-   `git pull`
+    `git pull`
 
-   - emacs
+    - emacs
 
-   `pikaur -Syu emacs-pgtk-native-comp-git`
+    `pikaur -Syu emacs-pgtk-native-comp-git`
 
-   - third party pkgs
+    - third party pkgs
 
-   M-x package-list-packages, then U followed by x
+    M-x package-list-packages, then U followed by x
 
-   ** license
+*** license
 
-  - free software, public domain, no warranty
+    - free software, public domain, no warranty
 
-  - happy hacking
+    - happy hacking

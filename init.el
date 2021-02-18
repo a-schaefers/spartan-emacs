@@ -172,11 +172,11 @@
 
 ;; FIND FILE
 
-(global-set-key (kbd "C-c pf") 'find-name-dired)
+(global-set-key (kbd "C-c pf") 'find-name-dired) ; replace projectile muscle memory
 
 ;; GREP FILE
 
-(global-set-key (kbd "C-c psg") 'grep)
+(global-set-key (kbd "C-c psg") 'grep) ; replace projectile muscle memory
 
 ;; DIFF
 
@@ -240,11 +240,5 @@
   (define-key python-mode-map (kbd "M-m rb") 'python-shell-send-buffer)
   (define-key python-mode-map (kbd "M-m rR") 'run-python)
   (define-key python-mode-map (kbd "M-m db") 'db))
-
-;; LAST THINGS
-
-(setq spartan-user-local (concat user-emacs-directory "init.local.el"))
-(when (file-exists-p spartan-user-local)
-  (load-file spartan-user-local))
 
 ;;; init.el ends here
