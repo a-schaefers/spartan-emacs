@@ -40,8 +40,6 @@
 *** how to hack
 
     - fork repo, clone it, own it
-    - when ~/.emacs.d/init.pre.local.el exists it will load first
-    - when ~/.emacs.d/init.local.el exists it will load last
 
 *** how to update
 
