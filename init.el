@@ -102,6 +102,8 @@
 (require 'docker-tramp)
 (require 'browse-kill-ring)
 (require 'crux)
+(require 'better-shell)
+(require 'shx)
 
 ;; THIRD PARTY PKGS
 
@@ -230,7 +232,7 @@
 (setq flymake-shellcheck-use-file nil)
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
 
-(global-set-key (kbd "C-c $") 'shell)
+(global-set-key (kbd "C-<return>") 'better-shell-for-current-dir)
 
 ;; PYTHON
 
