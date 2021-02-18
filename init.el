@@ -245,4 +245,3 @@
   (define-key python-mode-map (kbd "M-m db") 'db))
 
 ;;; init.el ends here
-p
