@@ -97,7 +97,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/vetted/")
 (require 'snippets)
-(require 'better-shell)
 (require 'flymake-shellcheck)
 (require 'docker-tramp)
 (require 'browse-kill-ring)
@@ -108,7 +107,7 @@
 (setq package-list '(
                      magit ;; pulls in dash, with-editor, transient
 
-                     eglot ;; only requires Emacs. "Make sure your package system pulls in and loads the newest project.el, xref.el, eldoc.el, etc... In case of trouble M-x find-library can help you tell if that happened."
+                     eglot ;; only requires Emacs.
                      ))
 
 (require 'package)
@@ -175,6 +174,10 @@
 
 (global-set-key (kbd "C-c psg") 'grep)
 
+;; DIFF
+
+(global-set-key (kbd "C-c |") 'ediff)
+
 ;; GIT
 
 (setq magit-repository-directories '(("~/repos" . 1)))
@@ -222,8 +225,7 @@
 (setq flymake-shellcheck-use-file nil)
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
 
-(global-set-key (kbd "C-c $") 'better-shell-for-current-dir)
-(global-set-key (kbd "C-c #") 'shell-to)
+(global-set-key (kbd "C-c $") 'shell)
 
 ;; PYTHON
 
