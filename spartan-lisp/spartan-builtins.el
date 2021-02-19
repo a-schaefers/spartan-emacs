@@ -2,11 +2,6 @@
 
 (add-hook 'prog-mode-hook 'goto-address-mode)
 
-(add-hook 'window-setup-hook #'(lambda ()
-                                 (require 'server)
-                                 (or (server-running-p)
-                                     (server-start))))
-
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)

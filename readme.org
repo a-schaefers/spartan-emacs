@@ -67,6 +67,8 @@
 
     - typical linux commands need to be available on path: find, grep, netcat, git, bash, ... (required)
 
+    - adobe source code pro font is installed
+
     - for bash: i prefer installing shellcheck-bin and only using that as it has better diagnostics
       than bash-language-server. (recommended)
 

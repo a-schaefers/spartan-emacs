@@ -1,11 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
 
-(setq package-list '(
-                     magit ;; pulls in dash, with-editor, transient
-
-                     eglot ;; only requires Emacs.
-                     ))
-
 (require 'package)
 
 ;; Prefer GNU ELPA > MELPA [stable] (fallback)
@@ -20,14 +14,12 @@
 
 (package-initialize)
 
-(unless package-archive-contents
-  (package-refresh-contents))
+(add-hook 'after-init-hook (lambda ()
+                             (unless package-archive-contents
+                                 (package-refresh-contents))
 
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-(require 'magit)
-(require 'eglot)
+                               (dolist (package spartan-package-list)
+                                 (unless (package-installed-p package)
+                                   (package-install package)))))
 
 (provide 'spartan-elpa-melpa)
