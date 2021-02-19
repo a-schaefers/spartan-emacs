@@ -72,4 +72,4 @@ current frame."
   (async-shell-command (buffer-file-name)))
 (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
 
-(provide 'snippets)
+(provide 'spartan-collect-defun)
