@@ -88,6 +88,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/vetted/")
 (require 'snippets)
+(require 'paredit)
 (require 'flymake-shellcheck)
 (require 'docker-tramp)
 (require 'browse-kill-ring)
@@ -170,6 +171,11 @@
                      (interactive)
                      (spartan-font-resizer -1)))
 
+;; REGEXP search
+
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-forward-regexp)
+
 ;; FIND FILES
 
 (global-set-key (kbd "C-c pf") 'find-name-dired) ; replace projectile muscle memory
@@ -221,6 +227,13 @@
           (lambda () (setq indent-tabs-mode t)))
 
 ;; EMACS LISP
+
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 (define-key emacs-lisp-mode-map (kbd "C-c C-b") 'eval-buffer)
