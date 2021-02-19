@@ -170,11 +170,11 @@
                      (interactive)
                      (spartan-font-resizer -1)))
 
-;; FIND FILE
+;; FIND FILES
 
 (global-set-key (kbd "C-c pf") 'find-name-dired) ; replace projectile muscle memory
 
-;; GREP FILE
+;; GREP FILES
 
 (setq grep-command "grep -Ern '' .")
 (global-set-key (kbd "C-c psg") 'grep) ; replace projectile muscle memory
