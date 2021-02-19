@@ -45,7 +45,13 @@
 
     - emacs
 
-    `pikaur -syu emacs-pgtk-native-comp-git`
+**** arch
+
+    `pikaur -Syu emacs-pgtk-native-comp-git`
+
+**** flatpak
+
+     https://github.com/fejfighter/pgtk-emacs-flatpak
 
     - third party pkgs
 
