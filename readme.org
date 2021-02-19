@@ -29,6 +29,8 @@
 
       eglot (gnu elpa, only depends on emacs)
 
+      exec-path-from-shell (melpa stable, only for macos and gnome users)
+
 *** languages preconfigured
 
     - lisp/scheme
