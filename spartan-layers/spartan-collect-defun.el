@@ -40,10 +40,9 @@
         ((looking-at "\\s)") (forward-char) (backward-sexp arg))
         ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
-(defun spartan-shell-mode-compile()
+(defun spartan-script-execute()
   (interactive)
   (save-buffer)
   (async-shell-command (buffer-file-name)))
-(add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
 
 (provide 'spartan-collect-defun)

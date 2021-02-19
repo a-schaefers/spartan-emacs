@@ -52,7 +52,6 @@
 ;; GIT
 
 (defalias 'git 'magit)
-(setq magit-repository-directories '(("~/repos" . 1)))
 (global-set-key (kbd "C-c g") 'magit)
 
 ;; LINTER
@@ -74,5 +73,13 @@
 (with-eval-after-load 'better-shell
   (defalias 'sh 'better-shell-for-current-dir)
   (global-set-key (kbd "C-c $") 'better-shell-for-current-dir))
+
+;; COMPILE COMMAND / EXECUTE SCRIPT
+
+(setq compile-command "make -k ")
+(global-set-key (kbd "<f5>") 'compile)
+
+(with-eval-after-load 'spartan-collect-defun
+  (global-set-key (kbd "<f6>") 'spartan-script-execute))
 
 (provide 'spartan-binds-global)

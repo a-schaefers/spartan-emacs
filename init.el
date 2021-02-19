@@ -20,7 +20,6 @@
                          spartan-macos
                          spartan-elpa-melpa
                          spartan-binds-global
-                         spartan-prog-global
                          spartan-magit
                          spartan-eglot
                          ;; spartan-evil
