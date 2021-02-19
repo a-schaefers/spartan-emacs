@@ -28,7 +28,7 @@
               tramp-default-method "ssh"
               tramp-copy-size-limit nil
               tramp-use-ssh-controlmaster-options nil
-              ;; tramp-default-remote-shell "/bin/bash"
+              tramp-default-remote-shell "/bin/bash"
               shell-file-name "/bin/bash"
               explicit-shell-file-name "/bin/bash"
               vc-follow-symlinks t
