@@ -15,7 +15,7 @@
     - no syntax highlighting
     - no M-x customize -- custom-file is set to "/dev/null"
     - auto bootstrap self
-    - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time -- still starts in 0.54 seconds on my 10 year old laptop
+    - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - tested against latest pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance (not required, just recommended)
     - optional evil mode
