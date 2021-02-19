@@ -22,16 +22,16 @@
 
       magit (melpa stable)
       which pulls in:
-      dash (GNU elpa)
+      dash (gnu elpa)
       transient (melpa stable)
       with-editor  (melpa stable)
 
-      eglot (GNU elpa, only depends on Emacs)
+      eglot (gnu elpa, only depends on emacs)
 
 *** languages preconfigured
 
-    Bash
-    Python
+    bash
+    python
 
 *** how to hack
 
@@ -45,11 +45,11 @@
 
     - emacs
 
-    `pikaur -Syu emacs-pgtk-native-comp-git`
+    `pikaur -syu emacs-pgtk-native-comp-git`
 
     - third party pkgs
 
-    M-x package-list-packages, then U followed by x
+    m-x package-list-packages, then u followed by x
 
 *** license
 
