@@ -8,7 +8,23 @@
 ;; ╚══════╝╚═╝;;;;;╚═╝;;╚═╝╚═╝;;╚═╝;;;╚═╝;;;╚═╝;;╚═╝
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq spartan-package-list '(magit eglot)
+(setq spartan-package-list '(magit
+                             eglot)
+
+      spartan-layers       '(spartan-settings
+                             spartan-theme
+                             spartan-builtins
+                             spartan-collect-defun
+                             spartan-vetted
+                             spartan-macos
+                             spartan-elpa-melpa
+                             spartan-binds-global
+                             spartan-prog-global
+                             spartan-c
+                             spartan-lisp
+                             spartan-bash
+                             spartan-python)
+
       spartan-lisp-d (concat user-emacs-directory "spartan.d")
       gc-cons-threshold 100000000
       read-process-output-max (* 1024 1024)
@@ -27,19 +43,8 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "spartan-lisp"))
 
-(require 'spartan-settings)
-(require 'spartan-theme)
-(require 'spartan-builtins)
-(require 'spartan-collect-defun)
-(require 'spartan-vetted)
-(require 'spartan-macos)
-(require 'spartan-elpa-melpa)
-(require 'spartan-binds-global)
-(require 'spartan-prog-global)
-(require 'spartan-c)
-(require 'spartan-lisp)
-(require 'spartan-bash)
-(require 'spartan-python)
+(dolist (layer spartan-layers)
+  (require layer))
 
 (when (file-directory-p spartan-lisp-d)
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
