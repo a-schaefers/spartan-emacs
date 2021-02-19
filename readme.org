@@ -91,11 +91,6 @@
       another option is using pipenv.el to activate the environment from an emacs buffer, but
       i prefer starting an emacs instance in the environment manually.
 
-*** todo
-
-    - the idea is use default Emacs binds everywhere, C-c is for global binds, M-m is for language-local binds
-    - consider git submodules in vetted pkgs
-
 *** license
 
     - free software, public domain, no warranty
