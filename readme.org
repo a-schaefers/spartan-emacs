@@ -30,9 +30,9 @@
 
 *** languages preconfigured
 
-    lisp/scheme
-    bash
-    python
+    - lisp/scheme
+    - bash
+    - python
 
 *** how to hack
 
