@@ -30,6 +30,7 @@
 
 *** languages preconfigured
 
+    lisp/scheme
     bash
     python
 
