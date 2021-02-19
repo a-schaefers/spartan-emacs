@@ -58,26 +58,26 @@
 
     m-x package-list-packages, then u followed by x
 
-*** Assumptions
+*** assumptions
 
-    - Recent Emacs compiled from the gccemacs branch with json support
+    - recent emacs compiled from the gccemacs branch with json support
 
-    - Typical linux commands need to be available on path: find, grep, netcat, git, bash, ...
+    - typical linux commands need to be available on path: find, grep, netcat, git, bash, ...
 
-    - For bash: I prefer installing shellcheck-bin and only using that as it has better diagnostics
+    - for bash: i prefer installing shellcheck-bin and only using that as it has better diagnostics
       than bash-language-server.
 
-    - For python: `pip install --user pipenv python-language-server[all]`
+    - for python: `pip install --user pipenv python-language-server[all]`
 
       after that, eglot and lsp should be working automatically.
 
-      If I want to setup a pipenv project with project dependency tracking, I'll do something like,
+      if i want to setup a pipenv project with project dependency tracking, i'll do something like,
 
       `pipenv install --dev --pre python-language-server[all]`
 
-      in the project directory... After that `pipenv run emacs` to use the environment that way.
-      Another option is using pipenv.el to activate the environment from an Emacs buffer, but
-      I prefer starting an Emacs instance in the environment manually.
+      in the project directory... after that `pipenv run emacs` to use the environment that way.
+      another option is using pipenv.el to activate the environment from an emacs buffer, but
+      i prefer starting an emacs instance in the environment manually.
 
 *** license
 
