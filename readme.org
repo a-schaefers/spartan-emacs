@@ -91,6 +91,10 @@
       another option is using pipenv.el to activate the environment from an emacs buffer, but
       i prefer starting an emacs instance in the environment manually.
 
+*** contribute
+
+    - Feel free to submit simple layers similar to [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-evil.el][spartan-evil.el]]
+
 *** license
 
     - free software, public domain, no warranty
