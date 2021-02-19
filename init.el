@@ -23,6 +23,7 @@
         spartan-macos
         spartan-elpa-melpa
         spartan-binds-global
+        spartan-alias
         spartan-prog-global
         ;; spartan-evil
         spartan-c

@@ -45,7 +45,4 @@
               ido-use-filename-at-point 'guess
               ido-use-faces nil)
 
-(defalias 'yes-or-no-p 'y-or-n-p)
-(defalias 'sh 'better-shell-for-current-dir)
-
 (provide 'spartan-settings)
