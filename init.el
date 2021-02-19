@@ -239,6 +239,6 @@
   (define-key python-mode-map (kbd "M-m rr") 'python-shell-send-region)
   (define-key python-mode-map (kbd "M-m rb") 'python-shell-send-buffer)
   (define-key python-mode-map (kbd "M-m rR") 'run-python)
-  (define-key python-mode-map (kbd "M-m db") 'db))
+  (define-key python-mode-map (kbd "M-m db") 'pdb))
 
 ;;; init.el ends here
