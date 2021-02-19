@@ -3,16 +3,6 @@
   #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
   [[spartan-emacs.jpg]]
 
-  #+BEGIN_SRC emacs-lisp
-    ;; ███████╗██████╗;;█████╗;██████╗;████████╗;█████╗;
-    ;; ██╔════╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
-    ;; ███████╗██████╔╝███████║██████╔╝;;;██║;;;███████║
-    ;; ╚════██║██╔═══╝;██╔══██║██╔══██╗;;;██║;;;██╔══██║
-    ;; ███████║██║;;;;;██║;;██║██║;;██║;;;██║;;;██║;;██║
-    ;; ╚══════╝╚═╝;;;;;╚═╝;;╚═╝╚═╝;;╚═╝;;;╚═╝;;;╚═╝;;╚═╝
-    ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  #+END_SRC
-
 ***** when [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]] is too elitist and spacemacs/doom/prelude/purcell/radian/... are too bloated.
 
 *** features:
