@@ -142,27 +142,27 @@
 
 ;; BINDS
 
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+(global-unset-key (kbd "M-m"))
+
+
 (global-set-key (kbd "C-c i") #'(lambda ()
                                   (interactive)
                                   (find-file user-init-file)))
 
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-x C-z"))
-(global-unset-key (kbd "M-m"))
-(global-set-key (kbd "C-%") 'forward-or-backward-sexp)
+(global-set-key (kbd "C-%") 'forward-or-backward-sexp) ; jump to matching bracket ala vim
 (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
 (global-set-key (kbd "C-o") 'crux-smart-open-line)
 (global-set-key (kbd "C-c C-l") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c C--") 'crux-kill-whole-line)
 (global-set-key (kbd "C-c ;") 'crux-duplicate-and-comment-current-line-or-region)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
+
 (global-set-key (kbd "C-x C-o") 'spacemacs/alternate-window)
 (global-set-key (kbd "C-x C-b") 'spacemacs/alternate-buffer)
 (global-set-key (kbd "C-x <C-backspace>") 'bury-buffer)
-(global-set-key (kbd "C-1") 'delete-other-windows)
-(global-set-key (kbd "C-2") 'split-window-below)
-(global-set-key (kbd "C-3") 'split-window-right)
-(global-set-key (kbd "C-0") 'delete-window)
+
 (global-set-key (kbd "C-=") #'(lambda ()
                      (interactive)
                      (spartan-font-resizer 1)))
