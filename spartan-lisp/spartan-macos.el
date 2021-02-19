@@ -2,8 +2,6 @@
 
 ;; for systems that don't inherit environment variables from a shell
 
-(setenv "XDG_CURRENT_DESKTOP" "gnome")
-
 (defun spartan-macos-hook ()
   (exec-path-from-shell-initialize))
 
