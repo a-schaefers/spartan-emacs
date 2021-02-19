@@ -10,6 +10,7 @@
     - simple, clean configuration with minimal abstraction
     - prefer built-ins for simplicity, performance, reliability and security reasons
     - no syntax highlighting
+    - no M-x customize -- custom-file is set to "/dev/null"
     - auto bootstrap self
     - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time -- still starts in 0.54 seconds on my 10 year old laptop
     - tested on Linux, but should work also work fine on any gnu/bsd/macos base
