@@ -8,4 +8,4 @@
 (require 'better-shell)
 (require 'shx)
 
-(provide 'vetted)
+(provide 'spartan-vetted)
