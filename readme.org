@@ -22,15 +22,17 @@
     - for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
     - basically the only third-party packages being installed from repos are:
 
-      magit (melpa stable)
+      magit (melpa)
       which pulls in:
       dash (gnu elpa)
-      transient (melpa stable)
-      with-editor  (melpa stable)
+      transient (melpa)
+      with-editor  (melpa)
 
       eglot (gnu elpa, only depends on emacs)
 
-      exec-path-from-shell (melpa stable, only for macos and gnome users)
+      exec-path-from-shell (melpa, only for macos and gnome users)
+
+      evil-mode (melpa, optional)
 
 *** languages preconfigured
 

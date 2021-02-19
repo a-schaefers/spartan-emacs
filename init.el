@@ -10,22 +10,25 @@
 
 ;; configuration
 
-(setq spartan-package-list '(magit
-                             eglot)
+(setq spartan-package-list
+      '(magit
+        eglot)
 
-      spartan-layers '(spartan-settings
-                       spartan-theme
-                       spartan-builtins
-                       spartan-collect-defun
-                       spartan-vetted
-                       spartan-macos
-                       spartan-elpa-melpa
-                       spartan-binds-global
-                       spartan-prog-global
-                       spartan-c
-                       spartan-lisp
-                       spartan-bash
-                       spartan-python))
+      spartan-layers
+      '(spartan-settings
+        spartan-theme
+        spartan-builtins
+        spartan-collect-defun
+        spartan-vetted
+        spartan-macos
+        spartan-elpa-melpa
+        spartan-binds-global
+        spartan-prog-global
+        ;; spartan-evil
+        spartan-c
+        spartan-lisp
+        spartan-bash
+        spartan-python))
 
 ;; startup
 
