@@ -118,7 +118,7 @@
 
 *** contribute
 
-    - Feel free to submit simple layers similar to [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-evil.el][spartan-evil.el]]
+    - feel free to submit simple layers similar to [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-evil.el][spartan-evil.el]]
 
 *** license
 
