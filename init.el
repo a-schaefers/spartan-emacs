@@ -25,8 +25,7 @@
                                  (or (server-running-p)
                                      (server-start))))
 
-(add-to-list 'load-path "~/.emacs.d/spartan-lisp")
-(add-to-list 'load-path "~/.emacs.d/spartan-lisp-vetted")
+(add-to-list 'load-path (concat user-emacs-directory "spartan-lisp"))
 
 (require 'spartan-settings)
 (require 'spartan-theme)

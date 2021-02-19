@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 
-(add-hook 'python-mode-hook 'eglot-ensure)
+(when (executable-find "pyls")
+    (add-hook 'python-mode-hook 'eglot-ensure))
 
 (with-eval-after-load 'python
   (define-key python-mode-map (kbd "M-m rr") 'python-shell-send-region)
