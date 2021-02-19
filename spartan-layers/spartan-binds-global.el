@@ -4,6 +4,8 @@
 (global-unset-key (kbd "C-x C-z"))
 (global-unset-key (kbd "M-m"))
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (with-eval-after-load 'spartan-collect-defun
   (global-set-key (kbd "C-%") 'forward-or-backward-sexp)) ; jump to matching bracket ala vim
 
