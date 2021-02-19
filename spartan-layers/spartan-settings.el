@@ -23,7 +23,7 @@
               tramp-use-ssh-controlmaster-options nil
 
               ;; I recommend the following ~/.ssh/config settings be used with the tramp settings in this cfg:
-              ;;
+              ;; Host *
               ;; ForwardAgent yes
               ;; AddKeysToAgent yes
               ;; ControlMaster auto
