@@ -176,6 +176,7 @@
 
 ;; GREP FILE
 
+(setq grep-command "grep -Ern '' .")
 (global-set-key (kbd "C-c psg") 'grep) ; replace projectile muscle memory
 
 ;; DIFF
