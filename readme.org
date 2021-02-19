@@ -95,6 +95,9 @@
 
     - default emacs binds (unless you enable evil)
 
+    - Principally, we want to use short M-x aliases, while also putting global function binds on C-c and
+      language specific binds on M-m prefixes
+
     - do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
       the general idea, however.
 
