@@ -3,10 +3,10 @@
   #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
   [[spartan-emacs.jpg]]
 
-***** If you feel like spacemacs/doom/prelude/purcell/radian/... are too bloated,
-      while rolling your own as described in [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]]
-      may be too time consuming... And if you are looking for a simple and well organized base to build on,
-      then Spartan Emacs might be a good choice for you.
+  If you feel like spacemacs/doom/prelude/purcell/radian/... are too bloated,
+  while rolling your own as described in [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]]
+  may be too time consuming... And if you are looking for a simple and well organized base to build on,
+  then Spartan Emacs might be a good choice for you.
 
 *** features:
 
