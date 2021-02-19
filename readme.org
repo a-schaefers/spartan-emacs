@@ -7,12 +7,13 @@
 
 *** features:
 
+    - simple, clean configuration with minimal abstraction
+    - prefer built-ins for simplicity, performance, reliability and security reasons
     - no syntax highlighting
-    - use pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance
-    - simple configuration with minimal abstraction
     - auto bootstrap self
-    - prefer built-ins
-    - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
+    - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time -- still starts in 0.54 seconds on my 10 year old laptop
+    - tested on Linux, but should work also work fine on any gnu/bsd/macos base
+    - tested against latest pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance (not required, just recommended)
 
 *** security conscious
 
@@ -60,12 +61,12 @@
 
 *** assumptions
 
-    - recent emacs compiled from the gccemacs branch with json support
+    - recent emacs compiled from the gccemacs branch with json support (recommended)
 
-    - typical linux commands need to be available on path: find, grep, netcat, git, bash, ...
+    - typical linux commands need to be available on path: find, grep, netcat, git, bash, ... (required)
 
     - for bash: i prefer installing shellcheck-bin and only using that as it has better diagnostics
-      than bash-language-server.
+      than bash-language-server. (recommended)
 
     - for python: `pip install --user pipenv python-language-server[all]`
 
