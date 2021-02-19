@@ -15,11 +15,8 @@
   (global-set-key (kbd "C-c ;") 'crux-duplicate-and-comment-current-line-or-region))
 
 (with-eval-after-load 'browse-kill-ring
+  (defalias 'kr 'browse-kill-ring)
   (global-set-key (kbd "M-y") 'browse-kill-ring))
-
-(with-eval-after-load 'spartan-collect-defun
-  (global-set-key (kbd "C-x C-o") 'spacemacs/alternate-window)
-  (global-set-key (kbd "C-x C-b") 'spacemacs/alternate-buffer))
 
 (with-eval-after-load 'spartan-collect-defun
   (global-set-key (kbd "C-=") #'(lambda ()
@@ -36,30 +33,44 @@
 
 ;; FIND FILES
 
+(defalias 'ff 'find-name-dired)
 (global-set-key (kbd "C-c pf") 'find-name-dired) ; replace projectile muscle memory
 
 ;; GREP FILES
 
+(defalias 'gf 'grep)
 (setq grep-command "grep -Ern '' .")
 (global-set-key (kbd "C-c psg") 'grep) ; replace projectile muscle memory
 
 ;; DIFF
 
+(defalias 'ed 'ediff)
 (global-set-key (kbd "C-c |") 'ediff)
 
 ;; GIT
 
+(defalias 'git 'magit)
 (setq magit-repository-directories '(("~/repos" . 1)))
-(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-c g") 'magit)
 
 ;; LINTER
 
-(global-set-key (kbd "C-c f") 'flymake-show-diagnostics-buffer)
+(with-eval-after-load 'flymake
+  (defalias 'lint 'flymake-show-diagnostics-buffer)
+  (global-set-key (kbd "C-c f") 'flymake-show-diagnostics-buffer))
 
-;; PASTEBIN
+;; TERMBIN
 
 (with-eval-after-load 'spartan-collect-defun
+  (defalias 'tb 'buffer-to-termbin)
+  (defalias 'tr 'region-to-termbin)
   (global-set-key (kbd "C-c t r") 'region-to-termbin)
   (global-set-key (kbd "C-c t b") 'buffer-to-termbin))
+
+;; DUMB TERM
+
+(with-eval-after-load 'better-shell
+  (defalias 'sh 'better-shell-for-current-dir)
+  (global-set-key (kbd "C-c $") 'better-shell-for-current-dir))
 
 (provide 'spartan-binds-global)

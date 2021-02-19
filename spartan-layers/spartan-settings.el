@@ -45,4 +45,6 @@
               ido-use-filename-at-point 'guess
               ido-use-faces nil)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (provide 'spartan-settings)
