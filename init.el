@@ -8,25 +8,28 @@
 ;; ╚══════╝╚═╝;;;;;╚═╝;;╚═╝╚═╝;;╚═╝;;;╚═╝;;;╚═╝;;╚═╝
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; configuration
+
 (setq spartan-package-list '(magit
                              eglot)
 
-      spartan-layers       '(spartan-settings
-                             spartan-theme
-                             spartan-builtins
-                             spartan-collect-defun
-                             spartan-vetted
-                             spartan-macos
-                             spartan-elpa-melpa
-                             spartan-binds-global
-                             spartan-prog-global
-                             spartan-c
-                             spartan-lisp
-                             spartan-bash
-                             spartan-python)
+      spartan-layers '(spartan-settings
+                       spartan-theme
+                       spartan-builtins
+                       spartan-collect-defun
+                       spartan-vetted
+                       spartan-macos
+                       spartan-elpa-melpa
+                       spartan-binds-global
+                       spartan-prog-global
+                       spartan-c
+                       spartan-lisp
+                       spartan-bash
+                       spartan-python))
 
-      spartan-lisp-d (concat user-emacs-directory "spartan.d")
-      gc-cons-threshold 100000000
+;; startup
+
+(setq gc-cons-threshold 100000000
       read-process-output-max (* 1024 1024)
       custom-file "/dev/null"
       inhibit-startup-screen nil
@@ -37,14 +40,28 @@
 
 (add-hook 'window-setup-hook #'(lambda ()
                                  (interactive)
+
                                  (require 'server)
                                  (or (server-running-p)
-                                     (server-start))))
+                                     (server-start))
 
-(add-to-list 'load-path (concat user-emacs-directory "spartan-lisp"))
+                                 (message (concat "<ΞΞΞΞΞΞΞΞΞΞΞΞΞ((X))oo{} "
+                                                  "Welcome "
+                                                  user-login-name
+                                                  ", this is Sparta!"
+                                                  " {}oo((X))ΞΞΞΞΞΞΞΞΞΞΞΞΞ>"))))
+
+
+;; spartan-layers
+
+(add-to-list 'load-path (concat user-emacs-directory "spartan-layers"))
 
 (dolist (layer spartan-layers)
   (require layer))
+
+;; spartan.d/
+
+(setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
 
 (when (file-directory-p spartan-lisp-d)
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
