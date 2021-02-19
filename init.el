@@ -226,7 +226,7 @@
 (add-hook 'c-mode-hook
           (lambda () (setq indent-tabs-mode t)))
 
-;; EMACS LISP
+;; LISP
 
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
