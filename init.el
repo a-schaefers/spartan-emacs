@@ -15,24 +15,9 @@
 (require 'spartan-theme)
 (require 'spartan-builtins)
 (require 'spartan-collect-defun)
-(require 'spartan-binds-global)
-
-;; PKGS VETTED
-
-(require 'paredit)
-(require 'flymake-shellcheck)
-(require 'docker-tramp)
-(require 'browse-kill-ring)
-(require 'crux)
-(require 'better-shell)
-(require 'shx)
-
-;; PKGS ELPA/MELPA-STABLE
-
+(require 'spartan-vetted)
 (require 'spartan-elpa-melpa)
-
-;; CODE
-
+(require 'spartan-binds-global)
 (require 'spartan-prog-global)
 (require 'spartan-c)
 (require 'spartan-lisp)
