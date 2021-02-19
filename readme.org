@@ -28,14 +28,10 @@
 
       eglot (GNU elpa, only depends on Emacs)
 
-*** languages preconfigured (geared for devops usage)
+*** languages preconfigured
 
     Bash
     Python
-    Systemd
-    Nginx
-    Docker
-    Tramp
 
 *** how to hack
 
