@@ -52,9 +52,4 @@
         amx-show-key-bindings nil)
   (amx-mode 1))
 
-(with-eval-after-load 'flx-ido
-  (flx-ido-mode 1)
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
-
 (provide 'spartan-settings)
