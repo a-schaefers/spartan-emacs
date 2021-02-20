@@ -8,6 +8,12 @@
   may be too time consuming... And if you are looking for a simple and well organized base to build on,
   then Spartan Emacs might be a good choice for you.
 
+** Quick install
+
+   #+BEGIN_SRC bash
+     git clone https://github.com/grandmasterfoobah/spartan-emacs ~/.emacs.d
+   #+END_SRC
+
 *** features:
 
     - simple, clean configuration and a comprehensible layers system
@@ -58,15 +64,15 @@
 
 **** arch
 
-    `pikaur -Syu emacs-pgtk-native-comp-git`
+     `pikaur -Syu emacs-pgtk-native-comp-git`
 
 **** flatpak
 
      https://github.com/fejfighter/pgtk-emacs-flatpak
 
-    - third party pkgs
+     - third party pkgs
 
-    m-x package-list-packages, then u followed by x
+     m-x package-list-packages, then u followed by x
 
 *** assumptions
 
