@@ -47,15 +47,11 @@
 
 (setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
 
-(when (file-directory-p spartan-lisp-d)
+(defun spartan-user-local-hook ()
+  (when (file-directory-p spartan-lisp-d)
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
-    (load-file (concat spartan-lisp-d "/" file))))
+    (load-file (concat spartan-lisp-d "/" file)))))
 
-;; M-x customize
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
-(when (file-exists-p custom-file)
-  (load-file custom-file))
+(add-hook 'window-setup-hook 'spartan-user-local-hook)
 
 ;;; init.el ends here
