@@ -12,10 +12,7 @@
               apropos-do-all t
               require-final-newline t
               ediff-window-setup-function 'ediff-setup-windows-plain
-              backup-directory-alist
-              `((".*" . ,temporary-file-directory))
-              auto-save-file-name-transforms
-              `((".*" ,temporary-file-directory t))
+              backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
               tab-always-indent 'complete
 
               tramp-default-method "ssh"
