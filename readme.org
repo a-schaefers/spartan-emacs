@@ -22,7 +22,7 @@
     - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended...)
-    - Optional evil mode, projectile, etc. (more layers coming soon...)
+    - Optional evil mode, projectile, etc. (More layers coming soon...)
 
 *** SECURITY / DEPENDENCY CONSCIOUSNESS
 
@@ -32,12 +32,11 @@
 
     - By default, the only third-party packages being installed from repos are:
 
-      *magit* (melpa)
-      which pulls in: *dash* (gnu elpa), *transient* (melpa), *with-editor* (melpa)
+      *magit* (melpa) -- which pulls in: *dash* (gnu elpa), *transient* (melpa), *with-editor* (melpa)
 
-      *eglot* (gnu elpa, only depends on emacs)
+      *eglot* (gnu elpa)
 
-      /exec-path-from-shell/ (melpa) -- only for macos and gnome users...
+      /exec-path-from-shell/ (melpa) -- Only for macos and gnome users...
 
 *** LANGUAGES PRECONFIGURED
 
@@ -65,11 +64,11 @@
     - For Bash: i prefer installing shellcheck-bin (recommended) and only using that as it has better diagnostics
       than bash-language-server currently.
 
-    - For python: *pip install --user pipenv python-language-server[all]*
+    - For python, *pip install --user pipenv python-language-server[all]*
 
       after that, eglot and lsp should be working automatically.
 
-      if i want to setup a pipenv project with project dependency tracking, i'll do something like,
+      If i want to setup a pipenv project with project dependency tracking, i'll do something like,
 
       *pipenv install --dev --pre python-language-server[all]*
 
