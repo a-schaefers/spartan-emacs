@@ -23,7 +23,6 @@
                          spartan-magit
                          spartan-eglot
                          ;; spartan-evil
-                         spartan-c
                          spartan-lisp
                          spartan-bash
                          spartan-python))
