@@ -59,6 +59,10 @@
 (dolist (layer spartan-layers)
   (require layer))
 
+;; install third party packages
+
+(spartan-package-bootstrap)
+
 ;; spartan.d/
 
 (defvar spartan-lisp-d (concat user-emacs-directory "spartan.d"))
@@ -66,9 +70,5 @@
 (when (file-directory-p spartan-lisp-d)
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
     (load-file (concat spartan-lisp-d "/" file))))
-
-;; install third party packages
-
-(spartan-package-bootstrap)
 
 ;;; init.el ends here
