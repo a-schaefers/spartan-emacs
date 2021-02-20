@@ -12,7 +12,8 @@
 
 (defvar spartan-package-list '())
 
-(defvar spartan-layers '(spartan-settings
+(defvar spartan-layers '(spartan-performance
+                         spartan-settings
                          spartan-ido
                          spartan-theme
                          spartan-builtins
@@ -31,13 +32,9 @@
 
 ;; startup
 
-(setq-default gc-cons-threshold 100000000
-              read-process-output-max (* 1024 1024)
-              inhibit-startup-screen nil
+(setq-default inhibit-startup-screen nil
               initial-major-mode 'emacs-lisp-mode
-              load-prefer-newer t
-              comp-deferred-compilation t
-              package-native-compile t)
+              load-prefer-newer t)
 
 (add-hook 'window-setup-hook #'(lambda ()
                                  (interactive)
