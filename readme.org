@@ -18,7 +18,7 @@
     - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - tested against latest pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance (not required, just recommended)
-    - optional evil mode
+    - optional evil mode (melpa, and whatever dependencies it pulls in)
 
 *** security conscious
 
