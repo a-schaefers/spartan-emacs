@@ -42,7 +42,7 @@
 
       exec-path-from-shell (melpa, only for macos and gnome users)
 
-      evil-mode,projectile (melpa, optional-- and whatever dependencies they pulls in...)
+      evil-mode, projectile (melpa, optional-- and whatever dependencies they pull in...)
 
 *** LANGUAGES PRECONFIGURED
 
