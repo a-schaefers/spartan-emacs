@@ -102,7 +102,7 @@
       the general idea, however.
 
       M-x ff (find files) ,
-      M-x gf (grep files) ,
+      M-x rg (rgrep files) ,
       M-x kr (browse-kill-ring) ,
       M-x ed (ediff) ,
       M-x git (magit) ,
