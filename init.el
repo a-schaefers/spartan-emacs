@@ -12,7 +12,8 @@
 
 (defvar spartan-package-list '())
 
-(defvar spartan-layers '(spartan-performance
+(defvar spartan-layers '(spartan-startup
+                         spartan-performance
                          spartan-settings
                          spartan-ido
                          spartan-theme
