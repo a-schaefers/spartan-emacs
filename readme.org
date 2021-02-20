@@ -8,7 +8,7 @@
   may be too time consuming... And if you are looking for a simple and well organized base to build on,
   then Spartan Emacs might be a good choice for you.
 
-** Quick install
+** quick install
 
    #+BEGIN_SRC bash
      git clone https://github.com/grandmasterfoobah/spartan-emacs ~/.emacs.d
