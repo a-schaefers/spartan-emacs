@@ -32,9 +32,9 @@
 
 ;; startup
 
-(setq-default inhibit-startup-screen nil
-              initial-major-mode 'emacs-lisp-mode
-              load-prefer-newer t)
+(setq inhibit-startup-screen nil
+      initial-major-mode 'emacs-lisp-mode
+      load-prefer-newer t)
 
 (add-hook 'window-setup-hook #'(lambda ()
                                  (interactive)
