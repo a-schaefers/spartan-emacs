@@ -32,17 +32,12 @@
 
     - By default, the only third-party packages being installed from repos are:
 
-      magit (melpa)
-      which pulls in:
-      dash (gnu elpa)
-      transient (melpa)
-      with-editor  (melpa)
+      *magit* (melpa)
+      which pulls in: *dash* (gnu elpa), *transient* (melpa), *with-editor* (melpa)
 
-      eglot (gnu elpa, only depends on emacs)
+      *eglot* (gnu elpa, only depends on emacs)
 
-      exec-path-from-shell (melpa, only for macos and gnome users)
-
-      evil-mode, projectile (melpa, optional-- and whatever dependencies they pull in...)
+      /exec-path-from-shell/ (melpa) -- only for macos and gnome users...
 
 *** LANGUAGES PRECONFIGURED
 
