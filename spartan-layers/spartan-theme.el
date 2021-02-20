@@ -8,7 +8,7 @@
 (tool-bar-mode -1)
 
 (setq spartan-font "Source Code Pro"
-      spartan-font-size '10)
+      spartan-font-size '11)
 
 (with-eval-after-load 'spartan-collect-defun
   (spartan-font-resizer 0))
