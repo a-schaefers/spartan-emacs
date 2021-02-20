@@ -9,7 +9,5 @@
 (require 'crux)
 (require 'better-shell)
 (require 'shx)
-(require 'ido-completing-read+)
-(require 'amx)
 
 (provide 'spartan-vetted)

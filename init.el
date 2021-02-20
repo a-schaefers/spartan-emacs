@@ -13,6 +13,7 @@
 (defvar spartan-package-list '())
 
 (defvar spartan-layers '(spartan-settings
+                         spartan-ido
                          spartan-theme
                          spartan-builtins
                          spartan-collect-defun
