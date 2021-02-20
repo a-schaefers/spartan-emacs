@@ -30,26 +30,6 @@
                          spartan-bash
                          spartan-python))
 
-;; startup
-
-(setq inhibit-startup-screen nil
-      initial-major-mode 'emacs-lisp-mode
-      load-prefer-newer t)
-
-(add-hook 'window-setup-hook #'(lambda ()
-                                 (interactive)
-
-                                 (require 'server)
-                                 (or (server-running-p)
-                                     (server-start))
-
-                                 (message (concat "<ΞΞΞΞΞΞΞΞΞΞΞΞΞ((X))oo{} "
-                                                  "Welcome "
-                                                  user-login-name
-                                                  ", this is Sparta!"
-                                                  " {}oo((X))ΞΞΞΞΞΞΞΞΞΞΞΞΞ>"))))
-
-
 ;; spartan-layers
 
 (add-to-list 'load-path (concat user-emacs-directory "spartan-layers"))
@@ -59,7 +39,8 @@
 
 ;; install third party packages
 
-(spartan-package-bootstrap)
+(with-eval-after-load 'spartan-elpa-melpa
+  (spartan-package-bootstrap))
 
 ;; spartan.d/
 
