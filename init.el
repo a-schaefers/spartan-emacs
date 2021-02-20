@@ -21,6 +21,7 @@
                          spartan-elpa-melpa
                          spartan-binds-global
                          spartan-magit
+                         ;; spartan-projectile
                          spartan-eglot
                          ;; spartan-evil
                          spartan-lisp
