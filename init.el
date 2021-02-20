@@ -31,7 +31,6 @@
 
 (setq-default gc-cons-threshold 100000000
               read-process-output-max (* 1024 1024)
-              custom-file "/dev/null"
               inhibit-startup-screen nil
               initial-major-mode 'emacs-lisp-mode
               load-prefer-newer t
@@ -70,5 +69,11 @@
 (when (file-directory-p spartan-lisp-d)
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
     (load-file (concat spartan-lisp-d "/" file))))
+
+;; M-x customize
+
+(setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
+(when (file-exists-p custom-file)
+  (load-file custom-file))
 
 ;;; init.el ends here
