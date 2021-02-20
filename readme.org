@@ -21,16 +21,16 @@
     - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
     - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
-    - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended...)
-    - Optional evil mode, projectile, etc. (More layers coming soon...)
+    - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
+    - Optional evil mode, projectile, etc. (More layers coming soon)
 
 *** SECURITY / DEPENDENCY CONSCIOUSNESS
 
-    - Audit third party packages and track them in vetted/ (TODO: Move to a gitsubmodule model...)
+    - Audit third party packages and track them in vetted/ (TODO: Move to a gitsubmodule model)
 
     - For larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
 
-    - By default, the only third-party packages being installed from repos are:
+    - By default, the only third-party packages being installed from repos are,
 
       *magit* (melpa) -- which pulls in: *dash* (gnu elpa), *transient* (melpa), *with-editor* (melpa)
 
@@ -43,11 +43,11 @@
     - Lisp/Scheme
     - Bash
     - Python
-    - More coming soon... / send a PR
+    - PR's accepted :)
 
 *** HOW TO HACK
 
-    - Fork repo, clone it, own it.
+    - Fork repo, clone it, own it
 
 *** HOW TO UPDATE
 
@@ -61,7 +61,7 @@
 
     - Adobe source code pro font
 
-    - For Bash: i prefer installing shellcheck-bin (recommended) and only using that as it has better diagnostics
+    - For Bash, i prefer installing shellcheck-bin (recommended) and only using that as it has better diagnostics
       than bash-language-server currently.
 
     - For python, *pip install --user pipenv python-language-server[all]*
@@ -82,7 +82,7 @@
       language specific binds on M-m prefixes
 
     - Do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
-      the general idea, however.
+      the general idea,
 
       M-x ff (find files) ,
       M-x rg (rgrep files) ,
@@ -100,7 +100,7 @@
     - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
 
     - Lastly, if not using evil, I recommend swapping left-alt with left-control in your desktop settings for ergonomic reasons. I've been doing it for years,
-      and it basically solves the infamous "Emacs pinky" RSI issue.
+      and it basically solves the infamous "Emacs pinky" RSI issue
 
 *** CONTRIBUTE
 
