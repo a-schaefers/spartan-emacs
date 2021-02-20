@@ -67,4 +67,8 @@
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
     (load-file (concat spartan-lisp-d "/" file))))
 
+;; install third party packages
+
+(spartan-package-bootstrap)
+
 ;;; init.el ends here

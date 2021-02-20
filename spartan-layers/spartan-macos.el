@@ -8,6 +8,6 @@
 (when (or (string= (getenv "XDG_CURRENT_DESKTOP") "gnome")
           (string= system-type "darwin"))
   (add-to-list 'spartan-package-list 'exec-path-from-shell)
-  (add-hook 'window-setup-hook 'spartan-macos-hook))
+  (add-hook 'after-init-hook 'spartan-macos-hook))
 
 (provide 'spartan-macos)

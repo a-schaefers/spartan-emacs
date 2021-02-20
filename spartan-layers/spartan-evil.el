@@ -5,6 +5,6 @@
 (defun spartan-evil-hook ()
   (evil-mode 1))
 
-(add-hook 'window-setup-hook 'spartan-evil-hook)
+(add-hook 'after-init-hook 'spartan-evil-hook)
 
 (provide 'spartan-evil)

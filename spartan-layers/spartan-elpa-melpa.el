@@ -14,13 +14,12 @@
 
 (package-initialize)
 
-(add-hook 'after-init-hook
-          (lambda ()
-            (unless package-archive-contents
-              (package-refresh-contents))
+(defun spartan-package-bootstrap ()
+  (unless package-archive-contents
+    (package-refresh-contents))
 
-            (dolist (package spartan-package-list)
-              (unless (package-installed-p package)
-                (package-install package)))))
+  (dolist (package spartan-package-list)
+    (unless (package-installed-p package)
+      (package-install package))))
 
 (provide 'spartan-elpa-melpa)
