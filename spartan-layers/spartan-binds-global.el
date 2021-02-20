@@ -51,8 +51,9 @@
 
 ;; GIT
 
-(defalias 'git 'magit)
-(global-set-key (kbd "C-c g") 'magit)
+(with-eval-after-load 'magit
+  (defalias 'git 'magit)
+  (global-set-key (kbd "C-c g") 'magit))
 
 ;; LINTER
 
