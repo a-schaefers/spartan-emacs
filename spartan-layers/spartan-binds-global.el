@@ -64,9 +64,7 @@
 ;; TERMBIN
 
 (with-eval-after-load 'spartan-collect-defun
-  (defalias 'tb 'buffer-to-termbin)
-  (defalias 'tr 'region-to-termbin)
-  (global-set-key (kbd "C-c t r") 'region-to-termbin)
+  (defalias 'tb 'yf/termbin-region)
   (global-set-key (kbd "C-c t b") 'buffer-to-termbin))
 
 ;; DUMB TERM

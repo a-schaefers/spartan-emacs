@@ -9,5 +9,6 @@
 (require 'crux)
 (require 'better-shell)
 (require 'shx)
+(require 'termbin)
 
 (provide 'spartan-vetted)
