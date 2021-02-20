@@ -1,4 +1,4 @@
-* spartan emacs
+* SPARTAN EMACS
 
   #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
   [[spartan-emacs.jpg]]
@@ -8,28 +8,29 @@
   may be too time consuming... And if you are looking for a simple and well organized base to build on,
   then Spartan Emacs might be a good choice for you.
 
-** quick install
+** QUICK INSTALL
 
    #+BEGIN_SRC bash
      git clone https://github.com/grandfoobah/spartan-emacs.git ~/.emacs.d
    #+END_SRC
 
-*** features:
+*** FEATURES
 
-    - simple, clean configuration and a comprehensible layers system
-    - prefer built-ins for simplicity, performance, reliability and security reasons
-    - no syntax highlighting
-    - auto bootstrap self
-    - doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
-    - tested on Linux, but should work also work fine on any gnu/bsd/macos base
-    - tested against latest pgtk gccemacs with native json parsing with eglot (language server protocol) for ultimate performance (not required, just recommended)
-    - optional evil mode
+    - Simple, clean configuration and a comprehensible layers system
+    - Prefer built-ins for simplicity, performance, reliability and security reasons
+    - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
+    - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
+    - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
+    - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended...)
+    - Optional evil mode, projectile, etc. (more layers coming soon...)
 
-*** security conscious
+*** SECURITY / DEPENDENCY CONSCIOUSNESS
 
-    - audit third party packages and track them in vetted/
-    - for larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
-    - basically the only third-party packages being installed from repos are:
+    - Audit third party packages and track them in vetted/ (TODO: Move to a gitsubmodule model...)
+
+    - For larger, [difficult to audit] but well reputed third-party packages: prefer gnu elpa > melpa
+
+    - By default, the only third-party packages being installed from repos are:
 
       magit (melpa)
       which pulls in:
@@ -41,69 +42,52 @@
 
       exec-path-from-shell (melpa, only for macos and gnome users)
 
-      evil-mode (melpa, optional-- and whatever dependencies it pulls in)
+      evil-mode,projectile (melpa, optional-- and whatever dependencies they pulls in...)
 
-*** languages preconfigured
+*** LANGUAGES PRECONFIGURED
 
-    - lisp/scheme
-    - bash
-    - python
+    - Lisp/Scheme
+    - Bash
+    - Python
+    - More coming soon... / send a PR
 
-*** how to hack
+*** HOW TO HACK
 
-    - fork repo, clone it, own it
+    - Fork repo, clone it, own it.
 
-*** how to update
+*** HOW TO UPDATE
 
-    - config
+    - *git pull*
 
-    `git pull`
+    - *M-x package-list-packages*, then *u* followed by *x*
 
-    - emacs
+*** ASSUMPTIONS
 
-**** arch
+    - GNU or BSD coreutils
 
-     `pikaur -Syu emacs-pgtk-native-comp-git`
+    - Adobe source code pro font
 
-**** flatpak
+    - For Bash: i prefer installing shellcheck-bin (recommended) and only using that as it has better diagnostics
+      than bash-language-server currently.
 
-     https://github.com/fejfighter/pgtk-emacs-flatpak
-
-     - third party pkgs
-
-     m-x package-list-packages, then u followed by x
-
-*** assumptions
-
-    - recent emacs compiled from the gccemacs branch with json support (recommended)
-
-    - typical linux commands need to be available on path: find, grep, netcat, git, bash, ... (required)
-
-    - adobe source code pro font (required)
-
-    - for bash: i prefer installing shellcheck-bin and only using that as it has better diagnostics
-      than bash-language-server. (recommended)
-
-    - for python: `pip install --user pipenv python-language-server[all]`
+    - For python: *pip install --user pipenv python-language-server[all]*
 
       after that, eglot and lsp should be working automatically.
 
       if i want to setup a pipenv project with project dependency tracking, i'll do something like,
 
-      `pipenv install --dev --pre python-language-server[all]`
+      *pipenv install --dev --pre python-language-server[all]*
 
-      in the project directory... after that `pipenv run emacs` to use the environment that way.
-      another option is using pipenv.el to activate the environment from an emacs buffer, but
-      i prefer starting an emacs instance in the environment manually.
+      in the project directory... after that *pipenv run emacs* to use the environment that way.
 
-*** key binds
+*** KEY BINDS
 
-    - default emacs binds (unless you enable evil)
+    - Default emacs binds (unless you enable evil)
 
-    - principally, we want to use short M-x aliases, while also putting global function binds on C-c and
+    - Principally, we want to use short M-x aliases, while also putting global function binds on C-c and
       language specific binds on M-m prefixes
 
-    - do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
+    - Do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
       the general idea, however.
 
       M-x ff (find files) ,
@@ -117,19 +101,21 @@
       <f5> (compile) ,
       <f6> (script execute) ...
 
-    - also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
+    - Also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
 
-    - and language-specific files, see e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
+    - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
 
-    - lastly, if not using evil, I recommend swapping left-alt with left-control in your desktop settings for ergonomic reasons. I've been doing it for years,
+    - Lastly, if not using evil, I recommend swapping left-alt with left-control in your desktop settings for ergonomic reasons. I've been doing it for years,
       and it basically solves the infamous "Emacs pinky" RSI issue.
 
-*** contribute
+*** CONTRIBUTE
 
-    - feel free to submit simple layers similar to [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-evil.el][spartan-evil.el]]
+    - Feel free to submit simple layers similar to [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-evil.el][spartan-evil.el]]
 
-*** license
+*** LICENSE
 
-    - free software, public domain, no warranty
+    - ALL MY CODE IS FREE SOFTWARE, PUBLIC DOMAIN, NO WARRANTY
 
-    - happy hacking
+    - ALL VETTED CODE IS UNDER RESPECTIVE LICENSE OF AUTHORS
+
+    - HAPPY HACKING
