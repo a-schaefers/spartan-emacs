@@ -28,6 +28,7 @@
 (savehist-mode 1)
 
 (ido-mode 1)
+(ido-everywhere 1)
 
 (with-eval-after-load 'flymake
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))

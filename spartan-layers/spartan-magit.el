@@ -4,4 +4,6 @@
 
 (setq magit-repository-directories '(("~/repos" . 1)))
 
+(setq magit-completing-read-function 'magit-ido-completing-read)
+
 (provide 'spartan-magit)
