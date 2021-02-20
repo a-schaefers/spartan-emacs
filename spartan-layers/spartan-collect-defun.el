@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (defun spartan-font-resizer (x)
   (when (> x 0)

@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (setq flymake-shellcheck-use-file nil)
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)

@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (with-eval-after-load 'paredit
   (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)

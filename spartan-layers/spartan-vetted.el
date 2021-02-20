@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (add-to-list 'load-path (concat user-emacs-directory "spartan-lisp-vetted"))
 

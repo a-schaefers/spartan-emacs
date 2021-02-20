@@ -1,19 +1,17 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (add-to-list 'spartan-package-list 'projectile)
 
 (defun spartan-projectile-hook ()
-  (with-eval-after-load 'projectile
-    ;; https://emacs.stackexchange.com/questions/32634/how-can-the-list-of-projects-used-by-projectile-be-manually-updated
-    (when (require 'magit nil t)
-      (mapc #'projectile-add-known-project
-            (mapcar #'file-name-as-directory (magit-list-repos)))
-      ;; Optionally write to persistent `projectile-known-projects-file'
-      (projectile-save-known-projects)))
-
+  (require 'projectile)
   (projectile-mode 1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+  (with-eval-after-load 'magit
+    ;; https://emacs.stackexchange.com/questions/32634/how-can-the-list-of-projects-used-by-projectile-be-manually-updated
+    (mapc #'projectile-add-known-project
+          (mapcar #'file-name-as-directory (magit-list-repos)))
+    (projectile-save-known-projects)))
 
 (add-hook 'after-init-hook 'spartan-projectile-hook)
 

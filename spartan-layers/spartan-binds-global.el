@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))

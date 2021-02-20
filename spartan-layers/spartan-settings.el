@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (setq-default frame-resize-pixelwise t ; support better certain window managers like ratpoison
               indent-tabs-mode nil

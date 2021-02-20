@@ -1,6 +1,7 @@
-;;; -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (global-font-lock-mode 0)
+
 (blink-cursor-mode 1)
 (scroll-bar-mode -1)
 (fringe-mode -1)
