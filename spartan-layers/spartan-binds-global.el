@@ -63,7 +63,7 @@
 
 ;; TERMBIN
 
-(with-eval-after-load 'spartan-collect-defun
+(with-eval-after-load 'termbin
   (defalias 'tb 'yf/termbin-region)
   (global-set-key (kbd "C-c t b") 'buffer-to-termbin))
 
