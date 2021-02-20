@@ -11,8 +11,7 @@
                                  (or (server-running-p)
                                      (server-start))
 
-                                 (message (concat "<ΞΞΞΞΞΞΞΞΞΞΞΞΞ((X))oo{} "
-                                                  "Welcome "
+                                 (message (concat "Welcome "
                                                   user-login-name
                                                   ", this is Sparta!"
                                                   " {}oo((X))ΞΞΞΞΞΞΞΞΞΞΞΞΞ>"))))
