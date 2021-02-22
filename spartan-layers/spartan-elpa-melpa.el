@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+(setq spartan-package-list '())
+
 (require 'package)
 
 ;; Prefer GNU ELPA > MELPA (fallback)

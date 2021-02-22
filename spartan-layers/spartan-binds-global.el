@@ -7,8 +7,16 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-(with-eval-after-load 'spartan-collect-defun
-  (global-set-key (kbd "C-%") 'forward-or-backward-sexp)) ; jump to matching bracket ala vim
+(defun forward-or-backward-sexp (&optional arg)
+  "Go to the matching parenthesis character if one is adjacent to point."
+  (interactive "^p")
+  (cond ((looking-at "\\s(") (forward-sexp arg))
+        ((looking-back "\\s)" 1) (backward-sexp arg))
+        ;; Now, try to succeed from inside of a bracket
+        ((looking-at "\\s)") (forward-char) (backward-sexp arg))
+        ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
+
+(global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
 (with-eval-after-load 'crux
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
@@ -21,7 +29,7 @@
   (defalias 'kr 'browse-kill-ring)
   (global-set-key (kbd "M-y") 'browse-kill-ring))
 
-(with-eval-after-load 'spartan-collect-defun
+(with-eval-after-load 'spartan-theme
   (global-set-key (kbd "C-=") #'(lambda ()
                                   (interactive)
                                   (spartan-font-resizer 1)))
@@ -63,9 +71,9 @@
 
 ;; TERMBIN
 
-(with-eval-after-load 'termbin
-  (defalias 'tb 'yf/termbin-region)
-  (global-set-key (kbd "C-c t b") 'buffer-to-termbin))
+(with-eval-after-load 'webpaste
+  (defalias 'pb 'webpaste-paste-buffer-or-region)
+  (global-set-key (kbd "C-c C-p C-p") 'webpaste-paste-buffer-or-region))
 
 ;; DUMB TERM
 
@@ -78,7 +86,7 @@
 (setq compile-command "make -k ")
 (global-set-key (kbd "<f5>") 'compile)
 
-(with-eval-after-load 'spartan-collect-defun
+(with-eval-after-load 'spartan-shell
   (global-set-key (kbd "<f6>") 'spartan-script-execute))
 
 (provide 'spartan-binds-global)

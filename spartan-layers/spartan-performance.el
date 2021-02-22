@@ -14,4 +14,7 @@
 (unless (functionp 'json-serialize)
   (message "Native JSON is *not* available, lsp performance will suffer..."))
 
+;; do not steal focus while doing async compilations
+(setq warning-suppress-types '((comp)))
+
 (provide 'spartan-performance)

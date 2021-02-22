@@ -8,28 +8,30 @@
 ;; ╚══════╝╚═╝;;;;;╚═╝;;╚═╝╚═╝;;╚═╝;;;╚═╝;;;╚═╝;;╚═╝
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; configuration
-
-(setq spartan-package-list '())
+;; configuration -- uncomment desired layers => C-xC-s => M-x spartan-reconfigure
 
 (setq spartan-layers '(spartan-startup
                        spartan-performance
-                       spartan-settings
-                       spartan-ido
                        spartan-theme
-                       spartan-builtins
-                       spartan-collect-defun
-                       spartan-vetted
-                       spartan-macos
-                       spartan-elpa-melpa
+                       spartan-settings
                        spartan-binds-global
-                       spartan-magit
+                       spartan-elpa-melpa
+                       ;; spartan-ido                       
                        ;; spartan-projectile
-                       spartan-eglot
                        ;; spartan-evil
-                       spartan-lisp
-                       spartan-bash
-                       spartan-python))
+                       ;; spartan-kill-ring
+                       ;; spartan-crux
+                       ;; spartan-webpaste
+                       ;; spartan-shell
+                       ;; spartan-vterm
+                       ;; spartan-builtins
+                       ;; spartan-macos
+                       ;; spartan-magit
+                       ;; spartan-eglot
+                       ;; spartan-lisp
+                       ;; spartan-bash
+                       ;; spartan-python
+                       ))
 
 ;; spartan-layers
 
@@ -60,5 +62,13 @@
     (load-file (concat spartan-lisp-d "/" file)))))
 
 (add-hook 'window-setup-hook 'spartan-user-local-hook)
+
+;; M-x spartan-reconfigure
+
+(defun spartan-reconfigure ()
+  (interactive)
+  (load-file user-init-file)
+  (run-hooks 'after-init-hook
+             'window-setup-hook))
 
 ;;; init.el ends here
