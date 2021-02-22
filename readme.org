@@ -53,7 +53,7 @@
 
     - *git pull*
 
-    - *M-x package-list-packages*, then *u* followed by *x*
+    - *M-x package-list-packages*, then *U* followed by *x*
 
 *** ASSUMPTIONS
 
