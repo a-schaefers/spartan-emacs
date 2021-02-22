@@ -10,7 +10,9 @@
 
 (defun spartan-shell-hook ()
   (require 'shx)
-  (require 'better-shell))
+  (require 'better-shell)
+
+  (shx-global-mode 1))
 
 (add-hook 'after-init-hook 'spartan-shell-hook)
 
