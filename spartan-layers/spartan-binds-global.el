@@ -39,9 +39,9 @@
   (defalias 'kr 'browse-kill-ring)
   (global-set-key (kbd "M-y") 'browse-kill-ring))
 
-;; Global font size adjustments (requires spartan-theme layer)
+;; Global font size adjustments (requires spartan-better-defaults layer)
 
-(with-eval-after-load 'spartan-theme
+(with-eval-after-load 'spartan-better-defaults
   (global-set-key (kbd "C-=") #'(lambda ()
 				  (interactive)
 				  (spartan-font-resizer 1)))
