@@ -1,9 +1,14 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; Unbind annoyances
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 (global-unset-key (kbd "M-m"))
 
+;; Tab auto completion
+(setq tab-always-indent 'complete) ; used by eglot for auto-completion as well
+
+;; Better-defaults
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
 
@@ -11,11 +16,12 @@
   "Go to the matching parenthesis character if one is adjacent to point."
   (interactive "^p")
   (cond ((looking-at "\\s(") (forward-sexp arg))
-        ((looking-back "\\s)" 1) (backward-sexp arg))
-        ;; Now, try to succeed from inside of a bracket
-        ((looking-at "\\s)") (forward-char) (backward-sexp arg))
-        ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
+	((looking-back "\\s)" 1) (backward-sexp arg))
+	;; Now, try to succeed from inside of a bracket
+	((looking-at "\\s)") (forward-char) (backward-sexp arg))
+	((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
+;; Ala vim
 (global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
 ;; Collection of Rediculously useful eXtensions (requires spartan-crux layer)
@@ -37,11 +43,11 @@
 
 (with-eval-after-load 'spartan-theme
   (global-set-key (kbd "C-=") #'(lambda ()
-                                  (interactive)
-                                  (spartan-font-resizer 1)))
+				  (interactive)
+				  (spartan-font-resizer 1)))
   (global-set-key (kbd "C--") #'(lambda ()
-                                  (interactive)
-                                  (spartan-font-resizer -1))))
+				  (interactive)
+				  (spartan-font-resizer -1))))
 
 ;; REGEXP search
 
