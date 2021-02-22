@@ -14,7 +14,8 @@
 		       spartan-performance
 		       spartan-better-defaults
 		       spartan-binds-global
-		       spartan-elpa-melpa
+
+		       ;;;; spartan-elpa-melpa ; required by layers below
 		       ;; spartan-ido
 		       ;; spartan-flymake
 		       ;; spartan-projectile
