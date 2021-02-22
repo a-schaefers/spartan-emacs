@@ -18,6 +18,7 @@
                        spartan-builtins
                        spartan-elpa-melpa
                        ;; spartan-ido
+                       ;; spartan-flymake
                        ;; spartan-projectile
                        ;; spartan-evil
                        ;; spartan-kill-ring
