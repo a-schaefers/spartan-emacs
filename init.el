@@ -43,6 +43,13 @@
 (with-eval-after-load 'spartan-elpa-melpa
   (spartan-package-bootstrap))
 
+;; M-x customize
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(when (file-exists-p custom-file)
+  (load-file custom-file))
+
 ;; spartan.d/
 
 (setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
