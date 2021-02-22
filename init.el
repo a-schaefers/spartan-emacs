@@ -15,6 +15,7 @@
                        spartan-theme
                        spartan-settings
                        spartan-binds-global
+                       spartan-builtins
                        spartan-elpa-melpa
                        ;; spartan-ido                       
                        ;; spartan-projectile
@@ -24,7 +25,6 @@
                        ;; spartan-webpaste
                        ;; spartan-shell
                        ;; spartan-vterm
-                       ;; spartan-builtins
                        ;; spartan-macos
                        ;; spartan-magit
                        ;; spartan-eglot
