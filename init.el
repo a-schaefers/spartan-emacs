@@ -9,6 +9,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; configuration -- uncomment desired layers => C-xC-s => M-x spartan-reconfigure
+;; place user-local customization in spartan.d/
 
 (setq spartan-layers '(spartan-startup
                        spartan-performance
@@ -17,7 +18,7 @@
                        spartan-binds-global
                        spartan-builtins
                        spartan-elpa-melpa
-                       ;; spartan-ido                       
+                       ;; spartan-ido
                        ;; spartan-projectile
                        ;; spartan-evil
                        ;; spartan-kill-ring
@@ -69,6 +70,6 @@
   (interactive)
   (load-file user-init-file)
   (run-hooks 'after-init-hook
-             'window-setup-hook))
+             'emacs-startup-hook))
 
 ;;; init.el ends here

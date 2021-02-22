@@ -27,16 +27,16 @@
     - Optional evil mode, magit, projectile, etc. (More layers coming soon)
 
 *** LAYERS
-    
+
     - Edit init.el and M-x spartan-reconfigure
 
-**** HOW LAYERS WORK    
+**** HOW LAYERS WORK
 
     - Enabled layer packages are installed during init
     - Then layer packages are configured in the after-init-hook
     - Finally layer packages may be user local customized in spartan.d/
 
-      (all lisp files in spartan.d/ load last, during the window-setup-hook)
+      (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
 
 *** LANGUAGES PRECONFIGURED
 
