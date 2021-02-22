@@ -21,6 +21,18 @@
 	((looking-at "\\s)") (forward-char) (backward-sexp arg))
 	((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
+;; tramp
+
+(defun spartan-tramp (x)
+  "Tramp ssh to a server, optionally as root, and [optionally] store creds in .authinfo[.gpg]"
+  (interactive "sServer name: ")
+  (if (yes-or-no-p "sudo to root? ")
+    (find-file (concat "/ssh:" x "|sudo:" x ":"))
+  (find-file (concat "/ssh:" x ":"))))
+
+(defalias 'tramp 'spartan-tramp)
+(global-set-key (kbd "C-c t") 'spartan-tramp)
+
 ;; Ala vim
 (global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
