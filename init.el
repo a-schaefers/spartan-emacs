@@ -17,20 +17,20 @@
                        spartan-binds-global
                        spartan-builtins
                        spartan-elpa-melpa
-                       spartan-ido
-                       spartan-projectile
+                       ;; spartan-ido
+                       ;; spartan-projectile
                        ;; spartan-evil
-                       spartan-kill-ring
-                       spartan-crux
-                       spartan-webpaste
-                       spartan-shell
+                       ;; spartan-kill-ring
+                       ;; spartan-crux
+                       ;; spartan-webpaste
+                       ;; spartan-shell
                        ;; spartan-vterm
                        ;; spartan-macos
-                       spartan-magit
-                       spartan-eglot
-                       spartan-lisp
-                       spartan-bash
-                       spartan-python
+                       ;; spartan-magit
+                       ;; spartan-eglot
+                       ;; spartan-lisp
+                       ;; spartan-bash
+                       ;; spartan-python
                        ))
 
 ;; spartan-layers
