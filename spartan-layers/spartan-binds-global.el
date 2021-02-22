@@ -18,6 +18,8 @@
 
 (global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
+;; Collection of Rediculously useful eXtensions (requires spartan-crux layer)
+
 (with-eval-after-load 'crux
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
   (global-set-key (kbd "C-o") 'crux-smart-open-line)
@@ -25,9 +27,13 @@
   (global-set-key (kbd "C-c C--") 'crux-kill-whole-line)
   (global-set-key (kbd "C-c ;") 'crux-duplicate-and-comment-current-line-or-region))
 
+;; Browse Kill Ring (requires spartan-kill-ring layer)
+
 (with-eval-after-load 'browse-kill-ring
   (defalias 'kr 'browse-kill-ring)
   (global-set-key (kbd "M-y") 'browse-kill-ring))
+
+;; Global font size adjustments (requires spartan-theme layer)
 
 (with-eval-after-load 'spartan-theme
   (global-set-key (kbd "C-=") #'(lambda ()
@@ -45,46 +51,48 @@
 ;; FIND FILES
 
 (defalias 'ff 'find-name-dired)
-(global-set-key (kbd "C-c pf") 'find-name-dired) ; replace projectile muscle memory
+(global-set-key (kbd "C-c pf") 'find-name-dired)
 
 ;; GREP FILES
 
 (defalias 'rg 'rgrep)
-(global-set-key (kbd "C-c psg") 'rgrep) ; replace projectile muscle memory
+(global-set-key (kbd "C-c psg") 'rgrep)
 
 ;; DIFF
 
 (defalias 'ed 'ediff)
 (global-set-key (kbd "C-c |") 'ediff)
 
-;; GIT
+;; GIT (requires spartan-magit layer)
 
 (with-eval-after-load 'magit
   (defalias 'git 'magit)
   (global-set-key (kbd "C-c g") 'magit))
 
-;; LINTER
+;; LINTER  (requires spartan-flymake layer)
 
-(with-eval-after-load 'flymake
+(with-eval-after-load 'spartan-flymake
   (defalias 'lint 'flymake-show-diagnostics-buffer)
   (global-set-key (kbd "C-c f") 'flymake-show-diagnostics-buffer))
 
-;; TERMBIN
+;; Pastebin (requires spartan-webpaste layer)
 
-(with-eval-after-load 'webpaste
+(with-eval-after-load 'spartan-webpaste
   (defalias 'pb 'webpaste-paste-buffer-or-region)
   (global-set-key (kbd "C-c C-p C-p") 'webpaste-paste-buffer-or-region))
 
-;; DUMB TERM
+;; DUMB TERM (requires spartan-shell layer)
 
-(with-eval-after-load 'better-shell
+(with-eval-after-load 'spartan-shell
   (defalias 'sh 'better-shell-for-current-dir)
   (global-set-key (kbd "C-c $") 'better-shell-for-current-dir))
 
-;; COMPILE COMMAND / EXECUTE SCRIPT
+;; COMPILE COMMAND
 
 (setq compile-command "make -k ")
 (global-set-key (kbd "<f5>") 'compile)
+
+;; EXECUTE SCRIPT (requires spartan-shell layer)
 
 (with-eval-after-load 'spartan-shell
   (global-set-key (kbd "<f6>") 'spartan-script-execute))

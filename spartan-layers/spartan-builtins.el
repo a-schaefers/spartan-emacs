@@ -27,8 +27,4 @@
 
 (savehist-mode 1)
 
-(with-eval-after-load 'flymake
-  (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
-(add-hook 'prog-mode-hook 'flymake-mode)
-
 (provide 'spartan-builtins)
