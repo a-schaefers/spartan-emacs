@@ -11,10 +11,10 @@
   (require 'flx-ido)
 
   (setq ido-create-new-buffer 'always
-        ido-auto-merge-work-directories-length -1
-        ido-enable-flex-matching t
-        ido-use-filename-at-point 'guess
-        ido-use-faces nil)
+	ido-auto-merge-work-directories-length -1
+	ido-enable-flex-matching t
+	ido-use-filename-at-point 'guess
+	ido-use-faces nil)
 
   (ido-mode 1)
   (ido-everywhere 1)
@@ -24,14 +24,13 @@
 
   (with-eval-after-load 'amx
     (setq amx-ignored-command-matchers nil
-          amx-show-key-bindings nil)
+	  amx-show-key-bindings nil)
     (amx-mode 1))
 
   (with-eval-after-load 'flx-ido
     (flx-ido-mode 1)
     (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil)
-    (setq flx-ido-threshold '3000)))
+    (setq ido-use-faces nil)))
 
 (add-hook 'after-init-hook 'spartan-ido-hook)
 
