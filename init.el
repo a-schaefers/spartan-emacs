@@ -62,7 +62,7 @@
   (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
     (load-file (concat spartan-lisp-d "/" file)))))
 
-(add-hook 'window-setup-hook 'spartan-user-local-hook)
+(add-hook 'emacs-startup-hook 'spartan-user-local-hook)
 
 ;; M-x spartan-reconfigure
 
