@@ -62,19 +62,11 @@ TIP: Try M-x sh after this, for a remote shell."
 
 ;; FIND FILES
 
-(if (fboundp 'projectile-mode)
-    (defalias 'ff 'projectile-find-file)
-    (progn
-      (defalias 'ff 'find-name-dired)
-      (global-set-key (kbd "C-c pf") 'find-name-dired)))
+(defalias 'ff 'find-name-dired)
 
 ;; GREP FILES
 
-(if (fboundp 'projectile-mode)
-    (defalias 'rg 'projectile-grep)
-    (progn
-      (defalias 'rg 'rgrep)
-      (global-set-key (kbd "C-c psg") 'rgrep)))
+(defalias 'rg 'rgrep)
 
 ;; DIFF
 
@@ -83,33 +75,33 @@ TIP: Try M-x sh after this, for a remote shell."
 
 ;; PROJECT MGMT
 
-(with-eval-after-load 'spartan-projectile
-  (defalias 'proj 'projectile-commander)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+(with-eval-after-load 'projectile
+    (defalias 'proj 'projectile-commander)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 ;; GIT
 
-(with-eval-after-load 'spartan-magit
+(with-eval-after-load 'magit
   (defalias 'git 'magit))
 
 ;; LINTER
 
-(with-eval-after-load 'spartan-flymake
+(with-eval-after-load 'flymake
   (defalias 'lint 'flymake-show-diagnostics-buffer))
 
 ;; PASTEBIN
 
-(with-eval-after-load 'spartan-webpaste
+(with-eval-after-load 'webpaste
   (defalias 'paste 'webpaste-paste-buffer-or-region))
 
 ;; DUMB TERM
 
-(with-eval-after-load 'spartan-shell
+(with-eval-after-load 'better-shell
   (defalias 'sh 'better-shell-for-current-dir))
 
 ;; VTERM
 
-(with-eval-after-load 'spartan-vterm
+(with-eval-after-load 'vterm
   (defalias 'vt 'vterm)
   (global-set-key (kbd "C-c C-v") 'vterm)
   (global-set-key (kbd "C-c C-j") 'vterm-copy-mode)
