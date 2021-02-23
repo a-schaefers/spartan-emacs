@@ -19,12 +19,10 @@
     - Simple, clean configuration and a comprehensible layers system
     - No third party packages install by default
     - Prefer built-ins
-    - Use lightweight, mostly-vanilla configured layer packages for simplicity, performance, and reliability
-    - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time (Still loads all layers sans evil in 0.77 seconds on my old laptop...)
-    - Programmer-centric -- doesn't mess with Email, Browsers, Window Management, or Media players (not that it can't...)
+    - Use lightweight, mostly-vanilla configured layer packages
+    - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
-    - Optional evil mode, magit, projectile, etc. (More layers coming soon)
 
 *** LAYERS
 
