@@ -30,7 +30,8 @@
   (with-eval-after-load 'flx-ido
     (flx-ido-mode 1)
     (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil)))
+    (setq ido-use-faces nil)
+    (setq flx-ido-threshold '1000)))
 
 (add-hook 'after-init-hook 'spartan-ido-hook)
 
