@@ -5,9 +5,9 @@
 
 (defun spartan-bash-hook ()
   (when (executable-find "shellcheck")
-    (with-eval-after-load 'flymake-shellcheck
-      (setq flymake-shellcheck-use-file nil)
-      (add-hook 'sh-mode-hook 'flymake-shellcheck-load)))
+    (require 'flymake-shellcheck)
+    (setq flymake-shellcheck-use-file nil)
+      (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
   (when (executable-find "bash-language-server")
     (with-eval-after-load 'eglot
