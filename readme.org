@@ -59,7 +59,7 @@
 
     - GNU or BSD coreutils
 
-    - Adobe source code pro font
+    - Roboto Mono and Fira Code are available (for elegant-emacs theme)
 
     - For Bash, i prefer installing shellcheck-bin (recommended) and only using that as it has better diagnostics
       than bash-language-server currently.
