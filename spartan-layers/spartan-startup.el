@@ -6,14 +6,8 @@
 
 (add-hook 'after-init-hook #'(lambda ()
 			       (interactive)
-
 			       (require 'server)
 			       (or (server-running-p)
-				   (server-start))
-
-			       (message (concat "Welcome "
-						user-login-name
-						", this is Sparta!"
-						" {}oo((X))ΞΞΞΞΞΞΞΞΞΞΞΞΞ>"))))
+				   (server-start))))
 
 (provide 'spartan-startup)
