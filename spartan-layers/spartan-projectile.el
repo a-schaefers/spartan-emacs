@@ -5,12 +5,11 @@
 (defun spartan-projectile-hook ()
   (require 'projectile)
   (projectile-mode 1)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
   (with-eval-after-load 'magit
     ;; https://emacs.stackexchange.com/questions/32634/how-can-the-list-of-projects-used-by-projectile-be-manually-updated
     (mapc #'projectile-add-known-project
-          (mapcar #'file-name-as-directory (magit-list-repos)))
+	  (mapcar #'file-name-as-directory (magit-list-repos)))
     (projectile-save-known-projects)))
 
 (add-hook 'after-init-hook 'spartan-projectile-hook)

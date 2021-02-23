@@ -17,14 +17,14 @@
 ;; REDICULOUSLY USEFUL TRAMP COMMAND
 
 (defun spartan-tramp (x)
-  "Tramp ssh to a server, optionally as root, and [optionally] store creds in .authinfo[.gpg] if Emacs 27"
+  "Tramp ssh to a server, optionally as root, and [optionally] store creds in .authinfo[.gpg] if Emacs 27
+TIP: Try M-x sh after this, for a remote shell."
   (interactive "sServer name: ")
   (if (yes-or-no-p "sudo to root? ")
     (find-file (concat "/ssh:" x "|sudo:" x ":"))
   (find-file (concat "/ssh:" x ":"))))
 
 (defalias 'tramp 'spartan-tramp)
-(global-set-key (kbd "C-c t") 'spartan-tramp)
 
 ;; MATCHING BRACKET LIKE VIM's "%"
 
@@ -51,7 +51,6 @@
 ;; BROWSE KILL RING
 
 (with-eval-after-load 'browse-kill-ring
-  (defalias 'kr 'browse-kill-ring)
   (global-set-key (kbd "M-y") 'browse-kill-ring))
 
 ;; REGEXP SEARCH
@@ -63,42 +62,50 @@
 
 ;; FIND FILES
 
-(defalias 'ff 'find-name-dired)
-(global-set-key (kbd "C-c pf") 'find-name-dired)
+(if (fboundp 'projectile-mode)
+    (defalias 'ff 'projectile-find-file)
+    (progn
+      (defalias 'ff 'find-name-dired)
+      (global-set-key (kbd "C-c pf") 'find-name-dired)))
 
 ;; GREP FILES
 
-(defalias 'rg 'rgrep)
-(global-set-key (kbd "C-c psg") 'rgrep)
+(if (fboundp 'projectile-mode)
+    (defalias 'rg 'projectile-grep)
+    (progn
+      (defalias 'rg 'rgrep)
+      (global-set-key (kbd "C-c psg") 'rgrep)))
 
 ;; DIFF
 
 (defalias 'ed 'ediff)
-(global-set-key (kbd "C-c |") 'ediff)
+(defalias 'edb 'ediff-buffers)
+
+;; PROJECT MGMT
+
+(with-eval-after-load 'spartan-projectile
+  (defalias 'proj 'projectile-commander)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 ;; GIT
 
-(with-eval-after-load 'magit
-  (defalias 'git 'magit)
-  (global-set-key (kbd "C-c g") 'magit))
+(with-eval-after-load 'spartan-magit
+  (defalias 'git 'magit))
 
 ;; LINTER
 
 (with-eval-after-load 'spartan-flymake
-  (defalias 'lint 'flymake-show-diagnostics-buffer)
-  (global-set-key (kbd "C-c f") 'flymake-show-diagnostics-buffer))
+  (defalias 'lint 'flymake-show-diagnostics-buffer))
 
 ;; PASTEBIN
 
 (with-eval-after-load 'spartan-webpaste
-  (defalias 'pb 'webpaste-paste-buffer-or-region)
-  (global-set-key (kbd "C-c C-p C-p") 'webpaste-paste-buffer-or-region))
+  (defalias 'paste 'webpaste-paste-buffer-or-region))
 
 ;; DUMB TERM
 
 (with-eval-after-load 'spartan-shell
-  (defalias 'sh 'better-shell-for-current-dir)
-  (global-set-key (kbd "C-c $") 'better-shell-for-current-dir))
+  (defalias 'sh 'better-shell-for-current-dir))
 
 ;; VTERM
 
