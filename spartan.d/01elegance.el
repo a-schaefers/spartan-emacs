@@ -1,0 +1,1 @@
+../elegant-emacs-4dc47a804213ace171dea357268cb3fa111db17a/elegance.el

@@ -32,10 +32,10 @@
   "Go to the matching parenthesis character if one is adjacent to point."
   (interactive "^p")
   (cond ((looking-at "\\s(") (forward-sexp arg))
-	((looking-back "\\s)" 1) (backward-sexp arg))
-	;; Now, try to succeed from inside of a bracket
-	((looking-at "\\s)") (forward-char) (backward-sexp arg))
-	((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
+        ((looking-back "\\s)" 1) (backward-sexp arg))
+        ;; Now, try to succeed from inside of a bracket
+        ((looking-at "\\s)") (forward-char) (backward-sexp arg))
+        ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
 (global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
@@ -54,20 +54,22 @@
   (defalias 'kr 'browse-kill-ring)
   (global-set-key (kbd "M-y") 'browse-kill-ring))
 
-;; GLOBAL FONT SIZE ADJUSTMENTS
+;; ;; GLOBAL FONT SIZE ADJUSTMENTS
 
-(with-eval-after-load 'spartan-better-defaults
-  (global-set-key (kbd "C-=") #'(lambda ()
-				  (interactive)
-				  (spartan-font-resizer 1)))
-  (global-set-key (kbd "C--") #'(lambda ()
-				  (interactive)
-				  (spartan-font-resizer -1))))
+;; (with-eval-after-load 'spartan-better-defaults
+;;   (global-set-key (kbd "C-=") #'(lambda ()
+;;                                   (interactive)
+;;                                   (spartan-font-resizer 1)))
+;;   (global-set-key (kbd "C--") #'(lambda ()
+;;                                   (interactive)
+;;                                   (spartan-font-resizer -1))))
 
 ;; REGEXP SEARCH
 
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
 
 ;; FIND FILES
 

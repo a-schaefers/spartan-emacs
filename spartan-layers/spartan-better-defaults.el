@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+(global-font-lock-mode 0) ; disable syntax highlighting
+
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -35,25 +37,30 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-;; font settings
-(setq spartan-font "Source Code Pro"
-      spartan-font-size '11)
+;; better dired
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")))
 
-(defun spartan-font-resizer (x)
-  (when (> x 0)
-    (setq spartan-font-size (+ 1 spartan-font-size))
-    (set-face-attribute 'default nil
-			:font (concat spartan-font "-" (number-to-string spartan-font-size))))
-  (when (< x 0)
-    (setq spartan-font-size (+ -1 spartan-font-size))
-    (set-face-attribute 'default nil
-			:font (concat spartan-font "-" (number-to-string spartan-font-size))))
-  (when (eq x 0)
-    (set-face-attribute 'default nil
-			:font (concat spartan-font "-" (number-to-string spartan-font-size))))
-  (message (concat spartan-font "-" (number-to-string spartan-font-size))))
+;; ;; font settings
+;; (setq spartan-font "Source Code Pro"
+;;       spartan-font-size '11)
 
-(spartan-font-resizer 0)
+;; (defun spartan-font-resizer (x)
+;;   (when (> x 0)
+;;     (setq spartan-font-size (+ 1 spartan-font-size))
+;;     (set-face-attribute 'default nil
+;;                         :font (concat spartan-font "-" (number-to-string spartan-font-size))))
+;;   (when (< x 0)
+;;     (setq spartan-font-size (+ -1 spartan-font-size))
+;;     (set-face-attribute 'default nil
+;;                         :font (concat spartan-font "-" (number-to-string spartan-font-size))))
+;;   (when (eq x 0)
+;;     (set-face-attribute 'default nil
+;;                         :font (concat spartan-font "-" (number-to-string spartan-font-size))))
+;;   (message (concat spartan-font "-" (number-to-string spartan-font-size))))
+
+;; (spartan-font-resizer 0)
 
 (setq frame-resize-pixelwise t ; support better certain window managers like ratpoison
 
