@@ -42,26 +42,6 @@
           (lambda ()
             (load "dired-x")))
 
-;; ;; font settings
-;; (setq spartan-font "Source Code Pro"
-;;       spartan-font-size '11)
-
-;; (defun spartan-font-resizer (x)
-;;   (when (> x 0)
-;;     (setq spartan-font-size (+ 1 spartan-font-size))
-;;     (set-face-attribute 'default nil
-;;                         :font (concat spartan-font "-" (number-to-string spartan-font-size))))
-;;   (when (< x 0)
-;;     (setq spartan-font-size (+ -1 spartan-font-size))
-;;     (set-face-attribute 'default nil
-;;                         :font (concat spartan-font "-" (number-to-string spartan-font-size))))
-;;   (when (eq x 0)
-;;     (set-face-attribute 'default nil
-;;                         :font (concat spartan-font "-" (number-to-string spartan-font-size))))
-;;   (message (concat spartan-font "-" (number-to-string spartan-font-size))))
-
-;; (spartan-font-resizer 0)
-
 (setq frame-resize-pixelwise t ; support better certain window managers like ratpoison
 
       ;; these settings still should be set on a per language basis, this is just a general default
