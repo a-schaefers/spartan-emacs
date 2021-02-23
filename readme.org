@@ -20,7 +20,6 @@
     - No third party packages install by default
     - Prefer built-ins
     - Use lightweight, mostly-vanilla configured layer packages for simplicity, performance, and reliability
-    - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
     - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time (Still loads all layers sans evil in 0.77 seconds on my old laptop...)
     - Programmer-centric -- doesn't mess with Email, Browsers, Window Management, or Media players (not that it can't...)
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base

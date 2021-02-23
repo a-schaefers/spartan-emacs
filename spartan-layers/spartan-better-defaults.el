@@ -1,9 +1,5 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(global-font-lock-mode 0) ; disable syntax highlighting
-
-(add-hook 'prog-mode-hook 'goto-address-mode) ; make comment urls clickable
-
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -29,6 +25,8 @@
 (recentf-mode 1) ; track recently opened files
 
 (savehist-mode 1) ; save minibuffer history
+
+(add-hook 'prog-mode-hook 'goto-address-mode) ; make comment urls clickable
 
 ;; clean look
 (blink-cursor-mode -1)
