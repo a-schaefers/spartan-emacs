@@ -113,6 +113,8 @@
 (with-eval-after-load 'spartan-vterm
   (defalias 'vt 'vterm)
   (global-set-key (kbd "C-c C-v") 'vterm)
+  (global-set-key (kbd "C-c C-j") 'vterm-copy-mode)
+  (global-set-key (kbd "C-c C-k") 'vterm-copy-mode-done)
   (global-set-key (kbd "C-c v") 'vterm))
 
 ;; COMPILE COMMAND
