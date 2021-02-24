@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; requires libvterm
+
 (add-to-list 'spartan-package-list 'vterm)
 
 (defun spartan-vterm-hook ()
