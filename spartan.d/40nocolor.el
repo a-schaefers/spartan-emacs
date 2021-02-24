@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(global-font-lock-mode 1)
+(global-font-lock-mode -1)
 
 (dolist (f (face-list))
   (progn
