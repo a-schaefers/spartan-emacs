@@ -16,15 +16,8 @@
 
 ;; REDICULOUSLY USEFUL TRAMP COMMAND
 
-(defun spartan-tramp (x)
-  "Tramp ssh to a server, optionally as root, and [optionally] store creds in .authinfo[.gpg] if Emacs 27
-TIP: Try M-x sh after this, for a remote shell."
-  (interactive "sServer name: ")
-  (if (yes-or-no-p "sudo to root? ")
-    (find-file (concat "/ssh:" x "|sudo:" x ":"))
-  (find-file (concat "/ssh:" x ":"))))
-
-(defalias 'tramp 'spartan-tramp)
+(with-eval-after-load 'spartan-shell
+    (defalias 'tramp 'spartan-tramp))
 
 ;; MATCHING BRACKET LIKE VIM's "%"
 
