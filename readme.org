@@ -1,14 +1,12 @@
-* ABOUT SPARTAN EMACS
+* SPARTAN EMACS
 
   Elegant Emacs theme,
+
   [[spartan-emacs-1.png]]
 
-  Or if terminal emacs + transparency is your thing...
-  [[spartan-emacs-2.png]]
+  Or if terminal Emacs + opacity is your thing,
 
-  When you feel like spacemacs/doom/prelude/purcell/radian/... are too bloated,
-  while rolling your own as described in [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]]
-  may be too time consuming...
+  [[spartan-emacs-2.png]]
 
 ** QUICK INSTALL
 
