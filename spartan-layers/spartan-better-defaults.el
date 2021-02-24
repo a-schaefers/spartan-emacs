@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(global-font-lock-mode 0) ; disable syntax highlighting
+(global-font-lock-mode -1) ; disable syntax highlighting
 
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)
@@ -39,8 +39,8 @@
 
 ;; better dired
 (add-hook 'dired-load-hook
-          (lambda ()
-            (load "dired-x")))
+	  (lambda ()
+	    (load "dired-x")))
 
 (setq frame-resize-pixelwise t ; support better certain window managers like ratpoison
 
