@@ -17,6 +17,7 @@
 		       ;; spartan-crux
 		       ;; spartan-webpaste
 		       ;; spartan-shell
+		       ;; spartan-emacs-nw
 		       ;; spartan-vterm
 		       ;; spartan-macos
 		       ;; spartan-magit
