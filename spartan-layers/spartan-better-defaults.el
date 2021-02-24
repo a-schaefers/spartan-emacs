@@ -1,7 +1,5 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(global-font-lock-mode -1) ; disable syntax highlighting
-
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -16,13 +14,9 @@
 
 (delete-selection-mode) ; allow highlight and backspace over text like a normal editor
 
-(show-paren-mode 1) ; highlight matching paren
-
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p) ; auto chmod +x scripts
 
 (add-hook 'before-save-hook 'whitespace-cleanup) ; auto strip whitespace
-
-(save-place-mode 1) ; remember place in file
 
 (recentf-mode 1) ; track recently opened files
 
