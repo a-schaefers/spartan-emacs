@@ -9,13 +9,13 @@
 
   (require 'dashboard)
 
+  (setq dashboard-center-content t)
+
   (dashboard-setup-startup-hook)
 
   (setq dashboard-startup-banner 'logo)
 
   (setq dashboard-banner-logo-title nil)
-
-  (setq dashboard-center-content t)
 
   (setq dashboard-page-separator "\n\n")
 
@@ -23,13 +23,10 @@
 
   (setq dashboard-set-init-info t)
 
-  ;; (setq dashboard-init-info "sparta")
+  (with-eval-after-load 'projectile
+    (add-to-list 'dashboard-items '(projects  . 5)))
 
-  (setq dashboard-footer-messages '("\"So that we may always have something to offer\""))
-
-  ;; (with-eval-after-load 'projectile
-  ;;   (add-to-list 'dashboard-items '(projects  . 5)))
-  )
+  (setq dashboard-footer-messages '("\"So that we may always have something to offer\"")))
 
 (add-hook 'after-init-hook 'spartan-dashboard-hook)
 
