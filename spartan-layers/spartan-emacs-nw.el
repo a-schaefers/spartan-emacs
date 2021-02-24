@@ -3,8 +3,10 @@
 ;; for terminal Emacs only (emacs -nw)
 
 (defun spartan-emacs-nw-hook ()
-	       (require 'clipetty)
-	       (global-clipetty-mode +1))
+  (xterm-mouse-mode 1)
+
+  (require 'clipetty)
+  (global-clipetty-mode +1))
 
 (or window-system
     (progn
