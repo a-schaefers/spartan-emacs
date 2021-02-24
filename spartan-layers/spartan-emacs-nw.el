@@ -3,6 +3,9 @@
 ;; for terminal Emacs only (emacs -nw)
 
 (defun spartan-emacs-nw-hook ()
+
+  (global-set-key (kbd "C-x ;") 'comment-line) ; "C-x C-;" is interpreted this way in some terminals
+
   (xterm-mouse-mode 1)
 
   (require 'clipetty)
