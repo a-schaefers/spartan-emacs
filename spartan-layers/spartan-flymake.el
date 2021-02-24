@@ -2,8 +2,7 @@
 
 (defun spartan-flymake-hook ()
   (require 'flymake)
-  (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
-  (add-hook 'prog-mode-hook 'flymake-mode))
+  (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
 
 (add-hook 'after-init-hook 'spartan-flymake-hook)
 

@@ -80,7 +80,11 @@
 ;; LINTER
 
 (with-eval-after-load 'flymake
-  (defalias 'lint 'flymake-show-diagnostics-buffer))
+  (defun spartan-lint ()
+    (interactive)
+    (flymake-mode 1)
+    (flymake-show-diagnostics-buffer))
+  (defalias 'lint 'spartan-lint))
 
 ;; PASTEBIN
 
