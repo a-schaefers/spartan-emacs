@@ -1,14 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; ███████╗██████╗;;█████╗;██████╗;████████╗;█████╗;
-;; ██╔════╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
-;; ███████╗██████╔╝███████║██████╔╝;;;██║;;;███████║
-;; ╚════██║██╔═══╝;██╔══██║██╔══██╗;;;██║;;;██╔══██║
-;; ███████║██║;;;;;██║;;██║██║;;██║;;;██║;;;██║;;██║
-;; ╚══════╝╚═╝;;;;;╚═╝;;╚═╝╚═╝;;╚═╝;;;╚═╝;;;╚═╝;;╚═╝
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; configuration -- uncomment desired layers => C-xC-s => M-x spartan-reconfigure
+;; configuration -- uncomment desired layers => C-x C-s => M-x spartan-reconfigure
 
 (setq spartan-layers '(spartan-startup
 		       spartan-performance
@@ -16,6 +8,7 @@
 		       spartan-binds-global
 
 		       ;;;; spartan-elpa-melpa ; required by layers below
+		       ;; spartan-dashboard
 		       ;; spartan-ido
 		       ;; spartan-flymake
 		       ;; spartan-projectile
