@@ -1,4 +1,6 @@
-(setq-default cursor-type 'box)  ; please help us find the cursor with elegant-Emacs theme.
+;;; -*- lexical-binding: t; no-byte-compile: t; -*-
+
+(set-default 'cursor-type  '(bar . 2))  ; please help us find the cursor
 
 ;; fixes based on gui light https://github.com/nashamri/spacemacs-theme/blob/master/spacemacs-common.el
 
