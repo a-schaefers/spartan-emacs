@@ -6,6 +6,7 @@
 		       spartan-performance
 		       spartan-better-defaults
 		       spartan-binds-global
+		       spartan-environment
 
 		       ;;;; spartan-elpa-melpa ; required by layers below
 		       ;; spartan-dashboard
