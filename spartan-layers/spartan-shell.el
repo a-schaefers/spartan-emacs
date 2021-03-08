@@ -14,17 +14,30 @@
 
 ;; M-x `tramp'
 (defun spartan-tramp (x)
-  "Tramp using ssh or docker, optionally as root, and [optionally] store creds in .authinfo[.gpg] if Emacs 27"
-  (interactive "sServer name: ")
-  (require 'ido)
-  (setq proto-choices '("ssh"))
-  (when (executable-find "docker")
-    (add-to-list 'proto-choices '("docker")))
-  (let ((choices proto-choices))
-    (setq spartan-tramp-method (ido-completing-read "Tramp to:" choices))
-    (if (yes-or-no-p "sudo to root? ")
-	(find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
-      (find-file (concat "/" spartan-tramp-method ":" x ":")))))
+  "ULTIMATE TRAMP HELPER. Includes sudo options, docker variants, and su to root options for localhost."
+  (interactive "sEnter SSH / Docker hostname, OR \"su\" to become root: ")
+  ;; if "su" is entered, be root on local machine
+  (if (string= x "su")
+      (find-file (concat "/su::") system-name)
+    (progn
+      (setq proto-choices '("ssh"))
+      ;; only offer docker option if docker is available
+      (if (executable-find "docker")
+	  (progn
+	    (require 'ido)
+	    (add-to-list 'proto-choices '("docker"))
+	    (let ((choices proto-choices))
+	      (setq spartan-tramp-method (ido-completing-read "Tramp to:" choices))
+	      ;; only offer to login as root (using sudo) when ssh is chosen
+	      (if (and (string= spartan-tramp-method "ssh")
+		       (yes-or-no-p "sudo to root? "))
+		  (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
+		(find-file (concat "/" spartan-tramp-method ":" x ":")))))
+	;; docker is not available, and root local login was not specified, so only ask about ssh and sudo
+	(progn
+	  (if (yes-or-no-p "sudo to root? ")
+	      (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
+	    (find-file (concat "/" spartan-tramp-method ":" x ":"))))))))
 
 ;; <f6>
 (defun spartan-script-execute()
