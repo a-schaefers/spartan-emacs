@@ -6,6 +6,8 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+(show-paren-mode 1) ; highlight matching paren
+
 (global-eldoc-mode 1) ; eglot uses this too
 
 (winner-mode 1) ; C-c <left>, C-c <right> window layout undo/redo
