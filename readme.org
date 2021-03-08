@@ -1,5 +1,7 @@
 * SPARTAN EMACS
 
+  Finally, a simple base Emacs configuration framework
+
 ** QUICK INSTALL
 
    #+BEGIN_SRC bash
