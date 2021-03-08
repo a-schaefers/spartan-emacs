@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;; Explicitly set an Emacs environment as desired.
+;; NO MORE editing .bash_profile or whatever or messing with packages like `exec-path-from-shell' !
 
 ;; if EDITOR is not set already, set it.
 (or (getenv "EDITOR")
