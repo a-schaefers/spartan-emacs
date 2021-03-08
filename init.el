@@ -19,7 +19,6 @@
 		       ;; spartan-shell
 		       ;; spartan-emacs-nw
 		       ;; spartan-vterm
-		       ;; spartan-macos
 		       ;; spartan-magit
 		       ;; spartan-eglot
 		       ;; spartan-lisp

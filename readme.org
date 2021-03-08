@@ -1,13 +1,5 @@
 * SPARTAN EMACS
 
-  Elegant Emacs theme,
-
-  [[spartan-emacs-1.png]]
-
-  Or if terminal Emacs + opacity is your thing,
-
-  [[spartan-emacs-2.png]]
-
 ** QUICK INSTALL
 
    #+BEGIN_SRC bash
@@ -23,8 +15,7 @@
     - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
-    - Includes [[https://github.com/rougier/elegant-emacs][elegant-emacs]] theme by default
-    - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
+    - Uses default angry-fruit-salad theme and default font. Add your own theme layer or put customizations in spartan.d/ ...
 
 *** LAYERS
 
