@@ -21,7 +21,7 @@
 			    ))
 
 (setq spartan-path-append '(
-			    ""
+			    ;; "~/Put/To/End/Of/PATH"
 			    ))
 
 ;; SET matching exec-path and 'PATH' values with inserts/appends
