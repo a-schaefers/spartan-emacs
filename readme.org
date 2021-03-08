@@ -72,9 +72,6 @@
 
     - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
 
-    - Lastly, if not using evil, I recommend swapping left-alt with left-control in your desktop settings for ergonomic reasons. I've been doing it for years,
-      and it basically solves the infamous "Emacs pinky" RSI issue
-
 *** CONTRIBUTE
 
     - [[https://github.com/grandfoobah/spartan-emacs/issues/1][Language Layers Wanted]]
