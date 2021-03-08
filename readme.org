@@ -46,26 +46,7 @@
 
     - *M-x package-list-packages* => *U* => *x*
 
-*** ASSUMPTIONS
-
-    - GNU or BSD coreutils
-
-    - Roboto Mono and Fira Code are available (for elegant-emacs theme)
-
-    - For Bash, i prefer installing shellcheck-bin (recommended) and only using that as it has better diagnostics
-      than bash-language-server currently.
-
-    - For python, *pip install --user pipenv python-language-server[all]*
-
-      after that, eglot and lsp should be working automatically.
-
-      If i want to setup a pipenv project with project dependency tracking, i'll do something like,
-
-      *pipenv install --dev --pre python-language-server[all]*
-
-      in the project directory... after that *pipenv run emacs* to use the environment that way.
-
-*** KEY BINDS
+*** BINDS
 
     - Default emacs binds (unless you enable evil)
 
