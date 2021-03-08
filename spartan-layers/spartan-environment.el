@@ -14,10 +14,14 @@
 
 ;; 'PATH' modifications
 
-(setq spartan-path-insert '("~/bin"
-			    "~/.local/bin"))
+(setq spartan-path-insert '(
+			    ;; "~/bin"
+			    ;; "~/.local/bin"
+			    ))
 
-(setq spartan-path-append '(""))
+(setq spartan-path-append '(
+			    ""
+			    ))
 
 ;; SET matching exec-path and 'PATH' values with inserts/appends
 
