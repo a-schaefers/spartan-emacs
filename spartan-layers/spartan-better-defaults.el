@@ -16,8 +16,6 @@
 
 (delete-selection-mode) ; allow highlight and backspace over text like a normal editor
 
-(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p) ; auto chmod +x scripts
-
 (add-hook 'before-save-hook 'whitespace-cleanup) ; auto strip whitespace
 
 (recentf-mode 1) ; track recently opened files
@@ -73,12 +71,6 @@
       ;; ControlPersist yes
       ;; ServerAliveInterval 10
       ;; ServerAliveCountMax 10
-
-      ;; bash, please
-      tramp-default-remote-shell "/bin/bash"
-      shell-file-name "/bin/bash"
-      explicit-shell-file-name "/bin/bash"
-
 
       vc-follow-symlinks t ; open symlinks, don't ask confusing questions
 
