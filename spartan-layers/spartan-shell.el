@@ -14,7 +14,6 @@
 
 ;; M-x `tramp'
 (defun spartan-tramp (x)
-  "ULTIMATE TRAMP HELPER. Includes sudo options, docker variants, and su to root options for localhost."
   (interactive "sEnter SSH / Docker hostname, OR \"su\" to become root: ")
   ;; if "su" is entered, be root on local machine
   (if (string= x "su")
