@@ -36,48 +36,49 @@
 	  (lambda ()
 	    (load "dired-x")))
 
-(setq frame-resize-pixelwise t ; support better certain window managers like ratpoison
+(setq-default
+ frame-resize-pixelwise t ; support better certain window managers like ratpoison
 
-      ;; these settings still should be set on a per language basis, this is just a general default
-      indent-tabs-mode nil ; spaces > tabs
-      tab-width 8 ; tab is 8 spaces
-      fill-column 79 ; python friendly
+ ;; these settings still should be set on a per language basis, this is just a general default
+ indent-tabs-mode nil ; spaces > tabs
+ tab-width 8 ; tab is 8 spaces
+ fill-column 79 ; python friendly
 
-      ;; better security
-      gnutls-verify-error t
-      gnutls-min-prime-bits 2048
+ ;; better security
+ gnutls-verify-error t
+ gnutls-min-prime-bits 2048
 
-      ;; dont expire a passphrase
-      password-cache-expiry nil
+ ;; dont expire a passphrase
+ password-cache-expiry nil
 
-      mouse-yank-at-point t
-      save-interprogram-paste-before-kill t
-      apropos-do-all t
-      require-final-newline t
-      ediff-window-setup-function 'ediff-setup-windows-plain
-      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+ mouse-yank-at-point t
+ save-interprogram-paste-before-kill t
+ apropos-do-all t
+ require-final-newline t
+ ediff-window-setup-function 'ediff-setup-windows-plain
+ backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
 
-      ;; the most reliable tramp setup I have found (used at work every day...)
-      tramp-default-method "ssh"
-      tramp-copy-size-limit nil
-      tramp-use-ssh-controlmaster-options nil
+ ;; the most reliable tramp setup I have found (used at work every day...)
+ tramp-default-method "ssh"
+ tramp-copy-size-limit nil
+ tramp-use-ssh-controlmaster-options nil
 
-      ;; I recommend the following ~/.ssh/config settings be used with the tramp settings in this cfg:
-      ;; Host *
-      ;; ForwardAgent yes
-      ;; AddKeysToAgent yes
-      ;; ControlMaster auto
-      ;; ControlPath ~/.ssh/master-%r@%h:%p
-      ;; ControlPersist yes
-      ;; ServerAliveInterval 10
-      ;; ServerAliveCountMax 10
+ ;; I recommend the following ~/.ssh/config settings be used with the tramp settings in this cfg:
+ ;; Host *
+ ;; ForwardAgent yes
+ ;; AddKeysToAgent yes
+ ;; ControlMaster auto
+ ;; ControlPath ~/.ssh/master-%r@%h:%p
+ ;; ControlPersist yes
+ ;; ServerAliveInterval 10
+ ;; ServerAliveCountMax 10
 
-      vc-follow-symlinks t ; open symlinks, don't ask confusing questions
+ vc-follow-symlinks t ; open symlinks, don't ask confusing questions
 
-      ring-bell-function 'ignore ; be quiet
+ ring-bell-function 'ignore ; be quiet
 
-      browse-url-browser-function 'eww-browse-url ; use a text browser --great for clicking documentation links
-      )
+ browse-url-browser-function 'eww-browse-url ; use a text browser --great for clicking documentation links
+ )
 
 (defalias 'yes-or-no-p 'y-or-n-p) ; don't make us spell "yes" or "no"
 
