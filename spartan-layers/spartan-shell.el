@@ -22,21 +22,21 @@
       (setq proto-choices '("ssh"))
       ;; only offer docker option if docker is available
       (if (executable-find "docker")
-	  (progn
-	    (require 'ido)
-	    (add-to-list 'proto-choices '("docker"))
-	    (let ((choices proto-choices))
-	      (setq spartan-tramp-method (ido-completing-read "Tramp to:" choices))
-	      ;; only offer to login as root (using sudo) when ssh is chosen
-	      (if (and (string= spartan-tramp-method "ssh")
-		       (yes-or-no-p "sudo to root? "))
-		  (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
-		(find-file (concat "/" spartan-tramp-method ":" x ":")))))
-	;; docker is not available, and root local login was not specified, so only ask about ssh and sudo
-	(progn
-	  (if (yes-or-no-p "sudo to root? ")
-	      (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
-	    (find-file (concat "/" spartan-tramp-method ":" x ":"))))))))
+          (progn
+            (require 'ido)
+            (add-to-list 'proto-choices '("docker"))
+            (let ((choices proto-choices))
+              (setq spartan-tramp-method (ido-completing-read "Tramp to:" choices))
+              ;; only offer to login as root (using sudo) when ssh is chosen
+              (if (and (string= spartan-tramp-method "ssh")
+                       (yes-or-no-p "sudo to root? "))
+                  (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
+                (find-file (concat "/" spartan-tramp-method ":" x ":")))))
+        ;; docker is not available, and root local login was not specified, so only ask about ssh and sudo
+        (progn
+          (if (yes-or-no-p "sudo to root? ")
+              (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
+            (find-file (concat "/" spartan-tramp-method ":" x ":"))))))))
 
 ;; <f6>
 (defun spartan-script-execute()
@@ -55,8 +55,8 @@
 
   ;; bash everywhere because this is __GNU__ Emacs after all...
   (setq tramp-default-remote-shell "/bin/bash"
-	shell-file-name "/bin/bash"
-	explicit-shell-file-name "/bin/bash")
+        shell-file-name "/bin/bash"
+        explicit-shell-file-name "/bin/bash")
 
   ;; sh/bash linter
   (or
