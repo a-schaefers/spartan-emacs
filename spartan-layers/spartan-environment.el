@@ -3,6 +3,8 @@
 ;; Explicitly set an Emacs environment as desired.
 ;; NO MORE editing .bash_profile or whatever or messing with packages like `exec-path-from-shell' !
 
+(require 'subr-x)
+
 ;; if EDITOR is not set already, set it.
 (or (getenv "EDITOR")
     (progn
@@ -13,16 +15,18 @@
 (or (getenv "PAGER")
     (setenv "PAGER" "cat"))
 
+(setenv "WORKON_HOME" "~/Envs")
+
 ;; 'PATH' modifications
 
 (setq spartan-path-insert '(
-			    ;; "~/bin"
-			    ;; "~/.local/bin"
-			    ))
+                            "~/bin"
+                            "~/.local/bin"
+                            ))
 
 (setq spartan-path-append '(
-			    ;; "~/Put/To/End/Of/PATH"
-			    ))
+                            ;; "~/Put/To/End/Of/PATH"
+                            ))
 
 ;; SET matching exec-path and 'PATH' values with inserts/appends
 
