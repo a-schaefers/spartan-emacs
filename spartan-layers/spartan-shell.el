@@ -21,10 +21,12 @@
     (progn
       (setq proto-choices '("ssh"))
       ;; only offer docker option if docker is available
-      (if (executable-find "docker")
+      (if (and
+           (executable-find "docker")
+           (functionp 'docker-tramp-add-method))
           (progn
             (require 'ido)
-            (add-to-list 'proto-choices '("docker"))
+            (add-to-list 'proto-choices '("docker") t)
             (let ((choices proto-choices))
               (setq spartan-tramp-method (ido-completing-read "Tramp to:" choices))
               ;; only offer to login as root (using sudo) when ssh is chosen
