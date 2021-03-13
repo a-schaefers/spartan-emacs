@@ -1,13 +1,17 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; Simple mode-line
-;; https://emacs.stackexchange.com/questions/5529/how-to-right-align-some-items-in-the-modeline
+;; remove hostname from the GUI titlebar
+(setq-default frame-title-format '("Emacs"))
 
+;; simple mode-line
+
+;; https://emacs.stackexchange.com/questions/5529/how-to-right-align-some-items-in-the-modeline
 (defun simple-mode-line-render (left right)
   "Return a string of `window-width' length containing LEFT, and RIGHT
  aligned respectively."
   (let* ((available-width (- (window-width) (length left) 2)))
     (format (format " %%s %%%ds " available-width) left right)))
+
 (setq mode-line-format
       '((:eval (simple-mode-line-render
                 ;; left
@@ -32,7 +36,6 @@
 ; ______| |       |     | |    \\_    |    |     |
 
 ")
-
 
 ;; no colors
 (global-font-lock-mode -1)
