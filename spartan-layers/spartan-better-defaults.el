@@ -33,8 +33,8 @@
 
 ;; better dired
 (add-hook 'dired-load-hook
-	  (lambda ()
-	    (load "dired-x")))
+          (lambda ()
+            (load "dired-x")))
 
 (setq-default
  frame-resize-pixelwise t ; support better certain window managers like ratpoison
