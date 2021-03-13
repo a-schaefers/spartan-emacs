@@ -17,6 +17,7 @@
     - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
+    - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
 
 *** LAYERS
 
