@@ -3,28 +3,28 @@
 ;; configuration -- uncomment desired layers => C-x C-s => M-x spartan-reconfigure
 
 (setq spartan-layers '(spartan-startup
-		       spartan-performance
-		       spartan-better-defaults
-		       spartan-binds-global
-		       spartan-environment
+                       spartan-performance
+                       spartan-better-defaults
+                       spartan-binds-global
+                       spartan-environment
+                       spartan-theme
 
-		       ;;;; spartan-elpa-melpa ; required by layers below
-		       ;; spartan-dashboard
-		       ;; spartan-ido
-		       ;; spartan-flymake
-		       ;; spartan-projectile
-		       ;; spartan-evil
-		       ;; spartan-kill-ring
-		       ;; spartan-crux
-		       ;; spartan-webpaste
-		       ;; spartan-shell
-		       ;; spartan-emacs-nw
-		       ;; spartan-vterm
-		       ;; spartan-magit
-		       ;; spartan-eglot
-		       ;; spartan-lisp
-		       ;; spartan-python
-		       ))
+                       ;; spartan-elpa-melpa ; required by layers below
+                       ;; spartan-ido
+                       ;; spartan-flymake
+                       ;; spartan-projectile
+                       ;; spartan-evil
+                       ;; spartan-kill-ring
+                       ;; spartan-crux
+                       ;; spartan-webpaste
+                       ;; spartan-shell
+                       ;; spartan-emacs-nw
+                       ;; spartan-vterm
+                       ;; spartan-magit
+                       ;; spartan-eglot
+                       ;; spartan-lisp
+                       ;; spartan-python
+                       ))
 
 ;; spartan-layers
 
@@ -62,6 +62,6 @@
   (interactive)
   (load-file user-init-file)
   (run-hooks 'after-init-hook
-	     'emacs-startup-hook))
+             'emacs-startup-hook))
 
 ;;; init.el ends here
