@@ -15,8 +15,6 @@
 (or (getenv "PAGER")
     (setenv "PAGER" "cat"))
 
-(setenv "WORKON_HOME" "~/Envs")
-
 ;; 'PATH' modifications
 
 (setq spartan-path-insert '(
