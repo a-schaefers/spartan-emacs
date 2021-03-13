@@ -2,6 +2,8 @@
 
   Finally, a simple base Emacs configuration framework
 
+  [[screenshot.png]]
+
 ** QUICK INSTALL
 
    #+BEGIN_SRC bash
