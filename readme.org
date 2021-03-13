@@ -2,7 +2,7 @@
 
   Finally, a simple base Emacs configuration framework
 
-  [[screenshot.png]]
+  [[spartan-theme.png]]
 
 ** QUICK INSTALL
 
