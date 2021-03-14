@@ -61,12 +61,13 @@
           (delete-region (point-min) (point-max))
           (insert-file-contents scratch-file)))))
 
-(add-hook 'emacs-startup-hook 'load-persistent-scratch)
+(add-hook 'after-init-hook 'load-persistent-scratch)
 (add-hook 'kill-emacs-hook 'save-persistent-scratch)
 
 (run-with-idle-timer 300 t 'save-persistent-scratch)
 
 ;; no colors
+
 (global-font-lock-mode -1)
 
 (or window-system
