@@ -10,7 +10,6 @@
                        spartan-theme
 
                        ;; spartan-elpa-melpa ; required by layers below
-                       ;; spartan-persistent-scratch
                        ;; spartan-ido
                        ;; spartan-flymake
                        ;; spartan-projectile
