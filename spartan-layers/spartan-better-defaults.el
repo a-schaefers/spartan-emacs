@@ -6,23 +6,11 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-(show-paren-mode 1) ; highlight matching paren
-
 (global-eldoc-mode 1) ; eglot uses this too
-
-(winner-mode 1) ; C-c <left>, C-c <right> window layout undo/redo
 
 (electric-pair-mode 1) ; auto parens in pairs
 
-(delete-selection-mode) ; allow highlight and backspace over text like a normal editor
-
 (add-hook 'before-save-hook 'whitespace-cleanup) ; auto strip whitespace
-
-(recentf-mode 1) ; track recently opened files
-
-(savehist-mode 1) ; save minibuffer history
-
-(add-hook 'prog-mode-hook 'goto-address-mode) ; make comment urls clickable
 
 ;; clean look
 (blink-cursor-mode -1)
@@ -30,11 +18,6 @@
 (fringe-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-
-;; better dired
-(add-hook 'dired-load-hook
-          (lambda ()
-            (load "dired-x")))
 
 (setq-default
  frame-resize-pixelwise t ; support better certain window managers like ratpoison
