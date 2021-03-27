@@ -14,10 +14,14 @@
 
 ;; M-x `tramp'
 (defun spartan-tramp (x)
-  (interactive "sEnter SSH / Docker hostname, OR \"su\" to become root: ")
+  (interactive "sEnter SSH / Docker hostname, OR \"su/sudo\" to become root: ")
   ;; if "su" is entered, be root on local machine
-  (if (string= x "su")
-      (find-file (concat "/su::") system-name)
+  (if (or
+       (string= x "su")
+       (string= x "sudo"))
+      (if (string= x "su")
+          (find-file (concat "/su::") system-name)
+        (find-file (concat "/sudo::") system-name))
     (progn
       (setq proto-choices '("ssh"))
       ;; only offer docker option if docker is available
