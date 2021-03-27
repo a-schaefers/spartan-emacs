@@ -12,6 +12,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup) ; auto strip whitespace
 
+(delete-selection-mode) ; allow highlight and backspace over text like a normal editor
+
 ;; clean look
 (blink-cursor-mode -1)
 (scroll-bar-mode -1)
