@@ -14,11 +14,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-;; REDICULOUSLY USEFUL TRAMP COMMAND
-
-(with-eval-after-load 'spartan-shell
-    (defalias 'tramp 'spartan-tramp))
-
 ;; MATCHING BRACKET LIKE VIM's "%"
 
 (defun forward-or-backward-sexp (&optional arg)

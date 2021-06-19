@@ -12,38 +12,6 @@
 (when (executable-find "docker") (add-to-list 'spartan-package-list 'docker-tramp)) ; Add docker support to tramp
 (when (executable-find "shellcheck") (add-to-list 'spartan-package-list 'flymake-shellcheck)) ; Add shellcheck support to flymake (linter)
 
-;; M-x `tramp'
-(defun spartan-tramp (x)
-  (interactive "sEnter SSH / Docker hostname, OR \"su/sudo\" to become root: ")
-  ;; if "su" is entered, be root on local machine
-  (if (or
-       (string= x "su")
-       (string= x "sudo"))
-      (if (string= x "su")
-          (find-file (concat "/su::") system-name)
-        (find-file (concat "/sudo::") system-name))
-    (progn
-      (setq proto-choices '("ssh"))
-      ;; only offer docker option if docker is available
-      (if (and
-           (executable-find "docker")
-           (functionp 'docker-tramp-add-method))
-          (progn
-            (require 'ido)
-            (add-to-list 'proto-choices '("docker") t)
-            (let ((choices proto-choices))
-              (setq spartan-tramp-method (ido-completing-read "Tramp to:" choices))
-              ;; only offer to login as root (using sudo) when ssh is chosen
-              (if (and (string= spartan-tramp-method "ssh")
-                       (yes-or-no-p "sudo to root? "))
-                  (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
-                (find-file (concat "/" spartan-tramp-method ":" x ":")))))
-        ;; docker is not available, and root local login was not specified, so only ask about ssh and sudo
-        (progn
-          (if (yes-or-no-p "sudo to root? ")
-              (find-file (concat "/" spartan-tramp-method ":" x "|sudo:" x ":"))
-            (find-file (concat "/" spartan-tramp-method ":" x ":"))))))))
-
 ;; <f6>
 (defun spartan-script-execute()
   "Save a buffer and execute the script"
