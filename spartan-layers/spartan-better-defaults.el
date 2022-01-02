@@ -67,4 +67,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p) ; don't make us spell "yes" or "no"
 
+;; better dired
+(add-hook 'dired-load-hook (function (lambda () (load "dired-x"))))
+
 (provide 'spartan-better-defaults)
