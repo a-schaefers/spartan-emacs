@@ -29,6 +29,10 @@
 
 ;; COLLECTION OF REDICULOUSLY USEFUL EXTENSIONS
 
+(global-set-key (kbd "C-c i") #'(lambda ()
+                                  (interactive)
+                                  (find-file user-init-file)))
+
 (with-eval-after-load 'crux
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
   (global-set-key (kbd "C-o") 'crux-smart-open-line)
