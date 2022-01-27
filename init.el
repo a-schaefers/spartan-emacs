@@ -24,6 +24,8 @@
                        ;; spartan-eglot
                        ;; spartan-lisp
                        ;; spartan-python
+                       spartan-terraform
+                       ;; spartan-terraform
                        ))
 
 ;; spartan-layers
