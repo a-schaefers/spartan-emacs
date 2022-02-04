@@ -4,7 +4,8 @@
 
 (add-to-list 'spartan-package-list 'terraform-mode)
 
-(custom-set-variables
- '(terraform-indent-level 2))
+(with-eval-after-load 'terraform-mode
+  (custom-set-variables
+   '(terraform-indent-level 2)))
 
 (provide 'spartan-terraform)
