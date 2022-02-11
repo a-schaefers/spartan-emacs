@@ -26,6 +26,7 @@
                        ;; spartan-python
                        spartan-terraform
                        ;; spartan-terraform
+                       ;; spartan-typescript
                        ))
 
 ;; spartan-layers
