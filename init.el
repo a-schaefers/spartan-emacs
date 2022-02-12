@@ -9,7 +9,7 @@
                        spartan-environment
                        spartan-theme
 
-                       ;; spartan-elpa-melpa ; required by layers below
+                       spartan-elpa-melpa ; required by layers below
                        ;; spartan-ido
                        ;; spartan-flymake
                        ;; spartan-projectile
@@ -24,7 +24,7 @@
                        ;; spartan-eglot
                        ;; spartan-lisp
                        ;; spartan-python
-                       spartan-terraform
+                       ;; spartan-terraform
                        ;; spartan-terraform
                        ;; spartan-typescript
                        ))
