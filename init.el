@@ -26,6 +26,7 @@
                        ;; spartan-c
                        ;; spartan-python
                        ;; spartan-terraform
+                       ;; spartan-nginx
                        ;; spartan-systemd
                        ;; spartan-json
                        ;; spartan-yaml

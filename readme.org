@@ -35,17 +35,26 @@
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
-    - Emacs Lisp, Common Lisp, Clojure, Clojurescript, Scheme
-    - Bash
-    - Python
-    - Ruby
-    - Rust
-    - Go
-    - Javascript / Typescript
-    - Terraform
-    - Systemd
-    - JSON YAML XML
-    - PR's accepted :)
+NOTE: The idea here is to provde everywhere the get up and going configuration, this means  proper syntax and formatting with an interactive repl for rapid development.
+
+Debugging is provided within many of the languages itself, e.g. Python and Ruby have builtin debuggers. With C, one may use M-x `gdb' with 'gdb', etc.
+
+With compiled languages, one might use <f5> and set the compile command to something instead of make if needed, etc.
+
+Javascript: you're on your own.
+
+    - Emacs Lisp (paredit, builtins)
+    - Common Lisp (paredit, slime)
+    - C / C++ (lsp)
+    - Clojure, Clojurescript (paredit, lsp, inf-clojure)
+    - Scheme (paredit)
+    - Bash  (shellcheck, lsp)
+    - Python (lsp)
+    - Ruby (lsp)
+    - Rust (lsp)
+    - Go (lsp)
+    - Javascript / Typescript (lsp)
+    - Extra cfg file formatting / syntax support: Terraform, Systemd, Nginx, JSON, YAML, XML
 
 *** HOW TO HACK
 

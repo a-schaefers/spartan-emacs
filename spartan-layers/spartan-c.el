@@ -1,28 +1,31 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; expects 'python-language-server'
+;; lsp requires clang
 
-;;Thx https://github.com/bbatsov/prelude/blob/master/modules/prelude-c.el
-(defun prelude-c-mode-common-defaults ()
-  (setq c-default-style "k&r"
-        c-basic-offset 4)
+;; For debugging checkout M-x gdb
+
+;;Thx https://github.com/bbatsov/spartan/blob/master/modules/spartan-c.el
+(defun spartan-c-mode-common-defaults ()
+  ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html#linux-kernel-coding-style
+  (setq c-default-style "linux"
+        c-basic-offset 8)
   (c-set-offset 'substatement-open 0))
 
-(setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
+(setq spartan-c-mode-common-hook 'spartan-c-mode-common-defaults)
 
-(defun prelude-makefile-mode-defaults ()
+(defun spartan-makefile-mode-defaults ()
   (whitespace-toggle-options '(tabs))
   (setq indent-tabs-mode t ))
 
-(setq prelude-makefile-mode-hook 'prelude-makefile-mode-defaults)
+(setq spartan-makefile-mode-hook 'spartan-makefile-mode-defaults)
 
 (add-hook 'makefile-mode-hook (lambda ()
-                                (run-hooks 'prelude-makefile-mode-hook)))
+                                (run-hooks 'spartan-makefile-mode-hook)))
 
 ;; this will affect all modes derived from cc-mode, like
 ;; java-mode, php-mode, etc
 (add-hook 'c-mode-common-hook (lambda ()
-                                (run-hooks 'prelude-c-mode-common-hook)))
+                                (run-hooks 'spartan-c-mode-common-hook)))
 ;;/Thx
 
 (when (executable-find "clangd")
@@ -30,4 +33,4 @@
     (add-hook 'c-mode-hook 'eglot-ensure)
     (add-hook 'c++-mode-hook 'eglot-ensure)))
 
-(provide 'spartan-python)
+(provide 'spartan-c)
