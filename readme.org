@@ -4,6 +4,12 @@
 
   [[spartan-theme.png]]
 
+  A word for beginners:
+
+  Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, welcome, and please begin by checking out `M-x help-with-tutorial`.
+  `M-x` means meta ('alt') + `x` and then `help-with-tutorial` Return (enter) to begin. One might follow up with `An Introduction to Programming in Emacs Lisp`
+  additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
+
 ** QUICK INSTALL
 
    #+BEGIN_SRC bash
