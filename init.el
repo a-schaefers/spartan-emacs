@@ -32,6 +32,7 @@
                        ;; spartan-javascript
                        ;; spartan-ruby
                        ;; spartan-rust
+                       ;; spartan-go
                        ))
 
 ;; spartan-layers
