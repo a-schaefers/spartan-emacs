@@ -23,6 +23,7 @@
                        ;; spartan-magit
                        ;; spartan-eglot
                        ;; spartan-lisp
+                       ;; spartan-c
                        ;; spartan-python
                        ;; spartan-terraform
                        ;; spartan-systemd
