@@ -13,7 +13,7 @@
                        ;; spartan-ido
                        ;; spartan-flymake
                        ;; spartan-projectile
-                       ;; spartan-evil
+                       ;; ;; spartan-evil
                        ;; spartan-kill-ring
                        ;; spartan-crux
                        ;; spartan-webpaste
@@ -25,7 +25,13 @@
                        ;; spartan-lisp
                        ;; spartan-python
                        ;; spartan-terraform
-                       ;; spartan-typescript
+                       ;; spartan-systemd
+                       ;; spartan-json
+                       ;; spartan-yaml
+                       ;; spartan-xml
+                       ;; spartan-javascript
+                       ;; spartan-ruby
+                       ;; spartan-rust
                        ))
 
 ;; spartan-layers

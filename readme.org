@@ -33,11 +33,17 @@
 
       (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
 
-*** LANGUAGES PRECONFIGURED
+*** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
-    - Lisp/Scheme
+    - Emacs Lisp, Common Lisp, Scheme
     - Bash
     - Python
+    - Ruby
+    - Rust
+    - Javascript / Typescript
+    - Terraform
+    - Systemd
+    - JSON YAML XML
     - PR's accepted :)
 
 *** HOW TO HACK
