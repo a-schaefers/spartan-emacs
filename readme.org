@@ -35,7 +35,8 @@
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
-NOTE: The idea here is to provde everywhere the get up and going configuration, this means  proper syntax and formatting with an interactive repl for rapid development.
+NOTE: The idea here is to provde everywhere the get up and going configuration, this means  proper syntax formatting with an interactive repl for rapid development,
+and intelligent auto-completion and find definition, etc. via eglot's minimal language server protocol implementation.
 
 Debugging is provided within many of the languages itself, e.g. Python and Ruby have builtin debuggers. With C, one may use M-x `gdb' with 'gdb', etc.
 
