@@ -22,7 +22,7 @@
   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
   (add-hook 'racket-mode-hook           #'enable-paredit-mode)
 
-  ;;Racket
+  ;;Racket, PR WANTED: use lsp in a way similar to clojure below
   (add-hook 'racket-mode-hook
           (lambda ()
             ;; Likewise for racket-repl-mode-hook and racket-repl-mode-map.
