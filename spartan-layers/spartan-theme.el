@@ -68,9 +68,9 @@
 
 ;; no colors
 
-;; (global-font-lock-mode -1)
+(global-font-lock-mode -1)
 
-;; (or window-system
-;;       (add-to-list 'default-frame-alist '(tty-color-mode . -1)))
+(or window-system
+      (add-to-list 'default-frame-alist '(tty-color-mode . -1)))
 
 (provide 'spartan-theme)
