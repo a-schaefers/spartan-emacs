@@ -60,7 +60,7 @@ With compiled languages, one might use <f5> and set the compile command to somet
     - Rust (lsp)
     - Go (lsp)
     - Javascript / Typescript (lsp)
-    - Extra cfg file formatting / syntax support: Terraform, Systemd, Nginx, JSON, YAML, XML
+    - Extra cfg file formatting / syntax support: Terraform, Nix, Systemd, Nginx, JSON, YAML, XML
 
 *** HOW TO HACK
 
