@@ -35,7 +35,7 @@
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
-    - Emacs Lisp, Common Lisp, Scheme
+    - Emacs Lisp, Common Lisp, Clojure, Clojurescript, Scheme
     - Bash
     - Python
     - Ruby
