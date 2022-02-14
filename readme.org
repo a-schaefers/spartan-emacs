@@ -47,6 +47,7 @@ Javascript: you're on your own.
     - Common Lisp (paredit, slime)
     - C / C++ (lsp)
     - Clojure, Clojurescript (paredit, lsp, inf-clojure)
+    - Racket (paredit)
     - Scheme (paredit)
     - Bash  (shellcheck, lsp)
     - Python (lsp)
