@@ -18,11 +18,13 @@
 
 *** FEATURES
 
-    - Simple, clean configuration and a comprehensible layers system
-    - No third party packages install by default
-    - Prefer built-ins
-    - Use lightweight, mostly-vanilla configured layer packages
-    - Doesn't mess with use-package, deferral, the pdumper -- doesn't care about start time
+    - KISS, clean configuration and a comprehensible layers system
+    - No third party packages install by default - prefers built-ins
+    - Uses lightweight, mostly-vanilla configured layer packages
+    - Popular langs come with optional layers that are preconfigured with the best modes, a REPL, and intelligent LSP auto-completion, find def, etc. via Eglot
+    - Project Awareness is available with Projectile, VC with Magit
+    - Support for Evil mode with spartan-evil layer
+    - Load time with all layers enabled is less than 1 second on a 10 year old laptop - without resorting to use-package, deferrals, pdumper or hacks.
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
     - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
     - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
