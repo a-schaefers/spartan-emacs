@@ -36,6 +36,7 @@
                        ;; spartan-ruby
                        ;; spartan-rust
                        ;; spartan-go
+                       ;; spartan-solidity
                        ))
 
 ;; spartan-layers
