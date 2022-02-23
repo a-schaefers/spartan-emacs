@@ -29,10 +29,13 @@
 
   ;; bash everywhere because this is __GNU__ Emacs after all...
   (setq tramp-default-remote-shell "/bin/bash"
-        shell-file-name "/bin/bash"
-        explicit-shell-file-name "/bin/bash")
+        explicit-shell-file-name "bash")
 
-  ;; sh/bash linter
+  (if (executable-find "/opt/homebrew/bin/bash")
+      (setq shell-file-name "/opt/homebrew/bin/bash")
+    (setq shell-file-name "/bin/bash"))
+
+    ;; sh/bash linter
   (or
    ;; prefer shellcheck
    (when (executable-find "shellcheck")
