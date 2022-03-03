@@ -103,3 +103,11 @@ With compiled languages, one might use <f5> and set the compile command to somet
 *** CONTRIBUTE
 
     - [[https://github.com/grandfoobah/spartan-emacs/issues/1][Language Layers Wanted]]
+
+**** Tips for MacOS users
+
+    - brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep bash
+    - echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
+    - chsh -s /opt/homebrew/bin/bash
+
+    The rest will be taken care of by a-schaefers@0ba55e7580ca70f9ef172a5464bba8bd575df7b8
