@@ -26,6 +26,18 @@
                             ;; "~/Put/To/End/Of/PATH"
                             ))
 
+;; Help out MacOS users to make dev env more like-linux
+;; HINT: brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+
+(when (file-directory-p "/opt/homebrew")
+  (setq gnubin-locations
+        (split-string (shell-command-to-string "find /opt/homebrew -name \"*gnubin*\" -type d") "\n" t))
+  (add-to-list 'gnubin-locations "/opt/homebrew/bin" t)
+  (add-to-list 'gnubin-locations "/opt/homebrew/sbin" t)
+
+  (dolist (item gnubin-locations)
+    (add-to-list 'spartan-path-insert item)))
+
 ;; SET matching exec-path and 'PATH' values with inserts/appends
 
 (dolist (item spartan-path-insert)
