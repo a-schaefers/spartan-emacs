@@ -27,7 +27,7 @@
                             ))
 
 ;; Help out MacOS users to make dev env more like-linux
-;; HINT: brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+;; HINT: brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep bash
 
 (when (file-directory-p "/opt/homebrew")
   (setq gnubin-locations
