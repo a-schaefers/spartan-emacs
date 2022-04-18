@@ -41,7 +41,6 @@
  apropos-do-all t
  require-final-newline t
  ediff-window-setup-function 'ediff-setup-windows-plain
- backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
 
  ;; the most reliable tramp setup I have found (used at work every day...)
  tramp-default-method "ssh"
@@ -64,6 +63,11 @@
 
  browse-url-browser-function 'eww-browse-url ; use a text browser --great for clicking documentation links
  )
+
+(setq backup-directory-alist
+       `((".*" . ,temporary-file-directory)))
+ (setq auto-save-file-name-transforms
+       `((".*" ,temporary-file-directory t)))
 
 (defalias 'yes-or-no-p 'y-or-n-p) ; don't make us spell "yes" or "no"
 
