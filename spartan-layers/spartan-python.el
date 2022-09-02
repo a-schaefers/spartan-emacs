@@ -2,9 +2,17 @@
 
 ;; expects 'python-language-server'
 
+
+(defun spartan-python-hook ()
+  (interactive)
+  (setq-local tab-width 4))
+
+(add-hook 'python-mode-hook 'spartan-python-hook)
+
+
 (when (executable-find "pyls")
-  (with-eval-after-load 'eglot
-    (add-hook 'python-mode-hook 'eglot-ensure)))
+  (require 'eglot)
+  (add-hook 'python-mode-hook 'eglot-ensure))
 
 (with-eval-after-load 'python
   (define-key python-mode-map (kbd "M-m rr") 'python-shell-send-region)

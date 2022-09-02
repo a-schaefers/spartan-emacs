@@ -9,12 +9,11 @@
    '(terraform-indent-level 2))
 
 
-  (with-eval-after-load 'eglot
-      (add-to-list 'eglot-server-programs
-                   `(terraform-mode . ("terraform-lsp"))))
+  (require 'eglot)
+  (add-to-list 'eglot-server-programs
+                   `(terraform-mode . ("terraform-lsp")))
 
   (when (executable-find "terraform-lsp")
-    (with-eval-after-load 'eglot
-      (add-hook 'terraform-mode-hook 'eglot-ensure))))
+    (add-hook 'terraform-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-terraform)
