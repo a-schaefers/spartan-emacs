@@ -154,7 +154,7 @@ With compiled languages, one might use <f5> and set the compile command to somet
     - Do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
       the general idea
 
-
+      #+BEGIN_SRC
       M-x ff (find files) ,
       M-x rg (rgrep files) ,
       M-x kr (browse-kill-ring) ,
@@ -172,14 +172,13 @@ With compiled languages, one might use <f5> and set the compile command to somet
       C-c pp, (switch projects (assuming your repos are in ~/repos))
       C-c pf, (find files in project)
       C-c psg, (grep through a project)
+      #+END_SRC
 
       What else do ya need?! A repl, I s'pose. Well, good luck with that. As I've said, some modes have them included.
 
     - Also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
 
     - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
-
-***
 
 *** CONTRIBUTE
 
