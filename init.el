@@ -13,7 +13,7 @@
                        ;; ;; required for layers below
                        ;; spartan-elpa-melpa
 
-                       ;; ;; For psychos
+                       ;; ;; for psychos
                        ;; spartan-evil
 
                        ;; ;; general, make things easier stuff
