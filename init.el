@@ -10,34 +10,34 @@
                        spartan-binds-global
                        spartan-theme
 
-                       ;; Required for layers below
-                       spartan-elpa-melpa
+                       ;; ;; Required for layers below
+                       ;; spartan-elpa-melpa
 
-                       ;; for psychos
-                       spartan-evil
+                       ;; ;; for psychos
+                       ;; spartan-evil
 
-                       ;; general, make things easier stuff
-                       spartan-ido
-                       spartan-flymake
-                       spartan-kill-ring
-                       spartan-crux
+                       ;; ;; general, make things easier stuff
+                       ;; spartan-ido
+                       ;; spartan-flymake
+                       ;; spartan-kill-ring
+                       ;; spartan-crux
 
-                       ;; ide-like features
-                       spartan-projectile
-                       spartan-magit
-                       spartan-eglot
+                       ;; ;; ide-like features
+                       ;; spartan-projectile
+                       ;; spartan-magit
+                       ;; spartan-eglot
 
-                       ;; language support
-                       spartan-bash
-                       spartan-c
-                       spartan-elisp
-                       spartan-go
-                       spartan-javascript
-                       spartan-nix
-                       spartan-python
-                       spartan-ruby
-                       spartan-rust
-                       spartan-terraform
+                       ;; ;; language support
+                       ;; spartan-bash
+                       ;; spartan-c
+                       ;; spartan-elisp
+                       ;; spartan-go
+                       ;; spartan-javascript
+                       ;; spartan-nix
+                       ;; spartan-python
+                       ;; spartan-ruby
+                       ;; spartan-rust
+                       ;; spartan-terraform
                        ))
 
 ;; spartan-layers
