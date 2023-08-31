@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; lsp requires clang
+;; lsp requires clangd
 
 ;; For debugging checkout M-x gdb
 
