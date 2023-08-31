@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; expects gems 'irb' 'rdo'c 'solargraph', recommended 'pry' for setting breakpoints
+;; expects gems 'irb' 'rdoc' 'solargraph', recommended 'pry' for setting breakpoints
+;; usage: can't find a good doc, M-x ruby and look around
 
 (add-to-list 'spartan-package-list 'inf-ruby)
 
@@ -8,14 +9,9 @@
         (with-eval-after-load 'eglot
           (add-hook 'ruby-mode-hook 'eglot-ensure)))
 
-(with-eval-after-load 'ruby-mode
-  (define-key ruby-mode-map (kbd "M-m rr") 'ruby-send-region)
-  (define-key ruby-mode-map (kbd "M-m rb") 'ruby-send-buffer)
-  (define-key ruby-mode-map (kbd "M-m rR") 'inf-ruby))
-
 (defun our-ruby-cfg ()
   (interactive)
-  ;; Thx https://github.com/bbatsov/prelude/blob/master/modules/prelude-ruby.el
+  ;; Thx https://github.com/bbatsov/prelude
   ;; We never want to edit Rubinius bytecode
   (add-to-list 'completion-ignored-extensions ".rbc")
   ;; Don't auto-insert encoding comments

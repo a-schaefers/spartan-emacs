@@ -1,5 +1,9 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; font size
+
+(set-face-attribute 'default nil :family "Monospace" :height 150)
+
 ;; remove hostname from the GUI titlebar
 (setq-default frame-title-format '("Emacs"))
 
@@ -65,12 +69,5 @@
 (add-hook 'kill-emacs-hook 'save-persistent-scratch)
 
 (run-with-idle-timer 300 t 'save-persistent-scratch)
-
-;; no colors
-
-;; (global-font-lock-mode -1)
-
-;; (or window-system
-;;       (add-to-list 'default-frame-alist '(tty-color-mode . -1)))
 
 (provide 'spartan-theme)

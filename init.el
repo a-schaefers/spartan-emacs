@@ -2,41 +2,42 @@
 
 ;; configuration -- uncomment desired layers => C-x C-s => M-x spartan-reconfigure
 
-(setq spartan-layers '(spartan-startup
+(setq spartan-layers '(
+                       ;; Global defaults everywhere
+                       spartan-startup
                        spartan-performance
                        spartan-better-defaults
                        spartan-binds-global
-                       spartan-environment
                        spartan-theme
 
-                       ;; spartan-elpa-melpa ; required by layers below
-                       ;; spartan-ido
-                       ;; spartan-flymake
-                       ;; spartan-projectile
-                       ;; spartan-evil
-                       ;; spartan-kill-ring
-                       ;; spartan-crux
-                       ;; spartan-webpaste
-                       ;; spartan-shell
-                       ;; spartan-emacs-nw
-                       ;; spartan-vterm
-                       ;; spartan-magit
-                       ;; spartan-eglot
-                       ;; spartan-lisp
-                       ;; spartan-c
-                       ;; spartan-python
-                       ;; spartan-terraform
-                       ;; spartan-nix
-                       ;; spartan-nginx
-                       ;; spartan-systemd
-                       ;; spartan-json
-                       ;; spartan-yaml
-                       ;; spartan-xml
-                       ;; spartan-javascript
-                       ;; spartan-ruby
-                       ;; spartan-rust
-                       ;; spartan-go
-                       ;; spartan-solidity
+                       ;; Required for layers below
+                       spartan-elpa-melpa
+
+                       ;; for psychos
+                       spartan-evil
+
+                       ;; general, make things easier stuff
+                       spartan-ido
+                       spartan-flymake
+                       spartan-kill-ring
+                       spartan-crux
+
+                       ;; ide-like features
+                       spartan-projectile
+                       spartan-magit
+                       spartan-eglot
+
+                       ;; language support
+                       spartan-bash
+                       spartan-c
+                       spartan-elisp
+                       spartan-go
+                       spartan-javascript
+                       spartan-nix
+                       spartan-python
+                       spartan-ruby
+                       spartan-rust
+                       spartan-terraform
                        ))
 
 ;; spartan-layers

@@ -27,7 +27,7 @@
  ;; these settings still should be set on a per language basis, this is just a general default
  indent-tabs-mode nil ; spaces > tabs
  tab-width 8 ; tab is 8 spaces
- fill-column 79 ; python friendly
+ fill-column 80 ; python friendly, almost. HAHAHA
 
  ;; better security
  gnutls-verify-error t
@@ -42,7 +42,7 @@
  require-final-newline t
  ediff-window-setup-function 'ediff-setup-windows-plain
 
- ;; the most reliable tramp setup I have found (used at work every day...)
+ ;; the most reliable tramp setup I have found
  tramp-default-method "ssh"
  tramp-copy-size-limit nil
  tramp-use-ssh-controlmaster-options nil
@@ -73,5 +73,15 @@
 
 ;; better dired
 (add-hook 'dired-load-hook (function (lambda () (load "dired-x"))))
+
+;; if EDITOR is not set already, set it.
+(or (getenv "EDITOR")
+    (progn
+      (setenv "EDITOR" "emacsclient")
+      (setenv "VISUAL" (getenv "EDITOR"))))
+
+;; if PAGER is not set already, set it
+(or (getenv "PAGER")
+    (setenv "PAGER" "cat"))
 
 (provide 'spartan-better-defaults)

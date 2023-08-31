@@ -1,5 +1,8 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; expects: typescript-language-server
+;; usage: https://www.emacswiki.org/emacs/JavaScriptMode
+
 ;; Lesser versions not even worth using Emacs with javascript I won't support it
 (or (version< emacs-version "27")
     (progn

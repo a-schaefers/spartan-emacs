@@ -4,7 +4,7 @@
 
 ;; For debugging checkout M-x gdb
 
-;;Thx https://github.com/bbatsov/spartan/blob/master/modules/spartan-c.el
+;; Thx https://github.com/bbatsov/prelude
 (defun spartan-c-mode-common-defaults ()
   ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html#linux-kernel-coding-style
   (setq c-default-style "linux"
@@ -26,7 +26,6 @@
 ;; java-mode, php-mode, etc
 (add-hook 'c-mode-common-hook (lambda ()
                                 (run-hooks 'spartan-c-mode-common-hook)))
-;;/Thx
 
 (when (executable-find "clangd")
   (with-eval-after-load 'eglot

@@ -1,0 +1,178 @@
+* SPARTAN EMACS
+
+  Finally, a simple base Emacs configuration framework
+
+  [[spartan-theme.png]]
+
+  A word for beginners:
+
+  Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out `M-x help-with-tutorial`.
+  `M-x` means meta ('alt') + `x` and then `help-with-tutorial` Return (enter) to begin. One might follow up with `An Introduction to Programming in Emacs Lisp`
+  additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
+
+** News
+
+*** Wed 30 Aug 2023 05:06:23 PM MDT
+
+Spartan Emacs gets a haircut. 2.0, because 1.0 it wasn't masochist enough.
+
+Reminder, this is an opinionated framework.
+
+  - README.md <<< Updated more thoroughly
+
+  - Why we still are not using `use-package or `straight.el
+
+    So, until they make it in to core, I'm not gonna bother. In my practice, if I need those tools, then I just have too much stuff going on and Emacs needs to be simplified.
+
+    Yes, yes... Straight.el is good stuff, I get it. We can use it to make this Distro reproducible.
+    But you know -- I have a lot of other work to do that is more important. It's been years now and I still haven't gotten around to it.
+    I'd accept a PR if it was documented with how to migrate to, and the basics of how to use it, pinning our packages, how to upgrade them, roll back, etc.
+
+  - Theme, Syntax highlighting stays.
+
+    Angryfruit is standard now. + A global font size option is now in the theme file.
+
+  - Removed attempts to make things nicer for macos.
+
+    If you're on mac, you're on your own.
+
+  - Removed emacs-nw layer
+
+    This fixes copy/paste issues people would have in the terminal.
+
+    And remotely running Emacs? Just use tramp.
+
+    And I don't care about your terminal transparency.
+
+  - Removed spartan-environment layer, moved PAGER/EDITOR settings to better-defaults
+
+    The insanity of managing PATH from Emacs is over. With all the virtualenv and nix-shell type of approaches, I recommend instead now to just open `emacs` from your terminal shell.
+
+  - Removed unneccessary layers that I don't find useful: spartan-{solidity,json,yaml,xml,nginx,systemd}
+
+  - Removed webpaste
+
+    This is actually a security feature. I've had this one disabled a very long time. Can't be accidentally pasting company code to the WWW and losing our jobs, can we?
+
+  - Removed the lisp layer's Clojure, Scheme and Common lisp support and renamed it to `spartan-elisp` instead
+
+    I don't use those things anymore, if someone wants to open a PR for those languages individually I'd accept that and put them back in.
+
+  - Removed vterm layer
+
+    This is cheating. Use shell mode.
+
+  - Language layers are zero maintenance now.
+
+    Per-language keybindings using M-m are removed everywhere, for example, in spartan-python.el the following is gone:
+
+   #+BEGIN_SRC elisp
+     (with-eval-after-load 'python
+       (define-key python-mode-map (kbd "M-m rr") 'python-shell-send-region)
+       (define-key python-mode-map (kbd "M-m rb") 'python-shell-send-buffer)
+       (define-key python-mode-map (kbd "M-m rR") 'run-python))
+   #+END_SRC
+
+   If you're gonna do this stuff, just DIY.
+
+   Most language modes have builtins with `M-x foo-bar` type of features, and if you're in a language regularly, you should get to know your language mode layer,
+   and perhaps consider customizing it yourself in `.emacs.d/spartan.d` where your overrides will load last during init.
+
+
+** QUICK INSTALL
+
+   #+BEGIN_SRC bash
+     git clone https://github.com/grandfoobah/spartan-emacs.git ~/.emacs.d
+   #+END_SRC
+
+   There are better ways, probably -- using symlinks. DYOR.
+
+*** FEATURES
+
+    - KISS, clean configuration and a comprehensible layers system
+    - No third party packages install by default - prefers built-ins
+    - Uses lightweight, mostly-vanilla configured layer packages
+    - Popular langs come with optional layers that are preconfigured with the best modes, and intelligent LSP auto-completion, find def, etc. via Eglot
+    - Project Awareness is available with Projectile, VC with Magit
+    - Support for Evil mode with spartan-evil layer
+    - Load time with all layers enabled is less than 1 second on a 10 year old laptop - without resorting to use-package, deferrals, pdumper or hacks.
+    - Tested on Linux, but should work also work fine anywhere for the most part.
+    - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
+
+*** LAYERS
+
+    - Edit `init.el` and M-x spartan-reconfigure
+
+**** HOW LAYERS WORK
+
+    - Enabled layer packages are installed during init
+    - Then layer packages are configured in the after-init-hook
+    - Finally layer packages may be user local customized in spartan.d/
+
+      (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
+
+*** MINIMAL LANGUAGE LAYERS PRECONFIGURED
+
+The idea here is to provde everywhere the get up and going configuration, this means  proper syntax formatting for rapid development,
+and intelligent auto-completion and find definition, etc. via eglot's minimal language server protocol implementation. Some of the language modes also include repls.
+
+Debugging is provided within many of the languages itself, e.g. Python and Ruby have builtin debuggers. With C, one may use M-x `gdb' with 'gdb', etc.
+
+With compiled languages, one might use <f5> and set the compile command to something instead of make if needed, etc.
+
+    - Emacs Lisp (paredit, builtins)
+    - C / C++ (lsp)
+    - Bash  (shellcheck)
+    - Python (lsp)
+    - Ruby (lsp)
+    - Rust (lsp)
+    - Go (lsp)
+    - Javascript / Typescript (lsp)
+    - Terraform (lsp)
+    - Nix (just the mode)
+
+*** HOW TO HACK
+
+    - Fork repo, clone it, own it
+
+*** HOW TO UPDATE
+
+    - *git pull*
+
+    - *M-x package-list-packages* => *U* => *x*
+
+*** BINDS
+
+    - Default emacs binds (unless you enable evil)
+
+    - Principally, we want to use short M-x aliases, while also putting global function binds on C-c
+
+    - Language mode specifc binds should be handled by the mode upstream
+
+    - Overrides go in `.emacs.d/spartan.d/`
+
+    - Do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
+      the general idea
+
+      M-x ff (find files) ,
+      M-x rg (rgrep files) ,
+      M-x kr (browse-kill-ring) ,
+      M-x ed (ediff) ,
+      M-x git (magit) ,
+      M-x lint (flymake) ,
+      M-x pb (webpaste) ,
+      M-x sh (better-shell) ,
+      <f5> (compile) ,
+      <f6> (script execute) ...
+
+    - Also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
+
+    - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
+
+*** CONTRIBUTE
+
+    - No thanks. Nah, nah - Go ahead thanks.
+
+**** Tips for MacOS users
+
+    Try Debian 12 https://www.debian.org/

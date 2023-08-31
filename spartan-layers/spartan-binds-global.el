@@ -52,20 +52,9 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; FIND FILES
+;; DIFF / M-x ediff has this covered
 
-(defalias 'ff 'find-name-dired)
-
-;; GREP FILES
-
-(defalias 'rg 'rgrep)
-
-;; DIFF
-
-(defalias 'ed 'ediff)
-(defalias 'edb 'ediff-buffers)
-
-;; PROJECT MGMT
+;; PROJECT MGMT / Find / Grep
 
 (with-eval-after-load 'projectile
     (defalias 'proj 'projectile-commander)
@@ -94,15 +83,6 @@
 
 (with-eval-after-load 'better-shell
   (defalias 'sh 'better-shell-for-current-dir))
-
-;; VTERM
-
-(with-eval-after-load 'vterm
-  (defalias 'vt 'vterm)
-  (global-set-key (kbd "C-c C-v") 'vterm)
-  (global-set-key (kbd "C-c C-j") 'vterm-copy-mode)
-  (global-set-key (kbd "C-c C-k") 'vterm-copy-mode-done)
-  (global-set-key (kbd "C-c v") 'vterm))
 
 ;; COMPILE COMMAND
 
