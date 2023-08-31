@@ -3,17 +3,17 @@
 ;; configuration -- uncomment desired layers => C-x C-s => M-x spartan-reconfigure
 
 (setq spartan-layers '(
-                       ;; Global defaults everywhere
+                       ;; global defaults everywhere
                        spartan-startup
                        spartan-performance
                        spartan-better-defaults
                        spartan-binds-global
                        spartan-theme
 
-                       ;; ;; Required for layers below
+                       ;; ;; required for layers below
                        ;; spartan-elpa-melpa
 
-                       ;; ;; for psychos
+                       ;; ;; For psychos
                        ;; spartan-evil
 
                        ;; ;; general, make things easier stuff
