@@ -154,20 +154,32 @@ With compiled languages, one might use <f5> and set the compile command to somet
     - Do look at [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]] to get
       the general idea
 
+
       M-x ff (find files) ,
       M-x rg (rgrep files) ,
       M-x kr (browse-kill-ring) ,
-      M-x ed (ediff) ,
+      M-x ediff (ediff) ,
       M-x git (magit) ,
       M-x lint (flymake) ,
-      M-x pb (webpaste) ,
       M-x sh (better-shell) ,
       <f5> (compile) ,
-      <f6> (script execute) ...
+      <f6> (script execute) ,
+      M-/ (autocomplete, or <Tab>)
+      M-. (findef)
+      M-= (format)
+      M-? (find references)
+      M-, (rename)
+      C-c pp, (switch projects (assuming your repos are in ~/repos))
+      C-c pf, (find files in project)
+      C-c psg, (grep through a project)
+
+      What else do ya need?! A repl, I s'pose. Well, good luck with that. As I've said, some modes have them included.
 
     - Also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
 
     - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
+
+***
 
 *** CONTRIBUTE
 
