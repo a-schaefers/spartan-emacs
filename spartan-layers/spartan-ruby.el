@@ -9,6 +9,7 @@
         (with-eval-after-load 'eglot
           (add-hook 'ruby-mode-hook 'eglot-ensure)))
 
+;; Thx https://github.com/bbatsov/prelude
 (defun our-ruby-cfg ()
   (interactive)
   ;; Thx https://github.com/bbatsov/prelude

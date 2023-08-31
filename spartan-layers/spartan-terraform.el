@@ -7,13 +7,6 @@
 
 (with-eval-after-load 'terraform-mode
   (custom-set-variables
-   '(terraform-indent-level 2))
-
-  (require 'eglot)
-  (add-to-list 'eglot-server-programs
-                   `(terraform-mode . ("terraform-lsp")))
-
-  (when (executable-find "terraform-lsp")
-    (add-hook 'terraform-mode-hook 'eglot-ensure)))
+   '(terraform-indent-level 2)))
 
 (provide 'spartan-terraform)
