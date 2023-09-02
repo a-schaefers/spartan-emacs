@@ -88,7 +88,7 @@
 (dolist (layer spartan-layers)
   (require layer))
 
-;; spartan.d/
+;; spartan.d/ loads last
 
 (setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
 (or
@@ -101,13 +101,5 @@
       (load-file (concat spartan-lisp-d "/" file)))))
 
 (add-hook 'emacs-startup-hook 'spartan-user-local-hook)
-
-;; M-x spartan-reconfigure
-
-(defun spartan-reconfigure ()
-  (interactive)
-  (load-file user-init-file)
-  (run-hooks 'after-init-hook
-             'emacs-startup-hook))
 
 ;;; init.el ends here
