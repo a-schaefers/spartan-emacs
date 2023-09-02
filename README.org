@@ -87,7 +87,21 @@ With compiled languages, one might use <f5> and set the compile command to somet
 
     - *git pull*
 
+      Note:
+
+      Normally, we should be able to just pull this repo, restart Emacs and execute M-x ~straight-thaw-versions~
+
+      But if you're upgrading from <3.0 prior versions of spartan-emacs, I'd recommend cloning the project again.
+
     - *Restart Emacs*
+
+      or ~M-x load-file ~/.emacs.d/init.el~ and what have you.
+
+    - *M-x straight-thaw-versions*
+
+      To be honest, I'm not entirely sure based on my reading of Radian's docs whether this is necessary. But it is helpful to know, that this is
+      the way to revert packages back to the pinned versions. In one place, it sounds like this automatically takes place on a fresh bootstrap of straight with Emacs.
+      But in another place, it sounds like we need to run this command.
 
 *** BINDS
 
