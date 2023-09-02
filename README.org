@@ -53,7 +53,7 @@
 
 *** LAYERS
 
-    - Edit ~init.el~ and M-x spartan-reconfigure
+    - Edit ~init.el~ to enable additional language layers, then restart
 
 **** HOW LAYERS WORK
 
