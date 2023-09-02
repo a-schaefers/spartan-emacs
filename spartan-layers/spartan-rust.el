@@ -9,7 +9,4 @@
         (with-eval-after-load 'eglot
           (add-hook 'rust-mode-hook 'eglot-ensure)))
 
-(with-eval-after-load 'rust-mode
-  (define-key rust-mode-map (kbd "M-m rr") 'rust-run))
-
 (provide 'spartan-rust)

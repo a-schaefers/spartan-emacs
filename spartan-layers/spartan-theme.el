@@ -2,8 +2,11 @@
 
 ;; theme
 
-(add-to-list 'spartan-package-list 'github-theme)
-(load-theme 'github t)
+(use-package github-theme
+  :straight t
+  :demand t
+  :config
+  (load-theme 'github t))
 
 ;; font size
 

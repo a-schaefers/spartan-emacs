@@ -1,9 +1,9 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(defun spartan-flymake-hook ()
-  (require 'flymake)
+(use-package flymake
+  :straight t
+  :demand t
+  :config
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
-
-(add-hook 'after-init-hook 'spartan-flymake-hook)
 
 (provide 'spartan-flymake)

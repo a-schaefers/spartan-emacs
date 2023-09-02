@@ -48,11 +48,6 @@
 (dolist (layer spartan-layers)
   (require layer))
 
-;; install third party packages
-
-(with-eval-after-load 'spartan-elpa-melpa
-  (spartan-package-bootstrap))
-
 ;; M-x customize
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
