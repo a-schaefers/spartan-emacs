@@ -32,6 +32,19 @@
                        ;; spartan-terraform
                        ))
 
+;; Startup
+
+(setq package-enable-at-startup nil
+      load-prefer-newer t
+      inhibit-startup-screen t
+      initial-major-mode 'emacs-lisp-mode)
+
+(add-hook 'after-init-hook #'(lambda ()
+                               (interactive)
+                               (require 'server)
+                               (or (server-running-p)
+                                   (server-start))))
+
 ;; straight+use-package
 
 (defvar bootstrap-version)
@@ -47,21 +60,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(setq package-enable-at-startup nil)
-
 (straight-use-package 'use-package)
-
-;; Startup
-
-(setq load-prefer-newer t
-      inhibit-startup-screen t
-      initial-major-mode 'emacs-lisp-mode)
-
-(add-hook 'after-init-hook #'(lambda ()
-                               (interactive)
-                               (require 'server)
-                               (or (server-running-p)
-                                   (server-start))))
 
 ;; Performance
 
