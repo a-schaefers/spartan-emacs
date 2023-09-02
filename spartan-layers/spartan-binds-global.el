@@ -30,13 +30,6 @@
 (with-eval-after-load 'browse-kill-ring
   (global-set-key (kbd "M-y") 'browse-kill-ring))
 
-;; REGEXP SEARCH
-
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
-
 ;; DIFF / M-x ediff has this covered
 
 ;; PROJECT MGMT / Find / Grep
