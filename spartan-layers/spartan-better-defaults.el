@@ -84,4 +84,9 @@
 (or (getenv "PAGER")
     (setenv "PAGER" "cat"))
 
+;; M-x customize
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load-file custom-file))
+
 (provide 'spartan-better-defaults)

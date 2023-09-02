@@ -1,34 +1,25 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; configuration -- uncomment desired layers => C-x C-s => M-x spartan-reconfigure
+;; configuration -- comment or uncomment desired layers => C-x C-s => M-x spartan-reconfigure
 
 (setq spartan-layers '(
-                       ;; global defaults everywhere
-                       spartan-startup
+                       ;; UI/UX
                        spartan-better-defaults
                        spartan-binds
-
-                       ;; required for layers below
-                       spartan-elpa-melpa
-
                        spartan-theme
-
-                       ;; for psychos
-                       ;;spartan-evil
-
-                       ;; general, make things easier stuff
                        spartan-ido
                        spartan-flymake
                        spartan-kill-ring
                        spartan-crux
+                       ;;spartan-evil
 
-                       ;; ide-like features
+                       ;; IDE-LIKE FEATURES
                        spartan-projectile
                        spartan-magit
                        spartan-eglot
                        spartan-company
 
-                       ;; language support
+                       ;; LANGUAGE SUPPORT
                        spartan-bash
                        spartan-c
                        spartan-elisp
@@ -41,6 +32,56 @@
                        ;; spartan-terraform
                        ))
 
+;; straight+use-package
+
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(setq package-enable-at-startup nil)
+
+(straight-use-package 'use-package)
+
+;; Startup
+
+(setq load-prefer-newer t
+      inhibit-startup-screen t
+      initial-major-mode 'emacs-lisp-mode)
+
+(add-hook 'after-init-hook #'(lambda ()
+                               (interactive)
+                               (require 'server)
+                               (or (server-running-p)
+                                   (server-start))))
+
+;; Performance
+
+;; https://emacs-lsp.github.io/lsp-mode/page/performance/
+(setq gc-cons-threshold 100000000
+      read-process-output-max (* 1024 1024))
+
+;; https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation
+(if (and (fboundp 'native-comp-available-p)
+         (native-comp-available-p))
+    (setq comp-deferred-compilation t
+          package-native-compile t)
+  (message "Native complation is *not* available, lsp performance will suffer..."))
+
+(unless (functionp 'json-serialize)
+  (message "Native JSON is *not* available, lsp performance will suffer..."))
+
+;; do not steal focus while doing async compilations
+(setq warning-suppress-types '((comp)))
+
 ;; spartan-layers
 
 (add-to-list 'load-path (concat user-emacs-directory "spartan-layers"))
@@ -48,16 +89,12 @@
 (dolist (layer spartan-layers)
   (require layer))
 
-;; M-x customize
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
-(when (file-exists-p custom-file)
-  (load-file custom-file))
-
 ;; spartan.d/
 
 (setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
+(or
+ (file-directory-p spartan-lisp-d)
+ (make-directory spartan-lisp-d))
 
 (defun spartan-user-local-hook ()
   (when (file-directory-p spartan-lisp-d)
