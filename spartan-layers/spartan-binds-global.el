@@ -52,11 +52,6 @@
     (flymake-show-diagnostics-buffer))
   (defalias 'lint 'spartan-lint))
 
-;; PASTEBIN
-
-(with-eval-after-load 'webpaste
-  (defalias 'paste 'webpaste-paste-buffer-or-region))
-
 ;; DUMB TERM
 
 (with-eval-after-load 'better-shell
