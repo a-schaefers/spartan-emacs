@@ -14,17 +14,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-;; MATCHING BRACKET LIKE VIM's "%"
-
-(defun forward-or-backward-sexp (&optional arg)
-  "Go to the matching parenthesis character if one is adjacent to point."
-  (interactive "^p")
-  (cond ((looking-at "\\s(") (forward-sexp arg))
-        ((looking-back "\\s)" 1) (backward-sexp arg))
-        ;; Now, try to succeed from inside of a bracket
-        ((looking-at "\\s)") (forward-char) (backward-sexp arg))
-        ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
-
 (global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
 ;; COLLECTION OF REDICULOUSLY USEFUL EXTENSIONS
