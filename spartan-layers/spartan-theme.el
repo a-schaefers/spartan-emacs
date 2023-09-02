@@ -1,8 +1,13 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; theme
+
+(add-to-list 'spartan-package-list 'github-theme)
+(load-theme 'github t)
+
 ;; font size
 
-(set-face-attribute 'default nil :family "Monospace" :height 120)
+(set-face-attribute 'default nil :family "Monospace" :height 130)
 
 ;; remove hostname from the GUI titlebar
 (setq-default frame-title-format '("Emacs"))
@@ -16,17 +21,17 @@
   (let* ((available-width (- (window-width) (length left) 2)))
     (format (format " %%s %%%ds " available-width) left right)))
 
-(setq mode-line-format
+(setq-default mode-line-format
       '((:eval (simple-mode-line-render
                 ;; left
                 (format-mode-line "%* %b %l")
                 ;; right
                 (format-mode-line "%m")))))
 
-;; modeline to top
+;; ;; modeline to top
 
-(setq-default header-line-format mode-line-format)
-(setq-default mode-line-format nil)
+;; (setq-default header-line-format mode-line-format)
+;; (setq-default mode-line-format nil)
 
 ;; a glorious scratch message
 

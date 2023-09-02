@@ -20,17 +20,13 @@ Most all layers now load on first-time setup, sans more specific language layers
 
 *** Wed 30 Aug 2023 05:06:23 PM MDT
 
-Spartan Emacs gets a haircut. 2.0, because 1.0 it wasn't masochist enough.
-
 Reminder, this is an opinionated framework.
 
   - Theme
 
-    Syntax highlighting stays.
-
     A global font size option is now in the theme file.
 
-    Angryfruit is standard now.
+    Moved to a clean-looking "github" theme and modeline back at the bottom
 
   - Removed attempts to make things nicer for macos.
 

@@ -7,10 +7,11 @@
                        spartan-startup
                        spartan-better-defaults
                        spartan-binds
-                       spartan-theme
 
                        ;; required for layers below
                        spartan-elpa-melpa
+
+                       spartan-theme
 
                        ;; for psychos
                        ;;spartan-evil
