@@ -2,7 +2,7 @@
 
 ;; font size
 
-(set-face-attribute 'default nil :family "Monospace" :height 150)
+(set-face-attribute 'default nil :family "Monospace" :height 130)
 
 ;; remove hostname from the GUI titlebar
 (setq-default frame-title-format '("Emacs"))
