@@ -11,9 +11,6 @@
 
 ;; BETTER-DEFAULTS
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "M-/") 'hippie-expand)
-
 (global-set-key (kbd "C-%") 'forward-or-backward-sexp)
 
 ;; COLLECTION OF REDICULOUSLY USEFUL EXTENSIONS
