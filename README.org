@@ -7,70 +7,27 @@
   A word for beginners:
 
   Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
-  ~M-x~ means meta ('alt') + ~x~ and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
+  ~M-x~ means meta ~Alt~ + ~x~ and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
   additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
 ** News
 
-*** Sat 02 Sep 2023 03:17:18 AM MDT
+*** Sat 02 Sep 2023 04:03:11 PM MDT
 
-A few more post release changes, fixed up c-mode issues, added a company mode layer, improved global bind aliases
+3.0 Release - Major re-write
 
-Most all layers now load on first-time setup, sans more specific language layers that can be enabled manually.
+- Uses straight + use-package for version pinning. (We're done with MELPA and package.el now.)
 
-*** Wed 30 Aug 2023 05:06:23 PM MDT
+  With this, we now provide version pins, hopefully for better stability long-term, one user can be sure he has the same package versions as another user.
 
-Reminder, this is an opinionated framework.
+  We're not deferring packages, currently -- actually the opposite, packages are configured with :demand.
+  In my experience, this provides a less buggy experience in general.
 
-  - Theme
+- Added company mode.
 
-    A global font size option is now in the theme file.
+- Packages auto-bootstrap. (Except more specialized language layers, those have to manually enabled.)
 
-    Moved to a clean-looking "github" theme and modeline back at the bottom
-
-  - Removed attempts to make things nicer for macos.
-
-  - Removed emacs-nw layer
-
-    This fixes copy/paste issues people would have in the terminal.
-
-    And remotely running Emacs? Just use tramp.
-
-    And I don't care about your terminal transparency.
-
-  - Removed spartan-environment layer, moved PAGER/EDITOR settings to better-defaults
-
-    The insanity of managing PATH from Emacs is over. With all the virtualenv and nix-shell type of approaches, I recommend instead now to just open ~emacs~ from your terminal shell.
-
-  - Removed many unneccessary layers that I don't find useful: spartan-{solidity,json,yaml,xml,nginx,systemd, etc.}
-
-  - Removed webpaste
-
-    This is actually a security feature. I've had this one disabled a very long time. Can't be accidentally pasting company code to the WWW and losing our jobs, can we?
-
-  - Removed the lisp layer's Clojure, Scheme and Common lisp support and renamed it to ~spartan-elisp~ instead
-
-    I don't use those things anymore, if someone wants to open a PR for those languages individually I'd accept that and put them back in.
-
-  - Removed vterm layer
-
-    This is cheating. Use shell mode.
-
-  - Language layers are zero maintenance now.
-
-    Per-language keybindings using M-m are removed everywhere, for example, in spartan-python.el the following is gone:
-
-   #+BEGIN_SRC elisp
-     (with-eval-after-load 'python
-       (define-key python-mode-map (kbd "M-m rr") 'python-shell-send-region)
-       (define-key python-mode-map (kbd "M-m rb") 'python-shell-send-buffer)
-       (define-key python-mode-map (kbd "M-m rR") 'run-python))
-   #+END_SRC
-
-   If you're gonna do this stuff, just DIY.
-
-   Most language modes have builtins with ~M-x foo-bar~ type of features, and if you're in a language regularly, you should get to know your language mode layer,
-   and perhaps consider customizing it yourself in ~.emacs.d/spartan.d~ where your overrides will load last during init.
+- Fixes all-around everywhere. Lots of code removed in various places.
 
 
 ** QUICK INSTALL
@@ -128,7 +85,7 @@ With compiled languages, one might use <f5> and set the compile command to somet
 
     - *git pull*
 
-    - *M-x package-list-packages* => *U* => *x*
+    - *Restart Emacs*
 
 *** BINDS
 
@@ -140,6 +97,6 @@ With compiled languages, one might use <f5> and set the compile command to somet
 
       Also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
 
-    - Language mode specifc binds should be handled by the mode upstream
+    - Language mode specifc binds should be handled by the mode upstream or by the individual user.
 
     - Overrides go in ~.emacs.d/spartan.d/~
