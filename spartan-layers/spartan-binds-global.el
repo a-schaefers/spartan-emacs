@@ -26,7 +26,7 @@
 ;; PROJECT MGMT / Find / Grep
 
 (with-eval-after-load 'projectile
-    (defalias 'pp 'projectile-commander))
+  (defalias 'pro 'projectile-commander))
 
 ;; GIT
 
