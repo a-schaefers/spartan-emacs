@@ -4,7 +4,6 @@
 
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
-(global-unset-key (kbd "M-m"))
 
 ;; TAB AUTO COMPLETION
 (setq tab-always-indent 'complete)
