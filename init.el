@@ -14,7 +14,7 @@
                        ;; spartan-elpa-melpa
 
                        ;; ;; for psychos
-                       ;; spartan-evil
+                       ;; ;;spartan-evil
 
                        ;; ;; general, make things easier stuff
                        ;; spartan-ido
@@ -26,6 +26,8 @@
                        ;; spartan-projectile
                        ;; spartan-magit
                        ;; spartan-eglot
+                       ;; spartan-company
+
 
                        ;; ;; language support
                        ;; spartan-bash
@@ -65,8 +67,8 @@
 
 (defun spartan-user-local-hook ()
   (when (file-directory-p spartan-lisp-d)
-  (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
-    (load-file (concat spartan-lisp-d "/" file)))))
+    (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
+      (load-file (concat spartan-lisp-d "/" file)))))
 
 (add-hook 'emacs-startup-hook 'spartan-user-local-hook)
 
