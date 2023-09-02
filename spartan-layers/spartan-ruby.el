@@ -3,13 +3,11 @@
 ;; expects gems 'irb' 'rdoc' 'solargraph', recommended 'pry' for setting breakpoints
 ;; usage: can't find a good doc, M-x ruby and look around
 
-(add-to-list 'spartan-package-list 'inf-ruby)
+(use-package inf-ruby
+  :straight t
+  :demand t)
 
-(when (executable-find "solargraph")
-        (with-eval-after-load 'eglot
-          (add-hook 'ruby-mode-hook 'eglot-ensure)))
-
-(add-hook 'makefile-mode-hook (lambda ()
+(add-hook 'ruby-mode-hook (lambda ()
                                 ;; Thx https://github.com/bbatsov/prelude
                                 ;; We never want to edit Rubinius bytecode
                                 (add-to-list 'completion-ignored-extensions ".rbc")
@@ -19,5 +17,9 @@
                                 (inf-ruby-minor-mode +1)
                                 ;; CamelCase aware editing operations
                                 (subword-mode +1)))
+
+(when (executable-find "solargraph")
+        (with-eval-after-load 'eglot
+          (add-hook 'ruby-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-ruby)

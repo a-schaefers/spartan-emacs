@@ -4,11 +4,8 @@
 
 ;; usage: https://www.emacswiki.org/emacs/PythonProgrammingInEmasc
 
-(defun spartan-python-hook ()
-  (interactive)
-  (setq-local tab-width 4))
-
-(add-hook 'python-mode-hook 'spartan-python-hook)
+(add-hook 'python-mode-hook (lambda ()
+                                (setq-local tab-width 4)))
 
 (when (executable-find "pyls")
   (require 'eglot)

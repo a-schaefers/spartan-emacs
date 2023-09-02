@@ -3,7 +3,9 @@
 ;; expects: rust-analyzer
 ;; usage: https://github.com/rust-lang/rust-mode
 
-(add-to-list 'spartan-package-list 'rust-mode)
+(use-package rust-mode
+  :straight t
+  :demand t)
 
 (when (executable-find "rust-analyzer")
         (with-eval-after-load 'eglot

@@ -2,8 +2,10 @@
 
 ;; usage: https://github.com/NixOS/nix-mode
 
-(add-to-list 'spartan-package-list 'nix-mode)
-
-(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
+(use-package nix-mode
+  :straight t
+  :demand t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode)))
 
 (provide 'spartan-nix)

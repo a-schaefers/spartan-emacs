@@ -3,9 +3,10 @@
 ;; expects: terraform-lsp
 ;; usage: https://github.com/emacsorphanage/terraform-mode
 
-(add-to-list 'spartan-package-list 'terraform-mode)
-
-(with-eval-after-load 'terraform-mode
+(use-package terraform-mode
+  :straight t
+  :demand t
+  :config
   (custom-set-variables
    '(terraform-indent-level 2)))
 
