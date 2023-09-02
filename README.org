@@ -6,8 +6,8 @@
 
   A word for beginners:
 
-  Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out `M-x help-with-tutorial`.
-  `M-x` means meta ('alt') + `x` and then `help-with-tutorial` Return (enter) to begin. One might follow up with `An Introduction to Programming in Emacs Lisp`
+  Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
+  ~M-x~ means meta ('alt') + ~x~ and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
   additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
 ** News
@@ -42,7 +42,7 @@ Reminder, this is an opinionated framework.
 
   - Removed spartan-environment layer, moved PAGER/EDITOR settings to better-defaults
 
-    The insanity of managing PATH from Emacs is over. With all the virtualenv and nix-shell type of approaches, I recommend instead now to just open `emacs` from your terminal shell.
+    The insanity of managing PATH from Emacs is over. With all the virtualenv and nix-shell type of approaches, I recommend instead now to just open ~emacs~ from your terminal shell.
 
   - Removed many unneccessary layers that I don't find useful: spartan-{solidity,json,yaml,xml,nginx,systemd, etc.}
 
@@ -50,7 +50,7 @@ Reminder, this is an opinionated framework.
 
     This is actually a security feature. I've had this one disabled a very long time. Can't be accidentally pasting company code to the WWW and losing our jobs, can we?
 
-  - Removed the lisp layer's Clojure, Scheme and Common lisp support and renamed it to `spartan-elisp` instead
+  - Removed the lisp layer's Clojure, Scheme and Common lisp support and renamed it to ~spartan-elisp~ instead
 
     I don't use those things anymore, if someone wants to open a PR for those languages individually I'd accept that and put them back in.
 
@@ -71,8 +71,8 @@ Reminder, this is an opinionated framework.
 
    If you're gonna do this stuff, just DIY.
 
-   Most language modes have builtins with `M-x foo-bar` type of features, and if you're in a language regularly, you should get to know your language mode layer,
-   and perhaps consider customizing it yourself in `.emacs.d/spartan.d` where your overrides will load last during init.
+   Most language modes have builtins with ~M-x foo-bar~ type of features, and if you're in a language regularly, you should get to know your language mode layer,
+   and perhaps consider customizing it yourself in ~.emacs.d/spartan.d~ where your overrides will load last during init.
 
 
 ** QUICK INSTALL
@@ -97,13 +97,13 @@ Reminder, this is an opinionated framework.
 
 *** LAYERS
 
-    - Edit `init.el` and M-x spartan-reconfigure
+    - Edit ~init.el~ and M-x spartan-reconfigure
 
 **** HOW LAYERS WORK
 
     - Enabled layer packages are installed during init
     - Then layer packages are configured in the after-init-hook
-    - Finally layer packages may be user local customized in `~/.emacs.d/spartan.d/`
+    - Finally layer packages may be user local customized in ~~/.emacs.d/spartan.d/~
 
       (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
 
@@ -112,7 +112,7 @@ Reminder, this is an opinionated framework.
 The idea here is to provde everywhere the get up and going configuration, this means proper syntax support,
 auto-completion and find definition, etc. via eglot's minimal language server protocol implementation.
 Some of the language modes also include repls. Debugging is provided within many of the languages itself,
-e.g. Python and Ruby have builtin debuggers. With C, one may use M-x `gdb' with 'gdb', etc.
+e.g. Python and Ruby have builtin debuggers. With C, one may use M-x ~gdb' with 'gdb', etc.
 
 With compiled languages, one might use <f5> and set the compile command to something instead of make if needed, etc.
 
@@ -145,4 +145,4 @@ With compiled languages, one might use <f5> and set the compile command to somet
 
     - Language mode specifc binds should be handled by the mode upstream
 
-    - Overrides go in `.emacs.d/spartan.d/`
+    - Overrides go in ~.emacs.d/spartan.d/~
