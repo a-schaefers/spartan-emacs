@@ -16,6 +16,8 @@
 
 A few more post release changes, fixed up c-mode issues, added a company mode layer, improved global bind aliases
 
+Most all layers now load on first-time setup, sans more specific language layers that can be enabled manually.
+
 *** Wed 30 Aug 2023 05:06:23 PM MDT
 
 Spartan Emacs gets a haircut. 2.0, because 1.0 it wasn't masochist enough.
@@ -86,7 +88,6 @@ Reminder, this is an opinionated framework.
 *** FEATURES
 
     - KISS, clean configuration and a comprehensible layers system
-    - No third party packages install by default - prefers built-ins
     - Uses lightweight, mostly-vanilla configured layer packages
     - Popular langs come with optional layers that are preconfigured with the best modes, and intelligent LSP auto-completion via company-mode integration and Eglot
     - Project Awareness is available with Projectile, VC with Magit

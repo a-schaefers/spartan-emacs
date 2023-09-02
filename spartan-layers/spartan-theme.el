@@ -2,7 +2,7 @@
 
 ;; font size
 
-(set-face-attribute 'default nil :family "Monospace" :height 130)
+(set-face-attribute 'default nil :family "Monospace" :height 120)
 
 ;; remove hostname from the GUI titlebar
 (setq-default frame-title-format '("Emacs"))
@@ -28,11 +28,7 @@
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format nil)
 
-;; a glorious startup theme
-
-(setq inhibit-startup-screen t
-      initial-major-mode 'emacs-lisp-mode
-      load-prefer-newer t)
+;; a glorious scratch message
 
   (setq initial-scratch-message "
 ; _______  _____  _______  ______ _______ _______

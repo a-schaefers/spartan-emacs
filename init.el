@@ -5,34 +5,32 @@
 (setq spartan-layers '(
                        ;; global defaults everywhere
                        spartan-startup
-                       spartan-performance
                        spartan-better-defaults
-                       spartan-binds-global
+                       spartan-binds
                        spartan-theme
 
-                       ;; ;; required for layers below
-                       ;; spartan-elpa-melpa
+                       ;; required for layers below
+                       spartan-elpa-melpa
 
-                       ;; ;; for psychos
-                       ;; ;;spartan-evil
+                       ;; for psychos
+                       ;;spartan-evil
 
-                       ;; ;; general, make things easier stuff
-                       ;; spartan-ido
-                       ;; spartan-flymake
-                       ;; spartan-kill-ring
-                       ;; spartan-crux
+                       ;; general, make things easier stuff
+                       spartan-ido
+                       spartan-flymake
+                       spartan-kill-ring
+                       spartan-crux
 
-                       ;; ;; ide-like features
-                       ;; spartan-projectile
-                       ;; spartan-magit
-                       ;; spartan-eglot
-                       ;; spartan-company
+                       ;; ide-like features
+                       spartan-projectile
+                       spartan-magit
+                       spartan-eglot
+                       spartan-company
 
-
-                       ;; ;; language support
-                       ;; spartan-bash
-                       ;; spartan-c
-                       ;; spartan-elisp
+                       ;; language support
+                       spartan-bash
+                       spartan-c
+                       spartan-elisp
                        ;; spartan-go
                        ;; spartan-javascript
                        ;; spartan-nix
