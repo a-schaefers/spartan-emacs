@@ -1,18 +1,13 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; UNBIND ANNOYANCES
-
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-x C-z"))
-
-;; TAB AUTO COMPLETION
-(setq tab-always-indent 'complete)
-
-;; COLLECTION OF REDICULOUSLY USEFUL EXTENSIONS
-
 (global-set-key (kbd "C-c i") #'(lambda ()
                                   (interactive)
                                   (find-file user-init-file)))
+
+;; TAB is indent or auto completion
+(setq tab-always-indent 'complete)
+
+;; COLLECTION OF REDICULOUSLY USEFUL EXTENSIONS
 
 (with-eval-after-load 'crux
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
@@ -31,8 +26,7 @@
 ;; PROJECT MGMT / Find / Grep
 
 (with-eval-after-load 'projectile
-    (defalias 'pp 'projectile-commander)
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+    (defalias 'pp 'projectile-commander))
 
 ;; GIT
 
@@ -56,11 +50,10 @@
 ;; COMPILE COMMAND
 
 (setq compile-command "make -k ")
-(global-set-key (kbd "<f5>") 'compile)
+(defalias 'cc 'compile)
 
-;; EXECUTE SCRIPT
-
-(with-eval-after-load 'spartan-shell
-  (global-set-key (kbd "<f6>") 'spartan-script-execute))
+;; UNBIND ANNOYANCES
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
 
 (provide 'spartan-binds-global)
