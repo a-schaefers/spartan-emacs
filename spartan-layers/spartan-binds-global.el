@@ -7,7 +7,7 @@
 (global-unset-key (kbd "M-m"))
 
 ;; TAB AUTO COMPLETION
-(setq tab-always-indent 'complete) ; used by eglot for auto-completion as well
+(setq tab-always-indent 'complete)
 
 ;; BETTER-DEFAULTS
 
