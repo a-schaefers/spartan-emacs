@@ -1,8 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(setq inhibit-startup-screen nil
-      initial-major-mode 'emacs-lisp-mode
-      load-prefer-newer t)
+(setq load-prefer-newer t)
 
 (add-hook 'after-init-hook #'(lambda ()
                                (interactive)

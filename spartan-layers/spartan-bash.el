@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; `shell' is the preferred spartan-emacs shell because eshell and ansi/multi/term are all too buggy.
+;; `shell' is the preferred spartan-emacs shell because eshell and ansi/multi/term are all too buggy while vterm is bloat
 ;; `shell' is a bash process attached to a buffer, so it has all of Emacs bindings, etc. That's perfect.
 
 ;; If you really need ncurses, you're probably doing it wrong.
@@ -8,13 +8,6 @@
 (add-to-list 'spartan-package-list 'better-shell) ; https://github.com/killdash9/better-shell
 (add-to-list 'spartan-package-list 'shx)          ; https://github.com/riscy/shx-for-emacs
 (when (executable-find "shellcheck") (add-to-list 'spartan-package-list 'flymake-shellcheck)) ; Add shellcheck support to flymake (linter)
-
-;; <f6>
-(defun spartan-script-execute()
-  "Save a buffer and execute the script"
-  (interactive)
-  (save-buffer)
-  (async-shell-command (buffer-file-name)))
 
 (defun spartan-shell-hook ()
   ;; SUPER helpful `shell' extensions
