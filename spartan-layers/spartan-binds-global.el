@@ -8,10 +8,6 @@
 ;; TAB AUTO COMPLETION
 (setq tab-always-indent 'complete)
 
-;; BETTER-DEFAULTS
-
-(global-set-key (kbd "C-%") 'forward-or-backward-sexp)
-
 ;; COLLECTION OF REDICULOUSLY USEFUL EXTENSIONS
 
 (global-set-key (kbd "C-c i") #'(lambda ()
