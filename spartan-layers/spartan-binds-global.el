@@ -35,7 +35,7 @@
 ;; PROJECT MGMT / Find / Grep
 
 (with-eval-after-load 'projectile
-    (defalias 'proj 'projectile-commander)
+    (defalias 'pp 'projectile-commander)
     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 ;; GIT
