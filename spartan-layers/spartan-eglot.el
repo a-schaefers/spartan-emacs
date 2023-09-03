@@ -1,6 +1,13 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+(use-package yasnippet
+  :straight t
+  :demand t
+  :config
+  (yas-global-mode 1))
+
 (use-package eglot
+  :after yasnippet
   :straight t
   :demand t
   :config
