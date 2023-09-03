@@ -113,7 +113,7 @@ Normally, we should be able to just pull this repo, restart Emacs and execute M-
 
     - Overrides go in ~.emacs.d/spartan.d/~
 
-***** **On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach**
+***** /On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach/
 
 I am passionate about using good ergonomics to extend the life and health of our fingers and wrists as programmers.
 
@@ -130,13 +130,15 @@ A major contributing factor to RSI is programming is the use of modifiers, which
 
 2. Holy mode (standard Emacs binds)
 
-   - Karate chops
+   Karate chops.
 
-   I recommend here the use of either karate chop control presses via a 60% keyboard, this enables you to keep your wrist straight
+   I recommend here the use of karate chop control presses via a 60% keyboard, this enables you to keep your wrist straight while using modifiers.
 
-   - Swap left Alt with Left Control
+   *OR*
 
-   If karate chopping your control keys is not for you, I recommend this keyswap.
+   Swap left Alt with left Control.
+
+   If karate chopping your control keys is not for you, I recommend this keyswap instead.
 
    Swapping left alt with left control enables the user to hold the control modifier with the left thumb, and the right alt modifier (in its natural position) with the right thumb.
    The result of this simple keyswap is that it is now possible to use both modifiers without holding them with the pinky or tweaking the wrists.
