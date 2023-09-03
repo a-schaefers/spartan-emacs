@@ -34,6 +34,7 @@
                        spartan-better-defaults
                        spartan-binds
                        spartan-theme
+                       spartan-dashboard
                        spartan-ido
                        spartan-flymake
                        spartan-kill-ring
