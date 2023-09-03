@@ -1,6 +1,33 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; configuration -- comment or uncomment desired layers => C-x C-s => M-x spartan-reconfigure
+;; configuration
+;; 1. setup your font and theme(s)
+;; 2. comment or uncomment desired layers,
+
+;; font selection and size
+
+(set-face-attribute 'default nil :family "Monospace" :height 120)
+
+;; themes
+
+(with-eval-after-load 'spartan-theme
+  (spartan-install-themes
+    github-theme
+    spacemacs-theme
+    doom-themes
+    )
+  (load-theme spartan-load-theme t))
+
+;; choose ONE
+(setq spartan-load-theme 'github)
+;; (setq spartan-load-theme 'spacemacs-light)
+;; (setq spartan-load-theme 'spacemacs-dark)
+;; (setq spartan-load-theme 'doom-gruvbox)
+;; (setq spartan-load-theme 'doom-gruvbox-light)
+;; (setq spartan-load-theme 'doom-one)
+;; (setq spartan-load-theme 'doom-one-light)
+
+;; layers
 
 (setq spartan-layers '(
                        ;; UI/UX
@@ -32,7 +59,7 @@
                        ;; spartan-terraform
                        ))
 
-;; Startup
+;; startup
 
 (setq package-enable-at-startup nil
       load-prefer-newer t
