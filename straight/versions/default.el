@@ -9,6 +9,7 @@
  ("eglot" . "08e75eaeea09a2a390c8949829f7562ddb484739")
  ("el-get" . "e1a3e59d800984ed7ef10469232b59b60244ae90")
  ("eldoc" . "a2aaed2b7c70c1f28dd212fe2f4304ce89c338d7")
+ ("emacs-dashboard" . "0cae7b872552c73da2ff61de6623b8c3196f1937")
  ("emacs-memoize" . "51b075935ca7070f62fae1d69fe0ff7d8fa56fdd")
  ("emacsmirror-mirror" . "09c5d38f75ccad8150cb4681d6e3fa6143238e49")
  ("external-completion" . "d717c138623aeecc8e0a0312e0576e98604c43f2")
