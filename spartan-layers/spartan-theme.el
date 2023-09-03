@@ -1,27 +1,14 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; font selection and size
-(set-face-attribute 'default nil :family "Monospace" :height 120)
+;; install theme(s)
 
-;; theme we will use
-(setq spartan-load-theme 'github) ;; put exact theme name right here, then M-x spartan-reconfigure
-
-;; themes we Provide
-
-(defmacro spartan-dynamic-theme-opt (&rest packages)
+(defmacro spartan-install-themes (&rest packages)
   ;; Thanks https://emacs.stackexchange.com/questions/32744/dynamic-package-name-with-use-package
       (declare (indent defun))
       (macroexp-progn
        (mapcar (lambda (package)
                  `(use-package ,package :straight t :demand))
                packages)))
-
-(spartan-dynamic-theme-opt
-   github-theme
-   spacemacs-theme
-   doom-themes)
-
-(load-theme spartan-load-theme t)
 
 ;; remove hostname from the GUI titlebar
 (setq-default frame-title-format '("Emacs"))
