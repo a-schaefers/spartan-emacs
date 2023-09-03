@@ -56,7 +56,11 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";; Spartan Config
+        (insert ";
+; _______  _____  _______  ______ _______ _______
+; |______ |_____] |_____| |_____/    |    |_____|
+; ______| |       |     | |    \\_    |    |     |
+;
 
 ;; font selection and size
 
