@@ -58,8 +58,7 @@
 **** HOW LAYERS WORK
 
     - Enabled layer packages are installed during init
-    - Then layer packages are configured in the after-init-hook
-    - Finally layer packages may be user local customized in ~~/.emacs.d/spartan.d/~
+    - Layer packages may be user local customized in ~~/.emacs.d/spartan.d/~
 
       (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
 
