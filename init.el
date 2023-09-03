@@ -9,7 +9,7 @@
 
 ;; font selection and size
 
-(set-face-attribute 'default nil :family "Hack" :height 120)
+(set-face-attribute 'default nil :family "Monospace" :height 120)
 
 ;; themes
 
