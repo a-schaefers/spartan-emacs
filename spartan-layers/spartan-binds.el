@@ -2,7 +2,7 @@
 
 (global-set-key (kbd "C-c i") #'(lambda ()
                                   (interactive)
-                                  (find-file user-init-file)))
+                                  (find-file spartan-config)))
 
 ;; TAB is indent or auto completion
 (setq tab-always-indent 'complete)

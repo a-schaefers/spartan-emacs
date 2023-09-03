@@ -52,14 +52,21 @@
 
 *** LAYERS
 
-    - Edit ~init.el~ to enable additional language layers, then restart
+    - Edit ~.emacs.d/spartan.el~ to configure the theme, fonts, and  additional language layers, then restart
 
 **** HOW LAYERS WORK
 
-    - Enabled layer packages are installed during init
-    - Layer packages may be user local customized in ~/.emacs.d/spartan.d/
+    - init.el (among other things) auto-generates a default ~/.emacs.d/.spartan-emacs.el
 
-      (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
+      This configuration file is not stored in our Git, but you might want to add it in to yours.
+
+      It may freely be modified by the user, but keep in mind it loads early, before the layers.
+
+    - Enabled layer packages are loaded after ~/.emacs.d/spartan.el
+
+    - Layer packages may be again customized in ~/.emacs.d/spartan.d/ with any additional setup or overrides
+
+      (all lisp files in spartan.d/ auto load last, during the emacs-startup-hook)
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
@@ -91,15 +98,9 @@ Normally, we should be able to just pull this repo, restart Emacs and execute M-
 
       But if you're upgrading from <3.0 prior versions of spartan-emacs, I'd recommend cloning the project again.
 
-    - *Restart Emacs*
-
-      or ~M-x load-file ~/.emacs.d/init.el~ and what have you.
-
     - *M-x straight-thaw-versions*
 
-      To be honest, I'm not entirely sure based on my reading of Radian's docs whether this is necessary. But it is helpful to know, that this is
-      the way to revert packages back to the pinned versions. In one place, it sounds like this automatically takes place on a fresh bootstrap of straight with Emacs.
-      But in another place, it sounds like we need to run this command.
+    - *Restart Emacs*
 
 *** BINDS
 

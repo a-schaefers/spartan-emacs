@@ -1,67 +1,5 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; 1. setup your font and theme(s)
-;; 2. comment or uncomment desired layers,
-
-;; font selection and size
-
-(set-face-attribute 'default nil :family "Monospace" :height 120)
-
-;; themes
-
-(with-eval-after-load 'spartan-theme
-  (spartan-install-themes
-    github-theme
-    spacemacs-theme
-    doom-themes
-    )
-  (load-theme spartan-load-theme t))
-
-(setq spartan-load-theme 'github ;; also available e.g. spacemacs-dark, spacemacs-light, doom-*...
-      spartan-persistent-scratch t
-      spartan-minimal-modeline t)
-
-;; layers
-
-(setq spartan-layers '(
-                       ;; UI/UX
-                       spartan-better-defaults
-                       spartan-binds
-                       spartan-theme
-                       spartan-dashboard
-                       spartan-ido
-                       spartan-flymake
-                       spartan-kill-ring
-                       spartan-crux
-                       ;;spartan-evil
-
-                       ;; IDE-LIKE FEATURES
-                       spartan-projectile
-                       spartan-magit
-                       spartan-eglot
-                       spartan-company
-
-                       ;; LANGUAGE SUPPORT
-                       spartan-bash
-                       spartan-c
-                       spartan-elisp
-                       ;; spartan-go
-                       ;; spartan-javascript
-                       ;; spartan-nix
-                       ;; spartan-python
-                       ;; spartan-ruby
-                       ;; spartan-rust
-                       ;; spartan-terraform
-                       ))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; main
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; startup
 
 (setq package-enable-at-startup nil
@@ -110,6 +48,68 @@
 
 ;; do not steal focus while doing async compilations
 (setq warning-suppress-types '((comp)))
+
+;; generate spartan configuration file
+
+(setq spartan-config (concat user-emacs-directory "spartan.el"))
+
+(or (file-exists-p spartan-config)
+    (progn
+      (with-temp-file spartan-config
+        (insert ";; Spartan Config
+
+;; font selection and size
+
+(set-face-attribute 'default nil :family \"Monospace\" :height 120)
+
+;; themes
+
+(with-eval-after-load 'spartan-theme
+  (spartan-install-themes
+    github-theme
+    spacemacs-theme
+    doom-themes
+    )
+  (load-theme spartan-load-theme t))
+
+(setq spartan-load-theme 'github ;; also available e.g. spacemacs-dark, spacemacs-light, doom-*...
+      spartan-persistent-scratch t
+      spartan-minimal-modeline t)
+
+;; layers
+
+(setq spartan-layers '(
+                       ;; UI/UX
+                       spartan-better-defaults
+                       spartan-binds
+                       spartan-theme
+                       spartan-dashboard
+                       spartan-ido
+                       spartan-flymake
+                       spartan-kill-ring
+                       spartan-crux
+                       ;;spartan-evil
+
+                       ;; IDE-LIKE FEATURES
+                       spartan-projectile
+                       spartan-magit
+                       spartan-eglot
+                       spartan-company
+
+                       ;; LANGUAGE SUPPORT
+                       spartan-bash
+                       spartan-c
+                       spartan-elisp
+                       ;; spartan-go
+                       ;; spartan-javascript
+                       ;; spartan-nix
+                       ;; spartan-python
+                       ;; spartan-ruby
+                       ;; spartan-rust
+                       ;; spartan-terraform
+                       ))"))))
+
+(load-file spartan-config)
 
 ;; spartan-layers
 
