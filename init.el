@@ -56,29 +56,33 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";
-; _______  _____  _______  ______ _______ _______
-; |______ |_____] |_____| |_____/    |    |_____|
-; ______| |       |     | |    \\_    |    |     |
-;
+        (insert ";; CONFIG
 
-;; font selection and size
+;; Choose between holy or evil, and ido or ivy
+(setq spartan-evil-or-holy \"holy\"
+      spartan-ido-or-ivy \"ido\")
 
+;; Font selection and size
 (set-face-attribute 'default nil :family \"Monospace\" :height 120)
 
-;; themes
-
+;; Appearance
 (with-eval-after-load 'spartan-theme
   (spartan-install-themes
+    ;; Add as many themes to install as you'd like here
     github-theme
-    spacemacs-theme
-    doom-themes
+    ;; spacemacs-theme
+    ;; doom-themes
     )
   (load-theme spartan-load-theme t))
 
-(setq spartan-load-theme 'github ;; also available e.g. spacemacs-dark, spacemacs-light, doom-*...
-      spartan-persistent-scratch t
-      spartan-minimal-modeline t)
+(setq ;; Set the precise theme name / variant to load here
+ spartan-load-theme 'github ;;
+
+ ;; Convert *scratch* buffer to persist between sessions, and make it un-killable (killing it drops it to the bottom of the stack.)
+ spartan-persistent-scratch t
+
+ ;; Use a simple, minimal mode, which only shows modified/unmodified state, the file name, the line number and the Major mode of the buffer.
+ spartan-minimal-modeline t)
 
 ;; layers
 
@@ -88,11 +92,11 @@
                        spartan-binds
                        spartan-theme
                        spartan-dashboard
-                       spartan-ido
+                       spartan-ido-or-ivy
                        spartan-flymake
                        spartan-kill-ring
                        spartan-crux
-                       ;;spartan-evil
+                       spartan-evil-or-holy
 
                        ;; IDE-LIKE FEATURES
                        spartan-projectile
@@ -111,7 +115,8 @@
                        ;; spartan-ruby
                        ;; spartan-rust
                        ;; spartan-terraform
-                       ))"))))
+                       ))
+"))))
 
 (load-file spartan-config)
 
