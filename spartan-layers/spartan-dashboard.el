@@ -12,4 +12,7 @@
  |______ |_____] |_____| |_____/    |    |_____|
  ______| |       |     | |    \\_    |    |     |
 ")
+
+(setq dashboard-footer-messages '("Vincit qui se vincit."))
+
 (provide 'spartan-dashboard)
