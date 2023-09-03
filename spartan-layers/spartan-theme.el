@@ -29,18 +29,10 @@
                 ;; right
                 (format-mode-line "%m")))))
 
-;; ;; modeline to top
 
-;; (setq-default header-line-format mode-line-format)
-;; (setq-default mode-line-format nil)
-
-;; a glorious scratch message
-
-  (setq initial-scratch-message "
-;; This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch
-")
 
 ;; better scratch https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
+  (setq initial-scratch-message ";; This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch")
 
 (defun immortal-scratch ()
   (if (eq (current-buffer) (get-buffer "*scratch*"))
