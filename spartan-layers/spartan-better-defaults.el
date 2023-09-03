@@ -42,20 +42,8 @@
  require-final-newline t
  ediff-window-setup-function 'ediff-setup-windows-plain
 
- ;; the most reliable tramp setup I have found
  tramp-default-method "ssh"
  tramp-copy-size-limit nil
- tramp-use-ssh-controlmaster-options nil
-
- ;; I recommend the following ~/.ssh/config settings be used with the tramp settings in this cfg:
- ;; Host *
- ;; ForwardAgent yes
- ;; AddKeysToAgent yes
- ;; ControlMaster auto
- ;; ControlPath ~/.ssh/master-%r@%h:%p
- ;; ControlPersist yes
- ;; ServerAliveInterval 10
- ;; ServerAliveCountMax 10
 
  vc-follow-symlinks t ; open symlinks, don't ask confusing questions
 
