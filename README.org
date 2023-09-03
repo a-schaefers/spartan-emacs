@@ -43,13 +43,12 @@
     - KISS, clean configuration and a comprehensible layers system
     - Uses lightweight, mostly-vanilla configured layer packages
     - Straight + use-package version version pinning for greater stability
-    - Install and use any theme quite easily by modifying spartan-themes.el
     - Popular langs come with optional layers that are preconfigured with the best modes, and intelligent LSP auto-completion via company-mode integration and Eglot
     - Project Awareness is available with Projectile, VC with Magit
     - Support for Evil mode with spartan-evil layer
     - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
     - Tested on Linux, but should work also work fine anywhere for the most part.
-    - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.) Debian 12 emacs comes out of the box with support for these features enabled now.
+    - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
 
 *** LAYERS
 
