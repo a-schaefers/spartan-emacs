@@ -49,7 +49,7 @@
     - Support for Evil mode with spartan-evil layer
     - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
     - Tested on Linux, but should work also work fine anywhere for the most part.
-    - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.) Debian 12 emacs comes out of the box with support for these features enabled now.
+    - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.) Debian 12 emacs comes out of the box with support for these features enabled now.
 
 *** LAYERS
 
