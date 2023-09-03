@@ -36,7 +36,7 @@
      git clone https://github.com/a-schaefers/spartan-emacs.git ~/.emacs.d
    #+END_SRC
 
-   There are better ways, probably using symlinks.
+   There are better ways, probably by using symlinks.
 
 *** FEATURES
 
@@ -67,7 +67,7 @@
 The idea here is to provde everywhere the get up and going configuration, this means proper syntax support,
 auto-completion and find definition, etc. via eglot's minimal language server protocol implementation.
 Some of the language modes also include repls. Debugging is provided within many of the languages itself,
-e.g. Python and Ruby have builtin debuggers. With C, one may use M-x ~gdb' with 'gdb', etc.
+e.g. Python and Ruby have builtin debuggers. With C, one may use M-x ~gdb~, etc.
 
 With compiled languages, one might use <f5> and set the compile command to something instead of make if needed, etc.
 
