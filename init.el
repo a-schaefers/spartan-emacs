@@ -1,12 +1,15 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; configuration
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; 1. setup your font and theme(s)
 ;; 2. comment or uncomment desired layers,
 
 ;; font selection and size
 
-(set-face-attribute 'default nil :family "Monospace" :height 120)
+(set-face-attribute 'default nil :family "Hack" :height 120)
 
 ;; themes
 
@@ -54,6 +57,10 @@
                        ;; spartan-rust
                        ;; spartan-terraform
                        ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; main
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; startup
 
