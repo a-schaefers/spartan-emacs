@@ -112,3 +112,40 @@ Normally, we should be able to just pull this repo, restart Emacs and execute M-
     - Language mode specifc binds should be handled by the mode upstream or by the individual user.
 
     - Overrides go in ~.emacs.d/spartan.d/~
+
+***** **On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach**
+
+I am passionate about using good ergonomics to extend the life and health of our fingers and wrists as programmers.
+
+A major contributing factor to RSI is programming is the use of modifiers, which Emacs makes heavy use of by default.
+
+0. Start with a mechanical keyboard.
+
+   For this, I also would recommend a board with cherry blue or gateron blue keys, or perhaps browns. So do a little research.
+
+1. Evil mode
+
+   Evil-mode users avoid much of the issue entirely, though please be careful about twisting your left wrist while pressing the escape key.
+   You may not even notice you are doing this until it is too late.
+
+2. Holy mode (standard Emacs binds)
+
+   - Karate chops
+
+   I recommend here the use of either karate chop control presses via a 60% keyboard, this enables you to keep your wrist straight
+
+   - Swap left Alt with Left Control
+
+   If karate chopping your control keys is not for you, I recommend this keyswap.
+
+   Swapping left alt with left control enables the user to hold the control modifier with the left thumb, and the right alt modifier (in its natural position) with the right thumb.
+   The result of this simple keyswap is that it is now possible to use both modifiers without holding them with the pinky or tweaking the wrists.
+   This keyswap is available in Gnome and accessible with the Gnome-Tweaks tool, and other Desktops have their own methods, too.
+
+3. Try lifting weights
+
+   It's amazing what a little bit of moderate exercise can do for the programmer's RSI. Try some curls and upright rows, military press and lateral pull-downs. 15 minutes a day might be all you need.
+
+4. Diet and sleep
+
+   This goes without saying and is out of scope, but do some research and try some things to improve in these areas -- it should help!
