@@ -107,7 +107,7 @@ Normally, we should be able to just pull this repo, restart Emacs and execute M-
 
     - Default emacs binds (unless you enable evil.)
 
-    - Short M-x aliases and the fuzzy completion from there as needed. See [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds-global.el]].
+    - Short M-x aliases and the fuzzy completion from there as needed. See [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds.el]]
 
     - Also see [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds under the M- prefix.
 
