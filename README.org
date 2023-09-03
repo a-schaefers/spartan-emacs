@@ -56,7 +56,7 @@
 
 **** HOW LAYERS WORK
 
-    - init.el (among other things) auto-generates a default ~/.emacs.d/.spartan-emacs.el
+    - init.el (among other things) auto-generates a default ~/.emacs.d/.spartan.el
 
       This configuration file is not stored in our Git, but you might want to add it in to yours.
 
