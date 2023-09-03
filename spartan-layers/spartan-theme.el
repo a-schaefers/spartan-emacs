@@ -22,25 +22,22 @@
   (let* ((available-width (- (window-width) (length left) 2)))
     (format (format " %%s %%%ds " available-width) left right)))
 
-(setq-default mode-line-format
+(and (bound-and-true-p spartan-minimal-modeline)
+     (progn
+       (setq-default mode-line-format
       '((:eval (simple-mode-line-render
                 ;; left
                 (format-mode-line "%* %b %l")
                 ;; right
-                (format-mode-line "%m")))))
-
-
+                (format-mode-line "%m")))))))
 
 ;; better scratch https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
-  (setq initial-scratch-message ";; This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch")
 
 (defun immortal-scratch ()
   (if (eq (current-buffer) (get-buffer "*scratch*"))
       (progn (bury-buffer)
              nil)
   t))
-
-(add-hook 'kill-buffer-query-functions 'immortal-scratch)
 
 (defun save-persistent-scratch ()
   "Save the contents of *scratch*"
@@ -56,9 +53,12 @@
           (delete-region (point-min) (point-max))
           (insert-file-contents scratch-file)))))
 
-(add-hook 'after-init-hook 'load-persistent-scratch)
-(add-hook 'kill-emacs-hook 'save-persistent-scratch)
-
-(run-with-idle-timer 300 t 'save-persistent-scratch)
+(and (bound-and-true-p spartan-persistent-scratch)
+     (progn
+       (setq initial-scratch-message ";; This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch")
+       (add-hook 'kill-buffer-query-functions 'immortal-scratch)
+       (add-hook 'after-init-hook 'load-persistent-scratch)
+       (add-hook 'kill-emacs-hook 'save-persistent-scratch)
+       (run-with-idle-timer 300 t 'save-persistent-scratch)))
 
 (provide 'spartan-theme)

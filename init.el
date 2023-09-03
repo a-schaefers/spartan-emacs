@@ -18,14 +18,9 @@
     )
   (load-theme spartan-load-theme t))
 
-;; choose ONE
-(setq spartan-load-theme 'github)
-;; (setq spartan-load-theme 'spacemacs-light)
-;; (setq spartan-load-theme 'spacemacs-dark)
-;; (setq spartan-load-theme 'doom-gruvbox)
-;; (setq spartan-load-theme 'doom-gruvbox-light)
-;; (setq spartan-load-theme 'doom-one)
-;; (setq spartan-load-theme 'doom-one-light)
+(setq spartan-load-theme 'github ;; also available e.g. spacemacs-dark, spacemacs-light, doom-*...
+      spartan-persistent-scratch t
+      spartan-minimal-modeline t)
 
 ;; layers
 
