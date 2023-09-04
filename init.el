@@ -109,6 +109,7 @@
                        spartan-c
                        spartan-elisp
                        ;; spartan-go
+                       ;; spartan-haskell
                        ;; spartan-javascript
                        ;; spartan-nix
                        ;; spartan-python
