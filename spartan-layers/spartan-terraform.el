@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; expects: terraform-lsp
+;; expects: terraform-ls
 ;; usage: https://github.com/emacsorphanage/terraform-mode
 
 (use-package terraform-mode
