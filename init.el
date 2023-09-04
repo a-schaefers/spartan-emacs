@@ -56,7 +56,11 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";; Spartan.el Emacs General Settings
+        (insert ";; spartan.el Emacs General Settings
+
+;; Here are the early init settings.
+;; To override various layer settings, place *.el files in ~/.emacs.d/spartan.d
+;; Files in ~/.emacs.d/spartan.d are loaded last.
 
 (setq spartan-evil-or-holy \"holy\" ;; choose holy or evil
       spartan-ido-or-ivy \"ido\"    ;; choose ido or ivy
@@ -73,12 +77,13 @@
     ;; doom-themes
     )
 
-  (setq spartan-load-theme 'github) ;; Load specific theme variant by modifying here
+  (setq spartan-load-theme 'github) ;; load specific theme variant by modifying here
 
   (load-theme spartan-load-theme t))
 
 (setq spartan-layers '(
                        ;; CORE
+
                        spartan-better-defaults
                        spartan-binds
                        spartan-theme
@@ -95,7 +100,8 @@
                        spartan-c
                        spartan-bash
 
-                       ;; EXTRA
+                       ;; EXTRAS
+
                        ;; spartan-clojure
                        ;; spartan-commonlisp
                        ;; spartan-go
