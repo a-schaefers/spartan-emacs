@@ -56,11 +56,12 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";; CONFIG
+        (insert ";; Spartan Options
 
-;; Choose between holy or evil, and ido or ivy
-(setq spartan-evil-or-holy \"holy\"
-      spartan-ido-or-ivy \"ido\")
+(setq spartan-evil-or-holy \"holy\" ;; choose holy or evil
+      spartan-ido-or-ivy \"ido\"    ;; choose ido or ivy
+      spartan-persistent-scratch t  ;; t or nil
+      spartan-minimal-modeline t)   ;; t or nil
 
 ;; Font selection and size
 (set-face-attribute 'default nil :family \"Monospace\" :height 120)
@@ -70,24 +71,18 @@
   (spartan-install-themes
     ;; Add as many themes to install as you'd like here
     github-theme
-    spacemacs-theme
-    doom-themes
+    ;; spacemacs-theme
+    ;; doom-themes
     )
+
+  (setq spartan-load-theme 'github) ;; Load specific theme variant by modifying here
+
   (load-theme spartan-load-theme t))
 
-;; Pick a theme
-(setq spartan-load-theme 'github
-
- ;; Convert *scratch* buffer to persist between sessions, and make it un-killable (killing it drops it to the bottom of the stack.)
- spartan-persistent-scratch t
-
- ;; Use a simple, minimal mode, which only shows modified/unmodified state, the file name, the line number and the Major mode of the buffer.
- spartan-minimal-modeline t)
-
-;; layers
+;; Layers
 
 (setq spartan-layers '(
-                       ;; UI/UX
+                       ;; CORE
                        spartan-better-defaults
                        spartan-binds
                        spartan-theme
@@ -96,17 +91,15 @@
                        spartan-flymake
                        spartan-crux
                        spartan-evil-or-holy
-
-                       ;; IDE-LIKE FEATURES
                        spartan-projectile
                        spartan-magit
                        spartan-eglot
                        spartan-company
-
-                       ;; LANGUAGE SUPPORT
                        spartan-elisp
                        spartan-c
                        spartan-bash
+
+                       ;; EXTRA
                        ;; spartan-clojure
                        ;; spartan-commonlisp
                        ;; spartan-go
