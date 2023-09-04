@@ -94,7 +94,6 @@
                        spartan-dashboard
                        spartan-ido-or-ivy
                        spartan-flymake
-                       spartan-kill-ring
                        spartan-crux
                        spartan-evil-or-holy
 
