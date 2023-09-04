@@ -104,9 +104,11 @@
                        spartan-company
 
                        ;; LANGUAGE SUPPORT
-                       spartan-bash
-                       spartan-c
                        spartan-elisp
+                       spartan-c
+                       spartan-bash
+                       ;; spartan-clojure
+                       ;; spartan-commonlisp
                        ;; spartan-go
                        ;; spartan-haskell
                        ;; spartan-javascript
