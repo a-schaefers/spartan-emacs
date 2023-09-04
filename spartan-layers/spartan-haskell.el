@@ -11,4 +11,4 @@
         (with-eval-after-load 'eglot
           (add-hook 'haskell-mode-hook 'eglot-ensure))))
 
-(provide 'spartan-go)
+(provide 'spartan-haskell)
