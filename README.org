@@ -90,6 +90,7 @@ With compiled languages, one might use M-x cc and set the compile-command to som
     - Javascript / Typescript (lsp)
     - Terraform (lsp)
     - Nix (just the mode)
+    - Haskell (lsp)
 
 *** HOW TO UPDATE
 
