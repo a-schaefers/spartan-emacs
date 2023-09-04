@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (use-package projectile
+  :bind-keymap ("C-c p" . projectile-command-map)
   :straight t
   :demand t
   :config
