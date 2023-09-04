@@ -65,18 +65,18 @@
 ;; Font selection and size
 (set-face-attribute 'default nil :family \"Monospace\" :height 120)
 
-;; Appearance
+;; Install some theme extra theme packs
 (with-eval-after-load 'spartan-theme
   (spartan-install-themes
     ;; Add as many themes to install as you'd like here
     github-theme
-    ;; spacemacs-theme
-    ;; doom-themes
+    spacemacs-theme
+    doom-themes
     )
   (load-theme spartan-load-theme t))
 
-(setq ;; Set the precise theme name / variant to load here
- spartan-load-theme 'github ;;
+;; Pick a theme
+(setq spartan-load-theme 'github
 
  ;; Convert *scratch* buffer to persist between sessions, and make it un-killable (killing it drops it to the bottom of the stack.)
  spartan-persistent-scratch t
