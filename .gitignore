@@ -1,5 +1,9 @@
-spartan.el
-spartan.d
-straight/repos
-straight/build
-straight/build-cache.el
+*
+!init.el
+!straight/versions/*
+!spartan-layers/*
+!.gitignore
+!LICENSE
+!README.org
+!spartan-army-spear-royalty-free-spear.png
+!spartan-theme.png
