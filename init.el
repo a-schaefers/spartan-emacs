@@ -56,17 +56,15 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";; Spartan Options
+        (insert ";; Spartan.el Emacs General Settings
 
 (setq spartan-evil-or-holy \"holy\" ;; choose holy or evil
       spartan-ido-or-ivy \"ido\"    ;; choose ido or ivy
       spartan-persistent-scratch t  ;; t or nil
       spartan-minimal-modeline t)   ;; t or nil
 
-;; Font selection and size
 (set-face-attribute 'default nil :family \"Monospace\" :height 120)
 
-;; Install some theme extra theme packs
 (with-eval-after-load 'spartan-theme
   (spartan-install-themes
     ;; Add as many themes to install as you'd like here
@@ -78,8 +76,6 @@
   (setq spartan-load-theme 'github) ;; Load specific theme variant by modifying here
 
   (load-theme spartan-load-theme t))
-
-;; Layers
 
 (setq spartan-layers '(
                        ;; CORE
