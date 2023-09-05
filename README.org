@@ -1,6 +1,23 @@
 * SPARTAN EMACS
 
-  Finally, a simple base Emacs configuration framework
+Finally, a simple base Emacs configuration framework
+
+** FEATURES
+
+    - KISS, clean configuration and a comprehensible layers system with minimal abstraction, (easy to hack on to make it "yours.")
+    - Uses lightweight, mostly-vanilla configured layer packages
+    - Straight + use-package version version pinning for greater stability
+    - Popular langs come with optional layers that are preconfigured with the best modes, and intelligent LSP auto-completion via company-mode integration and Eglot
+    - Project Awareness is available with Projectile, VC with Magit, Treemacs, etc.
+    - Support between holy or evil mode
+    - Choose between ido or ivy
+    - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
+    - Tested on Linux, but should work also work fine anywhere for the most part.
+    - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
+
+  Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
+  ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
+  additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
   [[spartan-theme.png]]
   [[spartanel_1.png]]
@@ -8,12 +25,6 @@
   [[spartanel_1_dark.png]]
   [[spartanel_2_dark.png]]
   [[spartanel_3_dark.png]]
-
-  A word for beginners:
-
-  Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
-  ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
-  additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
 ** News
 
@@ -44,18 +55,6 @@
      git clone https://github.com/a-schaefers/spartan-emacs.git ~/.emacs.d
    #+END_SRC
 
-*** FEATURES
-
-    - KISS, clean configuration and a comprehensible layers system
-    - Uses lightweight, mostly-vanilla configured layer packages
-    - Straight + use-package version version pinning for greater stability
-    - Popular langs come with optional layers that are preconfigured with the best modes, and intelligent LSP auto-completion via company-mode integration and Eglot
-    - Project Awareness is available with Projectile, VC with Magit
-    - Support for Evil mode with spartan-evil layer
-    - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
-    - Tested on Linux, but should work also work fine anywhere for the most part.
-    - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
-
 *** LAYERS
 
     - Edit ~.emacs.d/spartan.el~ to configure the theme, fonts, and  additional language layers, then restart
@@ -83,17 +82,19 @@ e.g. Python and Ruby have builtin debuggers. With C, one may use ~M-x gdb~, etc.
 
 With compiled languages, one might use M-x cc and set the compile-command to something instead of make if needed, etc.
 
-    - Emacs Lisp (paredit, builtins)
-    - C / C++ (lsp)
-    - Bash  (shellcheck)
-    - Python (lsp)
-    - Ruby (lsp)
-    - Rust (lsp)
-    - Go (lsp)
-    - Javascript / Typescript (lsp)
-    - Terraform (lsp)
-    - Nix (just the mode)
-    - Haskell (lsp)
+- Emacs Lisp (paredit, builtins)
+- Common Lisp (slime)
+- Clojure (lsp)
+- C (lsp)
+- Bash  (shellcheck)
+- Javascript / Typescript (lsp)
+- Python (lsp)
+- Rust (lsp)
+- Haskell (lsp)
+- Go (lsp)
+- Ruby (lsp)
+- Terraform (lsp)
+- Nix (mode)
 
 *** HOW TO UPDATE
 
@@ -101,9 +102,7 @@ Normally, we should be able to just pull this repo, restart Emacs and execute M-
 
     - *git pull*
 
-      Note:
-
-      But if you're upgrading from <3.0 prior versions of spartan-emacs, I'd recommend cloning the project again.
+      Note: ~if you're upgrading from <3.0 prior versions of spartan-emacs, I'd recommend cloning the project again.~
 
     - *M-x straight-thaw-versions*
 
@@ -113,7 +112,13 @@ Normally, we should be able to just pull this repo, restart Emacs and execute M-
 
     - Default emacs binds (unless you enable evil.)
 
-    - Short M-x aliases and the fuzzy completion from there as needed. See [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-binds-global.el][spartan-binds.el]]
+    - Short M-x aliases
+
+      M-x git  (magit)
+      M-x pro  (projectile)
+      M-x sh   (better-shell)
+      M-x lint (flymake)
+      etc...
 
     - Also see [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds under the M- prefix.
 
