@@ -20,11 +20,7 @@ Finally, a simple base Emacs configuration framework
   additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
   [[spartan-theme.png]]
-  [[spartanel_1.png]]
-  [[spartanel_2.png]]
   [[spartanel_1_dark.png]]
-  [[spartanel_2_dark.png]]
-  [[spartanel_3_dark.png]]
 
 ** News
 
