@@ -1,9 +1,12 @@
-*
-!init.el
-!straight/versions/*
-!spartan-layers/*
+/*
 !.gitignore
+!init.el
+!/spartan-layers
 !LICENSE
 !README.org
 !spartan-army-spear-royalty-free-spear.png
 !spartan-theme.png
+
+!/straight
+/straight/*
+!/straight/versions

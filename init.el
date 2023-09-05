@@ -108,6 +108,7 @@
                        spartan-flymake
                        spartan-crux
                        spartan-evil-or-holy
+                       spartan-treemacs
                        spartan-projectile
                        spartan-magit
                        spartan-eglot
