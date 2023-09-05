@@ -3,6 +3,8 @@
   Finally, a simple base Emacs configuration framework
 
   [[spartan-theme.png]]
+  [[spartanel_1.png]]
+  [[spartanel_2.png]]
 
   A word for beginners:
 
