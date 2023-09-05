@@ -77,4 +77,19 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
+(global-set-key (kbd "C-c i") #'(lambda ()
+                                  (interactive)
+                                  (find-file spartan-config)))
+
+;; TAB is indent or auto completion
+(setq tab-always-indent 'complete)
+
+;; Use a customizeable alias for make etc.
+(setq compile-command "make -k ")
+(defalias 'cc 'compile)
+
+;; UNBIND ANNOYANCES
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+
 (provide 'spartan-better-defaults)

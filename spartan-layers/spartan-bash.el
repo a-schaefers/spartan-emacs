@@ -15,7 +15,9 @@
   :straight t
   :demand t
   :config
-  (shx-global-mode 1))
+  (shx-global-mode 1)
+
+  (defalias 'sh 'better-shell-for-current-dir))
 
 
 

@@ -8,6 +8,8 @@
 
   (unless (or (fboundp 'helm-mode)
               (fboundp 'ivy-mode))
-    (setq magit-completing-read-function 'magit-ido-completing-read)))
+    (setq magit-completing-read-function 'magit-ido-completing-read))
+
+  (defalias 'git 'magit))
 
 (provide 'spartan-magit)

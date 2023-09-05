@@ -33,7 +33,9 @@
 (use-package browse-kill-ring
   :if (string-match-p spartan-ido-or-ivy "ido")
   :straight t
-  :demand t)
+  :demand t
+  :config
+  (global-set-key (kbd "M-y") 'browse-kill-ring))
 
 (use-package ivy
   :if (string-match-p spartan-ido-or-ivy "ivy")
@@ -50,11 +52,10 @@
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
   (global-set-key "\C-s" 'swiper)
+  (global-set-key "\C-r" 'swiper-backward)
   (global-set-key (kbd "M-y") 'counsel-yank-pop)
   (global-set-key (kbd "C-c C-r") 'ivy-resume)
-  (global-set-key (kbd "<f6>") 'ivy-resume)
   (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file))
 
 (provide 'spartan-ido-or-ivy)

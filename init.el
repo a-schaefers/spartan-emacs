@@ -30,7 +30,7 @@
 
 (straight-use-package 'use-package)
 
-;; Performance
+;; performance
 
 ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
 (setq gc-cons-threshold 100000000
@@ -56,18 +56,18 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";; spartan.el Emacs General Settings
+        (insert ";; Spartan.el Emacs General Settings
 
-;; Here are the early init settings.
-;; To override various layer settings, place *.el files in ~/.emacs.d/spartan.d
-;; Files in ~/.emacs.d/spartan.d are loaded last.
-
-(setq spartan-evil-or-holy \"holy\" ;; choose holy or evil
-      spartan-ido-or-ivy \"ido\"    ;; choose ido or ivy
+(setq spartan-evil-or-holy \"holy\"   ;; choose holy or evil
+      spartan-ido-or-ivy \"ivy\"      ;; choose ido or ivy
       spartan-persistent-scratch t  ;; t or nil
       spartan-minimal-modeline t)   ;; t or nil
 
+;; Font settings
+
 (set-face-attribute 'default nil :family \"Monospace\" :height 120)
+
+;; Theme customization settings
 
 (with-eval-after-load 'spartan-theme
   (spartan-install-themes
@@ -77,15 +77,31 @@
     ;; doom-themes
     )
 
-  (setq spartan-load-theme 'github) ;; load specific theme variant by modifying here
+  ;; Load specific theme variant by modifying here
+  (setq spartan-load-theme 'github)
 
   (load-theme spartan-load-theme t))
 
+;; Dashboard customization settings
+
+(setq dashboard-startup-banner (concat user-emacs-directory \"spartan-army-spear-royalty-free-spear.png\"))
+(setq dashboard-center-content t)
+(setq dashboard-banner-logo-title \"Spartan Emacs\")
+(and (file-exists-p spartan-first-time-run-has-completed)
+     (setq dashboard-footer-messages '(\"Vincit qui se vincit.\")))
+
+(setq dashboard-items '((recents  . 5)
+                        ;; (bookmarks . 5)
+                        ;; (projects . 5)
+                        ;; (agenda . 5)
+                        ;; (registers . 5)
+                        ))
+
+;; Layers
+
 (setq spartan-layers '(
                        ;; CORE
-
                        spartan-better-defaults
-                       spartan-binds
                        spartan-theme
                        spartan-dashboard
                        spartan-ido-or-ivy
@@ -100,8 +116,7 @@
                        spartan-c
                        spartan-bash
 
-                       ;; EXTRAS
-
+                       ;; EXTRA
                        ;; spartan-clojure
                        ;; spartan-commonlisp
                        ;; spartan-go
@@ -115,7 +130,15 @@
                        ))
 "))))
 
+(setq spartan-first-time-run-has-completed (concat user-emacs-directory ".spartan-first-time-run-has-completed"))
+
 (load-file spartan-config)
+
+(or (file-exists-p spartan-first-time-run-has-completed)
+    (progn
+      ;; This code here executes only on the first-time startup of Spartan Emacs
+      (setq dashboard-footer-messages '("Tip: Use 'C-c i' to view settings pertaining to Spartan Emacs configuration"))
+      (with-temp-file spartan-first-time-run-has-completed (insert "Hello"))))
 
 ;; spartan-layers
 
