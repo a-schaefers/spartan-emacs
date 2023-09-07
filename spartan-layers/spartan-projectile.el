@@ -13,7 +13,7 @@
           (mapcar #'file-name-as-directory (magit-list-repos)))
     (projectile-save-known-projects))
 
-  (defalias 'pro 'projectile-commander)
+  (defalias 'pro 'projectile-switch-project)
   (defalias 'grep 'projectile-grep)
   (defalias 'find 'projectile-find-file))
 
