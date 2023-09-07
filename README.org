@@ -10,7 +10,7 @@ Finally, a simple base Emacs configuration framework
 - Popular langs come with optional layers that are preconfigured with the best modes, eglot LSP, and company mode
 - Project Awareness is available with Projectile, VC with Magit, Treemacs, etc.
 - Choose between holy or evil mode
-- Choose between ido or ivy
+- Vertico minibuffer completion
 - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
 - Tested on Linux, but should work also work fine anywhere for the most part.
 - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)

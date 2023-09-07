@@ -59,7 +59,6 @@
         (insert ";; Spartan.el Emacs General Settings
 
 (setq spartan-evil-or-holy \"holy\"   ;; choose holy or evil
-      spartan-ido-or-ivy \"ivy\"      ;; choose ido or ivy
       spartan-persistent-scratch t  ;; t or nil
       spartan-minimal-modeline t)   ;; t or nil
 
@@ -105,13 +104,12 @@
                        spartan-better-defaults
                        spartan-theme
                        spartan-dashboard
-                       spartan-ido-or-ivy
+                       spartan-vertico
                        spartan-flymake
                        spartan-crux
                        spartan-evil-or-holy
-                       spartan-treemacs
-                       spartan-projectile
                        spartan-magit
+                       spartan-projectile
                        spartan-eglot
                        spartan-company
                        spartan-elisp
