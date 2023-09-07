@@ -8,7 +8,7 @@ Finally, a simple base Emacs configuration framework
 - Uses lightweight, mostly-vanilla configured layer packages
 - Straight + use-package version version pinning for greater stability
 - Popular langs come with optional layers that are preconfigured with the best modes, eglot LSP, and company mode
-- Project Awareness is available with Projectile, VC with Magit, Treemacs, etc.
+- Project Awareness is available with Projectile, VC with Magit, etc.
 - Choose between holy or evil mode
 - Vertico minibuffer completion
 - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
