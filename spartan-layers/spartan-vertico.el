@@ -1,9 +1,15 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; Really good minibuffer completion, with ido-like extension
 (use-package vertico
-  :straight t
+  :straight (:files (:defaults "extensions/*"))
+  :bind ( :map vertico-map
+          ("RET" . vertico-directory-enter)
+          ("DEL" . vertico-directory-delete-char)
+          ("M-DEL" . vertico-directory-delete-word))
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)
   :init
-  (vertico-mode))
+  (vertico-mode 1))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
