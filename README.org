@@ -4,16 +4,16 @@ Finally, a simple base Emacs configuration framework
 
 ** FEATURES
 
-    - KISS, clean configuration and a comprehensible layers system with minimal abstraction, (easy to hack on to make it "yours.")
-    - Uses lightweight, mostly-vanilla configured layer packages
-    - Straight + use-package version version pinning for greater stability
-    - Popular langs come with optional layers that are preconfigured with the best modes, eglot LSP, and company mode
-    - Project Awareness is available with Projectile, VC with Magit, Treemacs, etc.
-    - Choose between holy or evil mode
-    - Choose between ido or ivy
-    - Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
-    - Tested on Linux, but should work also work fine anywhere for the most part.
-    - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
+- KISS, clean configuration and a comprehensible layers system with minimal abstraction, (easy to hack on to make it "yours.")
+- Uses lightweight, mostly-vanilla configured layer packages
+- Straight + use-package version version pinning for greater stability
+- Popular langs come with optional layers that are preconfigured with the best modes, eglot LSP, and company mode
+- Project Awareness is available with Projectile, VC with Magit, Treemacs, etc.
+- Choose between holy or evil mode
+- Choose between ido or ivy
+- Load time with all layers enabled is around 2 seconds  without resorting to use-package deferrals, pdumper or hacks.
+- Tested on Linux, but should work also work fine anywhere for the most part.
+- Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
 
   Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
   ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
@@ -25,9 +25,9 @@ Finally, a simple base Emacs configuration framework
 
 *** QUICK INSTALL
 
-   #+BEGIN_SRC bash
-     git clone https://github.com/a-schaefers/spartan-emacs.git ~/.emacs.d
-   #+END_SRC
+#+BEGIN_SRC bash
+  git clone https://github.com/a-schaefers/spartan-emacs.git ~/.emacs.d
+#+END_SRC
 
 *** HOW TO UPDATE
 
@@ -41,7 +41,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 *** LAYERS
 
-    - Edit ~.emacs.d/spartan.el~ to configure the theme, fonts, and  additional language layers, then restart
+- Edit ~.emacs.d/spartan.el~ to configure the theme, fonts, and  additional language layers, then restart
 
 **** HOW LAYERS WORK
 
