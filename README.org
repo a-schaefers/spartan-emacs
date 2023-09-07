@@ -31,13 +31,13 @@ Finally, a simple base Emacs configuration framework
 
 *** HOW TO UPDATE
 
-Normally, we should be able to just pull this repo, restart Emacs and execute M-x ~straight-thaw-versions~
+Layers use pinned packages via Straight.el and are periodically updated.
 
-- *git pull*
+1. *git pull*
 
-- *Restart Emacs*
+2. *M-x straight-thaw-versions*
 
-- *M-x straight-thaw-versions*
+3. *Restart Emacs*
 
 *** LAYERS
 
