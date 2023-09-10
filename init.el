@@ -30,6 +30,8 @@
 
 (straight-use-package 'use-package)
 
+(setq use-package-compute-statistics t)
+
 ;; performance
 
 ;; https://emacs-lsp.github.io/lsp-mode/page/performance/

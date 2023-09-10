@@ -3,12 +3,12 @@
 (use-package yasnippet
   :straight t
   :defer t
-  :init (yas-global-mode 1))
+  :hook (prog-mode-hook . yas-minor-mode))
 
 (use-package eglot
   :after yasnippet
-  :defer t
   :straight t
+  :defer t
   :config
   (define-key eglot-mode-map (kbd "M-m dd") 'eldoc)
   (define-key eglot-mode-map (kbd "M-m ,") 'eglot-rename)

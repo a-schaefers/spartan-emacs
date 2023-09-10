@@ -9,10 +9,12 @@
   :init
   (custom-set-variables
    '(terraform-indent-level 2))
+
+  (when (executable-find "terraform-ls")
+    (add-hook 'terraform-mode-hook 'eglot-ensure))
+  :config
   (require 'eglot)
   (add-to-list 'eglot-server-programs
-                   `(terraform-mode . ("terraform-ls" "serve")))
-  (when (executable-find "terraform-ls")
-    (add-hook 'terraform-mode-hook 'eglot-ensure)))
+                   `(terraform-mode . ("terraform-ls" "serve"))))
 
 (provide 'spartan-terraform)
