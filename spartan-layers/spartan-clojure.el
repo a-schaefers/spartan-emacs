@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; requires spartan-elisp
+
 (use-package clojure-mode
   :straight t
   :demand t

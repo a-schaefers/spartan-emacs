@@ -60,11 +60,13 @@
 
 (setq spartan-evil-or-holy \"holy\"   ;; choose holy or evil
       spartan-persistent-scratch t  ;; t or nil
-      spartan-minimal-modeline t)   ;; t or nil
+      spartan-minimal-modeline t    ;; t or nil
+      spartan-preferred-shell \"bash\" ;; must be available on PATH
+      )
 
 ;; Font settings
 
-(set-face-attribute 'default nil :family \"Monospace\" :height 120)
+(set-face-attribute 'default nil :family \"Monospace\" :height 130)
 
 ;; Theme customization settings
 
@@ -78,9 +80,7 @@
     )
 
   ;; Load specific theme variant by modifying here
-  (setq spartan-load-theme 'github)
-
-  (load-theme spartan-load-theme t))
+  (load-theme 'github t))
 
 ;; Dashboard customization settings
 
@@ -112,13 +112,12 @@
                        spartan-projectile
                        spartan-eglot
                        spartan-company
-                       spartan-elisp
-                       spartan-c
-                       spartan-bash
 
-                       ;; EXTRA
-                       ;; spartan-clojure
-                       ;; spartan-commonlisp
+                       ;; LANGS
+                       ;; spartan-elisp ; recommended
+                       ;; spartan-c
+                       ;; spartan-clojure    ; requires spartan-elisp
+                       ;; spartan-commonlisp ; requires spartan-elisp
                        ;; spartan-go
                        ;; spartan-haskell
                        ;; spartan-javascript
@@ -126,6 +125,7 @@
                        ;; spartan-python
                        ;; spartan-ruby
                        ;; spartan-rust
+                       ;; spartan-shell ; recommended
                        ;; spartan-terraform
                        ))
 "))))

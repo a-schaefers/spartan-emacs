@@ -32,7 +32,6 @@
  ("project" . "02a6ac42721125b6afc42da699df8a8fc2b6bf22")
  ("projectile" . "971cd5c4f25ff1f84ab7e8337ffc7f89f67a1b52")
  ("rust-mode" . "9c26dc1195ec05309ee15c014631fb9abd6cf5d2")
- ("shx-for-emacs" . "b99d16f36bc278d668d8428c4bc9af77064c336a")
  ("slime" . "1e4b7417a1ade842ba4938f66445af68a93176b9")
  ("straight.el" . "ff63b154bef1ef8d92c141bd189001bff74f6982")
  ("terraform-mode" . "25a22a66f81e35c75f2fdaaab89aad7f9940fe06")

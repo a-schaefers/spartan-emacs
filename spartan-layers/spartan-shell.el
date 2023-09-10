@@ -5,37 +5,25 @@
 
 ;; If you really need ncurses, you're probably doing it wrong.
 
-(use-package shx
-  :straight t
-  :demand t
-  :config
-  (shx-global-mode 1))
+(setq explicit-shell-file-name spartan-preferred-shell)
 
+;; This little extension, is just so handy, with this enabled, now anytime you switch to a new file or dired location via C-xC-f,
+;; after that, you just need to hit 'M-x sh' again and you'll get shell mode switched in to the right directory,
+;; without requiring you to close and reopen other shell modes.
 (use-package better-shell
   :straight t
   :demand t
   :config
-  (shx-global-mode 1)
-
   (defalias 'sh 'better-shell-for-current-dir))
 
-
-
-;; bash everywhere because this is __GNU__ Emacs after all...
-(setq tramp-default-remote-shell "/bin/bash"
-      explicit-shell-file-name "bash")
-
-;; sh/bash linter
-(or
- ;; prefer shellcheck
- (when (executable-find "shellcheck")
-   (use-package flymake-shellcheck
+;; flymake addon to support shellcheck for linting
+(use-package flymake-shellcheck
+     :if (executable-find "shellcheck")
      :straight t
      :demand t
      :config
-     (shx-global-mode 1)
      (setq flymake-shellcheck-use-file nil)
-     (add-hook 'sh-mode-hook 'flymake-shellcheck-load))))
+     (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
 ;; auto chmod +x scripts
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
@@ -48,4 +36,4 @@
 (setq comint-move-point-for-output nil
       comint-scroll-show-maximum-output nil)
 
-(provide 'spartan-bash)
+(provide 'spartan-shell)

@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; requires spartan-elisp
+
 (use-package slime
   :straight t
   :demand t
