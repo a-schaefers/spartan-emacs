@@ -88,6 +88,9 @@
 (setq compile-command "make -k ")
 (defalias 'cc 'compile)
 
+;; scrolling line by line
+(setq scroll-conservatively most-positive-fixnum)
+
 ;; UNBIND ANNOYANCES
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))

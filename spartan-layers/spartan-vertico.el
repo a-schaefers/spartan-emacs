@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;; Really good minibuffer completion, with ido-like extension
+
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :bind ( :map vertico-map
@@ -18,6 +19,7 @@
   (savehist-mode 1))
 
 ;; A few more useful configurations...
+
 (use-package emacs
   :straight t
   :init
@@ -37,22 +39,9 @@
         '(read-only t cursor-intangible t face minibuffer-prompt))
   (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
 
-  ;; Emacs 28: Hide commands in M-x which do not work in the current mode.
-  ;; Vertico commands are hidden in normal buffers.
-  ;; (setq read-extended-command-predicate
-  ;;       #'command-completion-default-include-p)
-
   ;; Enable recursive minibuffers
   (setq enable-recursive-minibuffers t))
 
-;; (use-package browse-kill-ring
-;;   ;; :if (string-match-p spartan-ido-or-ivy "ido")
-;;   :straight t
-;;   :demand t
-;;   :config
-;;   (global-set-key (kbd "M-y") 'browse-kill-ring))
-
-;; Optionally use the `orderless' completion style.
 (use-package orderless
   :straight t
   :init
