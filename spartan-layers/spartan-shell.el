@@ -12,8 +12,7 @@
 ;; without requiring you to close and reopen other shell modes.
 (use-package better-shell
   :straight t
-  :defer t
-  :init
+  :config
   (defalias 'sh 'better-shell-for-current-dir))
 
 ;; flymake addon to support shellcheck for linting
