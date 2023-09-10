@@ -6,9 +6,10 @@ Finally, a simple base Emacs configuration framework
 
 - KISS, clean configuration and a comprehensible layers system with minimal abstraction, (easy to hack on to make it "yours.")
 - Uses lightweight, mostly-vanilla configured layer packages
-- Straight + use-package version version pinning for greater stability
-- Popular langs come with optional layers that are preconfigured with the best modes, eglot LSP, and company mode
-- Project Awareness is available with Projectile, VC with Magit, etc.
+- Straight + use-package version version pinning for greater stability (pins are updated here approximately once a month.)
+- Popular langs come with optional layers that are preconfigured with eglot LSP and company mode
+- Project Awareness is available with Projectile, and Magit
+- Everything is deferred as much as is reasonable, for <1 second initial load times with all layers enabled
 - Choose between holy or evil mode
 - Vertico minibuffer completion
 - Tested on Linux, but should work also work fine anywhere for the most part.
@@ -19,8 +20,6 @@ Finally, a simple base Emacs configuration framework
   additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
   [[spartan-theme.png]]
-
-  [[spartanel_1_dark.png]]
 
 *** QUICK INSTALL
 
@@ -44,7 +43,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 **** HOW LAYERS WORK
 
-1. init.el (among other things) auto-generates a default ~/.emacs.d/.spartan.el
+1. init.el (among other things) auto-generates a default ~/.emacs.d/spartan.el
 
    This configuration file is not stored in our Git, but you might want to add it in to yours.
 
@@ -58,17 +57,17 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
-The idea here is to provde everywhere the get up and going configuration, this means proper syntax support,
+The idea here is to provide everywhere the get up and going configuration, this means proper syntax support,
 auto-completion and find definition, etc. via eglot's minimal language server protocol implementation.
-Some of the language modes also include repls. Debugging is provided within many of the languages itself,
+Some of the language modes also include repls. Debugging is provided within many of the languages themselves,
 e.g. Python and Ruby have builtin debuggers. With C, one may use ~M-x gdb~, etc.
 
 With compiled languages, one might use M-x cc and set the compile-command to something instead of make if needed, etc.
 
 - Emacs Lisp (paredit, builtins)
-- Common Lisp (slime)
-- Clojure (lsp)
-- C (lsp)
+- Common Lisp (paredit, slime)
+- Clojure (paredit, lsp)
+- C (linux kernel coding standards, lsp)
 - Bash  (shellcheck)
 - Javascript / Typescript (lsp)
 - Python (lsp)
