@@ -86,14 +86,14 @@ With compiled languages, one might use M-x cc and set the compile-command to som
 
 - Short M-x aliases
 
-  M-x git  (magit)
-  M-x pro  (projectile)
-  M-x grep (projectile-grep)
-  M-x find (projectile-find-file)
-  M-x sh   (better-shell)
-  M-x lint (flymake)
-  M-x cc   (compile-command)
-  etc...
+  - M-x git  (magit)
+  - M-x pro  (projectile)
+  - M-x grep (projectile-grep)
+  - M-x find (projectile-find-file)
+  - M-x sh   (better-shell)
+  - M-x lint (flymake)
+  - M-x cc   (compile-command)
+  - etc...
 
 - Also see [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds under the M- prefix.
 
