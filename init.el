@@ -66,7 +66,7 @@
 
 ;; Font settings
 
-(set-face-attribute 'default nil :family \"Monospace\" :height 130)
+(set-face-attribute 'default nil :family \"Monospace\" :height 120)
 
 ;; Theme customization settings
 
