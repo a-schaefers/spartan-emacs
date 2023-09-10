@@ -4,8 +4,7 @@
 
 (setq package-enable-at-startup nil
       load-prefer-newer t
-      inhibit-startup-screen t
-      initial-major-mode 'emacs-lisp-mode)
+      inhibit-startup-screen t)
 
 (add-hook 'after-init-hook #'(lambda ()
                                (interactive)
@@ -65,6 +64,8 @@
       spartan-minimal-modeline t    ; t or nil
       spartan-preferred-shell \"bash\" ; must be available on PATH
       magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
+      initial-major-mode 'fundamental-mode
+      initial-scratch-message \"This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch\"
       )
 
 ;; Font settings
