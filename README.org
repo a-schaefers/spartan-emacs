@@ -87,9 +87,7 @@ With compiled languages, one might use M-x cc and set the compile-command to som
 - Short M-x aliases
 
   - M-x git  (magit)
-  - M-x pro  (projectile)
-  - M-x grep (projectile-grep)
-  - M-x find (projectile-find-file)
+  - M-x pro  (projectile-commander)
   - M-x sh   (better-shell)
   - M-x lint (flymake)
   - M-x cc   (compile-command)

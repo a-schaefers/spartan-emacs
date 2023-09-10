@@ -2,8 +2,8 @@
 
 (use-package flymake
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
 
   (defun spartan-lint ()

@@ -58,15 +58,16 @@
       (with-temp-file spartan-config
         (insert ";; Spartan.el Emacs General Settings
 
-(setq spartan-evil-or-holy \"holy\"   ;; choose holy or evil
-      spartan-persistent-scratch t  ;; t or nil
-      spartan-minimal-modeline t    ;; t or nil
-      spartan-preferred-shell \"bash\" ;; must be available on PATH
+(setq spartan-evil-or-holy \"holy\"   ; choose holy or evil
+      spartan-persistent-scratch t  ; t or nil
+      spartan-minimal-modeline t    ; t or nil
+      spartan-preferred-shell \"bash\" ; must be available on PATH
+      magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
       )
 
 ;; Font settings
 
-(set-face-attribute 'default nil :family \"Monospace\" :height 120)
+(set-face-attribute 'default nil :family \"Monospace\" :height 130)
 
 ;; Theme customization settings
 

@@ -7,7 +7,7 @@
       (declare (indent defun))
       (macroexp-progn
        (mapcar (lambda (package)
-                 `(use-package ,package :straight t :demand))
+                 `(use-package ,package :straight t :defer t))
                packages)))
 
 ;; remove hostname from the GUI titlebar

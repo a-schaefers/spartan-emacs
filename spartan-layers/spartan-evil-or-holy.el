@@ -3,8 +3,8 @@
 (use-package evil
   :if (string-match-p spartan-evil-or-holy "evil")
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (evil-mode 1))
 
 (provide 'spartan-evil-or-holy)

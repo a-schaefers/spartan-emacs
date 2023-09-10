@@ -2,8 +2,8 @@
 
 (use-package crux
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
   (global-set-key (kbd "C-o") 'crux-smart-open-line)
   (global-set-key (kbd "C-c C-l") 'crux-duplicate-current-line-or-region)

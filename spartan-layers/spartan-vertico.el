@@ -9,12 +9,14 @@
           ("DEL" . vertico-directory-delete-char)
           ("M-DEL" . vertico-directory-delete-word))
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)
+  :defer t
   :init
   (vertico-mode 1))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :straight t
+  :defer t
   :init
   (savehist-mode 1))
 
@@ -44,6 +46,7 @@
 
 (use-package orderless
   :straight t
+  :defer t
   :init
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)

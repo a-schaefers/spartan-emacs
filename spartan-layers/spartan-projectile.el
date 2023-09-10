@@ -1,9 +1,10 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (use-package projectile
-  :bind-keymap ("C-c p" . projectile-command-map)
   :straight t
-  :demand t
+  :defer t
+  :init
+  (defalias 'pro 'projectile-commander)
   :config
   (projectile-mode 1)
 
@@ -11,10 +12,6 @@
     ;; https://emacs.stackexchange.com/questions/32634/how-can-the-list-of-projects-used-by-projectile-be-manually-updated
     (mapc #'projectile-add-known-project
           (mapcar #'file-name-as-directory (magit-list-repos)))
-    (projectile-save-known-projects))
-
-  (defalias 'pro 'projectile-switch-project)
-  (defalias 'grep 'projectile-grep)
-  (defalias 'find 'projectile-find-file))
+    (projectile-save-known-projects)))
 
 (provide 'spartan-projectile)

@@ -2,8 +2,8 @@
 
 (use-package dashboard
   :straight t
-  :ensure t
-  :config
+  :defer t
+  :init
   (dashboard-setup-startup-hook))
 
 (provide 'spartan-dashboard)

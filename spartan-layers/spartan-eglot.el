@@ -2,14 +2,13 @@
 
 (use-package yasnippet
   :straight t
-  :demand t
-  :config
-  (yas-global-mode 1))
+  :defer t
+  :init (yas-global-mode 1))
 
 (use-package eglot
   :after yasnippet
+  :defer t
   :straight t
-  :demand t
   :config
   (define-key eglot-mode-map (kbd "M-m dd") 'eldoc)
   (define-key eglot-mode-map (kbd "M-m ,") 'eglot-rename)
