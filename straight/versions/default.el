@@ -8,7 +8,6 @@
  ("eglot" . "08e75eaeea09a2a390c8949829f7562ddb484739")
  ("el-get" . "e1a3e59d800984ed7ef10469232b59b60244ae90")
  ("eldoc" . "a2aaed2b7c70c1f28dd212fe2f4304ce89c338d7")
- ("emacs" . "8e73c675816faadcf4d052b1ba09dc1b00aa1509")
  ("emacs-dashboard" . "0cae7b872552c73da2ff61de6623b8c3196f1937")
  ("emacsmirror-mirror" . "09c5d38f75ccad8150cb4681d6e3fa6143238e49")
  ("evil" . "d6d2e5d2b170eb0ab3bec488868702009a0ee3b6")
