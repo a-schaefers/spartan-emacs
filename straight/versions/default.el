@@ -3,7 +3,6 @@
  ("clojure-mode" . "81b67ecd3aab13b35f76772a1021d5638d6bb148")
  ("company-mode" . "7c24dc8668af5aea8a5d07aeceda5fac7a2a85b5")
  ("compat" . "9428a64eb8a579f35d57bc4d4cdb6c5cf10806c1")
- ("consult" . "0923786304d1dc51c5ae92d27a85c6d8383fbc3d")
  ("crux" . "f8789f67a9d2e1eb31a0e4531aec9bb6d6ec1282")
  ("dash.el" . "6db80c711ce947f6c6fa11e5c2257fff2c79d139")
  ("eglot" . "08e75eaeea09a2a390c8949829f7562ddb484739")
