@@ -13,7 +13,6 @@
                                 (setq indent-tabs-mode t)))
 
 (when (executable-find "clangd")
-  (with-eval-after-load 'eglot
-    (add-hook 'c-mode-hook 'eglot-ensure)))
+  (add-hook 'c-mode-hook 'eglot-ensure))
 
 (provide 'spartan-c)

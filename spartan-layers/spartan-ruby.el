@@ -5,7 +5,9 @@
 
 (use-package inf-ruby
   :straight t
-  :demand t)
+  :defer t
+  :init
+  (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode))
 
 (add-hook 'ruby-mode-hook (lambda ()
                                 ;; Thx https://github.com/bbatsov/prelude
@@ -19,7 +21,6 @@
                                 (subword-mode +1)))
 
 (when (executable-find "solargraph")
-        (with-eval-after-load 'eglot
-          (add-hook 'ruby-mode-hook 'eglot-ensure)))
+  (add-hook 'ruby-mode-hook 'eglot-ensure))
 
 (provide 'spartan-ruby)

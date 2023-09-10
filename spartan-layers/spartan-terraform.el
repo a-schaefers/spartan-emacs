@@ -5,15 +5,14 @@
 
 (use-package terraform-mode
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (custom-set-variables
    '(terraform-indent-level 2))
-  (with-eval-after-load 'eglot
-      (add-to-list 'eglot-server-programs
-                   `(terraform-mode . ("terraform-ls" "serve"))))
+  (require 'eglot)
+  (add-to-list 'eglot-server-programs
+                   `(terraform-mode . ("terraform-ls" "serve")))
   (when (executable-find "terraform-ls")
-        (with-eval-after-load 'eglot
-          (add-hook 'terraform-mode-hook 'eglot-ensure))))
+    (add-hook 'terraform-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-terraform)

@@ -4,8 +4,8 @@
 
 (use-package slime
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
 
   (with-eval-after-load 'spartan-elisp
     (add-hook 'lisp-mode-hook             #'enable-paredit-mode)

@@ -4,8 +4,8 @@
 
 (use-package nix-mode
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode)))
 
 (provide 'spartan-nix)

@@ -8,7 +8,6 @@
                                 (setq-local tab-width 4)))
 
 (when (executable-find "pyls")
-  (require 'eglot)
   (add-hook 'python-mode-hook 'eglot-ensure))
 
 (provide 'spartan-python)

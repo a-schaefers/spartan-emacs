@@ -12,16 +12,16 @@
 ;; without requiring you to close and reopen other shell modes.
 (use-package better-shell
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (defalias 'sh 'better-shell-for-current-dir))
 
 ;; flymake addon to support shellcheck for linting
 (use-package flymake-shellcheck
      :if (executable-find "shellcheck")
      :straight t
-     :demand t
-     :config
+     :defer t
+     :init
      (setq flymake-shellcheck-use-file nil)
      (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 

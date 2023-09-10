@@ -5,10 +5,9 @@
 
 (use-package rust-mode
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (when (executable-find "rust-analyzer")
-        (with-eval-after-load 'eglot
-          (add-hook 'rust-mode-hook 'eglot-ensure))))
+    (add-hook 'rust-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-rust)

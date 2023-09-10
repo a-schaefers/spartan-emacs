@@ -4,18 +4,17 @@
 
 (use-package clojure-mode
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
 
   (with-eval-after-load 'spartan-elisp
     (add-hook 'clojure-mode-hook          #'enable-paredit-mode))
 
-  (with-eval-after-load 'eglot
-      (add-to-list 'eglot-server-programs
-                   `(clojure-mode . ("clojure-lsp"))))
+  (require 'eglot)
+  (add-to-list 'eglot-server-programs
+                   `(clojure-mode . ("clojure-lsp")))
 
   (when (executable-find "clojure-lsp")
-    (with-eval-after-load 'eglot
-      (add-hook 'clojure-mode-hook 'eglot-ensure))))
+    (add-hook 'clojure-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-clojure)

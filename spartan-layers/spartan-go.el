@@ -5,10 +5,9 @@
 
 (use-package go-mode
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (when (executable-find "gopls")
-        (with-eval-after-load 'eglot
-          (add-hook 'go-mode-hook 'eglot-ensure))))
+    (add-hook 'go-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-go)

@@ -5,10 +5,9 @@
 
 (use-package haskell-mode
   :straight t
-  :demand t
-  :config
+  :defer t
+  :init
   (when (executable-find "hls")
-        (with-eval-after-load 'eglot
-          (add-hook 'haskell-mode-hook 'eglot-ensure))))
+    (add-hook 'haskell-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-haskell)
