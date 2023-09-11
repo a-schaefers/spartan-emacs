@@ -2,6 +2,13 @@
 
 Finally, a simple base Emacs configuration framework
 
+*** Breaking Changes Sun 10 Sep 2023 02:17:06 PM MDT
+
+I released quite a few breaking changes over the past few days. I should be done doing that, now. If having an issue, git pull, and then rm -f ~/.emacs.d/spartan.el to regenerate your config file.
+
+Sorry!
+
+
 ** FEATURES
 
 - KISS, clean configuration and a comprehensible layers system with minimal abstraction, (easy to hack on to make it "yours.")
@@ -135,9 +142,3 @@ A major contributing factor to RSI is programming is the use of modifiers, which
 4. Diet and sleep
 
    This goes without saying and is out of scope, but do some research and try some things to improve in these areas -- it should help!
-
-*** Breaking Changes Sun 10 Sep 2023 02:17:06 PM MDT
-
-I released quite a few breaking changes over the past few days. I should be done doing that, now. If having an issue, git pull, and then rm -f ~/.emacs.d/spartan.el to regenerate your config file.
-
-Sorry!
