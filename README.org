@@ -67,18 +67,18 @@ With compiled languages, one might use M-x cc and set the compile-command to som
 To enable LSP for a language layer that supports it, note the external package you will need from below,
 
 - Emacs Lisp (n/a)
-- Common Lisp (slime is included)
+- Common Lisp (n/a)
 - Clojure (clojure-lsp)
 - C (clang and clangd)
 - Bash  (shellcheck)
 - Javascript / Typescript (typescript-language-server)
 - Python (pyls)
-- Rust (lsp)
+- Rust (rust-analyzer)
 - Haskell (hls)
 - Go (gopls)
 - Ruby (solargraph)
 - Terraform (terraform-ls)
-- Nix (not implemented yet, PR accepted if someone wants to try out https://github.com/nix-community/nixd/ and report back)
+- Nix (n/a)
 
 *** BINDS
 
