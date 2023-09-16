@@ -64,19 +64,21 @@ e.g. Python and Ruby have builtin debuggers. With C, one may use ~M-x gdb~, etc.
 
 With compiled languages, one might use M-x cc and set the compile-command to something instead of make if needed, etc.
 
-- Emacs Lisp (paredit, builtins)
-- Common Lisp (paredit, slime)
-- Clojure (paredit, lsp)
-- C (linux kernel coding standards, lsp)
+To enable LSP for a language layer that supports it, note the external package you will need from below,
+
+- Emacs Lisp (n/a)
+- Common Lisp (slime is included)
+- Clojure (clojure-lsp)
+- C (clang and clangd)
 - Bash  (shellcheck)
-- Javascript / Typescript (lsp)
-- Python (lsp)
+- Javascript / Typescript (typescript-language-server)
+- Python (pyls)
 - Rust (lsp)
-- Haskell (lsp)
-- Go (lsp)
-- Ruby (lsp)
-- Terraform (lsp)
-- Nix (mode)
+- Haskell (hls)
+- Go (gopls)
+- Ruby (solargraph)
+- Terraform (terraform-ls)
+- Nix (not implemented yet, PR accepted if someone wants to try out https://github.com/nix-community/nixd/ and report back)
 
 *** BINDS
 
