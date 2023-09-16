@@ -106,64 +106,65 @@ I recommend this because it's fun and educational, and it'll keep you rolling on
 even when your distro isn't.
 
 #+BEGIN_SRC bash
-# First determine your gcc version with gcc --version, then modify libgccjit-12-dev below to the major version number you have
-sudo apt install \
-build-essential \
-autoconf \
-libgtk-3-dev \
-libgnutls28-dev \
-libtiff5-dev \
-libgif-dev \
-librsvg2-dev \
-libjpeg-dev \
-libwebp-dev \
-libxml2-dev \
-libpng-dev \
-libxpm-dev \
-libncurses-dev \
-texinfo \
-libjansson4 \
-libjansson-dev \
-libgccjit0 \
-libgccjit-12-dev \
-libtree-sitter-dev
+  # First determine your gcc version with gcc --version,
+  # then modify libgccjit-12-dev below to the major version number you have...
+  sudo apt install \
+  build-essential \
+  autoconf \
+  libgtk-3-dev \
+  libgnutls28-dev \
+  libtiff5-dev \
+  libgif-dev \
+  librsvg2-dev \
+  libjpeg-dev \
+  libwebp-dev \
+  libxml2-dev \
+  libpng-dev \
+  libxpm-dev \
+  libncurses-dev \
+  texinfo \
+  libjansson4 \
+  libjansson-dev \
+  libgccjit0 \
+  libgccjit-12-dev \
+  libtree-sitter-dev
 
-# Clone repo, checkout relevant branch at time of this writing
-git clone git://git.sv.gnu.org/emacs.git
-git checkout emacs-29
-cd emacs
+  # Clone repo, checkout relevant branch at time of this writing
+  git clone git://git.sv.gnu.org/emacs.git
+  git checkout emacs-29
+  cd emacs
 
-# Generate makefile
-./autogen.sh
+  # Generate makefile
+  ./autogen.sh
 
-# set your c compiler to again be the major version of gcc on your system
-export CC=/usr/bin/gcc-12 CXX=/usr/bin/gcc-12
+  # set your c compiler to again be the major version of gcc on your system
+  export CC=/usr/bin/gcc-12 CXX=/usr/bin/gcc-12
 
-# configure with the flags you want to build with
-./configure --with-native-compilation \
---with-json \
---with-pgtk \
---with-rsvg \
---with-gnutls \
---without-xwidgets \
---without-xaw3d \
---with-mailutils \
---with-tree-sitter
+  # configure with the flags you want to build with
+  ./configure --with-native-compilation \
+  --with-json \
+  --with-pgtk \
+  --with-rsvg \
+  --with-gnutls \
+  --without-xwidgets \
+  --without-xaw3d \
+  --with-mailutils \
+  --with-tree-sitter
 
-# compile it
-make -j"$(nproc)"
+  # compile it
+  make -j"$(nproc)"
 
-# start emacs (test)
-./src/emacs
+  # start emacs (test)
+  ./src/emacs
 
-# From here, one could add a bash alias to the compiled executable in the HOME directory, e.g.
-# alias emacs=~/repos/emacs/src/emacs
-# OR, one could opt to just install it...
-# sudo make install   # to clobber it all of your system
-# sudo make uninstall # should do a decent cleanup job
-# to update, it might be necessary to clean it before pulling the repo and running through the entire process again
-# make clean
-# git clean -fdx
+  # From here, one could add a bash alias to the compiled executable in the HOME directory, e.g.
+  # alias emacs=~/repos/emacs/src/emacs
+  # OR, one could opt to just install it...
+  # sudo make install   # to clobber it all of your system
+  # sudo make uninstall # should do a decent cleanup job
+  # to update, it might be necessary to clean it before pulling the repo and running through the entire process again
+  # make clean
+  # git clean -fdx
 #+END_SRC
 
 ***** /On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach/
