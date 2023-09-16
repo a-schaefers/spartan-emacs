@@ -105,7 +105,7 @@ If you're on ubuntu or debian, this should compile Emacs 29 with native compile 
 I recommend this because it's fun and educational, and it'll keep you rolling on the recent Emacs releases,
 even when your distro isn't.
 
-```bash
+```
 # First determine your gcc version with gcc --version, then modify libgccjit-12-dev below to the major version number you have
 sudo apt install \
 build-essential \
