@@ -95,4 +95,8 @@
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
+;; nicer scrolling
+(when (>=  emacs-major-version 29)
+  (pixel-scroll-precision-mode 1))
+
 (provide 'spartan-better-defaults)
