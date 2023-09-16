@@ -160,8 +160,8 @@ even when your distro isn't.
   # From here, one could add a bash alias to the compiled executable in the HOME directory, e.g.
   # alias emacs=~/repos/emacs/src/emacs
   # OR, one could opt to just install it...
-  # sudo make install   # to clobber it all of your system
-  # sudo make uninstall # should do a decent cleanup job
+  # sudo make install   # to clobber it all over your system
+  # sudo make uninstall # should do a decent enough cleanup job
   # to update, it might be necessary to clean it before pulling the repo and running through the entire process again
   # make clean
   # git clean -fdx
