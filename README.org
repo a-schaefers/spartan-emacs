@@ -72,7 +72,7 @@ To enable LSP for a language layer that supports it, note the external package y
 - C (clang and clangd)
 - Bash  (shellcheck)
 - Javascript / Typescript (typescript-language-server)
-- Python (pyls)
+- Python (pylsp)
 - Rust (rust-analyzer)
 - Haskell (hls)
 - Go (gopls)
