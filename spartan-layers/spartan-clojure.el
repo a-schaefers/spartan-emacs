@@ -7,9 +7,6 @@
   :defer t
   :init
 
-  (with-eval-after-load 'spartan-elisp
-    (add-hook 'clojure-mode-hook          #'enable-paredit-mode))
-
   (when (executable-find "clojure-lsp")
     (add-hook 'clojure-mode-hook 'eglot-ensure))
 

@@ -118,7 +118,7 @@
                        spartan-company
 
                        ;; LANGS
-                       ;; spartan-elisp ; recommended
+                       ;; spartan-paredit ; recommended
                        ;; spartan-c
                        ;; spartan-clojure    ; requires spartan-elisp
                        ;; spartan-commonlisp ; requires spartan-elisp
