@@ -16,6 +16,21 @@
   :config
   (require 'eglot)
   (add-to-list 'eglot-server-programs
-                   `(clojure-mode . ("clojure-lsp"))))
+                   `(clojure-mode . ("clojure-lsp")))
+  (with-eval-after-load 'eglot
+    (setq eglot-connect-timeout 60)))
+
+(use-package cider
+  :straight t
+  :defer t
+  :init
+  ;; https://manueluberti.eu/2023/03/25/clojure-lsp.html
+  (setq-default cider-eldoc-display-for-symbol-at-point nil)
+
+  (defun mu-cider-disable-eldoc ()
+    "Let LSP handle ElDoc instead of CIDER."
+    (remove-hook 'eldoc-documentation-functions #'cider-eldoc t))
+
+  (add-hook 'cider-mode-hook #'mu-cider-disable-eldoc))
 
 (provide 'spartan-clojure)
