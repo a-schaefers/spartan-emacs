@@ -116,20 +116,22 @@
                        spartan-projectile
                        spartan-eglot
                        spartan-company
+                       spartan-shell
 
                        ;; LANGS
-                       ;; spartan-paredit ; recommended
+
                        ;; spartan-c
-                       ;; spartan-clojure    ; requires spartan-elisp
-                       ;; spartan-commonlisp ; requires spartan-elisp
+                       ;; spartan-clojure
+                       ;; spartan-commonlisp
                        ;; spartan-go
                        ;; spartan-haskell
                        ;; spartan-javascript
                        ;; spartan-nix
+                       ;; spartan-paredit ; recommended for schemes and lisps
                        ;; spartan-python
+                       ;; spartan-racket
                        ;; spartan-ruby
                        ;; spartan-rust
-                       ;; spartan-shell ; recommended
                        ;; spartan-terraform
                        ))
 "))))
