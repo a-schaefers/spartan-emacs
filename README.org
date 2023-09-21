@@ -68,6 +68,8 @@ To enable LSP for a language layer that supports it, note the external package y
 
 - Emacs Lisp (n/a)
 - Common Lisp (n/a)
+- Schemes (n/a)
+- Racket (racket-langserver) Note: ~M-x eglot~ manually or use ~(setq spartan-racket-langserver t)~ for autostarting eglot
 - Clojure (clojure-lsp)
 - C (clang and clangd)
 - Bash  (shellcheck)
