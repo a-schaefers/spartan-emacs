@@ -21,6 +21,7 @@
   (with-eval-after-load 'clojure-mode
     (add-hook 'clojure-mode-hook          #'enable-paredit-mode))
 
+  ;; racket
   (with-eval-after-load 'racket-mode
     (add-hook 'racket-mode-hook          #'enable-paredit-mode)))
 
