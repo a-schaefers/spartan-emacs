@@ -6,6 +6,9 @@
   :straight t
   :defer t
   :init
-  (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode)))
+  (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
+  :config
+  (when (executable-find "rnix-lsp")
+    (add-hook 'forth-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-nix)
