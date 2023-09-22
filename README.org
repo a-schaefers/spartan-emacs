@@ -77,6 +77,7 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 - Forth (forth-lsp)
 - Go (gopls)
 - Haskell (hls)
+- HTML / CSS (vscode-html-language-server, vscode-css-language-server)
 - Javascript / Typescript (typescript-language-server)
 - Lua (lua-language-server)
 - Nix (rnix-lsp)

@@ -127,6 +127,7 @@
                        ;; spartan-forth
                        ;; spartan-go
                        ;; spartan-haskell
+                       ;; spartan-html-css
                        ;; spartan-javascript
                        ;; spartan-lua
                        ;; spartan-nix
