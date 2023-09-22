@@ -8,6 +8,8 @@
   :defer t
   :init
   (when (executable-find "gopls")
-    (add-hook 'go-mode-hook 'eglot-ensure)))
+    (add-hook 'go-mode-hook 'eglot-ensure)
+    (add-hook 'go-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-go)

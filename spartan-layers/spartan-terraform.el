@@ -11,7 +11,9 @@
    '(terraform-indent-level 2))
 
   (when (executable-find "terraform-ls")
-    (add-hook 'terraform-mode-hook 'eglot-ensure))
+    (add-hook 'terraform-mode-hook 'eglot-ensure)
+    (add-hook 'terraform-ts-mode-hook 'eglot-ensure) ; for the future
+    )
   :config
   (require 'eglot)
   (add-to-list 'eglot-server-programs

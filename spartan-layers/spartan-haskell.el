@@ -8,6 +8,8 @@
   :defer t
   :init
   (when (executable-find "hls")
-    (add-hook 'haskell-mode-hook 'eglot-ensure)))
+    (add-hook 'haskell-mode-hook 'eglot-ensure)
+    (add-hook 'haskell-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-haskell)

@@ -7,6 +7,8 @@
 ;; hmm no quick way shown to detect path of this one https://github.com/jeapostrophe/racket-langserver
 ;; add to spartan.el (setq spartan-racket-langserver t)
 (when (bound-and-true-p spartan-racket-langserver)
-  (add-hook 'racket-mode-hook 'eglot-ensure))
+  (add-hook 'racket-mode-hook 'eglot-ensure)
+  (add-hook 'racket-ts-mode-hook 'eglot-ensure) ; for the future
+  )
 
 (provide 'spartan-racket)

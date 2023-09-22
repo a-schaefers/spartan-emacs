@@ -14,6 +14,10 @@
     (require 'eglot)
     (add-to-list 'eglot-server-programs
                  `(lua-mode . ("lua-language-server")))
-    (add-hook 'lua-mode-hook 'eglot-ensure)))
+    (add-to-list 'eglot-server-programs
+                 `(lua-ts-mode . ("lua-language-server"))) ; for the future
+    (add-hook 'lua-mode-hook 'eglot-ensure)
+    (add-hook 'lua-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-lua)

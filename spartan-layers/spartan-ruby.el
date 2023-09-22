@@ -20,7 +20,20 @@
                                 ;; CamelCase aware editing operations
                                 (subword-mode +1)))
 
+(add-hook 'ruby-ts-mode-hook (lambda ()
+                                ;; Thx https://github.com/bbatsov/prelude
+                                ;; We never want to edit Rubinius bytecode
+                                (add-to-list 'completion-ignored-extensions ".rbc")
+                                ;; Don't auto-insert encoding comments
+                                ;; Those are almost never needed in Ruby 2+
+                                (setq ruby-insert-encoding-ma gic-comment nil)
+                                (inf-ruby-minor-mode +1)
+                                ;; CamelCase aware editing operations
+                                (subword-mode +1)))
+
 (when (executable-find "solargraph")
-  (add-hook 'ruby-mode-hook 'eglot-ensure))
+  (add-hook 'ruby-mode-hook 'eglot-ensure)
+  (add-hook 'ruby-ts-mode-hook 'eglot-ensure)
+  )
 
 (provide 'spartan-ruby)

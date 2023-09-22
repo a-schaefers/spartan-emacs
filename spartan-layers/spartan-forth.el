@@ -10,6 +10,8 @@
     (require 'eglot)
     (add-to-list 'eglot-server-programs
                  `(forth-mode . ("forth-lsp")))
-    (add-hook 'forth-mode-hook 'eglot-ensure)))
+    (add-hook 'forth-mode-hook 'eglot-ensure)
+    (add-hook 'forth-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-forth)

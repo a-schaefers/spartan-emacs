@@ -3,15 +3,18 @@
 ;; expects: typescript-language-server
 ;; usage: https://www.emacswiki.org/emacs/JavaScriptMode
 
-;; Lesser versions not even worth using Emacs with javascript I won't support it
-(or (version< emacs-version "27")
-    (progn
+(progn
       (when (executable-find "typescript-language-server")
-        (add-hook 'js-mode-hook 'eglot-ensure))
+        (add-hook 'js-mode-hook 'eglot-ensure)
+        (add-hook 'typescript-ts-mode-hook 'eglot-ensure)
+        (add-hook 'js-ts-mode-hook 'eglot-ensure))
 
-      (add-to-list 'auto-mode-alist '("\\.ts$"  . js-mode))
-      (add-to-list 'auto-mode-alist '("\\.tsx$" . js-mode))
-      (add-to-list 'auto-mode-alist '("\\.js$"  . js-mode))
-      (add-to-list 'auto-mode-alist '("\\.jsx$" . js-mode))))
+      (if (bound-and-true-p treesit-auto-recipe-list)
+          (progn
+            (add-to-list 'auto-mode-alist '("\\.ts$"  . typescript-ts-mode))
+            (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-ts-mode)))
+        (progn
+          (add-to-list 'auto-mode-alist '("\\.ts$"  . js-mode))
+          (add-to-list 'auto-mode-alist '("\\.tsx$" . js-mode)))))
 
 (provide 'spartan-javascript)

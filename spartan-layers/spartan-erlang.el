@@ -7,6 +7,8 @@
   :defer t
   :config
   (when (executable-find "elixir_ls")
-    (add-hook 'elixir-mode-hook 'eglot-ensure)))
+    (add-hook 'erlang-mode-hook 'eglot-ensure)
+    (add-hook 'erlang-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-erlang)

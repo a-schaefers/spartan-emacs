@@ -8,6 +8,8 @@
                                 (setq-local tab-width 4)))
 
 (when (executable-find "pylsp")
-  (add-hook 'python-mode-hook 'eglot-ensure))
+  (add-hook 'python-mode-hook 'eglot-ensure)
+  (add-hook 'python-ts-mode-hook 'eglot-ensure)
+  )
 
 (provide 'spartan-python)

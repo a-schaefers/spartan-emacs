@@ -12,7 +12,11 @@
 (add-hook 'c-mode-hook (lambda ()
                                 (setq indent-tabs-mode t)))
 
+(add-hook 'c-ts-mode-hook (lambda ()
+                                (setq indent-tabs-mode t)))
+
 (when (executable-find "clangd")
-  (add-hook 'c-mode-hook 'eglot-ensure))
+  (add-hook 'c-mode-hook 'eglot-ensure)
+  (add-hook 'c-ts-mode-hook 'eglot-ensure))
 
 (provide 'spartan-c)

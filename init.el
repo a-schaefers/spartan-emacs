@@ -116,6 +116,7 @@
                        spartan-eglot
                        spartan-company
                        spartan-shell
+                       ;; spartan-treesitter ; recommended IF first 'apt install libtree-sitter-dev' and emacs 29 is compiled --with-tree-sitter support
 
                        ;; LANGS
 

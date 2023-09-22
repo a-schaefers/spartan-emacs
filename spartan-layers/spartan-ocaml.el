@@ -7,6 +7,8 @@
   :defer t
   :config
   (when (executable-find "ocaml-lsp")
-    (add-hook 'ocaml-mode-hook 'eglot-ensure)))
+    (add-hook 'tuareg-mode-hook 'eglot-ensure)
+    (add-hook 'tuareg-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-ocaml)

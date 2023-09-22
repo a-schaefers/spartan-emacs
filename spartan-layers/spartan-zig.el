@@ -7,6 +7,8 @@
   :defer t
   :config
   (when (executable-find "zls")
-    (add-hook 'zig-mode-hook 'eglot-ensure)))
+    (add-hook 'zig-mode-hook 'eglot-ensure)
+    (add-hook 'zig-ts-mode-hook 'eglot-ensure) ; for the future
+    ))
 
 (provide 'spartan-zig)
