@@ -126,6 +126,7 @@
                        ;; spartan-go
                        ;; spartan-haskell
                        ;; spartan-javascript
+                       ;; spartan-lua
                        ;; spartan-nix
                        ;; spartan-paredit ; recommended for schemes and lisps
                        ;; spartan-python
