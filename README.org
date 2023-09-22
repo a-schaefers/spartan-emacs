@@ -64,13 +64,16 @@ e.g. Python has pdb. With C, one may use ~M-x gdb~, etc.
 
 With compiled languages, one might use M-x cc and set the compile-command to something instead of make if needed, etc.
 
-To enable LSP for a language layer that supports it, note the external package you will need from below,
+To enable LSP for a language layer that supports it, note the external package you will need from below.
+If the LSP executable is on your PATH and the language layer is active, then ~eglot~ is going to automatically initialize it.
 
-- Emacs Lisp (n/a)
-- Common Lisp (n/a)
-- Schemes (n/a)
+- Emacs Lisp (lsp is n/a, paredit, ielm)
+- Common Lisp (n/a, use slime)
+- Schemes (n/a, paredit)
 - Racket (racket-langserver) Note: ~M-x eglot~ manually or use ~(setq spartan-racket-langserver t)~ for autostarting eglot
-- Clojure (n/a)
+- Clojure (n/a clojure-lsp was freezing up Emacs in testing, but cider is there.)
+- Forth (forth-lsp)
+- Lua (lua-language-server)
 - C (clang and clangd)
 - Bash  (shellcheck)
 - Javascript / Typescript (typescript-language-server)
@@ -80,7 +83,7 @@ To enable LSP for a language layer that supports it, note the external package y
 - Go (gopls)
 - Ruby (solargraph)
 - Terraform (terraform-ls)
-- Nix (n/a)
+- Nix (rnix-lsp)
 
 *** BINDS
 
