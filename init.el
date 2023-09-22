@@ -65,8 +65,7 @@
       spartan-preferred-shell \"bash\" ; must be available on PATH
       magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
       initial-major-mode 'fundamental-mode
-      initial-scratch-message \"This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch\"
-      )
+      initial-scratch-message \"This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch\")
 
 ;; Font settings
 
