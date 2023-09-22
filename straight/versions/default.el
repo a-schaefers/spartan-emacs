@@ -49,6 +49,7 @@
  ("straight.el" . "9b11112b2e7aedd994feb2d8f95bd66dbc5749a5")
  ("terraform-mode" . "25a22a66f81e35c75f2fdaaab89aad7f9940fe06")
  ("transient" . "04f87b4ab3c7448a78f452cadaaf5d9e7a216d1d")
+ ("treesit-auto" . "bac3b9d1d61a4d759f87c80de7be3b808d19cbf6")
  ("tuareg" . "301c80b48919614c2b2220c27a4002477e55f016")
  ("use-package" . "a6e856418d2ebd053b34e0ab2fda328abeba731c")
  ("vertico" . "81bec39151f0a2fc6cad541f2290b4ab6282e6e2")
