@@ -10,6 +10,7 @@
  ("el-get" . "05bb836e3dfac8ffe4b8a10ec332aa2f661523ce")
  ("eldoc" . "04bf5cd7dd85511a89b02bdb9658a9d4556d4c62")
  ("emacs-dashboard" . "346a7517c08e0657657917e6fff6cbf33cc531ae")
+ ("emacs-elixir" . "00d6580a040a750e019218f9392cf9a4c2dac23a")
  ("emacs-reformatter" . "6c4f35dd2b4658140513db978b3b237c45bcad19")
  ("emacsmirror-mirror" . "f872ac8a235d4344c3b2498de505fce00991764b")
  ("evil" . "d28206ccff74bc07ba335b8ff77805564f6928d7")
