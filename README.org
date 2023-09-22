@@ -183,8 +183,6 @@ even when your distro isn't.
 
 ***** /On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach/
 
-*Not
-
 I am passionate about using good ergonomics to extend the life and health of our fingers and wrists as programmers.
 
 A major contributing factor to RSI is programming is the use of modifiers, which Emacs makes heavy use of by default.
