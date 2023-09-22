@@ -72,6 +72,7 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 - Clojure (n/a clojure-lsp was freezing up Emacs in testing, but cider is there.)
 - Common Lisp (n/a, use slime)
 - Elixir (elixir-ls)
+- Erlang (erlang_ls)
 - Emacs Lisp (lsp is n/a, paredit, ielm)
 - Forth (forth-lsp)
 - Go (gopls)

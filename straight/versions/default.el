@@ -33,6 +33,7 @@
  ("nix-mode" . "719feb7868fb567ecfe5578f6119892c771ac5e5")
  ("nongnu-elpa" . "7be7879e3ea01401ff51a515da882e79148392ea")
  ("orderless" . "d6b402a89e234d0e6166247ed6025f9acc8b4d9a")
+ ("otp" . "61dc52c9227ff31a91ff14cef61107925015ceda")
  ("paredit" . "9a2c4b37fc8c1c7bdbb1f86fdec874c0d0652e64")
  ("parseclj" . "74ff7d63fed92a3c859e474ae85f011e794b751a")
  ("parseedn" . "5772dc9cb5e0ba6e8fe0b25f0897582b5348b5b5")

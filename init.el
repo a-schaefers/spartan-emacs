@@ -123,6 +123,7 @@
                        ;; spartan-clojure
                        ;; spartan-commonlisp
                        ;; spartan-elixir
+                       ;; spartan-erlang
                        ;; spartan-forth
                        ;; spartan-go
                        ;; spartan-haskell
