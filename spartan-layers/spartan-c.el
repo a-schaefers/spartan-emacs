@@ -19,4 +19,6 @@
   (add-hook 'c-mode-hook 'eglot-ensure)
   (add-hook 'c-ts-mode-hook 'eglot-ensure))
 
+;; note, if hitting strange error asking for cpp treesitter, open a new foo.cpp file to resolve. meh
+
 (provide 'spartan-c)
