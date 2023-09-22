@@ -14,7 +14,7 @@ Finally, a simple base Emacs configuration framework
 - Vertico minibuffer completion
 - Tested on Linux, but should work also work fine anywhere for the most part.
 - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
-- Automatic *Treesitter* (optional.) All you need is libtree-sitter-dev and emacs 29 compiled --with-tree-sitter support
+- *Treesitter* [optional] support. All you need is libtree-sitter-dev and emacs 29 compiled --with-tree-sitter support
 
   Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
   ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
