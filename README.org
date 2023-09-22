@@ -84,6 +84,7 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 - Ruby (solargraph)
 - Terraform (terraform-ls)
 - Nix (rnix-lsp)
+- Ocaml (ocaml-lsp)
 
 *** BINDS
 

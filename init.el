@@ -128,12 +128,14 @@
                        ;; spartan-javascript
                        ;; spartan-lua
                        ;; spartan-nix
+                       ;; spartan-ocaml
                        ;; spartan-paredit ; recommended for schemes and lisps
                        ;; spartan-python
                        ;; spartan-racket
                        ;; spartan-ruby
                        ;; spartan-rust
                        ;; spartan-terraform
+                       ;; spartan-zig
                        ))
 "))))
 
