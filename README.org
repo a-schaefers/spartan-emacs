@@ -82,7 +82,7 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 - Lua (lua-language-server)
 - Nix (rnix-lsp)
 - Ocaml (ocaml-lsp)
-- Php (Note: ~M-x eglot~ manually or use ~(setq spartan-php-langserver t)~ for autostarting eglot)
+- Php (php-language-server) Note: ~M-x eglot~ manually or use ~(setq spartan-php-langserver t)~ for autostarting eglot
 - Python (pylsp)
 - Racket (racket-langserver) Note: ~M-x eglot~ manually or use ~(setq spartan-racket-langserver t)~ for autostarting eglot
 - Ruby (solargraph)
