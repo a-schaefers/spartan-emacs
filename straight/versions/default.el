@@ -37,6 +37,7 @@
  ("paredit" . "9a2c4b37fc8c1c7bdbb1f86fdec874c0d0652e64")
  ("parseclj" . "74ff7d63fed92a3c859e474ae85f011e794b751a")
  ("parseedn" . "5772dc9cb5e0ba6e8fe0b25f0897582b5348b5b5")
+ ("php-mode" . "8500ecd2c4079404d0672254e974e1df240452ac")
  ("project" . "ce140cdb70138a4938c999d4606a52dbeced4676")
  ("projectile" . "4247ac77173b6f92f28af04f5a72ff68de19f057")
  ("queue" . "7ab8f23e770f64f6bd28a44c46c8becfc1af03d8")

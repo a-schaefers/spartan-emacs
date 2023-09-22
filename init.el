@@ -133,6 +133,7 @@
                        ;; spartan-nix
                        ;; spartan-ocaml
                        ;; spartan-paredit ; recommended for schemes and lisps
+                       ;; spartan-php
                        ;; spartan-python
                        ;; spartan-racket
                        ;; spartan-ruby
