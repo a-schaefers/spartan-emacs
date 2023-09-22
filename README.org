@@ -70,11 +70,11 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 
 - Bash  (shellcheck)
 - C (clang and clangd)
-- Clojure (n/a clojure-lsp was freezing up Emacs in testing, but cider is there.)
-- Common Lisp (n/a, use slime)
+- Clojure (n/a cider)
+- Common Lisp (n/a)
 - Elixir (elixir-ls)
 - Erlang (erlang_ls)
-- Emacs Lisp (lsp is n/a, paredit, ielm)
+- Emacs Lisp (n/a)
 - Forth (forth-lsp)
 - Go (gopls)
 - Haskell (hls)
@@ -83,14 +83,16 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 - Lua (lua-language-server)
 - Nix (rnix-lsp)
 - Ocaml (ocaml-lsp)
-- Php (php-language-server) Note: ~M-x eglot~ manually or use ~(setq spartan-php-langserver t)~ for autostarting eglot
+- Php (php-language-server) Note: ~M-x eglot~ manually or use ~(setq spartan-php-langserver t)~ for auto-starting eglot
 - Python (pylsp)
-- Racket (racket-langserver) Note: ~M-x eglot~ manually or use ~(setq spartan-racket-langserver t)~ for autostarting eglot
+- Racket (racket-langserver) Note: ~M-x eglot~ manually or use ~(setq spartan-racket-langserver t)~ for auto-starting eglot
 - Ruby (solargraph)
 - Rust (rust-analyzer)
-- Schemes (n/a, paredit)
+- Schemes (n/a)
 - Terraform (terraform-ls)
 - Zig (zls)
+
+Note: There is a spartan-paredit layer which will optionally activate for all of the schemes and lisps.
 
 *** BINDS
 
@@ -181,6 +183,8 @@ even when your distro isn't.
 
 ***** /On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach/
 
+*Not
+
 I am passionate about using good ergonomics to extend the life and health of our fingers and wrists as programmers.
 
 A major contributing factor to RSI is programming is the use of modifiers, which Emacs makes heavy use of by default.
@@ -191,8 +195,10 @@ A major contributing factor to RSI is programming is the use of modifiers, which
 
 1. Evil mode
 
-   Evil-mode users avoid much of the issue entirely, though please be careful about twisting your left wrist while pressing the escape key.
-   You may not even notice you are doing this until it is too late.
+   Evil-mode users avoid much of the issue entirely, things to be aware of:
+   - twisting your left wrist while pressing the escape key.
+   - the famous caps escape swap, this can be damaging to the left pinky finger.
+   - overuse with hjkl, when you should be using more 'w''e' and 'b', '/' etc.
 
 2. Holy mode (standard Emacs binds)
 
@@ -217,3 +223,8 @@ A major contributing factor to RSI is programming is the use of modifiers, which
 4. Diet and sleep
 
    This goes without saying and is out of scope, but do some research and try some things to improve in these areas -- it should help!
+
+****** Disclaimer
+   Please consult your physician for personalized medical advice.
+   Always seek the advice of a physician or other qualified healthcare provider with any questions regarding a medical condition.
+   Never disregard or delay seeking professional medical advice or treatment because of something you have read here.
