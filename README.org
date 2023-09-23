@@ -14,6 +14,7 @@ Finally, a simple base Emacs configuration framework
 - Vertico minibuffer completion
 - Tested on Linux, but should work also work fine anywhere for the most part.
 - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
+- Sat 23 Sep 2023 01:49:46 PM MDT - I have an eye towards tree-sitter, but have found setup and configuration incredibly complicated, and especially resulting in an inconsistent experience around something so basic as indentation, so we can wait a while longer for things to standardize and settle down before moving in that direction.
 
   Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
   ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
@@ -177,42 +178,3 @@ even when your distro isn't.
   # make clean
   # git clean -fdx
 #+END_SRC
-
-***** /On Ergonomics and the dreaded "Emacs Pinky" -- A wholistic approach/
-
-I am passionate about using good ergonomics to extend the life and health of our fingers and wrists as programmers.
-
-A major contributing factor to RSI is programming is the use of modifiers, which Emacs makes heavy use of by default.
-
-0. Start with a mechanical keyboard.
-
-   For this, I also would recommend a board with cherry blue or gateron blue keys, or perhaps browns. So do a little research.
-
-1. Evil mode
-
-   Evil-mode users avoid much of the issue entirely, though please be careful about twisting your left wrist while pressing the escape key.
-   You may not even notice you are doing this until it is too late.
-
-2. Holy mode (standard Emacs binds)
-
-   Karate chops.
-
-   I recommend here the use of karate chop control presses via a 60% keyboard, this enables you to keep your wrist straight while using modifiers.
-
-   *OR*
-
-   Swap left Alt with left Control.
-
-   If karate chopping your control keys is not for you, I recommend this keyswap instead.
-
-   Swapping left alt with left control enables the user to hold the control modifier with the left thumb, and the right alt modifier (in its natural position) with the right thumb.
-   The result of this simple keyswap is that it is now possible to use both modifiers without holding them with the pinky or tweaking the wrists.
-   This keyswap is available in Gnome and accessible with the Gnome-Tweaks tool, and other Desktops have their own methods, too.
-
-3. Try lifting weights
-
-   It's amazing what a little bit of moderate exercise can do for the programmer's RSI. Try some curls and upright rows, military press and lateral pull-downs. 15 minutes a day might be all you need.
-
-4. Diet and sleep
-
-   This goes without saying and is out of scope, but do some research and try some things to improve in these areas -- it should help!
