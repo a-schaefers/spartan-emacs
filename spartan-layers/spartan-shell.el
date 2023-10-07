@@ -37,4 +37,8 @@
 (setq comint-move-point-for-output nil
       comint-scroll-show-maximum-output nil)
 
+;; Always use a login shell if bash, which it should be!
+;; (setq explicit-shell-file-name "/bin/bash")
+(setq explicit-bash-args '("--noediting" "-i" "-l"))
+
 (provide 'spartan-shell)
