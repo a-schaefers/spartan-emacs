@@ -7,7 +7,8 @@
   :straight t
   :defer t
   :init
-  (when (executable-find "hls")
-    (add-hook 'haskell-mode-hook 'eglot-ensure)))
+  (when (executable-find "haskell-language-server-wrapper")
+    (add-hook 'haskell-mode-hook 'eglot-ensure))
+  )
 
 (provide 'spartan-haskell)
