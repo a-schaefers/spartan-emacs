@@ -1,9 +1,11 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; expects: typescript-language-server
-;; usage: https://www.emacswiki.org/emacs/JavaScriptMode
+(when (executable-find "vscode-html-language-server")
+    (add-hook 'html-mode-hook 'eglot-ensure))
 
-;; Lesser versions not even worth using Emacs with javascript I won't support it
+(when (executable-find "vscode-css-language-server")
+    (add-hook 'css-mode-hook 'eglot-ensure))
+
 (or (version< emacs-version "27")
     (progn
       (when (executable-find "typescript-language-server")
@@ -14,4 +16,4 @@
       (add-to-list 'auto-mode-alist '("\\.js$"  . js-mode))
       (add-to-list 'auto-mode-alist '("\\.jsx$" . js-mode))))
 
-(provide 'spartan-javascript)
+(provide 'spartan-html-css-javascript)

@@ -9,6 +9,6 @@
   (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
   :config
   (when (executable-find "rnix-lsp")
-    (add-hook 'forth-mode-hook 'eglot-ensure)))
+    (add-hook 'nix-mode-hook 'eglot-ensure)))
 
 (provide 'spartan-nix)

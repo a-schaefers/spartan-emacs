@@ -77,19 +77,36 @@
   (spartan-install-themes
     ;; Add as many themes to install as you'd like here
     github-theme
-    ;; dracula-theme
-    ;; spacemacs-theme
-    ;; doom-themes
+    dracula-theme
+    spacemacs-theme
+    doom-themes
     )
 
   ;; Load specific theme variant by modifying here
-  (load-theme 'github t))
+  (load-theme 'spacemacs-dark t))
+
+;; Transparency
+;; (set-frame-parameter nil 'alpha-background 75) ; This frame
+;; (add-to-list 'default-frame-alist '(alpha-background . 75)) ; New frames
 
 ;; Dashboard customization settings
 
-(setq dashboard-startup-banner (concat user-emacs-directory \"spartan-army-spear-royalty-free-spear.png\"))
+(setq dashboard-startup-banner 'ascii)
+(setq dashboard-banner-ascii \"
+
+   ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████  ▄████████    ▄████████
+  ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███ ███    ███   ███    ███
+  ███    █▀  ███   ███   ███   ███    ███ ███    █▀    ███    █▀
+ ▄███▄▄▄     ███   ███   ███   ███    ███ ███          ███
+▀▀███▀▀▀     ███   ███   ███ ▀███████████ ███        ▀███████████
+  ███    █▄  ███   ███   ███   ███    ███ ███    █▄           ███
+  ███    ███ ███   ███   ███   ███    ███ ███    ███    ▄█    ███
+  ██████████  ▀█   ███   █▀    ███    █▀  ████████▀   ▄████████▀
+
+
+\")
 (setq dashboard-center-content t)
-(setq dashboard-banner-logo-title \"Spartan Emacs\")
+(setq dashboard-banner-logo-title \"Spartan edition\")
 (and (file-exists-p spartan-first-time-run-has-completed)
      (setq dashboard-footer-messages '(\"Vincit qui se vincit.\")))
 
@@ -103,7 +120,6 @@
 ;; Layers
 
 (setq spartan-layers '(
-                       ;; CORE
                        spartan-better-defaults
                        spartan-theme
                        spartan-dashboard
@@ -116,31 +132,13 @@
                        spartan-eglot
                        spartan-company
                        spartan-shell
-
-                       ;; LANGS
-
-                       ;; spartan-c
-                       ;; spartan-clojure
-                       ;; spartan-commonlisp
-                       ;; spartan-elixir
-                       ;; spartan-erlang
-                       ;; spartan-forth
-                       ;; spartan-go
-                       ;; spartan-haskell
-                       ;; spartan-html-css
-                       ;; spartan-javascript
-                       ;; spartan-lua
-                       ;; spartan-nix
-                       ;; spartan-ocaml
-                       ;; spartan-paredit ; recommended for schemes and lisps
-                       ;; spartan-php
-                       ;; spartan-python
-                       ;; spartan-racket
-                       ;; spartan-ruby
-                       ;; spartan-rust
-                       ;; spartan-terraform
-                       ;; spartan-zig
+                       spartan-c
+                       spartan-python
+                       spartan-rust
+                       spartan-go
+                       spartan-html-css-javascript
                        ))
+
 "))))
 
 (setq spartan-first-time-run-has-completed (concat user-emacs-directory ".spartan-first-time-run-has-completed"))

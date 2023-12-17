@@ -2,6 +2,7 @@
 !.gitignore
 !init.el
 !/spartan-layers
+!/spartan-deprecated-layers
 !LICENSE
 !README.org
 !spartan-army-spear-royalty-free-spear.png
