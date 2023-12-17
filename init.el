@@ -133,10 +133,6 @@
                        spartan-company
                        spartan-shell
                        spartan-c
-                       spartan-python
-                       spartan-rust
-                       spartan-go
-                       spartan-html-css-javascript
                        ))
 
 "))))

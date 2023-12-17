@@ -70,11 +70,8 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 
 - Bash  (shellcheck)
 - C (clang and clangd)
-- Go (gopls)
-- HTML / CSS / Javascript (vscode-html-language-server, vscode-css-language-server, typescript-language-server)
-- Python (pylsp)
-- Ruby (solargraph)
-- Rust (rust-analyzer)
+
+Bash and C layers are provided OOTB. While many other layers live in spartan-library/ and can be copied in to spartan.d/ to enable them.
 
 *** BINDS
 
