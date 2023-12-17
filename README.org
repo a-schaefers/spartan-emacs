@@ -1,10 +1,12 @@
 Sat 16 Dec 2023 11:37:29 PM MST **BREAKING** changes.
-Changing the way this works.
-spartan-library has most of the layers.
-copy ones you want in to spartan.d
 
-To update without breaking, move your ~/.emacs.d/spartan.el file out of the way for a moment to a safe place, restart emacs.
-Then 'C-c i' and copy your old stuff that you want to keep back in to that one, or reconfigure the one new one, your choice.
+Changing the way this works.
+
+spartan-library has most of the layers, now.
+
+copy ones you want in to spartan.d ...
+
+To update without breaking, move your ~/.emacs.d/spartan.el file out of the way for a moment to a safe place, and then restart emacs. Then 'C-c i' and copy your old stuff that you want to keep back in, or reconfigure the new one, your choice.
 
 * SPARTAN EMACS
 
