@@ -23,7 +23,11 @@
 
   ;; racket
   (with-eval-after-load 'racket-mode
-    (add-hook 'racket-mode-hook          #'enable-paredit-mode)))
+    (add-hook 'racket-mode-hook          #'enable-paredit-mode))
+
+  ;; fennel
+  (with-eval-after-load 'fennel-mode
+    (add-hook 'fennel-mode-hook          #'enable-paredit-mode)))
 
 (provide 'spartan-paredit)
 
