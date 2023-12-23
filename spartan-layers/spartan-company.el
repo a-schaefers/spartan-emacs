@@ -3,6 +3,12 @@
 ;; http://company-mode.github.io/
 ;; https://github.com/joaotavora/eglot/issues/15
 
+(use-package company-prescient
+  :after (company prescient)
+  :straight t
+  :defer t
+  :init (company-prescient-mode 1))
+
 (use-package company
   :straight t
   :defer t

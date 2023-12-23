@@ -44,4 +44,16 @@
   ;; Enable recursive minibuffers
   (setq enable-recursive-minibuffers t))
 
+;; fuzz
+
+(use-package prescient
+  :straight t
+  :defer t)
+
+(use-package vertico-prescient
+  :after (vertico prescient)
+  :straight t
+  :defer t
+  :init (vertico-prescient-mode 1))
+
 (provide 'spartan-vertico)
