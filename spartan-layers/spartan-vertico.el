@@ -47,13 +47,11 @@
 ;; fuzz
 
 (use-package prescient
-  :straight t
-  :defer t)
+  :straight t)
 
 (use-package vertico-prescient
   :after (vertico prescient)
   :straight t
-  :defer t
   :init (vertico-prescient-mode 1))
 
 (provide 'spartan-vertico)
