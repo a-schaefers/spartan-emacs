@@ -83,7 +83,7 @@
     )
 
   ;; Load specific theme variant by modifying here
-  (load-theme 'spacemacs-dark t))
+  (load-theme 'github t))
 
 ;; Transparency
 ;; (set-frame-parameter nil 'alpha-background 75) ; This frame
