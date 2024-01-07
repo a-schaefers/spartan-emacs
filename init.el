@@ -77,7 +77,6 @@
   (spartan-install-themes
     ;; Add as many themes to install as you'd like here
     github-theme
-    dracula-theme
     spacemacs-theme
     doom-themes
     )
