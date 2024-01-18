@@ -76,13 +76,10 @@
 (with-eval-after-load 'spartan-theme
   (spartan-install-themes
     ;; Add as many themes to install as you'd like here
-    github-theme
-    spacemacs-theme
-    doom-themes
-    )
+    modus-themes)
 
   ;; Load specific theme variant by modifying here
-  (load-theme 'github t))
+  (load-theme 'modus-vivendi t))
 
 ;; Transparency
 ;; (set-frame-parameter nil 'alpha-background 75) ; This frame
