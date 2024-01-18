@@ -1,12 +1,17 @@
-Sat 16 Dec 2023 11:37:29 PM MST **BREAKING** changes.
+** Wed Jan 17 17:37:32 2024
+Added some code that detects if you're on wayland and fixes clipboard issues.
+it begins thusly,
 
-Changing the way this works.
+#+BEGIN_SRC elisp
+  (when (and (string= (getenv "XDG_SESSION_TYPE") "wayland")
+             (executable-find "wl-copy")
+             ...)
+#+END_SRC
 
-spartan-library has most of the layers, now.
-
-copy ones you want in to spartan.d ...
-
-To update without breaking, move your ~/.emacs.d/spartan.el file out of the way for a moment to a safe place, and then restart emacs. Then 'C-c i' and copy your old stuff that you want to keep back in, or reconfigure the new one, your choice.
+So if you're on wayland, you need 2 things: a pgtk build of Emacs, on arch, this would be the `emacs-wayland` package, which is going to give you native compile as well.
+And you also need the `wl-clipboard` package as well.
+So far in my testing, this is the only sane way to run Emacs under wayland. So figure it out or go back to Xorg. ;-)
+An added bonus also is this somehow fixes issues with the clipboard in `emacs -nw` mode as well.
 
 * SPARTAN EMACS
 
