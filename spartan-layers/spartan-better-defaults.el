@@ -99,28 +99,8 @@
 (when (>=  emacs-major-version 29)
   (pixel-scroll-precision-mode 1))
 
-;; mouse for terminal mode
-(xterm-mouse-mode 1) ; mouse support
-
-;; make clipboard behave under wayland and pgtk builds / terminal -nw mode
-(when (and (string= (getenv "XDG_SESSION_TYPE") "wayland")
-           (executable-find "wl-copy"))
-
-  ;; credit: yorickvP on Github
-  (setq wl-copy-process nil)
-  (defun wl-copy (text)
-    (setq wl-copy-process (make-process :name "wl-copy"
-                                        :buffer nil
-                                        :command '("wl-copy" "-f" "-n")
-                                        :connection-type 'pipe
-                                        :noquery t))
-    (process-send-string wl-copy-process text)
-    (process-send-eof wl-copy-process))
-  (defun wl-paste ()
-    (if (and wl-copy-process (process-live-p wl-copy-process))
-        nil ; should return nil if we're the current paste owner
-      (shell-command-to-string "wl-paste -n | tr -d \r")))
-  (setq interprogram-cut-function 'wl-copy)
-  (setq interprogram-paste-function 'wl-paste))
+(or (display-graphic-p)
+    (progn
+      (xterm-mouse-mode 1)))
 
 (provide 'spartan-better-defaults)
