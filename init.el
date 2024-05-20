@@ -59,8 +59,7 @@
       (with-temp-file spartan-config
         (insert ";; Spartan.el Emacs General Settings
 
-(setq spartan-evil-or-holy \"holy\"   ; choose holy or evil
-      spartan-persistent-scratch t  ; t or nil
+(setq spartan-persistent-scratch t  ; t or nil
       spartan-minimal-modeline t    ; t or nil
       spartan-preferred-shell \"bash\" ; must be available on PATH
       magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
@@ -122,7 +121,6 @@
                        spartan-vertico
                        spartan-flymake
                        spartan-crux
-                       spartan-evil-or-holy
                        spartan-magit
                        spartan-projectile
                        spartan-eglot
