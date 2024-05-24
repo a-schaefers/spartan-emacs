@@ -10,10 +10,15 @@
 
 (add-hook 'makefile-mode-hook (lambda ()
                                 (setq-local indent-tabs-mode t)))
+
 (add-hook 'c-mode-hook (lambda ()
                                 (setq-local indent-tabs-mode t)))
 
+(add-hook 'c++-mode-hook (lambda ()
+                                (setq-local indent-tabs-mode t)))
+
 (when (executable-find "clangd")
-  (add-hook 'c-mode-hook 'eglot-ensure))
+  (add-hook 'c-mode-hook 'eglot-ensure)
+  (add-hook 'c++-mode-hook 'eglot-ensure))
 
 (provide 'spartan-c)
