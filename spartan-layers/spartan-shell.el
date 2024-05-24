@@ -38,7 +38,19 @@
       comint-scroll-show-maximum-output nil)
 
 ;; Always use a login shell if bash, which it should be!
-;; (setq explicit-shell-file-name "/bin/bash")
 (setq explicit-bash-args '("--noediting" "-i" "-l"))
+
+;; Persist shell-mode M-r reverse search feature to a file
+(defun spartan-shell-mode-hook ()
+  (when (string=  spartan-preferred-shell "bash")
+    (setq comint-input-ring-file-name "~/.bash_history"))
+
+  (when (string=  spartan-preferred-shell "zsh")
+    (setq comint-input-ring-file-name "~/.zsh_history"))
+
+  (comint-read-input-ring t)
+  (comint-write-input-ring))
+
+(add-hook 'shell-mode-hook 'spartan-shell-mode-hook)
 
 (provide 'spartan-shell)
