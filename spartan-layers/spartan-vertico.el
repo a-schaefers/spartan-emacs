@@ -52,6 +52,8 @@
 (use-package vertico-prescient
   :after (vertico prescient)
   :straight t
-  :init (vertico-prescient-mode 1))
+  :init (vertico-prescient-mode 1)
+  :config (prescient-persist-mode 1) ; https://github.com/a-schaefers/spartan-emacs/issues/6
+  )
 
 (provide 'spartan-vertico)
