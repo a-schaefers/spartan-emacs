@@ -8,10 +8,11 @@ Finally, a simple base Emacs configuration framework
 - Uses lightweight, mostly-vanilla configured layer packages
 - Straight + use-package version version pinning for greater stability (pins are updated here approximately once a month.)
 - Popular langs come with optional layers that are preconfigured with eglot LSP and company mode
+- Interact with LLM's using gptel
 - Project Awareness is available with Projectile, and Magit
 - Everything is deferred as much as is reasonable, for <1 second initial load times with all layers enabled
-- Choose between holy or evil mode
-- Vertico minibuffer completion
+- Holy mode is default, while evil mode is available in the spartan-library
+- Vertico minibuffer with fuzzy completion
 - Tested on Linux, but should work also work fine anywhere for the most part.
 - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
 - Sat 23 Sep 2023 01:49:46 PM MDT - I have an eye towards tree-sitter, but have found setup and configuration incredibly complicated, and especially resulting in an inconsistent experience around something so basic as indentation, so we can wait a while longer for things to standardize and settle down before moving in that direction.
@@ -71,7 +72,7 @@ If the LSP executable is on your PATH and the language layer is active, then ~eg
 - Bash  (shellcheck)
 - C (clang and clangd)
 
-Bash and C layers are provided OOTB. While many other layers live in spartan-library/ and can be copied in to spartan.d/ to enable them.
+Bash and C layers are provided OOTB. While dozens of other layers live in spartan-library/ and can be copied in to spartan.d/ to enable them.
 
 *** BINDS
 
