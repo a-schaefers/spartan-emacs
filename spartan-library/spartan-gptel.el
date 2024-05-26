@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; https://github.com/karthink/gptel?tab=readme-ov-file#chatgpt
+;; https://github.com/karthink/gptel
 
 ;; M-x gptel to open interactive buffer
 ;; C-c RET runs gptel-send to interact
