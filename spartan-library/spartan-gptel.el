@@ -9,6 +9,9 @@
  :straight t
  :defer t
  :config
+ (setq gptel-default-mode 'org-mode)
+ (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+
  (setq gptel-model "gpt-3.5-turbo")
  ;; (setq gptel-model "gpt-4-turbo")
 
