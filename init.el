@@ -160,6 +160,6 @@
     (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
       (load-file (concat spartan-lisp-d "/" file)))))
 
-(add-hook 'emacs-startup-hook 'spartan-user-local-hook)
+(add-hook 'after-init-hook 'spartan-user-local-hook)
 
 ;;; init.el ends here

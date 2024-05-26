@@ -55,7 +55,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 3. Layer packages may be again customized in ~/.emacs.d/spartan.d/ with any additional setup or overrides
 
-   (all lisp files in spartan.d/ auto load last, during the emacs-startup-hook)
+   (all lisp files in spartan.d/ auto load last, during the after-init-hook)
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
