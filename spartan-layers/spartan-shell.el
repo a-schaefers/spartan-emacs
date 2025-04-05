@@ -5,8 +5,6 @@
 
 ;; If you really need ncurses, you're probably doing it wrong.
 
-(setq explicit-shell-file-name spartan-preferred-shell)
-
 ;; This little extension, is just so handy, with this enabled, now anytime you switch to a new file or dired location via C-xC-f,
 ;; after that, you just need to hit 'M-x sh' again and you'll get shell mode switched in to the right directory,
 ;; without requiring you to close and reopen other shell modes.
@@ -42,10 +40,10 @@
 
 ;; Persist shell-mode M-r reverse search feature to a file
 (defun spartan-shell-mode-hook ()
-  (when (string=  spartan-preferred-shell "bash")
+  (when (string-match ".*bash.*" (getenv "SHELL"))
     (setq comint-input-ring-file-name "~/.bash_history"))
 
-  (when (string=  spartan-preferred-shell "zsh")
+  (when (string-match ".*zsh.*" (getenv "SHELL"))
     (setq comint-input-ring-file-name "~/.zsh_history"))
 
   (comint-read-input-ring t)

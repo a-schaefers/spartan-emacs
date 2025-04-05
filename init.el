@@ -61,7 +61,6 @@
 
 (setq spartan-persistent-scratch t  ; t or nil
       spartan-minimal-modeline t    ; t or nil
-      spartan-preferred-shell \"bash\" ; must be available on PATH
       magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
       initial-major-mode 'fundamental-mode
       initial-scratch-message \"This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch\")
