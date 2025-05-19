@@ -99,6 +99,14 @@
                        spartan-c
                        ))
 
+(setq spartan-eglot-autostart-langs
+      '(
+        (c-mode-hook . clangd)
+        (c-ts-mode-hook . clangd)
+        (c++-mode-hook . clangd)
+        (c++-ts-mode-hook . clangd)
+        (lua-ts-mode-hook . lua-language-server)
+        ))
 "))))
 
 (load-file spartan-config)
