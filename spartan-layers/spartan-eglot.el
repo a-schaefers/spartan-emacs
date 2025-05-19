@@ -18,6 +18,8 @@
           (define-key eglot-mode-map (kbd "M-m ?") 'xref-find-references)
           (define-key eglot-mode-map (kbd "M-.") 'xref-find-definitions))
 
+;; iterate key value list of mode hooks and lsp bins and eglot-ensure
+
 (dolist (pair spartan-eglot-autostart-langs)
   (let ((hook (car pair))
         (lsp-bin (symbol-name (cdr pair))))
