@@ -83,40 +83,11 @@
 ;; (set-frame-parameter nil 'alpha-background 75) ; This frame
 ;; (add-to-list 'default-frame-alist '(alpha-background . 75)) ; New frames
 
-;; Dashboard customization settings
-
-(setq dashboard-startup-banner 'ascii)
-(setq dashboard-banner-ascii \"
-
-   ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████  ▄████████    ▄████████
-  ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███ ███    ███   ███    ███
-  ███    █▀  ███   ███   ███   ███    ███ ███    █▀    ███    █▀
- ▄███▄▄▄     ███   ███   ███   ███    ███ ███          ███
-▀▀███▀▀▀     ███   ███   ███ ▀███████████ ███        ▀███████████
-  ███    █▄  ███   ███   ███   ███    ███ ███    █▄           ███
-  ███    ███ ███   ███   ███   ███    ███ ███    ███    ▄█    ███
-  ██████████  ▀█   ███   █▀    ███    █▀  ████████▀   ▄████████▀
-
-
-\")
-(setq dashboard-center-content t)
-(setq dashboard-banner-logo-title \"Spartan edition\")
-(and (file-exists-p spartan-first-time-run-has-completed)
-     (setq dashboard-footer-messages '(\"Vincit qui se vincit.\")))
-
-(setq dashboard-items '((recents  . 5)
-                        ;; (bookmarks . 5)
-                        ;; (projects . 5)
-                        ;; (agenda . 5)
-                        ;; (registers . 5)
-                        ))
-
 ;; Layers
 
 (setq spartan-layers '(
                        spartan-better-defaults
                        spartan-theme
-                       spartan-dashboard
                        spartan-vertico
                        spartan-flymake
                        spartan-crux
@@ -130,15 +101,7 @@
 
 "))))
 
-(setq spartan-first-time-run-has-completed (concat user-emacs-directory ".spartan-first-time-run-has-completed"))
-
 (load-file spartan-config)
-
-(or (file-exists-p spartan-first-time-run-has-completed)
-    (progn
-      ;; This code here executes only on the first-time startup of Spartan Emacs
-      (setq dashboard-footer-messages '("Tip: Use 'C-c i' to view settings pertaining to Spartan Emacs configuration"))
-      (with-temp-file spartan-first-time-run-has-completed (insert "Hello"))))
 
 ;; spartan-layers
 
