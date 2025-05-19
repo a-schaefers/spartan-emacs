@@ -8,20 +8,17 @@ Finally, a simple base Emacs configuration framework
 - Uses lightweight, mostly-vanilla configured layer packages
 - Straight + use-package version version pinning for greater stability (pins are updated here approximately once a month.)
 - Popular langs come with optional layers that are preconfigured with eglot LSP and company mode
-- Interact with LLM's using gptel
 - Project Awareness is available with Projectile, and Magit
 - Everything is deferred as much as is reasonable, for <1 second initial load times with all layers enabled
 - Holy mode is default, while evil mode is available in the spartan-library
 - Vertico minibuffer with fuzzy completion
 - Tested on Linux, but should work also work fine anywhere for the most part.
 - Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
-- Sat 23 Sep 2023 01:49:46 PM MDT - I have an eye towards tree-sitter, but have found setup and configuration incredibly complicated, and especially resulting in an inconsistent experience around something so basic as indentation, so we can wait a while longer for things to standardize and settle down before moving in that direction.
+- *Treesitter* enabled everywhere by default
 
   Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
   ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
   additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
-
-  [[spartan-theme.png]]
 
 *** QUICK INSTALL
 
