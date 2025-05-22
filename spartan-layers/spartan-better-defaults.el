@@ -103,4 +103,7 @@
     (progn
       (xterm-mouse-mode 1)))
 
+;; org-mode scratch buffers
+(setq initial-major-mode 'org-mode)
+
 (provide 'spartan-better-defaults)

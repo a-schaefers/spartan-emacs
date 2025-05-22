@@ -59,11 +59,10 @@
       (with-temp-file spartan-config
         (insert ";; Spartan.el Emacs General Settings
 
-(setq spartan-persistent-scratch t  ; t or nil
-      spartan-minimal-modeline t    ; t or nil
+(setq spartan-persistent-scratch t
+      spartan-minimal-modeline t
       spartan-evil nil
       magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
-      initial-major-mode 'fundamental-mode
       initial-scratch-message \"This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch\")
 
 ;; Font settings
@@ -98,7 +97,7 @@
                        spartan-eglot
                        spartan-company
                        spartan-shell
-                       spartan-c
+                       spartan-treesit
                        ))
 
 (setq spartan-eglot-autostart-langs
