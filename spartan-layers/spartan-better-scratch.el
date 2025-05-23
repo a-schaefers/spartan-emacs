@@ -2,6 +2,8 @@
 
 ;; better scratch https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
 
+(setq initial-major-mode 'org-mode)
+
 (setq initial-scratch-message "* Spartan Emacs
 Finally, a simple base Emacs configuration framework
 
