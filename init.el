@@ -62,8 +62,7 @@
 (setq spartan-persistent-scratch t
       spartan-minimal-modeline t
       spartan-evil nil
-      magit-repository-directories '((\"~/repos\" . 1)) ; where your projects live
-      initial-scratch-message \"This is a persistent, unkillable scratch pad, stored to ~/.emacs.d/scratch\")
+      spartan-projects \"~/repos\")
 
 ;; Font settings
 

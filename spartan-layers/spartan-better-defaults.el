@@ -104,6 +104,7 @@
       (xterm-mouse-mode 1)))
 
 ;; org-mode scratch buffers
-(setq initial-major-mode 'org-mode)
+(setq initial-major-mode 'org-mode
+      initial-scratch-message "* Spartan Emacs")
 
 (provide 'spartan-better-defaults)
