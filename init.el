@@ -151,14 +151,14 @@
   (define-key eglot-mode-map (kbd \"M-m h\") 'eldoc)
   (define-key eglot-mode-map (kbd \"M-m =\") 'eglot-format)
   (define-key eglot-mode-map (kbd \"M-m ?\") 'xref-find-references)
-  (define-key eglot-mode-map (kbd \"M-.\")   'xref-find-definitions)
+  (define-key eglot-mode-map (kbd \"M-.\")   'xref-find-definitions))
 
-  ;; iterate key value list of mode hooks and lsp bins and eglot-ensure
-  (dolist (pair spartan-eglot-autostart-langs)
+;; iterate key value list of mode hooks and lsp bins and eglot-ensure
+(dolist (pair spartan-eglot-autostart-langs)
     (let ((hook (car pair))
           (lsp-bin (symbol-name (cdr pair))))
       (when (executable-find lsp-bin)
-        (add-hook hook #'eglot-ensure)))))
+        (add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Additional package setup, supports :defer :bind :config :init :after
