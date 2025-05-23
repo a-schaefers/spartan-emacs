@@ -10,11 +10,11 @@ Finally, a simple base Emacs configuration framework
 - Popular langs come with optional layers that are preconfigured with eglot LSP and company mode
 - Project Awareness is available with Projectile, and Magit
 - Everything is deferred as much as is reasonable, for <1 second initial load times with all layers enabled
-- Holy mode is default, while evil mode is available in the spartan-library
+- Holy mode is default, while evil mode is available
 - Vertico minibuffer with fuzzy completion
 - Tested on Linux, but should work also work fine anywhere for the most part.
-- Tuned for ultimate performance using the latest *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended.)
-- *Treesitter* enabled everywhere by default
+- Tuned for ultimate performance using the latest gccemacs with native json parsing with eglot language server protocol  (not required, just recommended.)
+- Treesitter enabled everywhere by default
 
   Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
   ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
@@ -38,7 +38,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 *** LAYERS
 
-- Edit ~.emacs.d/spartan.el~ to configure the theme, fonts, and  additional language layers, then restart
+- Edit ~.emacs.d/spartan.el~ to configure the theme, fonts, and  additional layers and packages, then restart
 
 **** HOW LAYERS WORK
 
@@ -46,13 +46,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
    This configuration file is not stored in our Git, but you might want to add it in to yours.
 
-   It may freely be modified by the user, but keep in mind it loads early, before the layers.
-
-2. Enabled layer packages are loaded after ~/.emacs.d/spartan.el
-
-3. Layer packages may be again customized in ~/.emacs.d/spartan.d/ with any additional setup or overrides
-
-   (all lisp files in spartan.d/ auto load last, during the after-init-hook)
+   It may freely be modified by the user.
 
 *** MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
@@ -62,14 +56,6 @@ Some of the language modes also include repls. Debugging is provided within many
 e.g. Python has pdb. With C, one may use ~M-x gdb~, etc.
 
 With compiled languages, one might use M-x cc and set the compile-command to something instead of make if needed, etc.
-
-To enable LSP for a language layer that supports it, note the external package you will need from below.
-If the LSP executable is on your PATH and the language layer is active, then ~eglot~ is going to automatically initialize it.
-
-- Bash  (shellcheck)
-- C (clang and clangd)
-
-Bash and C layers are provided OOTB. While dozens of other layers live in spartan-library/ and can be copied in to spartan.d/ to enable them.
 
 *** BINDS
 
@@ -84,8 +70,4 @@ Bash and C layers are provided OOTB. While dozens of other layers live in sparta
   - M-x cc   (compile-command)
   - etc...
 
-- Also see [[https://github.com/a-schaefers/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds under the M- prefix.
-
-- Language mode specifc binds should be handled by the mode upstream or by the individual user.
-
-- Overrides go in ~.emacs.d/spartan.d/~
+- Language mode specific binds should be handled by the mode upstream or by the individual user with overrides in spartan.el
