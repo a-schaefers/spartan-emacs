@@ -93,18 +93,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq spartan-layers '(
-                       spartan-better-defaults
-                       spartan-better-scratch
-                       spartan-theme
-                       spartan-vertico
-                       spartan-flymake
-                       spartan-crux
-                       spartan-magit
-                       spartan-projectile
-                       spartan-eglot
-                       spartan-company
-                       spartan-shell
-                       spartan-treesit
+                       spartan-better-defaults ; Based on technomancy's better defaults
+                       spartan-better-scratch  ; Persistent, unkillable org-mode scratch buffer
+                       spartan-theme           ; Cleans up UI in a way that is minimal
+                       spartan-vertico         ; Adds fancier minibuffer
+                       spartan-flymake         ; M-x lint
+                       spartan-crux            ; Adds misc. helper binds
+                       spartan-magit           ; M-x git
+                       spartan-projectile      ; M-x pro
+                       spartan-eglot           ; Adds lsp support
+                       spartan-company         ; Adds autocompletion drop-down menu
+                       spartan-shell           ; M-x sh
+                       spartan-treesit         ; Turns on treesitter everywhere as much as possible
                        ))
 
 (add-to-list 'load-path (concat user-emacs-directory \"spartan-layers\"))
