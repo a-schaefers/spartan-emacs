@@ -2,6 +2,24 @@
 
 ;; better scratch https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
 
+(setq initial-scratch-message "* Spartan Emacs
+Finally, a simple base Emacs configuration framework
+
+** Where to start
+- Press ~C-c i~ to jump to ~/.emacs.d/spartan.el and edit your config
+
+** How to keep up to date
+Layers use pinned packages via Straight.el and are periodically updated.
+
+0. cd ~/.emacs.d
+1. git pull
+2. M-x straight-thaw-versions
+3. Restart Emacs
+
+** About this *scratch* buffer
+This org-mode buffer is  un-killable and persistent in ~/.emacs.d/scratch
+Use it for whatever you want, or don't.")
+
 (defun immortal-scratch ()
   (if (eq (current-buffer) (get-buffer "*scratch*"))
       (progn (bury-buffer)
