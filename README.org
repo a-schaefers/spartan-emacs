@@ -5,7 +5,7 @@ Finally, a simple base Emacs configuration framework
 ** Major update
 
 We now add treesitter support, and have less of a need for "language layers", all configuration should be done in ~/.emacs.d/spartan.el,
-which should is mostly self documented.
+which is mostly self documented.
 
 ** FEATURES
 
