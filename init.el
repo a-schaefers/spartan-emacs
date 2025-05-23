@@ -31,6 +31,28 @@
 
 (setq use-package-compute-statistics t)
 
+(defmacro spartan-pkg (&rest specs)
+  (declare (indent defun))
+  (macroexp-progn
+   (mapcar
+    (lambda (spec)
+      (let* ((pkg (if (listp spec) (car spec) spec))
+             (props (if (listp spec) (cdr spec) '()))
+             (init   `(progn ,@(let ((val (plist-get props :init)))   (if (listp val) val (list val)))))
+             (config `(progn ,@(let ((val (plist-get props :config))) (if (listp val) val (list val)))))
+             (bind   `(progn ,@(let ((val (plist-get props :bind)))   (if (listp val) val (list val)))))
+             (after  `(progn ,@(let ((val (plist-get props :after)))  (if (listp val) val (list val)))))
+             (defer  (plist-get props :defer)))
+        `(use-package ,pkg
+           :straight t
+           ,@(when (plist-member props :init)   `(:init ,init))
+           ,@(when (plist-member props :defer)  `(:defer ,defer))
+           ,@(when (plist-member props :after)  `(:after ,after))
+           ,@(when (plist-member props :config) `(:config ,config))
+           ,@(when (plist-member props :bind)   `(:bind ,bind)))))
+    specs)))
+
+
 ;; performance
 
 ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
@@ -57,36 +79,22 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";; Spartan.el Emacs General Settings
+        (insert ";;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Spartan.el Emacs General Settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq spartan-persistent-scratch t
-      spartan-minimal-modeline t
-      spartan-evil nil
-      spartan-projects \"~/repos\")
+(setq user-full-name    \"John Doe\"
+      user-mail-address \"john.doe@example.com\"
+      spartan-projects  \"~/repos\" ; where your Projects live
+      )
 
-;; Font settings
-
-(set-face-attribute 'default nil :family \"Monospace\" :height 120)
-
-;; Theme customization settings
-
-(with-eval-after-load 'spartan-theme
-  (spartan-install-themes
-    ;; Add as many themes to install as you'd like here
-    modus-themes)
-
-  ;; Load specific theme variant by modifying here
-  (load-theme 'modus-vivendi t))
-
-;; Transparency
-;; (set-frame-parameter nil 'alpha-background 75) ; This frame
-;; (add-to-list 'default-frame-alist '(alpha-background . 75)) ; New frames
-
-;; Layers
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Load layers
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq spartan-layers '(
                        spartan-better-defaults
-                       spartan-evil
+                       spartan-better-scratch
                        spartan-theme
                        spartan-vertico
                        spartan-flymake
@@ -99,37 +107,136 @@
                        spartan-treesit
                        ))
 
-(setq spartan-eglot-autostart-langs
-      '(
-        (c-mode-hook . clangd)
-        (c-ts-mode-hook . clangd)
-        (c++-mode-hook . clangd)
-        (c++-ts-mode-hook . clangd)
-        (lua-ts-mode-hook . lua-language-server)
-        ))
-"))))
-
-(load-file spartan-config)
-
-;; spartan-layers
-
-(add-to-list 'load-path (concat user-emacs-directory "spartan-layers"))
-
+(add-to-list 'load-path (concat user-emacs-directory \"spartan-layers\"))
 (dolist (layer spartan-layers)
   (require layer))
 
-;; spartan.d/ loads last
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Modes that will autostart the corresponding eglot LSP server if found on PATH
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
-(or
- (file-directory-p spartan-lisp-d)
- (make-directory spartan-lisp-d))
+(setq spartan-eglot-autostart-langs
+      '(
+        (c-ts-mode-hook . clangd)
+        (c++-ts-mode-hook . clangd)
+        (lua-ts-mode-hook . lua-language-server)
+        (python-ts-mode-hook . pylsp)
+        (go-ts-mode-hook . gopls)
+        (rust-ts-mode-hook . rust-analyzer)
+        (ruby-ts-mode-hook . solargraph)
+        (elixir-ts-mode . elixir-ls)
+        (html-ts-mode-hook . vscode-html-language-server)
+        (css-ts-mode-hook . vscode-css-language-server)
+        (typescript-ts-mode-hook . typescript-language-server)
+        (js-ts-mode-hook . typescript-language-server)
 
-(defun spartan-user-local-hook ()
-  (when (file-directory-p spartan-lisp-d)
-    (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
-      (load-file (concat spartan-lisp-d "/" file)))))
+        ;; (php-mode-hook . true)          ; workaround, php lang server is not available on PATH but via required lib
+        ;; (zig-mode-hook . zigls)
+        ;; (terraform-mode-hook . terraform-ls)
+        ;; (nix-mode . rnix-lsp)
+        ;; (haskell-mode . haskell-language-server-wrapper)
+        ;; (ocaml-mode-hook . ocaml-lsp)
+        ;; (forth-mode-hook . forth-lsp)
+        ;; (erlang-mode-hook . erlang_ls)
+        ;; (racket-mode-hook . true)       ; workaround, racket lang server is not available on PATH but via required lib
+        ))
 
-(add-hook 'after-init-hook 'spartan-user-local-hook)
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Eglot LSP binds
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(with-eval-after-load 'eglot
+  (define-key eglot-mode-map (kbd \"M-m r\") 'eglot-rename)
+  (define-key eglot-mode-map (kbd \"M-m o\") 'eglot-code-action-organize-imports)
+  (define-key eglot-mode-map (kbd \"M-m h\") 'eldoc)
+  (define-key eglot-mode-map (kbd \"M-m =\") 'eglot-format)
+  (define-key eglot-mode-map (kbd \"M-m ?\") 'xref-find-references)
+  (define-key eglot-mode-map (kbd \"M-.\")   'xref-find-definitions)
+
+  ;; iterate key value list of mode hooks and lsp bins and eglot-ensure
+  (dolist (pair spartan-eglot-autostart-langs)
+    (let ((hook (car pair))
+          (lsp-bin (symbol-name (cdr pair))))
+      (when (executable-find lsp-bin)
+        (add-hook hook #'eglot-ensure)))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Additional package setup, supports :defer :bind :config :init :after
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(spartan-pkg
+  (modus-themes :config ((load-theme 'modus-operandi t)))
+
+  ;; (evil :config (evil-mode 1))
+
+  ;; Additional langs that aren't supported yet OOTB yet by treesitter
+
+  ;; (markdown-mode :defer t)
+  ;; (php-mode :defer t)
+  ;; (haskell-mode :defer t)
+  ;; (zig-mode :defer t)
+  ;; (terraform-mode :defer t)
+  ;; (nix-mode :defer t )
+  ;; (systemd-mode :defer t)
+  ;; (dockerfile-mode :defer t)
+  ;; (nginx-mode :defer t)
+  ;; (tuareg-mode :defer t) ; ocaml
+  ;; (forth-mode :defer t)
+  ;; (erlang :defer t)
+
+  ;;;; LISP general
+  (paredit
+   :defer t
+   :init
+   ((add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+   (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+   (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+   ;; lisps
+   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+   (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+   ;; schemes
+   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+   ;; clojure
+   (with-eval-after-load 'clojure-mode
+     (add-hook 'clojure-mode-hook          #'enable-paredit-mode))
+   ;; racket
+   (with-eval-after-load 'racket-mode
+     (add-hook 'racket-mode-hook          #'enable-paredit-mode))))
+
+  ;; (clojure-mode :defer t)
+  ;; (cider :defer t :after clojure-mode)
+
+  ;; (slime :init
+  ;;        ((setq inferior-lisp-program \"sbcl\")
+  ;;         (add-to-list 'auto-mode-alist '(\"\\\\.cl\\\\'\" . lisp-mode))
+  ;;         (add-to-list 'auto-mode-alist '(\"\\\\.sbclrc\\\\'\" . lisp-mode))))
+
+  ;; (racket-mode :defer t)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Additional config
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(set-face-attribute 'default nil :family \"Monospace\" :height 200) ; font size
+
+(setq
+ ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+ c-default-style \"linux\"
+ ;; tabs are 8 spaces
+ c-basic-offset 8)
+
+;; tabs are tabs
+(add-hook 'makefile-mode-hook (lambda ()
+                                (setq-local indent-tabs-mode t)))
+
+(add-hook 'c-ts-mode-hook (lambda ()
+                                (setq-local indent-tabs-mode t)))
+
+(add-hook 'c++-ts-mode-hook (lambda ()
+                                (setq-local indent-tabs-mode t)))
+"))))
+
+(load-file spartan-config)
 
 ;;; init.el ends here
