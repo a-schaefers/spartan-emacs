@@ -41,13 +41,11 @@
              (init   `(progn ,@(let ((val (plist-get props :init)))   (if (listp val) val (list val)))))
              (config `(progn ,@(let ((val (plist-get props :config))) (if (listp val) val (list val)))))
              (bind   `(progn ,@(let ((val (plist-get props :bind)))   (if (listp val) val (list val)))))
-             (after  `(progn ,@(let ((val (plist-get props :after)))  (if (listp val) val (list val)))))
              (defer  (plist-get props :defer)))
         `(use-package ,pkg
            :straight t
            ,@(when (plist-member props :init)   `(:init ,init))
            ,@(when (plist-member props :defer)  `(:defer ,defer))
-           ,@(when (plist-member props :after)  `(:after ,after))
            ,@(when (plist-member props :config) `(:config ,config))
            ,@(when (plist-member props :bind)   `(:bind ,bind)))))
     specs)))
@@ -161,7 +159,7 @@
         (add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Additional package setup, supports :defer :bind :config :init :after
+;; Additional package setup, supports :defer :bind :config :init
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (spartan-pkg
@@ -204,7 +202,7 @@
      (add-hook 'racket-mode-hook          #'enable-paredit-mode))))
 
   ;; (clojure-mode :defer t)
-  ;; (cider :defer t :after clojure-mode)
+  ;; (cider :defer t)
 
   ;; (slime :init
   ;;        ((setq inferior-lisp-program \"sbcl\")
