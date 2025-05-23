@@ -167,7 +167,7 @@
 (spartan-pkg
   (modus-themes :config ((load-theme 'modus-operandi t)))
 
-  ;; (evil :config (evil-mode 1))
+  ;; (evil :config ((evil-mode 1))
 
   ;; Additional langs that aren't supported yet OOTB yet by treesitter
 
