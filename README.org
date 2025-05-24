@@ -115,3 +115,11 @@ With compiled languages, one might use M-x cc and set the compile-command to som
   - etc...
 
 - Language mode specific binds should be handled by the mode upstream or by the individual user with overrides in spartan.el
+
+** spartan.el example
+
+Configuring spartan Emacs is easy, just edit spartan.el
+
+#+BEGIN_SRC elisp
+
+#+END_SRC
