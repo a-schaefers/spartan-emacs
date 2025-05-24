@@ -68,8 +68,8 @@ Spartan is ideal for Linux people, minimalists, hackers, and ex-Vimers who donâ€
 
   Moreover, the author has also freely created an Emacs tutorial mini-course available on YouTube,
 
-  Emacs hacking 00 - Avoid RSI and "emacs pinky" once and for all.
-  https://www.youtube.com/watch?v=n9gJxKchkRw
+  [[https://www.youtube.com/watch?v=n9gJxKchkRw][Emacs hacking 00]] - Avoid RSI and "emacs pinky" once and for all.
+
 
   Emacs hacking 01 - Vanilla Emacs Crash Course Emacs basics: PATH, ENV, moving the cursor, killing lines, copy, cut, paste, undo, redo, creating files, dired, buffers, windows, splits, open file, close file, temp files and lock files, customization via init.el, emacs notation, discoverability, package managers, melpa and evil mode.
   https://www.youtube.com/watch?v=dCdoyDeR_rI
