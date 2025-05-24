@@ -254,8 +254,6 @@
 ;; Additional config
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(set-face-attribute 'default nil :family \"Monospace\" :height 200) ; font size
-
 (setq
  ;; these settings still should be handled by various language modes on a per language basis, this is just a general default
  indent-tabs-mode nil ; In general, we prefer spaces
