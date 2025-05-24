@@ -226,12 +226,16 @@
 (set-face-attribute 'default nil :family \"Monospace\" :height 200) ; font size
 
 (setq
+ ;; these settings still should be handled by various language modes on a per language basis, this is just a general default
+ indent-tabs-mode nil ; In general, we prefer spaces
+ tab-width 8          ; a tab is 8 spaces
+ fill-column 79       ; python friendly
+
  ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html
- c-default-style \"linux\"
- ;; tabs are 8 spaces
+ c-default-style \"linux\" ; use linux kernel coding style in C
  c-basic-offset 8)
 
-;; tabs are tabs
+;; tabs are tabs in C family langs
 (add-hook 'makefile-mode-hook (lambda ()
                                 (setq-local indent-tabs-mode t)))
 

@@ -1,5 +1,12 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
+;; clean look
+(blink-cursor-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
 ;; remove hostname from the GUI titlebar
 (setq-default frame-title-format '("Emacs"))
 

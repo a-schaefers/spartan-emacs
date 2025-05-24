@@ -14,20 +14,8 @@
 
 (delete-selection-mode) ; allow highlight and backspace over text like a normal editor
 
-;; clean look
-(blink-cursor-mode -1)
-(scroll-bar-mode -1)
-(fringe-mode -1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
 (setq-default
  frame-resize-pixelwise t ; support better certain window managers like ratpoison
-
- ;; these settings still should be set on a per language basis, this is just a general default
- indent-tabs-mode nil ; spaces > tabs
- tab-width 8 ; tab is 8 spaces
- fill-column 80 ; python friendly, almost. HAHAHA
 
  ;; better security
  gnutls-verify-error t
