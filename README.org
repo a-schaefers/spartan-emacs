@@ -30,7 +30,7 @@ Lacks optional tooling niceties: Doom’s "Doctor", autoloads, profiling tools, 
 
 ** 🆚 Compared to Doom and Spacemacs
 | Feature/Philosophy  | **Spartan Emacs**                | **Doom Emacs**                      | **Spacemacs**                |
-| ------------------- | -------------------------------- | ----------------------------------- | ---------------------------- |
+| ------------------- | ------------------- | ------------------- | ------------------- |
 | Philosophy          | KISS / Unix-style                | Minimal but opinionated             | Full-featured / maximalist   |
 | Customization model | `spartan.el` (pure user control) | `config.el`/`init.el`/`packages.el` | Layer-based with abstraction |
 | Learning curve      | Medium–High                      | Medium                              | Medium–Low                   |
