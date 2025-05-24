@@ -263,23 +263,26 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq-default
- ;; these settings still should be handled by various language modes on a per language basis, this is just a general default
+ ;; these settings still should be set on a per language basis, this is just a general default
  indent-tabs-mode nil ; In general, we prefer spaces
- tab-width 8          ; a tab is 8 spaces
  fill-column 79       ; python friendly
+ )
 
- ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html
- c-default-style \"linux\" ; use linux kernel coding style in C
- c-basic-offset 8)
+;; C and C++ specific overrides (A language-specific override example)
+
+(defun spartan-c-ts-modes ()
+  ;; Use linux kernel coding style in C
+  ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+  (setq-local indent-tabs-mode t)            ; Use tabs for indentation
+  (setq-local tab-width 8)                   ; Tabs are 8 spaces wide
+  (setq-local c-ts-mode-indent-style 'linux) ; Use Linux indentation style
+  (setq-local c-ts-mode-indent-offset 8))    ; Indentation offset
+
+(add-hook 'c-ts-mode-hook #'spartan-c-ts-modes)
+(add-hook 'c++-ts-mode-hook #'spartan-c-ts-modes)
 
 ;; tabs are tabs in C family langs
 (add-hook 'makefile-mode-hook (lambda ()
-                                (setq-local indent-tabs-mode t)))
-
-(add-hook 'c-ts-mode-hook (lambda ()
-                                (setq-local indent-tabs-mode t)))
-
-(add-hook 'c++-ts-mode-hook (lambda ()
                                 (setq-local indent-tabs-mode t)))
 
 ;; Set default compile command, for make or whatever.
