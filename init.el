@@ -94,13 +94,13 @@
 		       spartan-better-defaults ; Based on technomancy's better defaults
 		       spartan-better-scratch  ; Persistent, unkillable org-mode scratch buffer
 		       spartan-vertico         ; Adds fancier minibuffer
-		       spartan-flymake         ; M-x lint
-		       spartan-crux            ; Adds misc. helper binds
-		       spartan-magit           ; M-x git
-		       spartan-projectile      ; M-x pro
+		       spartan-flymake         ; Configures flymake to be our linter
+		       spartan-crux            ; Adds misc. helpers
+		       spartan-magit           ; A frontend to git
+		       spartan-projectile      ; Git project awareness and find/grep tools
 		       spartan-eglot           ; Adds lsp support
 		       spartan-company         ; Adds autocompletion drop-down menu
-		       spartan-shell           ; M-x sh
+		       spartan-shell           ; Misc. configuration and improvement to shell-mode
 		       spartan-treesit         ; Turns on treesitter everywhere as much as possible
 		       ))
 
@@ -264,11 +264,6 @@
  c-default-style \"linux\" ; use linux kernel coding style in C
  c-basic-offset 8)
 
-;; Set default compile command, for make or whatever.
-(setq compile-command \"make -k \")
-;; M-x cc
-(defalias 'cc 'compile)
-
 ;; tabs are tabs in C family langs
 (add-hook 'makefile-mode-hook (lambda ()
 				(setq-local indent-tabs-mode t)))
@@ -278,6 +273,23 @@
 
 (add-hook 'c++-ts-mode-hook (lambda ()
 				(setq-local indent-tabs-mode t)))
+
+;; Set default compile command, for make or whatever.
+(setq compile-command \"make -k \")
+;; M-x cc
+(defalias 'cc 'compile)
+
+;; M-x sh
+(defalias 'sh 'better-shell-for-current-dir)
+
+;; M-x lint
+(defalias 'lint 'spartan-lint)
+
+;; M-x git
+(defalias 'git 'magit)
+
+;; M-x pro
+(defalias 'pro 'projectile-commander)
 "))))
 
 (load-file spartan-config)
