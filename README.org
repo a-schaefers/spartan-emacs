@@ -32,7 +32,7 @@ Spartan is more lean-and-mean.
 | Feature/Philosophy  | **Spartan Emacs**                | **Doom Emacs**                      | **Spacemacs**                |
 | ------------------- | ------------------- | ------------------- | ------------------- |
 | Philosophy          | KISS                   | Minimal but opinionated             | Full-featured / maximalist   |
-| Customization model | `spartan.el`  | `config.el`/`init.el`/`packages.el` | .spacemacs |
+| Customization model | `spartan.el`  | `config.el`/`init.el`/`packages.el` | `.spacemacs` |
 | Learning curve      | Medium            | Medium                              | Medium–Low                   |
 | Performance         | ⭐ **Very fast**                  | Fast                                | Slower (esp. with Evil)      |
 | Ease of hacking     | ⭐ **Best**                       | Good (macros-heavy)                 | Worse (macro abstraction)    |
