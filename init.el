@@ -120,6 +120,7 @@
         (js-ts-mode-hook . typescript-language-server)
         (yaml-ts-mode-hook . yaml-language-server)
         (json-ts-mode-hook . vscode-json-languageserver)
+        (java-ts-mode-hook . jdtls)
 
         ;; (markdown-mode-hook . marksman)
         ;; (php-mode-hook . true)          ; workaround, php lang server is not available on PATH but via required lib
