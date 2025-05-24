@@ -7,10 +7,10 @@
       inhibit-startup-screen t)
 
 (add-hook 'after-init-hook #'(lambda ()
-                               (interactive)
-                               (require 'server)
-                               (or (server-running-p)
-                                   (server-start))))
+			       (interactive)
+			       (require 'server)
+			       (or (server-running-p)
+				   (server-start))))
 
 ;; straight+use-package
 
@@ -20,9 +20,9 @@
       (bootstrap-version 6))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
+	(url-retrieve-synchronously
+	 "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	 'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
@@ -37,17 +37,17 @@
    (mapcar
     (lambda (spec)
       (let* ((pkg (if (listp spec) (car spec) spec))
-             (props (if (listp spec) (cdr spec) '()))
-             (init   `(progn ,@(let ((val (plist-get props :init)))   (if (listp val) val (list val)))))
-             (config `(progn ,@(let ((val (plist-get props :config))) (if (listp val) val (list val)))))
-             (bind   `(progn ,@(let ((val (plist-get props :bind)))   (if (listp val) val (list val)))))
-             (defer  (plist-get props :defer)))
-        `(use-package ,pkg
-           :straight t
-           ,@(when (plist-member props :init)   `(:init ,init))
-           ,@(when (plist-member props :defer)  `(:defer ,defer))
-           ,@(when (plist-member props :config) `(:config ,config))
-           ,@(when (plist-member props :bind)   `(:bind ,bind)))))
+	     (props (if (listp spec) (cdr spec) '()))
+	     (init   `(progn ,@(let ((val (plist-get props :init)))   (if (listp val) val (list val)))))
+	     (config `(progn ,@(let ((val (plist-get props :config))) (if (listp val) val (list val)))))
+	     (bind   `(progn ,@(let ((val (plist-get props :bind)))   (if (listp val) val (list val)))))
+	     (defer  (plist-get props :defer)))
+	`(use-package ,pkg
+	   :straight t
+	   ,@(when (plist-member props :init)   `(:init ,init))
+	   ,@(when (plist-member props :defer)  `(:defer ,defer))
+	   ,@(when (plist-member props :config) `(:config ,config))
+	   ,@(when (plist-member props :bind)   `(:bind ,bind)))))
     specs)))
 
 
@@ -59,9 +59,9 @@
 
 ;; https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation
 (if (and (fboundp 'native-comp-available-p)
-         (native-comp-available-p))
+	 (native-comp-available-p))
     (setq comp-deferred-compilation t
-          package-native-compile t)
+	  package-native-compile t)
   (message "Native complation is *not* available, lsp performance will suffer..."))
 
 (unless (functionp 'json-serialize)
@@ -77,7 +77,7 @@
 (or (file-exists-p spartan-config)
     (progn
       (with-temp-file spartan-config
-        (insert ";;;;;;;;;;;;;;;;;;;;;;;;;;
+	(insert ";;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Spartan.el Emacs General Settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -91,19 +91,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq spartan-layers '(
-                       spartan-better-defaults ; Based on technomancy's better defaults
-                       spartan-better-scratch  ; Persistent, unkillable org-mode scratch buffer
-                       spartan-theme           ; Cleans up UI in a way that is minimal
-                       spartan-vertico         ; Adds fancier minibuffer
-                       spartan-flymake         ; M-x lint
-                       spartan-crux            ; Adds misc. helper binds
-                       spartan-magit           ; M-x git
-                       spartan-projectile      ; M-x pro
-                       spartan-eglot           ; Adds lsp support
-                       spartan-company         ; Adds autocompletion drop-down menu
-                       spartan-shell           ; M-x sh
-                       spartan-treesit         ; Turns on treesitter everywhere as much as possible
-                       ))
+		       spartan-better-defaults ; Based on technomancy's better defaults
+		       spartan-better-scratch  ; Persistent, unkillable org-mode scratch buffer
+		       spartan-vertico         ; Adds fancier minibuffer
+		       spartan-flymake         ; M-x lint
+		       spartan-crux            ; Adds misc. helper binds
+		       spartan-magit           ; M-x git
+		       spartan-projectile      ; M-x pro
+		       spartan-eglot           ; Adds lsp support
+		       spartan-company         ; Adds autocompletion drop-down menu
+		       spartan-shell           ; M-x sh
+		       spartan-treesit         ; Turns on treesitter everywhere as much as possible
+		       ))
 
 (add-to-list 'load-path (concat user-emacs-directory \"spartan-layers\"))
 (dolist (layer spartan-layers)
@@ -115,41 +114,41 @@
 
 (setq spartan-eglot-autostart-langs
       '(
-        (c-ts-mode-hook . clangd)
-        (c++-ts-mode-hook . clangd)
-        (lua-ts-mode-hook . lua-language-server)
-        (python-ts-mode-hook . pylsp)
-        (go-ts-mode-hook . gopls)
-        (rust-ts-mode-hook . rust-analyzer)
-        (ruby-ts-mode-hook . solargraph)
-        (elixir-ts-mode-hook . elixir-ls)
-        (html-ts-mode-hook . vscode-html-language-server)
-        (css-ts-mode-hook . vscode-css-language-server)
-        (typescript-ts-mode-hook . typescript-language-server)
-        (js-ts-mode-hook . typescript-language-server)
-        (yaml-ts-mode-hook . yaml-language-server)
-        (json-ts-mode-hook . vscode-json-languageserver)
+	(c-ts-mode-hook . clangd)
+	(c++-ts-mode-hook . clangd)
+	(lua-ts-mode-hook . lua-language-server)
+	(python-ts-mode-hook . pylsp)
+	(go-ts-mode-hook . gopls)
+	(rust-ts-mode-hook . rust-analyzer)
+	(ruby-ts-mode-hook . solargraph)
+	(elixir-ts-mode-hook . elixir-ls)
+	(html-ts-mode-hook . vscode-html-language-server)
+	(css-ts-mode-hook . vscode-css-language-server)
+	(typescript-ts-mode-hook . typescript-language-server)
+	(js-ts-mode-hook . typescript-language-server)
+	(yaml-ts-mode-hook . yaml-language-server)
+	(json-ts-mode-hook . vscode-json-languageserver)
 
-        ;; (markdown-mode-hook . marksman)
-        ;; (php-mode-hook . true)          ; workaround, php lang server is not available on PATH but via required lib
-        ;; (zig-mode-hook . zigls)
-        ;; (terraform-mode-hook . terraform-ls)
-        ;; (nix-mode-hook . rnix-lsp)
-        ;; (haskell-mode-hook . haskell-language-server-wrapper)
-        ;; (ocaml-mode-hook . ocaml-lsp)
-        ;; (scala-mode-hook . metals)
-        ;; (forth-mode-hook . forth-lsp)
-        ;; (erlang-mode-hook . erlang_ls)
-        ;; (racket-mode-hook . true)       ; workaround, racket lang server is not available on PATH but via required lib
-        ;; (clojure-mode-hook . clojure-lsp)
-        ))
+	;; (markdown-mode-hook . marksman)
+	;; (php-mode-hook . true)          ; workaround, php lang server is not available on PATH but via required lib
+	;; (zig-mode-hook . zigls)
+	;; (terraform-mode-hook . terraform-ls)
+	;; (nix-mode-hook . rnix-lsp)
+	;; (haskell-mode-hook . haskell-language-server-wrapper)
+	;; (ocaml-mode-hook . ocaml-lsp)
+	;; (scala-mode-hook . metals)
+	;; (forth-mode-hook . forth-lsp)
+	;; (erlang-mode-hook . erlang_ls)
+	;; (racket-mode-hook . true)       ; workaround, racket lang server is not available on PATH but via required lib
+	;; (clojure-mode-hook . clojure-lsp)
+	))
 
 ;; iterate key value list of mode hooks and lsp bins and eglot-ensure
 (dolist (pair spartan-eglot-autostart-langs)
     (let ((hook (car pair))
-          (lsp-bin (symbol-name (cdr pair))))
+	  (lsp-bin (symbol-name (cdr pair))))
       (when (executable-find lsp-bin)
-        (add-hook hook #'eglot-ensure))))
+	(add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eglot LSP binds
@@ -168,9 +167,42 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (spartan-pkg
-  (modus-themes :config ((load-theme 'modus-operandi t)))
+  ;; Appearance
+  (modus-themes :config
+		((load-theme 'modus-operandi t)
 
-  ;; (evil :config ((evil-mode 1))
+		 ;; Set Font and Font Size here
+		 (set-face-attribute 'default nil :family \"Monospace\" :height 200)
+
+		 ;; Clean look
+		 (blink-cursor-mode -1)
+		 (scroll-bar-mode -1)
+		 (fringe-mode -1)
+		 (menu-bar-mode -1)
+		 (tool-bar-mode -1)
+
+		 ;; Remove hostname from the GUI titlebar
+		 (setq-default frame-title-format '(\"Emacs\"))
+
+		 ;; Clean mode-line
+
+		 ;; https://emacs.stackexchange.com/questions/5529/how-to-right-align-some-items-in-the-modeline
+		 (defun simple-mode-line-render (left right)
+		   \"Return a string of `window-width' length containing LEFT, and RIGHT
+ aligned respectively.\"
+		   (let* ((available-width (- (window-width) (length left) 2)))
+		     (format (format \" %%s %%%ds \" available-width) left right)))
+
+		 (progn
+		   (setq-default mode-line-format
+				 '((:eval (simple-mode-line-render
+					   ;; left
+					   (format-mode-line \"%* %b %l\")
+					   ;; right
+					   (format-mode-line \"%m\"))))))))
+
+  ;; Extensible vi layer
+  ;; (evil :config ((evil-mode 1)))
 
   ;; Additional langs that aren't supported yet OOTB yet by treesitter
 
@@ -236,13 +268,13 @@
 
 ;; tabs are tabs in C family langs
 (add-hook 'makefile-mode-hook (lambda ()
-                                (setq-local indent-tabs-mode t)))
+				(setq-local indent-tabs-mode t)))
 
 (add-hook 'c-ts-mode-hook (lambda ()
-                                (setq-local indent-tabs-mode t)))
+				(setq-local indent-tabs-mode t)))
 
 (add-hook 'c++-ts-mode-hook (lambda ()
-                                (setq-local indent-tabs-mode t)))
+				(setq-local indent-tabs-mode t)))
 "))))
 
 (load-file spartan-config)
