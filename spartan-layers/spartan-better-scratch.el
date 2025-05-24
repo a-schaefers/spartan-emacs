@@ -19,28 +19,28 @@ Layers use pinned packages via Straight.el and are periodically updated.
 3. Restart Emacs
 
 ** About this *scratch* buffer
-This org-mode buffer is  un-killable and persistent in ~/.emacs.d/scratch
+This org-mode buffer is un-killable and persistent in ~/.emacs.d/scratch
 Use it for whatever you want, or don't.")
 
 (defun immortal-scratch ()
   (if (eq (current-buffer) (get-buffer "*scratch*"))
       (progn (bury-buffer)
-             nil)
-  t))
+	     nil)
+    t))
 
 (defun save-persistent-scratch ()
   "Save the contents of *scratch*"
   (with-current-buffer (get-buffer-create "*scratch*")
     (write-region (point-min) (point-max)
-                  (concat user-emacs-directory "scratch"))))
+		  (concat user-emacs-directory "scratch"))))
 
 (defun load-persistent-scratch ()
   "Reload the scratch buffer"
   (let ((scratch-file (concat user-emacs-directory "scratch")))
     (if (file-exists-p scratch-file)
-        (with-current-buffer (get-buffer "*scratch*")
-          (delete-region (point-min) (point-max))
-          (insert-file-contents scratch-file)))))
+	(with-current-buffer (get-buffer "*scratch*")
+	  (delete-region (point-min) (point-max))
+	  (insert-file-contents scratch-file)))))
 
 (progn
   (add-hook 'kill-buffer-query-functions 'immortal-scratch)
