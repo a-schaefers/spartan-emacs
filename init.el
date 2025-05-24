@@ -211,7 +211,7 @@
   ;; (clojure-mode :defer t)
   ;; (cider :defer t)
 
-  ;; (slime :init
+  ;; (slime :defer t :init
   ;;        ((setq inferior-lisp-program \"sbcl\")
   ;;         (add-to-list 'auto-mode-alist '(\"\\\\.cl\\\\'\" . lisp-mode))
   ;;         (add-to-list 'auto-mode-alist '(\"\\\\.sbclrc\\\\'\" . lisp-mode))))
