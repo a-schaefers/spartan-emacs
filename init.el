@@ -163,7 +163,7 @@
   (define-key eglot-mode-map (kbd \"M-.\")   'xref-find-definitions))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Additional package setup, supports :defer :bind :config :init
+;; Install and configure additional packages, this macro supports :defer :bind :config :init
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (spartan-pkg
