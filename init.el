@@ -266,6 +266,11 @@
  c-default-style \"linux\" ; use linux kernel coding style in C
  c-basic-offset 8)
 
+;; Set default compile command, for make or whatever.
+(setq compile-command "make -k ")
+;; M-x cc
+(defalias 'cc 'compile)
+
 ;; tabs are tabs in C family langs
 (add-hook 'makefile-mode-hook (lambda ()
 				(setq-local indent-tabs-mode t)))

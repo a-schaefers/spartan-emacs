@@ -66,15 +66,11 @@
   (load-file custom-file))
 
 (global-set-key (kbd "C-c i") #'(lambda ()
-                                  (interactive)
-                                  (find-file spartan-config)))
+				  (interactive)
+				  (find-file spartan-config)))
 
 ;; TAB is indent or auto completion
 (setq tab-always-indent 'complete)
-
-;; Use a customizeable alias for make etc.
-(setq compile-command "make -k ")
-(defalias 'cc 'compile)
 
 ;; scrolling line by line
 (setq scroll-conservatively most-positive-fixnum)
