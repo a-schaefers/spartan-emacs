@@ -205,12 +205,12 @@
 
   ;; Collection of Ridiculously Useful eXtensions
   (crux :defer t :init
-        (global-set-key (kbd \"C-a\") 'crux-move-beginning-of-line)
+        ((global-set-key (kbd \"C-a\") 'crux-move-beginning-of-line)
         (global-set-key (kbd \"C-o\") 'crux-smart-open-line)
         (global-set-key (kbd \"C-x C-o\") 'crux-other-window-or-switch-buffer)
         (global-set-key (kbd \"C-c C-l\") 'crux-duplicate-current-line-or-region)
         (global-set-key (kbd \"C-c C--\") 'crux-kill-whole-line)
-        (global-set-key (kbd \"C-c ;\") 'crux-duplicate-and-comment-current-line-or-region))
+        (global-set-key (kbd \"C-c ;\") 'crux-duplicate-and-comment-current-line-or-region)))
 
   ;; Additional langs that aren't supported OOTB yet by treesitter
 
