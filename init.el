@@ -121,6 +121,7 @@
         (yaml-ts-mode-hook . yaml-language-server)
         (json-ts-mode-hook . vscode-json-languageserver)
         (java-ts-mode-hook . jdtls)
+        (csharp-ts-mode-hook . OmniSharp)
 
         ;; (markdown-mode-hook . marksman)
         ;; (php-mode-hook . true)          ; workaround, php lang server is not available on PATH but via required lib
