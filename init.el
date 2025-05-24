@@ -294,4 +294,18 @@
 
 (load-file spartan-config)
 
+;; spartan.d/ loads last
+
+(setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
+(or
+ (file-directory-p spartan-lisp-d)
+ (make-directory spartan-lisp-d))
+
+(defun spartan-user-local-hook ()
+  (when (file-directory-p spartan-lisp-d)
+    (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
+      (load-file (concat spartan-lisp-d "/" file)))))
+
+(add-hook 'after-init-hook 'spartan-user-local-hook)
+
 ;;; init.el ends here
