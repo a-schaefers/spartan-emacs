@@ -44,7 +44,6 @@
            ,@(when (plist-member props :bind)   `(:bind ,bind)))))
     specs)))
 
-
 ;; performance
 
 ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
