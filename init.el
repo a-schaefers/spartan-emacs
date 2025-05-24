@@ -271,12 +271,16 @@
 ;; C and C++ specific overrides (A language-specific override example)
 
 (defun spartan-c-ts-modes ()
-  ;; Use linux kernel coding style in C
+  ;; Use Linux kernel coding style in C and C++ (Tree-sitter modes)
   ;; https://www.kernel.org/doc/html/v4.10/process/coding-style.html
-  (setq-local indent-tabs-mode t)            ; Use tabs for indentation
-  (setq-local tab-width 8)                   ; Tabs are 8 spaces wide
-  (setq-local c-ts-mode-indent-style 'linux) ; Use Linux indentation style
-  (setq-local c-ts-mode-indent-offset 8))    ; Indentation offset
+  (setq-local indent-tabs-mode t)               ; Use tabs
+  (setq-local tab-width 8)                      ; Display width of tab
+  ;; C-specific
+  (setq-local c-ts-mode-indent-style 'linux)
+  (setq-local c-ts-mode-indent-offset 8)
+  ;; C++-specific
+  (setq-local c++-ts-mode-indent-style 'linux)
+  (setq-local c++-ts-mode-indent-offset 8))
 
 (add-hook 'c-ts-mode-hook #'spartan-c-ts-modes)
 (add-hook 'c++-ts-mode-hook #'spartan-c-ts-modes)
