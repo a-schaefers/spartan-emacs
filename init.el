@@ -290,6 +290,13 @@
 
 ;; M-x pro
 (defalias 'pro 'projectile-commander)
+
+;; Auto-completion bindings
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd \"C-n\") 'company-select-next)
+  (define-key company-active-map (kbd \"C-p\") 'company-select-previous)
+  (define-key company-search-map (kbd \"C-n\") 'company-select-next)
+  (define-key company-search-map (kbd \"C-p\") 'company-select-previous))
 "))))
 
 (load-file spartan-config)
