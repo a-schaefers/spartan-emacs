@@ -4,6 +4,24 @@ Finally, a simple base Emacs configuration framework
 
 [[screenshot.png]]
 
+Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
+~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
+additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
+
+  Moreover, the author has also freely created an Emacs tutorial mini-course available on YouTube,
+
+  [[https://www.youtube.com/watch?v=n9gJxKchkRw][Emacs hacking 00]] - Avoid RSI and "emacs pinky" once and for all.
+
+  [[https://www.youtube.com/watch?v=dCdoyDeR_rI][Emacs hacking 01]] - Vanilla Emacs Crash Course Emacs basics: PATH, ENV, moving the cursor, killing lines, copy, cut, paste, undo, redo, creating files, dired, buffers, windows, splits, open file, close file, temp files and lock files, customization via init.el, emacs notation, discoverability, package managers, melpa and evil mode.
+
+  [[https://www.youtube.com/watch?v=SEPlByrobAI][Emacs hacking 02]] - Vanilla Emacs Crash Course PT. 2 [un]comment a line, find & replace, --debug-init, write a emacs lisp function, bind a function to a key, the messages & scratch buffers, macros, terminals, keybinding conventions, Emacs vs. Vim workflows, use gpg to encrypt and decrypt files, irc, gnus (email), eww (browser), exwm, init'ing linux with Emacs
+
+  [[https://www.youtube.com/watch?v=JNpNge1cRhw][Emacs hacking 03]] - Crash Course PT. 3, org-mode, ediff, Magit, Projectile and more. A Devops Engineer in his native habitat
+
+  [[https://www.youtube.com/watch?v=AI3y15hJtKA][Emacs hacking 04]] - Emacs TRAMP Crash Course PT. 4 Remote file editing via Emacs tramp. GUI vs. Emacs terminal mode.
+
+  [[https://www.youtube.com/watch?v=Rk8vngeJZOk][Emacs hacking 05]] - More CRUX goodies - Emacs Crash Course PT. 5
+
 ** Major update <2025-05-23 Fri>
 
 We now add treesitter support, and have less of a need for "language layers", all configuration should be done in ~/.emacs.d/spartan.el,
@@ -61,24 +79,6 @@ Spartan is ideal for Linux people, minimalists, hackers, and ex-Vimers who donâ€
 - Tested on Linux, but should work also work fine anywhere for the most part.
 - Tuned for ultimate performance using the latest gccemacs with native json parsing with eglot language server protocol  (not required, just recommended.)
 - Treesitter enabled everywhere by default
-
-  Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
-  ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
-  additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
-
-  Moreover, the author has also freely created an Emacs tutorial mini-course available on YouTube,
-
-  [[https://www.youtube.com/watch?v=n9gJxKchkRw][Emacs hacking 00]] - Avoid RSI and "emacs pinky" once and for all.
-
-  [[https://www.youtube.com/watch?v=dCdoyDeR_rI][Emacs hacking 01]] - Vanilla Emacs Crash Course Emacs basics: PATH, ENV, moving the cursor, killing lines, copy, cut, paste, undo, redo, creating files, dired, buffers, windows, splits, open file, close file, temp files and lock files, customization via init.el, emacs notation, discoverability, package managers, melpa and evil mode.
-
-  [[https://www.youtube.com/watch?v=SEPlByrobAI][Emacs hacking 02]] - Vanilla Emacs Crash Course PT. 2 [un]comment a line, find & replace, --debug-init, write a emacs lisp function, bind a function to a key, the messages & scratch buffers, macros, terminals, keybinding conventions, Emacs vs. Vim workflows, use gpg to encrypt and decrypt files, irc, gnus (email), eww (browser), exwm, init'ing linux with Emacs
-
-  [[https://www.youtube.com/watch?v=JNpNge1cRhw][Emacs hacking 03]] - Crash Course PT. 3, org-mode, ediff, Magit, Projectile and more. A Devops Engineer in his native habitat
-
-  [[https://www.youtube.com/watch?v=AI3y15hJtKA][Emacs hacking 04]] - Emacs TRAMP Crash Course PT. 4 Remote file editing via Emacs tramp. GUI vs. Emacs terminal mode.
-
-  [[https://www.youtube.com/watch?v=Rk8vngeJZOk][Emacs hacking 05]] - More CRUX goodies - Emacs Crash Course PT. 5
 
 *** QUICK INSTALL
 
