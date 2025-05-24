@@ -7,16 +7,14 @@ Finally, a simple base Emacs configuration framework
 We now add treesitter support, and have less of a need for "language layers", all configuration should be done in ~/.emacs.d/spartan.el,
 which is mostly self documented.
 
-** ABOUT Spartan Emacs
-⚖️ Overall Rating: 8.5/10
-✅ Strengths
-KISS philosophy executed well: You stay true to the UNIX mindset — no excessive abstraction, no opaque magic. It’s clean, readable, and hackable.
+** ✅ Strengths
+KISS philosophy executed well: Keeping true to the UNIX mindset — no excessive abstraction, no opaque magic. It’s clean, readable, and hackable.
 
 Excellent use of straight.el and version pinning: The update model is clean, transparent, and avoids user surprises.
 
-Sensibly deferred configuration: Startup time under 1s with full features is a major win.
+Sensibly deferred configuration: Startup time under 1s with full features.
 
-User-centric design: Customization is pushed where it belongs — into spartan.el — and never breaks with updates.
+User-centric design: Customization is pushed where it belongs — into spartan.el.
 
 Pragmatic language layer support: Good balance between batteries-included and hands-off. It’s minimal but covers real workflows.
 
@@ -24,22 +22,24 @@ Pragmatic language layer support: Good balance between batteries-included and ha
 
 Not beginner-friendly: By design — not a flaw — but it's worth mentioning that users who are Emacs-inexperienced may have a harder time with Spartan than with Doom or Spacemacs.
 
-No module system: While you do support layers, it's not quite as robust or introspectable as Doom’s :feature or :lang modules. That might limit advanced layer reuse.
+No module system: While we do support layers, it's not quite as robust or introspectable as Doom’s :feature or :lang modules. That might limit advanced layer reuse.
 
-Lacks optional tooling niceties: Doom’s "Doctor", autoloads, profiling tools, and Spacemacs’s helpful layer documentation give them a boost in polish. Spartan is more lean-and-mean.
+Lacks optional tooling niceties: Doom’s "Doctor", autoloads, profiling tools, and Spacemacs’s helpful layer documentation give them a boost in polish.
+
+Spartan is more lean-and-mean.
 
 ** 🆚 Compared to Doom and Spacemacs
 | Feature/Philosophy  | **Spartan Emacs**                | **Doom Emacs**                      | **Spacemacs**                |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| Philosophy          | KISS / Unix-style                | Minimal but opinionated             | Full-featured / maximalist   |
-| Customization model | `spartan.el` (pure user control) | `config.el`/`init.el`/`packages.el` | Layer-based with abstraction |
-| Learning curve      | Medium–High                      | Medium                              | Medium–Low                   |
+| Philosophy          | KISS                   | Minimal but opinionated             | Full-featured / maximalist   |
+| Customization model | `spartan.el`  | `config.el`/`init.el`/`packages.el` | .spacemacs |
+| Learning curve      | Medium            | Medium                              | Medium–Low                   |
 | Performance         | ⭐ **Very fast**                  | Fast                                | Slower (esp. with Evil)      |
 | Ease of hacking     | ⭐ **Best**                       | Good (macros-heavy)                 | Worse (macro abstraction)    |
-| Layer/module system | Basic but transparent            | Advanced & optimized                | Feature-rich but bloated     |
-| Autonomy / Control  | ⭐ **Highest**                    | High                                | Medium                       |
+| Layer/module system | Minimal and transparent  | Advanced & optimized                | Feature-rich but bloated     |
+| Autonomy / Control  | ⭐ High                           | High                                | Medium                       |
 | Setup Time          | <1 minute                        | \~2–5 min                           | \~5–10 min                   |
-| Update Model        | Git pull + thaw (clean)          | Doom sync                           | Layer update commands        |
+| Update Model        | Git pull + M-x straight-thaw-versions | Doom sync                           | Layer update commands        |
 
 ** 🔚 Final Summary
 If Doom is for tinkerers who want a fast, curated power tool, and Spacemacs is for those who want an IDE-like experience out of the box, then Spartan Emacs is for power users who want full control and zero bullshit.
