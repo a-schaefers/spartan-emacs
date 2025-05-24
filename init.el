@@ -6,12 +6,6 @@
       load-prefer-newer t
       inhibit-startup-screen t)
 
-(add-hook 'after-init-hook #'(lambda ()
-			       (interactive)
-			       (require 'server)
-			       (or (server-running-p)
-				   (server-start))))
-
 ;; straight+use-package
 
 (defvar bootstrap-version)
@@ -305,6 +299,23 @@
 
 ;; M-x pro
 (defalias 'pro 'projectile-commander)
+
+;; Start the Emacs server for use by emacsclient
+(add-hook 'after-init-hook #'(lambda ()
+			       (interactive)
+			       (require 'server)
+			       (or (server-running-p)
+				   (server-start))))
+
+;; Set EDITOR to emacsclient
+(or (getenv \"EDITOR\")
+    (progn
+      (setenv \"EDITOR\" \"emacsclient\")
+      (setenv \"VISUAL\" (getenv \"EDITOR\"))))
+
+;; Set PAGER to cat, for proper viewing of man pages, etc. while in M-x shell
+(or (getenv \"PAGER\")
+    (setenv \"PAGER\" \"cat\"))
 "))))
 
 (load-file spartan-config)

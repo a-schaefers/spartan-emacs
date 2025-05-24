@@ -50,16 +50,6 @@
 ;; better dired
 (add-hook 'dired-load-hook (function (lambda () (load "dired-x"))))
 
-;; if EDITOR is not set already, set it.
-(or (getenv "EDITOR")
-    (progn
-      (setenv "EDITOR" "emacsclient")
-      (setenv "VISUAL" (getenv "EDITOR"))))
-
-;; if PAGER is not set already, set it
-(or (getenv "PAGER")
-    (setenv "PAGER" "cat"))
-
 ;; M-x customize
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
