@@ -169,10 +169,10 @@
 (spartan-pkg
   ;; Appearance
   (modus-themes :config
-		((load-theme 'modus-operandi t)
+		((load-theme 'modus-vivendi t)
 
 		 ;; Set Font and Font Size here
-		 (set-face-attribute 'default nil :family \"Monospace\" :height 200)
+		 (set-face-attribute 'default nil :family \"Monospace\" :height 180)
 
 		 ;; Clean look
 		 (blink-cursor-mode -1)
