@@ -9,8 +9,6 @@
   (defun spartan-lint ()
     (interactive)
     (flymake-mode 1)
-    (flymake-show-diagnostics-buffer))
-
-  (defalias 'lint 'spartan-lint))
+    (flymake-show-diagnostics-buffer)))
 
 (provide 'spartan-flymake)

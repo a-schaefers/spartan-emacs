@@ -83,7 +83,7 @@
 
 (setq user-full-name    \"John Doe\"
       user-mail-address \"john.doe@example.com\"
-      spartan-projects '(\"~/repos\") ; where your Projects live
+      magit-repository-directories '((\"~/repos\" . 1)) ; where your Projects live
       )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -204,7 +204,7 @@
   ;; Extensible vi layer
   ;; (evil :config ((evil-mode 1)))
 
-  ;; Additional langs that aren't supported yet OOTB yet by treesitter
+  ;; Additional langs that aren't supported OOTB yet by treesitter
 
   ;; (markdown-mode :defer t)
   ;; (php-mode :defer t)

@@ -11,9 +11,7 @@
 (use-package better-shell
   :straight t
   :bind (("C-<return>" . better-shell-for-current-dir))
-  :defer t
-  :init
-  (defalias 'sh 'better-shell-for-current-dir))
+  :defer t)
 
 ;; flymake addon to support shellcheck for linting
 (use-package flymake-shellcheck
