@@ -115,6 +115,8 @@ auto-completion and find definition, etc. via eglot's minimal language server pr
 Some of the language modes also include repls. Debugging is provided within many of the languages themselves,
 e.g. Python has pdb. With C, one may use ~M-x gdb~, etc.
 
+We have an eye towards https://github.com/svaante/dape once configuration and usage becomes clear.
+
 With compiled languages, one might use M-x cc and set the compile-command to something instead of make if needed, etc.
 
 *** BINDS
