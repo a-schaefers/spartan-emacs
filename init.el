@@ -83,7 +83,7 @@
 
 (setq user-full-name    \"John Doe\"
       user-mail-address \"john.doe@example.com\"
-      spartan-projects  \"~/repos\" ; where your Projects live
+      spartan-projects '(\"~/repos\") ; where your Projects live
       )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
