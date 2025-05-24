@@ -123,21 +123,34 @@
         (rust-ts-mode-hook . rust-analyzer)
         (ruby-ts-mode-hook . solargraph)
         (elixir-ts-mode-hook . elixir-ls)
+
         (html-ts-mode-hook . vscode-html-language-server)
         (css-ts-mode-hook . vscode-css-language-server)
         (typescript-ts-mode-hook . typescript-language-server)
         (js-ts-mode-hook . typescript-language-server)
+        (yaml-ts-mode-hook . yaml-language-server)
+        (json-ts-mode . vscode-json-languageserver)
 
+        ;; (markdown-mode-hook . marksman)
         ;; (php-mode-hook . true)          ; workaround, php lang server is not available on PATH but via required lib
         ;; (zig-mode-hook . zigls)
         ;; (terraform-mode-hook . terraform-ls)
         ;; (nix-mode-hook . rnix-lsp)
         ;; (haskell-mode-hook . haskell-language-server-wrapper)
         ;; (ocaml-mode-hook . ocaml-lsp)
+        ;; (scala-mode-hook . metals)
         ;; (forth-mode-hook . forth-lsp)
         ;; (erlang-mode-hook . erlang_ls)
         ;; (racket-mode-hook . true)       ; workaround, racket lang server is not available on PATH but via required lib
+        ;; (clojure-mode-hook . clojure-lsp)
         ))
+
+;; iterate key value list of mode hooks and lsp bins and eglot-ensure
+(dolist (pair spartan-eglot-autostart-langs)
+    (let ((hook (car pair))
+          (lsp-bin (symbol-name (cdr pair))))
+      (when (executable-find lsp-bin)
+        (add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eglot LSP binds
@@ -150,13 +163,6 @@
   (define-key eglot-mode-map (kbd \"M-m =\") 'eglot-format)
   (define-key eglot-mode-map (kbd \"M-m ?\") 'xref-find-references)
   (define-key eglot-mode-map (kbd \"M-.\")   'xref-find-definitions))
-
-;; iterate key value list of mode hooks and lsp bins and eglot-ensure
-(dolist (pair spartan-eglot-autostart-langs)
-    (let ((hook (car pair))
-          (lsp-bin (symbol-name (cdr pair))))
-      (when (executable-find lsp-bin)
-        (add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Additional package setup, supports :defer :bind :config :init
@@ -181,6 +187,7 @@
   ;; (tuareg-mode :defer t) ; ocaml
   ;; (forth-mode :defer t)
   ;; (erlang :defer t)
+  ;; (scala-mode :defer t)
 
   ;;;; LISP general
   (paredit
