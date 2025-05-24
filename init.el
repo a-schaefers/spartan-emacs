@@ -267,7 +267,7 @@
  c-basic-offset 8)
 
 ;; Set default compile command, for make or whatever.
-(setq compile-command "make -k ")
+(setq compile-command \"make -k \")
 ;; M-x cc
 (defalias 'cc 'compile)
 
