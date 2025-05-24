@@ -123,7 +123,6 @@
         (rust-ts-mode-hook . rust-analyzer)
         (ruby-ts-mode-hook . solargraph)
         (elixir-ts-mode-hook . elixir-ls)
-
         (html-ts-mode-hook . vscode-html-language-server)
         (css-ts-mode-hook . vscode-css-language-server)
         (typescript-ts-mode-hook . typescript-language-server)
