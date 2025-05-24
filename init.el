@@ -151,7 +151,7 @@
 	(add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Eglot LSP binds
+;; Eglot LSP and Company binds
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (with-eval-after-load 'eglot
@@ -161,6 +161,13 @@
   (define-key eglot-mode-map (kbd \"M-m =\") 'eglot-format)
   (define-key eglot-mode-map (kbd \"M-m ?\") 'xref-find-references)
   (define-key eglot-mode-map (kbd \"M-.\")   'xref-find-definitions))
+
+;; Auto-completion bindings
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd \"C-n\") 'company-select-next)
+  (define-key company-active-map (kbd \"C-p\") 'company-select-previous)
+  (define-key company-search-map (kbd \"C-n\") 'company-select-next)
+  (define-key company-search-map (kbd \"C-p\") 'company-select-previous))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Install and configure additional packages, this macro supports :defer :bind :config :init
@@ -290,13 +297,6 @@
 
 ;; M-x pro
 (defalias 'pro 'projectile-commander)
-
-;; Auto-completion bindings
-(with-eval-after-load 'company
-  (define-key company-active-map (kbd \"C-n\") 'company-select-next)
-  (define-key company-active-map (kbd \"C-p\") 'company-select-previous)
-  (define-key company-search-map (kbd \"C-n\") 'company-select-next)
-  (define-key company-search-map (kbd \"C-p\") 'company-select-previous))
 "))))
 
 (load-file spartan-config)
