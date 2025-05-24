@@ -20,7 +20,8 @@
      :defer t
      :init
      (setq flymake-shellcheck-use-file nil)
-     (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
+     (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
+     (add-hook 'bash-ts-mode 'flymake-shellcheck-load))
 
 ;; auto chmod +x scripts
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
