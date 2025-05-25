@@ -38,7 +38,7 @@ User-centric design: Customization is pushed where it belongs — into spartan.e
 
 Pragmatic language layer support: Good balance between batteries-included and hands-off. It’s minimal but covers real workflows.
 
-** ⚠️ Minor Weaknesses
+** ⚠️ Weaknesses
 
 Not beginner-friendly: By design — not a flaw — but it's worth mentioning that users who are Emacs-inexperienced may have a harder time with Spartan than with Doom or Spacemacs.
 
