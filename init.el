@@ -80,6 +80,37 @@
       )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Appearance
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Note: Users who dislike this theme may want to remove this section, and see the example below in the spartan-pkg macro for how to install and use another theme entirely.
+
+(setq-default frame-title-format '(\"Emacs\"))
+(blink-cursor-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+(add-to-list 'load-path (concat user-emacs-directory \"nano-emacs\"))
+
+(setq
+ nano-font-family-monospaced \"Monospace\"
+ nano-font-size 16
+ nano-splash-timeout nil
+ nano-splash-timeout-sec 5)
+
+(require 'nano-faces)
+(require 'nano-theme)
+(require 'nano-theme-dark)
+(require 'nano-theme-light)
+(require 'nano-modeline)
+(require 'nano-splash)
+
+(nano-theme-set-light)
+(call-interactively 'nano-refresh-theme)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load layers
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -168,39 +199,40 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (spartan-pkg
-  ;; Appearance
-  (modus-themes :config
-                ((load-theme 'modus-vivendi t)
+ ;; Original spartan-emacs theme, left in-place for those who may dislike the nano theme,
+ ;; or want an example of how to install and customize with another theme
+ ;;  (modus-themes :config
+ ;;                ((load-theme 'modus-vivendi t)
 
-                 ;; Set Font and Font Size here
-                 (set-face-attribute 'default nil :family \"Monospace\" :height 180)
+ ;;                 ;; Set Font and Font Size here
+ ;;                 (set-face-attribute 'default nil :family \"Monospace\" :height 180)
 
-                 ;; Clean look
-                 (blink-cursor-mode -1)
-                 (scroll-bar-mode -1)
-                 (fringe-mode -1)
-                 (menu-bar-mode -1)
-                 (tool-bar-mode -1)
+ ;;                 ;; Clean look
+ ;;                 (blink-cursor-mode -1)
+ ;;                 (scroll-bar-mode -1)
+ ;;                 (fringe-mode -1)
+ ;;                 (menu-bar-mode -1)
+ ;;                 (tool-bar-mode -1)
 
-                 ;; Remove hostname from the GUI titlebar
-                 (setq-default frame-title-format '(\"Emacs\"))
+ ;;                 ;; Remove hostname from the GUI titlebar
+ ;;                 (setq-default frame-title-format '(\"Emacs\"))
 
-                 ;; Clean mode-line
+ ;;                 ;; Clean mode-line
 
-                 ;; https://emacs.stackexchange.com/questions/5529/how-to-right-align-some-items-in-the-modeline
-                 (defun simple-mode-line-render (left right)
-                   \"Return a string of `window-width' length containing LEFT, and RIGHT
- aligned respectively.\"
-                   (let* ((available-width (- (window-width) (length left) 2)))
-                     (format (format \" %%s %%%ds \" available-width) left right)))
+ ;;                 ;; https://emacs.stackexchange.com/questions/5529/how-to-right-align-some-items-in-the-modeline
+ ;;                 (defun simple-mode-line-render (left right)
+ ;;                   \"Return a string of `window-width' length containing LEFT, and RIGHT
+ ;; aligned respectively.\"
+ ;;                   (let* ((available-width (- (window-width) (length left) 2)))
+ ;;                     (format (format \" %%s %%%ds \" available-width) left right)))
 
-                 (progn
-                   (setq-default mode-line-format
-                                 '((:eval (simple-mode-line-render
-                                           ;; left
-                                           (format-mode-line \"%* %b %l\")
-                                           ;; right
-                                           (format-mode-line \"%m\"))))))))
+ ;;                 (progn
+ ;;                   (setq-default mode-line-format
+ ;;                                 '((:eval (simple-mode-line-render
+ ;;                                           ;; left
+ ;;                                           (format-mode-line \"%* %b %l\")
+ ;;                                           ;; right
+ ;;                                           (format-mode-line \"%m\"))))))))
 
   ;; Extensible vi layer
   ;; (evil :config ((evil-mode 1)))
