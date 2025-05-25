@@ -83,7 +83,8 @@
 ;; Appearance
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Note: Users who dislike this theme may want to remove this section, and see the example below in the spartan-pkg macro for how to install and use another theme entirely.
+;; Note: Users who dislike this theme may want to remove this section,
+;; and see the example below in the spartan-pkg macro for how to install and use another theme entirely.
 
 (setq-default frame-title-format '(\"Emacs\"))
 (blink-cursor-mode -1)
@@ -92,14 +93,12 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+(setq nano-font-family-monospaced \"Monospace\" ; If you have \"Roboto Mono\" you may want to unset this here as it was the font this theme was designed to use
+      nano-font-size 16
+      nano-splash-timeout nil
+      nano-splash-timeout-sec 5)
+
 (add-to-list 'load-path (concat user-emacs-directory \"nano-emacs\"))
-
-(setq
- nano-font-family-monospaced \"Monospace\"
- nano-font-size 16
- nano-splash-timeout nil
- nano-splash-timeout-sec 5)
-
 (require 'nano-faces)
 (require 'nano-theme)
 (require 'nano-theme-dark)
