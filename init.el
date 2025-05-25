@@ -108,6 +108,7 @@
 (require 'nano-help)
 
 (nano-theme-set-light)
+;; (nano-theme-set-dark)
 (call-interactively 'nano-refresh-theme)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
