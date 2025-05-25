@@ -90,26 +90,23 @@
 (blink-cursor-mode -1)
 (scroll-bar-mode -1)
 (fringe-mode -1)
-(menu-bar-mode -1)
+(menu-bar-mode 1)
 (tool-bar-mode -1)
 
-(setq nano-font-family-monospaced \"Monospace\" ; If you have \"Roboto Mono\" you may want to unset this here as it was the font this theme was designed to use
-      nano-font-size 16
-      nano-splash-timeout nil
+(setq nano-splash-timeout nil
       nano-splash-timeout-sec 5)
 
 (add-to-list 'load-path (concat user-emacs-directory \"nano-emacs\"))
-(require 'nano-faces)
-(require 'nano-theme)
-(require 'nano-theme-dark)
-(require 'nano-theme-light)
-(require 'nano-modeline)
-(require 'nano-splash)
-(require 'nano-help)
 
-(nano-theme-set-light)
-;; (nano-theme-set-dark)
-(call-interactively 'nano-refresh-theme)
+(require 'nano-minimal)
+(require 'nano-splash)
+(set-face-attribute 'default nil
+                    :height 140
+                    :weight 'light
+                    :family \"Monospace\") ; If you have \"Roboto Mono\" you may want to unset this here as it was the font this theme was designed to use
+
+;; (nano-dark)
+(nano-light)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load layers
