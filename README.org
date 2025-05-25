@@ -4,11 +4,11 @@ Finally, a simple base Emacs configuration framework
 
 [[screenshot.png]]
 
-Spartan Emacs is not a starter kit. It does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
+Spartan Emacs does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
 ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
 additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
-  Moreover, the author has also freely created an Emacs tutorial mini-course available on YouTube,
+  The author has also freely created an Emacs tutorial mini-course available on YouTube,
 
   [[https://www.youtube.com/watch?v=n9gJxKchkRw][Emacs hacking 00]] - Avoid RSI and "emacs pinky" once and for all.
 
