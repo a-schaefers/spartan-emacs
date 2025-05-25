@@ -4,6 +4,8 @@ Finally, a simple base Emacs configuration framework
 
 [[screenshot.png]]
 
+[[screenshot2.png]]
+
 Spartan Emacs does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
 ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
 additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
