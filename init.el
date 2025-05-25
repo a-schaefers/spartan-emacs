@@ -105,6 +105,7 @@
 (require 'nano-theme-light)
 (require 'nano-modeline)
 (require 'nano-splash)
+(require 'nano-help)
 
 (nano-theme-set-light)
 (call-interactively 'nano-refresh-theme)
