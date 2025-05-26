@@ -60,7 +60,6 @@ Spartan is more lean-and-mean.
 | Ease of hacking     | ⭐ **Best**                       | Good (macros-heavy)                 | Worse (macro abstraction)    |
 | Layer/module system | Minimal and transparent  | Advanced & optimized                | Feature-rich but bloated     |
 | Autonomy / Control  | High                             | High                                | Medium                       |
-| Setup Time          | <1 minute                        | \~2–5 min                           | \~5–10 min                   |
 | Update Model        | Git pull + M-x straight-thaw-versions | Doom sync                           | Layer update commands        |
 
 ** 🔚 Final Summary
