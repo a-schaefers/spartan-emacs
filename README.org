@@ -6,6 +6,8 @@ Finally, a simple base Emacs configuration framework
 
 [[ss2.png]]
 
+The flagship theme used by Spartan Emacs is [[https://github.com/rougier/nano-emacs][Nano Emacs]] by Rougier.
+
 Spartan Emacs does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
 ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
 additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
