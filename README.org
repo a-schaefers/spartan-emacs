@@ -31,6 +31,17 @@ additionally. The manuals may all be found at https://www.gnu.org/software/emacs
 We now add treesitter support, and have less of a need for "language layers", all configuration should be done in ~/.emacs.d/spartan.el,
 which is mostly self documented.
 
+- Breaking change
+
+  ```elisp
+  (dolist (pair spartan-eglot-autostart-langs)
+    (let ((hook (car pair))
+          (lsp-bin (symbol-name (cdr pair))))
+      (when (executable-find lsp-bin)
+        (add-hook hook #'eglot-ensure))))
+  ```
+  The above previously default snippet in spartan.el should now be removed. Fixes https://github.com/a-schaefers/spartan-emacs/issues/9
+
 ** ✅ Strengths
 KISS philosophy executed well: Keeping true to the UNIX mindset — no excessive abstraction, no opaque magic. It’s clean, readable, and hackable.
 
