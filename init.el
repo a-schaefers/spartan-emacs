@@ -44,6 +44,27 @@
            ,@(when (plist-member props :bind)   `(:bind ,bind)))))
     specs)))
 
+(defun spartan-configure-eglot-autostart ()
+  "Configure eglot autostart hooks for specified language modes."
+  (dolist (pair spartan-eglot-autostart-langs)
+    (let* ((hook (car pair))
+           (val (cdr pair))
+           (mode (intern (string-remove-suffix "-hook" (symbol-name hook))))
+           (override (and (consp val) (eq (car val) :override)))
+           (lsp-bin (if override (cadr val) val))
+           (cmd (cond
+                 ((symbolp lsp-bin) (list (symbol-name lsp-bin)))
+                 ((listp lsp-bin) lsp-bin)
+                 (t nil))))
+      (when (and cmd (executable-find (car cmd)))
+        (add-hook hook #'eglot-ensure))
+      (when override
+        (eval-after-load 'eglot
+          `(add-to-list 'eglot-server-programs
+                        '(,mode . ,cmd)))))))
+
+(add-hook 'after-init-hook #'spartan-configure-eglot-autostart)
+
 ;; performance
 
 ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
