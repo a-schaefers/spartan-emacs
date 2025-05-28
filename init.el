@@ -142,7 +142,7 @@
         (go-ts-mode-hook . gopls)
         (rust-ts-mode-hook . rust-analyzer)
         (ruby-ts-mode-hook . solargraph)
-        (elixir-ts-mode-hook . elixir-ls)
+        (elixir-ts-mode-hook . (:override elixir-ls))
         (html-ts-mode-hook . vscode-html-language-server)
         (css-ts-mode-hook . vscode-css-language-server)
         (typescript-ts-mode-hook . typescript-language-server)
@@ -167,11 +167,25 @@
         ))
 
 ;; iterate key value list of mode hooks and lsp bins and eglot-ensure
+;; Supports overriding lsp-bin's as follows, e.g.:
+;; (elixir-ts-mode-hook . (:override (\"elixir-ls\" \"--stdio\")))
+;;  (rust-ts-mode-hook . (:override rust-analyzer))
 (dolist (pair spartan-eglot-autostart-langs)
-    (let ((hook (car pair))
-          (lsp-bin (symbol-name (cdr pair))))
-      (when (executable-find lsp-bin)
-        (add-hook hook #'eglot-ensure))))
+  (let* ((hook (car pair))
+         (val (cdr pair))
+         (mode (intern (string-remove-suffix \"-hook\" (symbol-name hook))))
+         (override (and (consp val) (eq (car val) :override)))
+         (lsp-bin (if override (cadr val) val))
+         (cmd (cond
+               ((symbolp lsp-bin) (list (symbol-name lsp-bin)))
+               ((listp lsp-bin) lsp-bin)
+               (t nil))))
+    (when (and cmd (executable-find (car cmd)))
+      (add-hook hook #'eglot-ensure))
+    (when override
+      (eval-after-load 'eglot
+        `(add-to-list 'eglot-server-programs
+                      '(,mode . ,cmd))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eglot LSP and Company binds
