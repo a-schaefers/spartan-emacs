@@ -24,7 +24,7 @@
       '((height . 44) (width  . 81) (left-fringe . 0) (right-fringe . 0)
         (internal-border-width . 32) (vertical-scroll-bars . nil)
         (bottom-divider-width . 0) (right-divider-width . 0)
-        (undecorated-round . t)))
+        (undecorated-round . nil)))
 (modify-frame-parameters nil default-frame-alist)
 ;; (setq-default pop-up-windows t)
 
