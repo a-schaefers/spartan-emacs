@@ -7,7 +7,7 @@ The goal of this fork is to keep the theme, but remove some opinionated parts su
 
 - nano emacs bindings and helpers (prefer to leave this to the user)
 - pop-up-windows (setting is problematic with magit)
-- various minibuffer changes are removed (Settings are problematic with vertico)
+- various minibuffer changes are removed (settings are problematic with vertico)
 - benchmarking related code (seems excessive)
 - command line chooser (seems obsessive)
 
@@ -15,6 +15,6 @@ A few things are re-added, such as:
 
 - The application titlebar was originally removed, but this is quite opinionated and possibly damning to accessibility
 - The 32 pixel gaps are reduced to 16 to improve screen real estate while retaining some vanity
-- The splash screen is reintroduced from the nano-emacs full project, as it is pretty.
+- The splash screen is reintroduced from the nano-emacs full project, as it is pretty
 
-Of note, this theme assumes you have the "Roboto Mono" font installed, and is required for a correct display.
+Of note, this theme assumes you have the "Roboto Mono" font installed, and is required for a correct display
