@@ -6,7 +6,7 @@ Finally, a simple base Emacs configuration framework
 
 [[screenshot2.png]]
 
-The flagship theme used by Spartan Emacs is [[https://github.com/rougier/nano-emacs][Nano Emacs]] by Rougier.
+The flagship theme used by Spartan Emacs is [[https://github.com/a-schaefers/spartan-emacs/tree/main/nano-emacs][minimal fork]] of [[https://github.com/rougier/nano-emacs][Nano Emacs]] originally designed by the great [[https://github.com/rougier][Rougier]].
 
 Spartan Emacs does not teach Emacs. If you are new, and please begin by checking out ~M-x help-with-tutorial~.
 ~M-x~ means (~Alt~ + ~x~) and then ~help-with-tutorial~ Return (enter) to begin. One might follow up with ~An Introduction to Programming in Emacs Lisp~
@@ -25,22 +25,6 @@ additionally. The manuals may all be found at https://www.gnu.org/software/emacs
   [[https://www.youtube.com/watch?v=AI3y15hJtKA][Emacs hacking 04]] - Emacs TRAMP Crash Course PT. 4 Remote file editing via Emacs tramp. GUI vs. Emacs terminal mode.
 
   [[https://www.youtube.com/watch?v=Rk8vngeJZOk][Emacs hacking 05]] - More CRUX goodies - Emacs Crash Course PT. 5
-
-** Major update <2025-05-23 Fri>
-
-We now add treesitter support, and have less of a need for "language layers", all configuration should be done in ~/.emacs.d/spartan.el,
-which is mostly self documented.
-
-- Breaking change
-
-#+BEGIN_SRC elisp
-  (dolist (pair spartan-eglot-autostart-langs)
-    (let ((hook (car pair))
-          (lsp-bin (symbol-name (cdr pair))))
-      (when (executable-find lsp-bin)
-        (add-hook hook #'eglot-ensure))))
-#+END_SRC
-  The above previously default snippet in spartan.el should now be removed. Fixes https://github.com/a-schaefers/spartan-emacs/issues/9
 
 ** ✅ Strengths
 KISS philosophy executed well: Keeping true to the UNIX mindset — no excessive abstraction, no opaque magic. It’s clean, readable, and hackable.
@@ -106,9 +90,14 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 1. *git pull*
 
-2. *M-x straight-thaw-versions*
+2. *M-x update-config-with-ediff*
+It is essential to ensure you have the latest configuration changes merged from spartan-defaults.el, if there are any - to avoid breakage.
+This is the user's responsibility at the end of the day.
+In a worst case scenario, just rm ~/.emacs.d/spartan.el (consider backing it up first, though) and allow the new version to be regenerated on the next restart.
 
-3. *Restart Emacs*
+3. *M-x straight-thaw-versions*
+
+4. *Restart Emacs*
 
 *** LAYERS
 

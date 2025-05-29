@@ -13,10 +13,23 @@ Finally, a simple base Emacs configuration framework
 ** How to keep up to date
 Layers use pinned packages via Straight.el and are periodically updated.
 
-0. cd ~/.emacs.d
-1. git pull
-2. M-x straight-thaw-versions
-3. Restart Emacs
+1. cd ~/.emacs.d
+
+2. M-x update-config-with-ediff
+
+It is essential to ensure you have the latest configuration changes
+merged from spartan-defaults.el, if there are any - to avoid breakage.
+This is the user’s responsibility at the end of the day.
+
+In a worst case scenario, just rm ~/.emacs.d/spartan.el
+(consider backing it up first, though) and allow the new
+version to be regenerated on the next restart.
+
+3. git pull
+
+4. M-x straight-thaw-versions
+
+5. Restart Emacs
 
 ** About this *scratch* buffer
 This org-mode buffer is un-killable and persistent in ~/.emacs.d/scratch
@@ -25,22 +38,22 @@ Use it for whatever you want, or don't.")
 (defun immortal-scratch ()
   (if (eq (current-buffer) (get-buffer "*scratch*"))
       (progn (bury-buffer)
-	     nil)
+             nil)
     t))
 
 (defun save-persistent-scratch ()
   "Save the contents of *scratch*"
   (with-current-buffer (get-buffer-create "*scratch*")
     (write-region (point-min) (point-max)
-		  (concat user-emacs-directory "scratch"))))
+                  (concat user-emacs-directory "scratch"))))
 
 (defun load-persistent-scratch ()
   "Reload the scratch buffer"
   (let ((scratch-file (concat user-emacs-directory "scratch")))
     (if (file-exists-p scratch-file)
-	(with-current-buffer (get-buffer "*scratch*")
-	  (delete-region (point-min) (point-max))
-	  (insert-file-contents scratch-file)))))
+        (with-current-buffer (get-buffer "*scratch*")
+          (delete-region (point-min) (point-max))
+          (insert-file-contents scratch-file)))))
 
 (progn
   (add-hook 'kill-buffer-query-functions 'immortal-scratch)
