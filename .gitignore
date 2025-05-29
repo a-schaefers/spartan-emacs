@@ -1,6 +1,7 @@
 /*
 !.gitignore
 !init.el
+!spartan-defaults.el
 !/spartan-layers
 !LICENSE
 !README.org
