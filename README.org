@@ -225,7 +225,7 @@ Configuring spartan Emacs is easy, just edit spartan.el
         (go-ts-mode-hook . gopls)
         (rust-ts-mode-hook . rust-analyzer)
         (ruby-ts-mode-hook . solargraph)
-        (elixir-ts-mode-hook . elixir-ls)
+        (elixir-ts-mode-hook . (:override elixir-ls))
         (html-ts-mode-hook . vscode-html-language-server)
         (css-ts-mode-hook . vscode-css-language-server)
         (typescript-ts-mode-hook . typescript-language-server)
@@ -248,13 +248,6 @@ Configuring spartan Emacs is easy, just edit spartan.el
         ;; (racket-mode-hook . true)       ; workaround, racket lang server is not available on PATH but via required lib
         ;; (clojure-mode-hook . clojure-lsp)
         ))
-
-;; iterate key value list of mode hooks and lsp bins and eglot-ensure
-(dolist (pair spartan-eglot-autostart-langs)
-    (let ((hook (car pair))
-          (lsp-bin (symbol-name (cdr pair))))
-      (when (executable-find lsp-bin)
-        (add-hook hook #'eglot-ensure))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eglot LSP and Company binds
