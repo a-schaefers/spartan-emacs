@@ -26,7 +26,7 @@
   (progn
     (set-face-attribute 'default nil
                         :height nano-font-height :weight 'light :family "Monospace")
-    (message "Roboto Mono font unavailable, falling back to Monospace")))
+    (message (concat nano-default-font " font unavailable, falling back to Monospace"))))
 
 (set-display-table-slot standard-display-table 'truncation (make-glyph-code ?…))
 (set-display-table-slot standard-display-table 'wrap (make-glyph-code ?–))
