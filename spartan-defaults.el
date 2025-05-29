@@ -203,9 +203,9 @@
   ;; (cider :defer t)
 
   ;; (slime :defer t :init
-  ;;        ((setq inferior-lisp-program \"sbcl\")
-  ;;         (add-to-list 'auto-mode-alist '(\"\\\\.cl\\\\'\" . lisp-mode))
-  ;;         (add-to-list 'auto-mode-alist '(\"\\\\.sbclrc\\\\'\" . lisp-mode))))
+  ;;        ((setq inferior-lisp-program "sbcl")
+  ;;         (add-to-list 'auto-mode-alist '("\\.cl\\'" . lisp-mode))
+  ;;         (add-to-list 'auto-mode-alist '("\\.sbclrc\\'" . lisp-mode))))
 
   ;; (racket-mode :defer t)
   )
