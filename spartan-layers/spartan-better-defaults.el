@@ -55,10 +55,6 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
-(global-set-key (kbd "C-c i") #'(lambda ()
-				  (interactive)
-				  (find-file spartan-config)))
-
 ;; TAB is indent or auto completion
 (setq tab-always-indent 'complete)
 

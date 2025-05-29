@@ -7,6 +7,16 @@
       user-mail-address "john.doe@example.com"
       magit-repository-directories '(("~/repos" . 1)))
 
+;; spartan.el is generated from emacs.d/spartan-defaults.el
+;; It may be necessary to manually update your spartan.el based on spartan-defaults.el periodically to obtain some new feature or other changes
+;; The helper function `spartan-update-config-with-ediff' is available for this purpose, which will open an ediff session for doing this.
+
+;; Edit spartan.el
+(global-set-key (kbd "C-c i") 'spartan-edit-config)
+
+;; Ediff spartan.el and spartan-defaults.el
+(global-set-key (kbd "C-c I") 'spartan-update-config-with-ediff)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Appearance
 ;;;;;;;;;;;;;;;;;;;;;;;;;;

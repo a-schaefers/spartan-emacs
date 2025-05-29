@@ -87,13 +87,23 @@
 ;; generate spartan configuration file
 
 (setq spartan-config (concat user-emacs-directory "spartan.el"))
+(setq spartan-default-config (concat user-emacs-directory "spartan-defaults.el"))
 
 (or (file-exists-p spartan-config)
-    (progn
-      (setq spartan-default-config (concat user-emacs-directory "spartan-defaults.el"))
-      (copy-file spartan-default-config spartan-config)))
+    (copy-file spartan-default-config spartan-config))
 
 (load-file spartan-config)
+
+;; define manual update mechanism for spartan.el
+
+(defun spartan-update-config-with-ediff ()
+  (interactive)
+  (ediff-files spartan-config
+               spartan-default-config))
+
+(defun spartan-edit-config ()
+  (interactive)
+  (find-file spartan-config))
 
 ;; spartan.d/ loads last
 
