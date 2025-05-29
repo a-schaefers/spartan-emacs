@@ -2,9 +2,9 @@
 
 Finally, a simple base Emacs configuration framework
 
-[[ss.png]]
+[[screenshot.png]]
 
-[[ss2.png]]
+[[screenshot2.png]]
 
 The flagship theme used by Spartan Emacs is [[https://github.com/rougier/nano-emacs][Nano Emacs]] by Rougier.
 
