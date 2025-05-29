@@ -8,9 +8,6 @@
 ;; This is NANO Emacs in 256 lines, without any dependency
 ;; Usage (command line):  emacs -Q -l nano.el -[light|dark]
 
-;; --- Speed benchmarking -----------------------------------------------------
-(setq init-start-time (current-time))
-
 ;; --- Typography stack -------------------------------------------------------
 (set-face-attribute 'default nil
                     :height 140 :weight 'light :family "Roboto Mono")
@@ -26,11 +23,12 @@
         (bottom-divider-width . 0) (right-divider-width . 0)
         (undecorated-round . nil)))
 (modify-frame-parameters nil default-frame-alist)
-;; (setq-default pop-up-windows t)
+
+;; (setq-default pop-up-windows t) ; This bit is problematic with magit
 
 ;; --- Activate / Deactivate modes --------------------------------------------
 (tool-bar-mode -1) (menu-bar-mode -1) (blink-cursor-mode -1)
-(global-hl-line-mode 1) ;(icomplete-vertical-mode 1)
+(global-hl-line-mode 1) ;(icomplete-vertical-mode 1) ; This bit is problematic with Vertico
 (pixel-scroll-precision-mode 1)
 
 ;; --- Minimal NANO (not a real) theme ----------------------------------------
@@ -150,70 +148,6 @@
   (nano-set-face 'nano-critical "#EBCB8B") ;; Aurora 2
   (nano-install-theme))
 
-;; --- Command line theme chooser ---------------------------------------------
-(add-to-list 'command-switch-alist '("-dark"  . nano-dark))
-(add-to-list 'command-switch-alist '("-light" . nano-light))
-(if (member "-dark" command-line-args) (nano-dark) (nano-light))
-
-;; --- Minibuffer completion --------------------------------------------------
-;; (setq tab-always-indent 'complete
-;;       icomplete-delay-completions-threshold 0
-;;       icomplete-compute-delay 0
-;;       icomplete-show-matches-on-no-input t
-;;       icomplete-hide-common-prefix nil
-;;       icomplete-prospects-height 9
-;;       icomplete-separator " . "
-;;       icomplete-with-completion-tables t
-;;       icomplete-in-buffer t
-;;       icomplete-max-delay-chars 0
-;;       icomplete-scroll t
-;;       resize-mini-windows 'grow-only
-;;       icomplete-matches-format nil)
-;; (bind-key "TAB" #'icomplete-force-complete icomplete-minibuffer-map)
-;; (bind-key "RET" #'icomplete-force-complete-and-exit icomplete-minibuffer-map)
-
-;; --- Minimal key bindings ---------------------------------------------------
-;; (defun nano-quit ()
-;;   "Quit minibuffer from anywhere (code from Protesilaos Stavrou)"
-
-;;   (interactive)
-;;   (cond ((region-active-p) (keyboard-quit))
-;;         ((derived-mode-p 'completion-list-mode) (delete-completion-window))
-;;         ((> (minibuffer-depth) 0) (abort-recursive-edit))
-;;         (t (keyboard-quit))))
-
-;; (defun nano-kill ()
-;;   "Delete frame or kill emacs if there is only one frame left"
-
-;;   (interactive)
-;;   (condition-case nil
-;;       (delete-frame)
-;;     (error (save-buffers-kill-terminal))))
-
-;; (bind-key "C-x k" #'kill-current-buffer)
-;; (bind-key "C-x C-c" #'nano-kill)
-;; (bind-key "C-x C-r" #'recentf-open)
-;; (bind-key "C-g" #'nano-quit)
-;; (bind-key "M-n" #'make-frame)
-;; (bind-key "C-z"  nil) ;; No suspend frame
-;; (bind-key "C-<wheel-up>" nil) ;; No text resize via mouse scroll
-;; (bind-key "C-<wheel-down>" nil) ;; No text resize via mouse scroll
-
-;; --- Sane settings ----------------------------------------------------------
-;; (set-default-coding-systems 'utf-8)
-;; (setq-default indent-tabs-mode nil
-;;               ring-bell-function 'ignore
-;;               select-enable-clipboard t)
-
-;; --- OSX Specific -----------------------------------------------------------
-;; (when (eq system-type 'darwin)
-;;   (select-frame-set-input-focus (selected-frame))
-;;   (setq mac-option-modifier nil
-;;         ns-function-modifier 'super
-;;         mac-right-command-modifier 'hyper
-;;         mac-right-option-modifier 'alt
-;;         mac-command-modifier 'meta))
-
 ;; --- Header & mode lines ----------------------------------------------------
 (setq-default mode-line-format "")
 (setq-default header-line-format
@@ -234,24 +168,5 @@
        (propertize mode 'face 'header-line)
        (propertize " " 'display `(space :align-to (- right ,(length coords))))
        (propertize coords 'face 'nano-faded)))))
-
-;; --- Minibuffer setup -------------------------------------------------------
-;; (defun nano-minibuffer--setup ()
-;;   (set-window-margins nil 3 0)
-;;   (let ((inhibit-read-only t))
-;;     (add-text-properties (point-min) (+ (point-min) 1)
-;;       `(display ((margin left-margin)
-;;                  ,(format "# %s" (substring (minibuffer-prompt) 0 1))))))
-;;   (setq truncate-lines t))
-;; (add-hook 'minibuffer-setup-hook #'nano-minibuffer--setup)
-
-;; --- Speed benchmarking -----------------------------------------------------
-(let ((init-time (float-time (time-subtract (current-time) init-start-time)))
-      (total-time (string-to-number (emacs-init-time "%f"))))
-  (message (concat
-    (propertize "Startup time: " 'face 'bold)
-    (format "%.2fs " init-time)
-    (propertize (format "(+ %.2fs system time)"
-                        (- total-time init-time)) 'face 'shadow))))
 
 (provide 'nano-minimal)
