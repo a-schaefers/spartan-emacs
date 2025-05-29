@@ -90,7 +90,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 1. *git pull*
 
-2. *M-x update-config-with-ediff*
+2. *M-x spartan-update-config-with-ediff*
 It is essential to ensure you have the latest configuration changes merged from spartan-defaults.el, if there are any - to avoid breakage.
 This is the user's responsibility at the end of the day.
 In a worst case scenario, just rm ~/.emacs.d/spartan.el (consider backing it up first, though) and allow the new version to be regenerated on the next restart.

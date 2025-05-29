@@ -15,7 +15,7 @@ Layers use pinned packages via Straight.el and are periodically updated.
 
 1. cd ~/.emacs.d
 
-2. M-x update-config-with-ediff
+2. M-x spartan-update-config-with-ediff
 
 It is essential to ensure you have the latest configuration changes
 merged from spartan-defaults.el, if there are any - to avoid breakage.
