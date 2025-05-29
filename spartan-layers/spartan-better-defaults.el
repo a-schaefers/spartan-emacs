@@ -45,6 +45,9 @@
  (setq auto-save-file-name-transforms
        `((".*" ,temporary-file-directory t)))
 
+;; Silently delete old backups without prompting
+(setq delete-old-versions t)
+
 (defalias 'yes-or-no-p 'y-or-n-p) ; don't make us spell "yes" or "no"
 
 ;; better dired
