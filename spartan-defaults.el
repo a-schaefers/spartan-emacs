@@ -32,16 +32,14 @@
 (tool-bar-mode -1)
 
 (setq nano-splash-timeout nil
-      nano-splash-timeout-sec 5)
+      nano-splash-timeout-sec 5
+      nano-font-height 140
+      nano-default-font "Roboto Mono") ; `nano-default-font' should support 'light and 'normal font shades
 
 (add-to-list 'load-path (concat user-emacs-directory "nano-emacs"))
 
 (require 'nano-minimal)
 (require 'nano-splash)
-(set-face-attribute 'default nil
-                    :height 140
-                    :weight 'light
-                    :family "Monospace") ; If you have Roboto Mono you may want to unset this here as it was the font this theme was designed to use
 
 ;; (nano-dark)
 (nano-light)

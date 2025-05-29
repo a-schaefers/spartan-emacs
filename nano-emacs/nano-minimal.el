@@ -9,10 +9,25 @@
 ;; Usage (command line):  emacs -Q -l nano.el -[light|dark]
 
 ;; --- Typography stack -------------------------------------------------------
-(set-face-attribute 'default nil
-                    :height 140 :weight 'light :family "Roboto Mono")
-(set-face-attribute 'bold nil :weight 'regular)
-(set-face-attribute 'bold-italic nil :weight 'regular)
+
+(unless (bound-and-true-p nano-default-font)
+  (setq nano-default-font "Roboto Mono"))
+
+(unless (bound-and-true-p nano-font-height)
+  (setq nano-font-height 140))
+
+(if (find-font (font-spec :name nano-default-font))
+    (progn
+      (set-face-attribute 'default nil
+                          :height nano-font-height :weight 'light :family nano-default-font)
+      (set-face-attribute 'bold nil :weight 'regular)
+      (set-face-attribute 'bold-italic nil :weight 'regular))
+  ;;fallback nicely to Monospace system font
+  (progn
+    (set-face-attribute 'default nil
+                        :height nano-font-height :weight 'light :family "Monospace")
+    (message "Roboto Mono font unavailable, falling back to Monospace")))
+
 (set-display-table-slot standard-display-table 'truncation (make-glyph-code ?…))
 (set-display-table-slot standard-display-table 'wrap (make-glyph-code ?–))
 
