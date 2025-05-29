@@ -13,9 +13,9 @@ Finally, a simple base Emacs configuration framework
 ** How to keep up to date
 Layers use pinned packages via Straight.el and are periodically updated.
 
-1. cd ~/.emacs.d
+- cd ~/.emacs.d
 
-2. M-x spartan-update-config-with-ediff
+- M-x spartan-update-config-with-ediff
 
 It is essential to ensure you have the latest configuration changes
 merged from spartan-defaults.el, if there are any - to avoid breakage.
@@ -25,11 +25,11 @@ In a worst case scenario, just rm ~/.emacs.d/spartan.el
 (consider backing it up first, though) and allow the new
 version to be regenerated on the next restart.
 
-3. git pull
+- git pull
 
-4. M-x straight-thaw-versions
+- M-x straight-thaw-versions
 
-5. Restart Emacs
+- Restart Emacs
 
 ** About this *scratch* buffer
 This org-mode buffer is un-killable and persistent in ~/.emacs.d/scratch
