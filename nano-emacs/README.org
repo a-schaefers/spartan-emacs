@@ -17,4 +17,13 @@ A few things are re-added, such as:
 - The 32 pixel gaps are reduced to 16 to improve screen real estate while retaining some vanity
 - The splash screen is reintroduced from the nano-emacs full project, as it is pretty
 
-Of note, this theme assumes you have the "Roboto Mono" font installed, and is required for a correct display
+A few configuration variables are added,
+
+#+begin_src elisp
+  (setq nano-splash-timeout     nil
+        nano-splash-timeout-sec 5
+        nano-font-height        140
+        nano-default-font       "Roboto Mono") ; `nano-default-font' should support 'light and 'normal font shades
+#+end_src
+
+Of note, this theme was designed with "Roboto Mono" in mind, but this version falls back to Monospace if the font is not found
