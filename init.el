@@ -23,8 +23,6 @@
 
 (straight-use-package 'use-package)
 
-(setq use-package-compute-statistics t)
-
 (defmacro spartan-pkg (&rest specs)
   (declare (indent defun))
   (macroexp-progn
