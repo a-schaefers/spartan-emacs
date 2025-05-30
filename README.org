@@ -26,6 +26,8 @@ additionally. The manuals may all be found at https://www.gnu.org/software/emacs
 
   [[https://www.youtube.com/watch?v=Rk8vngeJZOk][Emacs hacking 05]] - More CRUX goodies - Emacs Crash Course PT. 5
 
+  **[[https://www.youtube.com/watch?v=ijS1pAcUIaQ][Emacs hacking 06]] - Spartan Emacs - Crash Course PT. 6** A more minimal doom or spacemacs Emacs alternative
+
 ** ✅ Strengths
 KISS philosophy executed well: Keeping true to the UNIX mindset — no excessive abstraction, no opaque magic. It’s clean, readable, and hackable.
 
