@@ -74,6 +74,7 @@
         (c-ts-mode-hook . clangd)
         (c++-ts-mode-hook . clangd)
         (lua-ts-mode-hook . lua-language-server)
+        (bash-ts-mode-hook . bash-language-server)
         (python-ts-mode-hook . pylsp)
         (go-ts-mode-hook . gopls)
         (rust-ts-mode-hook . rust-analyzer)
