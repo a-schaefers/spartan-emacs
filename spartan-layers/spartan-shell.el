@@ -13,16 +13,6 @@
   :bind (("C-<return>" . better-shell-for-current-dir))
   :defer t)
 
-;; flymake addon to support shellcheck for linting
-(use-package flymake-shellcheck
-     :if (executable-find "shellcheck")
-     :straight t
-     :defer t
-     :init
-     (setq flymake-shellcheck-use-file nil)
-     (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
-     (add-hook 'bash-ts-mode 'flymake-shellcheck-load))
-
 ;; auto chmod +x scripts
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
