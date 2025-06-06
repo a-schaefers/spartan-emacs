@@ -28,12 +28,6 @@
 
 ;; clickable jump to line of code from error output in shell mode
 (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
-
-;; much improved perf in shell-mode buffers
-;; https://stackoverflow.com/questions/26985772/fast-emacs-shell-mode
-(setq comint-move-point-for-output nil
-      comint-scroll-show-maximum-output nil)
-
 ;; Always use a login shell if bash, which it should be!
 (setq explicit-bash-args '("--noediting" "-i" "-l"))
 
