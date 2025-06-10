@@ -164,6 +164,7 @@
 
   ;; Extensible vi layer
   ;; (evil :config ((evil-mode 1)))
+  ;; (evil-commentary :config ((evil-commentary-mode 1)))
 
   ;; Collection of Ridiculously Useful eXtensions
   (crux :defer t :init
