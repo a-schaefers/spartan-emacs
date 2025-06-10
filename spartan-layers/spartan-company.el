@@ -14,6 +14,7 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook 'company-mode)
+  (add-hook 'html-ts-mode-hook 'company-mode) ; apparently not a prog-mode
   :config
   (setq company-idle-delay 0))
 
