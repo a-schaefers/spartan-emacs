@@ -57,7 +57,6 @@
                        spartan-projectile      ; Git project awareness and find/grep tools
                        spartan-eglot           ; Adds lsp support
                        spartan-company         ; Adds autocompletion drop-down menu
-                       spartan-shell           ; Misc. configuration and improvement to shell-mode
                        spartan-treesit         ; Turns on treesitter everywhere as much as possible
                        ))
 
@@ -257,7 +256,7 @@
 (defalias 'cc 'compile)
 
 ;; M-x sh
-(defalias 'sh 'better-shell-for-current-dir)
+(defalias 'sh 'shell)
 
 ;; M-x lint
 (defalias 'lint 'spartan-lint)
