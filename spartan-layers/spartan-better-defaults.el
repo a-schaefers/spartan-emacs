@@ -15,7 +15,6 @@
 (delete-selection-mode) ; allow highlight and backspace over text like a normal editor
 
 (setq-default
- frame-resize-pixelwise t ; support better certain window managers like ratpoison
 
  ;; better security
  gnutls-verify-error t
@@ -75,5 +74,8 @@
 (or (display-graphic-p)
     (progn
       (xterm-mouse-mode 1)))
+
+;; auto chmod +x scripts
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 (provide 'spartan-better-defaults)
