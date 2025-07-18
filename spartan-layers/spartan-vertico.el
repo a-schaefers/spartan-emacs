@@ -3,7 +3,7 @@
 ;; Really good minibuffer completion, with ido-like extension
 
 (use-package vertico
-  :straight (:files (:defaults "extensions/*"))
+  :ensure t ;(:files (:defaults "extensions/*"))
   :bind ( :map vertico-map
           ("RET" . vertico-directory-enter)
           ("DEL" . vertico-directory-delete-char)
@@ -14,20 +14,11 @@
   (vertico-mode 1))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
-(use-package savehist
-  :straight t
-  :defer t
-  :init
-  (savehist-mode 1))
+(savehist-mode 1)
 
 ;; A few more useful configurations...
 
-(use-package emacs
-  :straight t
-  :init
-  ;; Add prompt indicator to `completing-read-multiple'.
-  ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
-  (defun crm-indicator (args)
+(defun crm-indicator (args)
     (cons (format "[CRM%s] %s"
                   (replace-regexp-in-string
                    "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
@@ -42,18 +33,17 @@
   (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
 
   ;; Enable recursive minibuffers
-  (setq enable-recursive-minibuffers t))
+  (setq enable-recursive-minibuffers t)
 
 ;; fuzz
 
 (use-package prescient
-  :straight t)
+  :ensure t)
 
 (use-package vertico-prescient
   :after (vertico prescient)
-  :straight t
+  :ensure (:wait t)
   :init (vertico-prescient-mode 1)
-  :config (prescient-persist-mode 1) ; https://github.com/a-schaefers/spartan-emacs/issues/6
-  )
+  :config (prescient-persist-mode 1))
 
 (provide 'spartan-vertico)

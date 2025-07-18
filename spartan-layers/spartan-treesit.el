@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (use-package treesit-auto
-  :straight t
+  :ensure t
   :custom
   (treesit-auto-install 'prompt)
   :config

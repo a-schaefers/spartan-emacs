@@ -57,7 +57,7 @@ Use it for whatever you want, or don't.")
 
 (progn
   (add-hook 'kill-buffer-query-functions 'immortal-scratch)
-  (add-hook 'after-init-hook 'load-persistent-scratch)
+  (add-hook 'elpaca-after-init-hook 'load-persistent-scratch)
   (add-hook 'kill-emacs-hook 'save-persistent-scratch)
   (run-with-idle-timer 300 t 'save-persistent-scratch))
 

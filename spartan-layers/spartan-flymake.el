@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (use-package flymake
-  :straight t
+  :ensure t
   :defer t
   :init
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
