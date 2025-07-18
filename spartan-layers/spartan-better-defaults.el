@@ -60,21 +60,6 @@
 ;; TAB is indent or auto completion
 (setq tab-always-indent 'complete)
 
-;; scrolling line by line
-(setq scroll-conservatively most-positive-fixnum)
-
-;; UNBIND ANNOYANCES
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-x C-z"))
-
-;; nicer scrolling
-(when (>=  emacs-major-version 29)
-  (pixel-scroll-precision-mode 1))
-
-(or (display-graphic-p)
-    (progn
-      (xterm-mouse-mode 1)))
-
 ;; auto chmod +x scripts
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
